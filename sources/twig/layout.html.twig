@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pomm - PHP / Postgresql object model manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Pomm, the PHP / Postgresql object model manager" />
+    <meta name="keywords" content="pomm, php, postgresql, database, orm, omm, layer, converter" />
+    <meta name="language" content="en" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- JAVASCRIPT -->
+{% block js %}{% endblock %}
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+
+{% if constant('ENV') == "prod" %}
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '']);
+      _gaq.push(['_setDomainName', 'www.pomm-project.org']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+{% endif %}
+    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,400italic,700italic' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.css" rel="stylesheet" media="screen" />
+    <link href="/css/custom.css" rel="stylesheet" media="screen" />
+{% block css %}{% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+{{ render(app.url_generator.generate("main_navbar")) }}
+        </div>
+      </div>
+    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-header">
+                <h1><a href="{{ app.url_generator.generate('main_index') }}"><img  style="vertical-align: bottom;" src="/images/Pomm.png" alt="pomm" /></a> <small>The Postgresql object model manager for PHP</small><h1>
+            </div>
+          </div>
+{% include "_error_bar.html.twig" with { "app": app } only %}
+        </div>
+{% block content %}{% endblock %}
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
+
