@@ -16,6 +16,7 @@ class MainController implements ControllerProviderInterface
         $this->app = $app;
         $controller_collection = $app['controllers_factory'];
         $controller_collection->get('/', array($this, 'index'))->bind('main_index');
+        $controller_collection->get('/about', array($this, 'about'))->bind('main_about');
         $controller_collection->get('/navbar', array($this, 'navbar'))->bind('main_navbar');
 
         return $controller_collection;
@@ -29,6 +30,11 @@ class MainController implements ControllerProviderInterface
     public function navbar()
     {
         return $this->app['twig']->render('_navbar.html.twig');
+    }
+
+    public function about()
+    {
+        return $this->app['twig']->render('about.html.twig');
     }
 }
 
