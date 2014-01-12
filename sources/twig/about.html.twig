@@ -3,11 +3,22 @@
 {% block content %}
         <div class="row">
           <div class="col-md-12">
-            <h2>A different approach to database layer</h2>
+            <h2>A take on ORM limitations</h2>
             <p>
-
-            <blockquote>Pomm, a take on ORM limitations</blockquote>
-          </p>
+              When ORM appeared in the PHP world, they brought with them a lot of good practices in addition of sticking to a purely object oriented model which, at the time, was missing in most of PHP projects. If ORM are widely used today it is because they ease the development of large applications. But they also come with pitfalls which lead to badly designed data structures, complex processes and more generally performances problems. The goal of this article is to present what are Pomm's underpinning choices.
+              <blockquote>Imagine an ORM but upside down. That's what Pomm is.</blockquote>
+            </p>
+            <h3>Structure definition in ORM world</h3>
+            <p>Even though ORM can generate entities from database introspection, the ORM keeps the definition of database structure in either a configuration file or POPO entities (trough annotation). Most of the time this is even the source of the database structure. This tight coupling between the entities class definition and database tables is common to most of the ORM. Even though this </p>
+            <div class="row">
+              <div class="col-md-6"><img src="/images/orm-entity.png" /></div>
+              <div class="col-md-6"><p>There are numerous advantages to write the DSL in PHP as it can be easily kept under version control and migration scenarios can be generated directly in PHP.</p><p>But the association between classes and tables must be kept. This static structure definition puts handcuffs on the database engine since relational databases deal with sets and <strong>sets are extendible</strong> by definition. Enforcing the cast of class definition in the relational world immediately means you loose the control of the queries hence performances. It strips out the added value of the rdbms and at the end, the relational engine is used as a <code> id => instance </code> storage layer.</p></div>
+            </div><!-- row -->
+            <h3>Structure definition with Pomm</h3>
+            <div class="row">
+              <div class="col-md-6"></div>
+              <div class="col-md-6"><img src="/images/pomm-entity.png" />In Pomm, a set database structure is held by a mapping class instance. It defines a projection (SELECT) between the set -- which can be a table, a view, a function or even a <pre>VALUES</pre> set -- and a schemaless entity class. In fact, each query defines a set developers choose to inject into typed schemaless entities</div>
+            </div><!-- row -->
           </div>
         </div>
 {% endblock %}
