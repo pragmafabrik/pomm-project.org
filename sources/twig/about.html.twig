@@ -5,20 +5,101 @@
           <div class="col-md-12">
             <h2>A take on ORM limitations</h2>
             <p>
-              When ORM appeared in the PHP world, they brought with them a lot of good practices in addition of sticking to a purely object oriented model which, at the time, was missing in most of PHP projects. If ORM are widely used today it is because they ease the development of large applications. But they also come with pitfalls which lead to badly designed data structures, complex processes and more generally performances problems. The goal of this article is to present what are Pomm's underpinning choices.
+              When ORM appeared in the PHP world, they brought with them a lot of good practices in addition of sticking to a purely object oriented model which, at the time, was missing in most of PHP projects. If ORM are widely used today it is because they ease the development of large applications. But they also come with pitfalls which lead to badly designed data structures, complex processes and more generally, performances issues. The goal of this article is to present Pomm's underpinning choices and what they change for developers.
               <blockquote>Imagine an ORM but upside down. That's what Pomm is.</blockquote>
             </p>
-            <h3>Structure definition in ORM world</h3>
-            <p>Even though ORM can generate entities from database introspection, the ORM keeps the definition of database structure in either a configuration file or POPO entities (trough annotation). Most of the time this is even the source of the database structure. This tight coupling between the entities class definition and database tables is common to most of the ORM. Even though this </p>
+            <h3>Classes Vs sets</h3>
+            <p>Object Relational Mappers try to grant developers with an object oriented API of the database. To do so they present database's tables as entities class definitions. Roughly, one class =&gt; one record so one record =&gt; one instance. This static structure definition puts handcuffs on the database engine since relational databases deal with sets and <strong>sets are extendible</strong> by definition. Being extendible does not mean «support for change», of course a database structure can change, extendible means sets can be transformed trough SQL manipulation.</p>
+            <pre class="vim"><span class="lnr">1 </span><span class="Statement">SELECT</span> letter <span class="Special">FROM</span> (<span class="Special">VALUES</span> (<span class="String">'a'</span>, <span class="Number">1</span>), (<span class="String">'b'</span>, <span class="Number">2</span>), (<span class="String">'c'</span>, <span class="Number">3</span>)) <span class="Special">AS</span> my_set (letter, <span class="Function">position</span>);</pre>
+            <p>The previous example shows how to project a part of a static set. In a way, <strong>tables are just persistent sets</strong>. To return a set in a SQL database you need to use a projection operator known as <code>SELECT</code> which defines what set the database is going to return. </p>
+            <p>Enforcing the cast of a static class definition in the relational world means engraving projections in stone plates hence loosing query control. In some way, ORM can create simplistic joins to fetch several linked entities but still we are far from what SQL can do in terms of combining sets to shape collections of entities.</p>
             <div class="row">
-              <div class="col-md-6"><img src="/images/orm-entity.png" /></div>
-              <div class="col-md-6"><p>There are numerous advantages to write the DSL in PHP as it can be easily kept under version control and migration scenarios can be generated directly in PHP.</p><p>But the association between classes and tables must be kept. This static structure definition puts handcuffs on the database engine since relational databases deal with sets and <strong>sets are extendible</strong> by definition. Enforcing the cast of class definition in the relational world immediately means you loose the control of the queries hence performances. It strips out the added value of the rdbms and at the end, the relational engine is used as a <code> id => instance </code> storage layer.</p></div>
+              <div class="col-md-6"><img src="/images/pomm-entity.png" /></div>
+              <div class="col-md-6"><p>In Pomm, a set database structure is held by a mapping class instance. It defines a projection between the set and a schemaless entity class. In fact, each query defines a set developers choose to inject into typed schemaless entities.</p><p>For example, if a <code>student</code> in the database holds the student password, it is possible to change the projection not to hydrate <code>Student</code> entities with this information, it is also possible to add a new attribute named <code>age</code> computed by the database from the student's birth date.</p>
+              <p>This projection operator works with every builtin queries and there are helpers to use it in custom queries. It is even possible to create custom projection methods.</p>
+              <p>Postgresql also proposes another projection operator: <code>RETURNING</code>. It can turn every <code>INSERT, UPDATE, DELETE</code> into a projection. With Pomm you can do:<pre class="vim"><span class="lnr">1 </span><span class="Operator">$</span><span class="Identifier">student</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">student_map</span><span class="Type">-&gt;</span>deleteByPK<span class="Delimiter">(</span><span class="Type">array</span><span class="Delimiter">(</span>'<span class="String">student_id</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Number">2</span><span class="Delimiter">))</span>;</pre> It will delete the given student from the database and if it exists, return an according entity hydrated using the configured projection.</p> </div>
             </div><!-- row -->
-            <h3>Structure definition with Pomm</h3>
+            <h3>The cost of database abstraction (DBAL)</h3>
+            <p>Database abstraction is a very interesting promise for developers: they can access and use every database the same way. It makes general purpose frameworks able to give developers access to any databases and it allows to write generic software (forum or blog plate-form) without the itch of managing database specific code.</p>
+            <p><dl>
+            <dt>But this has costs which are not often considered by ORM users:</dt>
+            <dd>it makes developers to have to learn a new specific query language simpler (and poorer) than SQL</dd>
+            <dd>it can only propose a small subset of types and functionalities of the underlying database</dd>
+            <dd>it hides a fast database under a slow and memory consuming PHP layer</dd>
+            </dl></p>
+            <p>In the vast majority of PHP web projects, the whole abstraction layer is interpreted for each request to access a single SQL database. In the same time, the DBAL reduces the database to a pool of entities identified by an auto-incremented id. In the end, developers use the relational database like a <code>id =&gt; instance</code> store in which rdbms only present poor added value. The only options presented to people building a database are poor and clumsy structures. When knowing the database engine below, using an abstraction layer on a project is like feet cuffing it.</p>
+            <p>This also leads DSL to be written in a non SQL format that is interpreted by the ORM and then imported to the database through the abstraction layer ignoring the specific goodnesses like constraints, tablespaces and almost all index types. (Oddly, the only rdbms specific features in PHP ORM are dedicated to mysql). Even though this can be considered as a feature since it brings easy migrations scripts, not using performances mechanisms while not having a hand on generated queries invariably leads to performances problems.</p>
+            <h3>Postgresql as object oriented database</h3>
+            <p>Pomm's choice was not to use an abstraction layer in favor of working with only one database engine: Postgresql.</p>
+            <p>Postgresql is a fast, full of features, free and robust database engine supporting SQL2008 standard augmented with some killing advantages. Knowing the database engine, PHP's PDO can be avoided in profit of native Pg library proposing even better performances and more functionalities (asynchronous event dispatcher system, scrollable cursors etc.).</p>
+            <h4>There are types for business data</h4>
+            <p>Postgresql comes with a large (and extensible) set of types to architecture data. It would be long to list them all here but here are the most common:
+              <dl>
+                <dd>&#10149; JSON, XML, text, UUID</dd>
+                <dd>&#10149; timestamps with time zone, periods, timestamp ranges</dd>
+                <dd>&#10149; HSTore (key =&gt; value store), LTree (materialized paths), ts_vector (full text lexemes)</dd>
+                <dd>&#10149; point, segment, circle, box, polygon</dd>
+                <dd>&#10149; inet4, inet6 (IP addresses V4 and V6), macaddr</dd>
+                <dd>&#10149; custom types</dd>
+              </dl>
+              Postgresql also proposes a bunch of functions and operators that interact with those types. The example below asks the database if a circle centered in <code>(1,1)</code> with radius 1 owns the point <code>(0,0)</code>:
+            <pre class="vim">
+<span class="lnr">1 </span><span class="Statement">SELECT</span> <span class="Type">circle</span> <span class="String">'((1,1), 1)'</span> @&gt; <span class="Type">point</span> <span class="String">'(0,0)'</span>; <span class="Comment">-- returns false</span>
+</pre> This makes developers to easily query and sort results on distance, position etc.</p>
             <div class="row">
-              <div class="col-md-6"></div>
-              <div class="col-md-6"><img src="/images/pomm-entity.png" />In Pomm, a set database structure is held by a mapping class instance. It defines a projection (SELECT) between the set -- which can be a table, a view, a function or even a <pre>VALUES</pre> set -- and a schemaless entity class. In fact, each query defines a set developers choose to inject into typed schemaless entities</div>
-            </div><!-- row -->
+              <div class="col-md-6"><img src="/images/pomm-converter.png" /></div>
+              <div class="col-md-6">
+                <p>The problem with PDO or most of the ORM is they do not know how to handle theses types. Pomm comes with a transparent and easily extensible converter layer that translates Postgresql types from / to PHP. Postgresql also proposes arrays of any supported types, so does Pomm. Custom types and table types can be converted directly into PHP object instances. It is not replacing the missing ORM's «relational» feature but it can create structured data in the database that is re-used in different entities.</p>
+              </div>
+            </div>
+            <h4>Heading for performances</h4>
+            <p>Like many ORM do today, in order to combine performances and security, all statements are prepared prior to execution. With Pomm, prepared statements are also pooled so if they are issued more than once, the prepared query is re-used automatically.
+<pre class="vim">
+<span class="lnr">1 </span><span class="Operator">$</span><span class="Identifier">map</span><span class="Type">-&gt;</span>findWhere<span class="Delimiter">(</span>'<span class="String">birth_date &gt;= $* AND gender = $*</span>', <span class="Delimiter">[</span> <span class="PreProc">new</span> \DateTime<span class="Delimiter">(</span>'<span class="String">1994-01-01</span>'<span class="Delimiter">)</span>, '<span class="String">M</span>' <span class="Delimiter">])</span>;
+<span class="lnr">2 </span><span class="Operator">$</span><span class="Identifier">map</span><span class="Type">-&gt;</span>findWhere<span class="Delimiter">(</span>'<span class="String">birth_date &gt;= $* AND gender = $*</span>', <span class="Delimiter">[</span> <span class="PreProc">new</span> \DateTime<span class="Delimiter">(</span>'<span class="String">1996-05-31</span>'<span class="Delimiter">)</span>, '<span class="String">F</span>' <span class="Delimiter">])</span>;
+</pre>
+ Both queries above use the same prepared statement.</p>
+<p>Pomm 1.2 switched from PDO to native PHP's Postgresql API. This resulted in a real performances boost in addition of consuming less memory to fetch data from database. PDO's postgresql driver does not support scrollable cursor on results, collection had to keep results in memory to be iterated over more than once.</p>
+            <h4>SQL as query language</h4>
+            <p>Structured Query Language has 40 years of experience in manipulating sets and querying data. Programmers in the past had problem building dynamic queries. This has been replaced today with ORM's query builders. Of course using an object oriented API to build queries is easier and more testable than using old tedious string operations but in the end, the result shows same complexity with added tables as joins, added condition in the <code>WHERE</code> clause, added fields in the <code>SELECT</code> part.</p>
+            <p>Pomm chose not to propose a query builder but a <code>Where</code> clause builder that could be used in generic methods and custom SQL queries instead.
+              <pre class="vim">
+<span class="lnr">1 </span><span class="Operator">$</span><span class="Identifier">where</span> <span class="Operator">=</span> \Pomm\Query\Where<span class="Operator">::</span>create<span class="Delimiter">(</span>'<span class="String">birth_date &gt;= $*</span>', <span class="Delimiter">[</span> <span class="PreProc">new</span> \DateTime<span class="Delimiter">(</span>'<span class="String">1994-01-01</span>'<span class="Delimiter">)</span> <span class="Delimiter">])</span>
+<span class="lnr">2 </span>    <span class="Type">-&gt;</span>andWhere<span class="Delimiter">(</span>'<span class="String">gender = $*</span>', <span class="Delimiter">[</span>'<span class="String">M</span>'<span class="Delimiter">])</span>;
+<span class="lnr">3 </span>
+<span class="lnr">4 </span><span class="Operator">$</span><span class="Identifier">students</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">student_map</span><span class="Type">-&gt;</span>findWhere<span class="Delimiter">(</span><span class="Operator">$</span><span class="Identifier">where</span><span class="Delimiter">)</span>;</pre>
+            For complex queries, SQL is the best candidate for the job. Pomm proposes a smooth integration with the PHP layer using query helpers. The following example fetch a collection of students augmented by the average score taken from a weighted list of exams scores and their ranking in their classroom.<pre class="vim">
+<span class="lnr"> 1 </span><span class="Delimiter">&lt;?php</span> <span class="Comment">// class StudentMap.php</span>
+<span class="lnr"> 2 </span><span class="Comment">// [...]</span>
+<span class="lnr"> 3 </span>    <span class="Type">protected</span> <span class="PreProc">function</span> findWithRankingWhere<span class="Delimiter">(</span>Where <span class="Operator">$</span><span class="Identifier">where</span><span class="Delimiter">)</span>
+<span class="lnr"> 4 </span>    <span class="Delimiter">{</span>
+<span class="lnr"> 5 </span>        <span class="Operator">$</span><span class="Identifier">student_score_map</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>getConnection<span class="Delimiter">()</span><span class="Type">-&gt;</span>getMapFor<span class="Delimiter">(</span>'<span class="String">\School\Student\Student</span>'<span class="Delimiter">)</span>;
+<span class="lnr"> 6 </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Operator">&lt;&lt;&lt;</span><span class="Delimiter">SQL</span>
+<span class="lnr"> 7 </span><span class="Special">WITH</span>
+<span class="lnr"> 8 </span>  student_unweighted_score <span class="Special">AS</span> ( <span class="Statement">SELECT</span> student_id, score <span class="Special">FROM</span> :student_score_table <span class="Special">NATURAL</span> <span class="Special">JOIN</span> :student_table, <span class="Function">generate_series</span>(<span class="Number">1</span>, coeff) <span class="Special">WHERE</span> :condition),
+<span class="lnr"> 9 </span>  student_avg_score <span class="Special">AS</span> ( <span class="Statement">SELECT</span> student_id, <span class="Function">avg</span>(score) <span class="Special">AS</span> score <span class="Special">FROM</span> student_unweighted_score <span class="Special">GROUP</span> <span class="Special">BY</span> student_id)
+<span class="lnr">10 </span><span class="Statement">SELECT</span>
+<span class="lnr">11 </span>  :student_fields,
+<span class="lnr">12 </span>  <span class="Function">round</span>(sas.score, <span class="Number">2</span>) <span class="Special">AS</span> score,
+<span class="lnr">13 </span>  <span class="Function">rank</span>() <span class="Special">OVER</span> (<span class="Special">PARTITION</span> <span class="Special">BY</span> student.class <span class="Special">ORDER</span> <span class="Special">BY</span> sas.score <span class="Special">DESC</span>) <span class="Special">AS</span> <span class="Function">position</span>
+<span class="lnr">14 </span><span class="Special">FROM</span>
+<span class="lnr">15 </span>  student
+<span class="lnr">16 </span>    <span class="Special">NATURAL</span> <span class="Special">JOIN</span> student_avg_score sas
+<span class="lnr">17 </span><span class="Delimiter">SQL</span>;
+<span class="lnr">18 </span>
+<span class="lnr">19 </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Function">strtr</span><span class="Delimiter">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Type">array</span><span class="Delimiter">(</span>
+<span class="lnr">20 </span>            '<span class="String">:student_table</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>getTableName<span class="Delimiter">()</span>,
+<span class="lnr">21 </span>            '<span class="String">:student_score_table</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">student_score_map</span><span class="Type">-&gt;</span>getTableName<span class="Delimiter">()</span>,
+<span class="lnr">22 </span>            '<span class="String">:student_fields</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>formatFields<span class="Delimiter">(</span>'<span class="String">getSelectFields</span>'<span class="Delimiter">)</span>,
+<span class="lnr">23 </span>            '<span class="String">:condition</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Delimiter">(</span><span class="Type">string</span><span class="Delimiter">)</span> <span class="Operator">$</span><span class="Identifier">where</span>
+<span class="lnr">24 </span>        <span class="Delimiter">))</span>;
+<span class="lnr">25 </span>
+<span class="lnr">26 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>query<span class="Delimiter">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Operator">$</span><span class="Identifier">where</span><span class="Type">-&gt;</span>getValues<span class="Delimiter">())</span>;
+<span class="lnr">27 </span>    <span class="Delimiter">}</span>
+</pre> 
+            </p>
+            <p>Pomm's ability to integrate SQL as query language allied with schemaless entities and the projection system make developers able to shape exactly the data they need to present with maximum performances.</p>
+            <blockquote>Pomm is the equilibrium point between the imperative, object oriented loosely typed PHP and declarative strongly typed Postgres's SQL.</blockquote>
           </div>
         </div>
 {% endblock %}
