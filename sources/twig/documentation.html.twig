@@ -1,0 +1,14 @@
+{% extends "layout.html.twig" %}
+{% block title %}
+{{ pomm_version }} Documentation
+{% endblock %}
+
+{% block sidebar %}
+{% include "documentation/toc_" + pomm_version + ".twig" %}
+{% endblock %}
+
+{% block content %}
+<div class="post">
+{% include "documentation/doc_" + pomm_version + ".twig" %}
+</div>
+{% endblock %}

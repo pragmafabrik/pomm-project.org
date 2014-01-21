@@ -18,6 +18,7 @@ class MainController implements ControllerProviderInterface
         $controller_collection->get('/', array($this, 'index'))->bind('main_index');
         $controller_collection->get('/about', array($this, 'about'))->bind('main_about');
         $controller_collection->get('/navbar', array($this, 'navbar'))->bind('main_navbar');
+        $controller_collection->get('/manual-{version}', array($this, 'documentation'))->bind('documentation');
 
         return $controller_collection;
     }
@@ -36,5 +37,9 @@ class MainController implements ControllerProviderInterface
     {
         return $this->app['twig']->render('about.html.twig');
     }
-}
 
+    public function documentation($version)
+    {
+        return $this->app['twig']->render('documentation.html.twig', array('pomm_version' => $version));
+    }
+}

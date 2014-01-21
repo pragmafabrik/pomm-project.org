@@ -1,0 +1,115 @@
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id4">Overview</a></li>
+<li><a class="reference internal" href="#databases-and-converters" id="id5">Databases and converters</a><ul>
+<li><a class="reference internal" href="#service-the-database-provider" id="id6">Service: the database provider</a><ul>
+<li><a class="reference internal" href="#database-class-and-configuration" id="id7">Database class and configuration</a></li>
+<li><a class="reference internal" href="#dsn" id="id8">DSN</a></li>
+<li><a class="reference internal" href="#connection-configuration" id="id9">Connection configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#converters" id="id10">Converters</a><ul>
+<li><a class="reference internal" href="#built-in-converters" id="id11">Built-in converters</a></li>
+<li><a class="reference internal" href="#registering-converters" id="id12">Registering converters</a></li>
+<li><a class="reference internal" href="#creating-your-own-database-class" id="id13">Creating your own Database class</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#converters-and-types" id="id14">Converters and types</a><ul>
+<li><a class="reference internal" href="#domains" id="id15">Domains</a></li>
+<li><a class="reference internal" href="#composite-types" id="id16">Composite types</a></li>
+<li><a class="reference internal" href="#writing-custom-types" id="id17">Writing custom types</a></li>
+<li><a class="reference internal" href="#entity-converter" id="id18">Entity converter</a></li>
+<li><a class="reference internal" href="#writing-your-own-converters" id="id19">Writing your own converters</a></li>
+<li><a class="reference internal" href="#spawning-connections" id="id20">Spawning connections</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#connections" id="id21">Connections</a><ul>
+<li><a class="reference internal" href="#id1" id="id22">Overview</a><ul>
+<li><a class="reference internal" href="#map-classes-provider" id="id23">Map classes provider</a></li>
+<li><a class="reference internal" href="#identity-mappers" id="id24">Identity mappers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#transactions" id="id25">Transactions</a><ul>
+<li><a class="reference internal" href="#standard-transactions" id="id26">Standard transactions</a></li>
+<li><a class="reference internal" href="#partial-transactions-and-savepoints" id="id27">Partial transactions and savepoints</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#prepared-statements" id="id28">Prepared statements</a></li>
+<li><a class="reference internal" href="#notifications-and-observers" id="id29">Notifications and observers</a><ul>
+<li><a class="reference internal" href="#observers" id="id30">Observers</a></li>
+<li><a class="reference internal" href="#sending-a-notification" id="id31">Sending a notification</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logging" id="id32">Logging</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#map-classes" id="id33">Map classes</a><ul>
+<li><a class="reference internal" href="#id2" id="id34">Overview</a></li>
+<li><a class="reference internal" href="#structure" id="id35">Structure</a><ul>
+<li><a class="reference internal" href="#introspected-tables" id="id36">Introspected tables</a></li>
+<li><a class="reference internal" href="#arrays" id="id37">Arrays</a></li>
+<li><a class="reference internal" href="#temporary-tables" id="id38">Temporary tables</a></li>
+<li><a class="reference internal" href="#creating-entities" id="id39">Creating entities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#querying-the-database" id="id40">Querying the database</a><ul>
+<li><a class="reference internal" href="#create-update-drop" id="id41">Create, update, drop</a></li>
+<li><a class="reference internal" href="#built-in-finders" id="id42">Built-in finders</a></li>
+<li><a class="reference internal" href="#findall" id="id43">findAll</a></li>
+<li><a class="reference internal" href="#findwhere" id="id44">findWhere</a></li>
+<li><a class="reference internal" href="#and-or-the-where-class" id="id45">AND, OR: The Where class</a></li>
+<li><a class="reference internal" href="#fields-methods" id="id46">Fields methods</a></li>
+<li><a class="reference internal" href="#building-custom-queries" id="id47">Building custom queries</a></li>
+<li><a class="reference internal" href="#fields-formatters" id="id48">Fields formatters</a></li>
+<li><a class="reference internal" href="#complex-queries" id="id49">Complex queries</a></li>
+<li><a class="reference internal" href="#virtual-fields" id="id50">Virtual fields</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#collections" id="id51">Collections</a><ul>
+<li><a class="reference internal" href="#fetching-results" id="id52">Fetching results</a></li>
+<li><a class="reference internal" href="#collection-filters" id="id53">Collection filters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pagers" id="id54">Pagers</a><ul>
+<li><a class="reference internal" href="#pager-query-methods" id="id55">Pager query methods</a></li>
+<li><a class="reference internal" href="#displaying-a-pager" id="id56">Displaying a pager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#entities" id="id57">Entities</a><ul>
+<li><a class="reference internal" href="#id3" id="id58">Overview</a><ul>
+<li><a class="reference internal" href="#what-is-an-entity-class" id="id59">What is an Entity class ?</a></li>
+<li><a class="reference internal" href="#data-source-agnostic" id="id60">Data source agnostic</a></li>
+<li><a class="reference internal" href="#schema-less-entities" id="id61">Schema less entities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#living-with-entities" id="id62">Living with entities</a><ul>
+<li><a class="reference internal" href="#creator" id="id63">Creator</a></li>
+<li><a class="reference internal" href="#accessors-and-mutators" id="id64">Accessors and mutators</a></li>
+<li><a class="reference internal" href="#interfaces-and-overloads" id="id65">Interfaces and overloads</a></li>
+<li><a class="reference internal" href="#extending-entities" id="id66">Extending entities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#entities-and-database" id="id67">Entities and database</a><ul>
+<li><a class="reference internal" href="#import-and-export" id="id68">Import and export</a></li>
+<li><a class="reference internal" href="#life-cycle" id="id69">Life cycle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tools" id="id70">Tools</a><ul>
+<li><a class="reference internal" href="#map-generation-tools" id="id71">Map generation tools</a><ul>
+<li><a class="reference internal" href="#database-inspector" id="id72">Database Inspector</a></li>
+<li><a class="reference internal" href="#createbasemaptool" id="id73">CreateBaseMapTool</a></li>
+<li><a class="reference internal" href="#scanschematool" id="id74">ScanSchemaTool</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+

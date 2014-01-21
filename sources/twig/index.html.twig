@@ -51,9 +51,9 @@ It offers an alternative approach than ORM to using database in web developments
                   <tr>
                     <td>
                       <dl style="margin-bottom: 0px;">
-                        <dd>Pomm 1.2 <a href="#">documentation</a> | <a href="#">API</a></dd>
-                        <dd>Pomm 1.1 <a href="#">documentation</a></dd>
-                        <dd>Pomm 1.0 <a href="#">documentation</a></dd>
+                        <dd>Pomm 1.2 <a href="{{ app.url_generator.generate('documentation', { 'version': '1.2' }) }}">documentation</a> | <a href="/api/index.html">API</a></dd>
+                        <dd>Pomm 1.1 <a href="{{ app.url_generator.generate('documentation', { 'version': '1.1' }) }}">documentation</a></dd>
+                        <dd>Pomm 1.0 <a href="{{ app.url_generator.generate('documentation', { 'version': '1.0' }) }}">documentation</a></dd>
                       </dl>
                     </td>
                     <td>
@@ -91,18 +91,18 @@ It offers an alternative approach than ORM to using database in web developments
                       Pomm
                     </th>
                     <th>
-                      <a href="#">Silex</a>
+                      <a href="https://github.com/chanmix51/PommServiceProvider">Silex</a>
                     </th>
                     <th>
-                      <a href="#">Symfony2</a>
+                      <a href="https://github.com/chanmix51/PommBundle">Symfony2</a>
                     </th>
                   </tr>
                   <tr>
                     <td>
                       <dl style="margin-bottom: 0px;">
-                        <dd><a href="#">Pomm 1.2-RC3</a></dd>
-                        <dd><a href="#">Pomm 1.1.4</a> (stable)</dd>
-                        <dd><a href="#">Pomm 1.0.6</a> (deprecated)</dd>
+                        <dd><a href="https://github.com/chanmix51/Pomm/archive/master.zip">Pomm 1.2.0</a> (stable)</dd>
+                        <dd><a href="https://github.com/chanmix51/Pomm/archive/1.1.zip">Pomm 1.1.4</a> (stable)</dd>
+                        <dd><a href="https://github.com/chanmix51/Pomm/archive/1.0.6.zip">Pomm 1.0.6</a> (deprecated)</dd>
                       </dl>
                     </td>
                     <td>
