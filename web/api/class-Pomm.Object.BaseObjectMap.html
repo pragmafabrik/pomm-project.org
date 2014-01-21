@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Pomm\Object\BaseObjectMap | Pomm 1.2</title>
+
+	<script type="text/javascript" src="resources/combined.js?184676627"></script>
+	<script type="text/javascript" src="elementlist.js?1218566668"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-16699784-2"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active main"><a href="namespace-Pomm.html">Pomm<span></span></a>
+						<ul>
+				<li class="main"><a href="namespace-Pomm.Connection.html">Connection</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Converter.html">Converter</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Exception.html">Exception</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Identity.html">Identity</a>
+						</li>
+				<li class="active main"><a href="namespace-Pomm.Object.html">Object</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Query.html">Query</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Tools.html">Tools</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Type.html">Type</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Pomm.Object.BaseObject.html">BaseObject</a></li>
+				<li class="active"><a href="class-Pomm.Object.BaseObjectMap.html">BaseObjectMap</a></li>
+				<li><a href="class-Pomm.Object.Collection.html">Collection</a></li>
+				<li><a href="class-Pomm.Object.Pager.html">Pager</a></li>
+				<li><a href="class-Pomm.Object.RowStructure.html">RowStructure</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Pomm.Object.html" title="Summary of Pomm\Object"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class BaseObjectMap</h1>
+
+
+	<div class="description">
+	
+<p>BaseObjectMap</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br />
+		
+		<b>Namespace:</b> <a href="namespace-Pomm.html">Pomm</a>\<a href="namespace-Pomm.Object.html">Object</a><br />
+		<b>Package:</b> Pomm<br />
+
+				<b>Copyright:</b>
+				2011-2013 Grégoire HUBERT<br />
+				<b>License:</b>
+				<a href="MIT/X11">{@link http://opensource.org/licenses/mit-license.php}</a><br />
+				<b>Author:</b>
+				Grégoire HUBERT &lt;<a
+href="mailto:hubert.greg&#64;gmail.com">hubert.greg&#64;<!---->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				$id$<br />
+				<b>Uses:</b>
+				<code><code><a href="class-Pomm.Exception.Exception.html">Pomm\Exception\Exception</a></code></code> <br />
+				<b>Uses:</b>
+				<code><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code></code> <br />
+				<b>Uses:</b>
+				<code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code> <br />
+		<b>Located at</b> <a href="source-class-Pomm.Object.BaseObjectMap.html#10-806" title="Go to source code">Object/BaseObjectMap.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="initialize" id="_initialize">
+
+		<td class="attributes"><code>
+			abstract protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_initialize">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#33-45" title="Go to source code">initialize</a>( )</code>
+
+		<div class="description short">
+			
+<p>initialize</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>initialize</p>
+
+<p>This method is called by the constructor, use it to declare</p>
+
+<ul>
+	<li>connection the connection name to use to query on this model objects</li>
+
+	<li>fields_definitions (mandatory)</li>
+
+	<li>object_class The class name of the corresponding model (mandatory)</li>
+
+	<li>primary key (optional).</li>
+</ul>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#47-75" title="Go to source code">__construct</a>( <span><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code> <var>$connection</var></span> )</code>
+
+		<div class="description short">
+			
+<p>__construct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__construct</p>
+
+<p>This constructor is intended to be used by
+\Pomm\Connection\Connection::getMapFor($class_name) to chain calls.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$connection</var></dt>
+					<dd><code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code><br>$connection</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTableName" id="_getTableName">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTableName">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#77-90" title="Go to source code">getTableName</a>( <span>String <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>getTableName</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getTableName</p>
+
+<p>Get the associated table signature (schema.name).</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$alias</var></dt>
+					<dd><code>String</code><br>$alias Optional alias (default null).</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getObjectClass" id="_getObjectClass">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getObjectClass">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#92-102" title="Go to source code">getObjectClass</a>( )</code>
+
+		<div class="description short">
+			
+<p>getObjectClass</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getObjectClass</p>
+
+<p>Returns object_class definition.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRowStructure" id="_getRowStructure">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.RowStructure.html">Pomm\Object\RowStructure</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRowStructure">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#104-114" title="Go to source code">getRowStructure</a>( )</code>
+
+		<div class="description short">
+			
+<p>getRowStructure</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getRowStructure</p>
+
+<p>Returns the underlying row structure</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.RowStructure.html">Pomm\Object\RowStructure</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConverter" id="_getConverter">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Converter.PgRow.html">Pomm\Converter\PgRow</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConverter">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#116-126" title="Go to source code">getConverter</a>( )</code>
+
+		<div class="description short">
+			
+<p>getConverter</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getConverter</p>
+
+<p>Returns the according PgRow</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Converter.PgRow.html">Pomm\Converter\PgRow</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPrimaryKey" id="_getPrimaryKey">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPrimaryKey">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#128-138" title="Go to source code">getPrimaryKey</a>( )</code>
+
+		<div class="description short">
+			
+<p>getPrimaryKey</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getPrimaryKey</p>
+
+<p>Return the array with field names composing the PK.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addField" id="_addField">
+
+		<td class="attributes"><code>
+			 protected 
+			<code><a href="class-Pomm.Object.BaseObjectMap.html">Pomm\Object\BaseObjectMap</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addField">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#140-156" title="Go to source code">addField</a>( <span>string <var>$name</var></span>, <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			
+<p>addField</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>addField</p>
+
+<p>Add a new field definition.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name</dd>
+					<dt><var>$type</var></dt>
+					<dd><code>string</code><br>$type Type must be associated with a converter</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObjectMap.html">Pomm\Object\BaseObjectMap</a></code></code><br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Database::registerConverter()<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addVirtualField" id="_addVirtualField">
+
+		<td class="attributes"><code>
+			 protected 
+			<code><a href="class-Pomm.Object.BaseObjectMap.html">Pomm\Object\BaseObjectMap</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addVirtualField">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#158-174" title="Go to source code">addVirtualField</a>( <span>string <var>$name</var></span>, <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			
+<p>addVirtualField</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>addVirtualField</p>
+
+<p>Add a new virtual field definition.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name</dd>
+					<dt><var>$type</var></dt>
+					<dd><code>string</code><br>$type Type must be associated with a converter</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObjectMap.html">Pomm\Object\BaseObjectMap</a></code></code><br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						Database::registerConverter()<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createAndSaveObjects" id="_createAndSaveObjects">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createAndSaveObjects">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#176-208" title="Go to source code">createAndSaveObjects</a>( <span>array <var>$values_array</var></span> )</code>
+
+		<div class="description short">
+			
+<p>createAndSaveObjects</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>createAndSaveObjects</p>
+
+<p>Create new instances in a single INSERT statement and return a Collection
+from it. All values MUST have the same column set.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values_array</var></dt>
+					<dd><code>Array</code><br>Array of values.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createAndSaveObject" id="_createAndSaveObject">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createAndSaveObject">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#210-225" title="Go to source code">createAndSaveObject</a>( <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>createAndSaveObject</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>createAndSaveObject</p>
+
+<p>Create a new instance of the corresponding model class and save it in the
+database.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createObject" id="_createObject">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createObject">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#227-240" title="Go to source code">createObject</a>( <span>array <var>$values</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>createObject</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>createObject</p>
+
+<p>Return a new instance of the corresponding model class.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Optional starting values.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createObjectFromPg" id="_createObjectFromPg">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createObjectFromPg">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#242-254" title="Go to source code">createObjectFromPg</a>( <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>createObjectFromPg</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>createObjectFromPg</p>
+
+<p>create an object with converted values and check it against identity mapper
+if any.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Values to be converted..</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br>$object<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="makeObjectFromPg" id="_makeObjectFromPg">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_makeObjectFromPg">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#256-267" title="Go to source code">makeObjectFromPg</a>( <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="doQuery" id="_doQuery">
+
+		<td class="attributes"><code>
+			 public 
+			Resource
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_doQuery">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#269-281" title="Go to source code">doQuery</a>( <span>String <var>$sql</var></span>, <span>Array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>doQuery</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>doQuery</p>
+
+<p>Send the query to the prepared statement system.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd><code>String</code><br>$sql SQL statement.</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Optional parameters for the prepared query.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Resource</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="query" id="_query">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_query">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#283-295" title="Go to source code">query</a>( <span>String <var>$sql</var></span>, <span>Array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>query</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>query</p>
+
+<p>Perform a query, hydrate the results and return a collection.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd><code>String</code><br>$sql SQL statement.</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Optional parameters for the prepared query.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="paginateQuery" id="_paginateQuery">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.Pager.html">Pomm\Object\Pager</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_paginateQuery">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#297-327" title="Go to source code">paginateQuery</a>( <span>String <var>$sql</var></span>, <span>String <var>$sql_count</var></span>, <span>Array <var>$values</var></span>, <span>Integer <var>$items_per_page</var></span>, <span>Integer <var>$page</var> = <span class="php-num">1</span></span> )</code>
+
+		<div class="description short">
+			
+<p>queryPaginate</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>queryPaginate</p>
+
+<p>paginate and execute a query.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd><code>String</code><br>$sql SQL query to paginate.</dd>
+					<dt><var>$sql_count</var></dt>
+					<dd><code>String</code><br>$sql_count SQL that count the overall results.</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values query parameters.</dd>
+					<dt><var>$items_per_page</var></dt>
+					<dd><code>Integer</code><br>$items_per_page</dd>
+					<dt><var>$page</var></dt>
+					<dd><code>Integer</code><br>$page page index.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.Pager.html">Pomm\Object\Pager</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="findAll" id="_findAll">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_findAll">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#329-341" title="Go to source code">findAll</a>( <span>string <var>$suffix</var> = <span class="php-quote">''</span></span> )</code>
+
+		<div class="description short">
+			
+<p>findAll</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>findAll</p>
+
+<p>The simplest query on a table.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$suffix</var></dt>
+					<dd><code>string</code><br>$suffix</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="findWhere" id="_findWhere">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_findWhere">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#343-368" title="Go to source code">findWhere</a>( <span>String <var>$where</var></span>, <span>Array <var>$values</var> = <span class="php-keyword1">array</span>()</span>, <span>String <var>$suffix</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>findWhere</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>findWhere</p>
+
+<p>Performs a SQL query given conditions and parameters.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$where</var></dt>
+					<dd><code>String</code><br>$where</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values</dd>
+					<dt><var>$suffix</var></dt>
+					<dd><code>String</code><br>$suffix</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="paginateFindWhere" id="_paginateFindWhere">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.Pager.html">Pomm\Object\Pager</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_paginateFindWhere">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#370-402" title="Go to source code">paginateFindWhere</a>( <span>Mixed <var>$where</var></span>, <span>Array <var>$values</var></span>, <span>String <var>$suffix</var></span>, <span>Integer <var>$items_per_page</var></span>, <span>Integer <var>$page</var> = <span class="php-num">1</span></span> )</code>
+
+		<div class="description short">
+			
+<p>paginateFindWhere</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>paginateFindWhere</p>
+
+<p>Paginate and execute a query with a Where statement.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$where</var></dt>
+					<dd><code>Mixed</code><br>$where Condition or Where instance.</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Query parameters.</dd>
+					<dt><var>$suffix</var></dt>
+					<dd><code>String</code><br>$suffix Order by.</dd>
+					<dt><var>$items_per_page</var></dt>
+					<dd><code>Integer</code><br>$items_per_page</dd>
+					<dt><var>$page</var></dt>
+					<dd><code>Integer</code><br>$page Page index.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.Pager.html">Pomm\Object\Pager</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="findByPk" id="_findByPk">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_findByPk">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#404-422" title="Go to source code">findByPk</a>( <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>findByPk</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>findByPk</p>
+
+<p>Retrieve the corresponding entity from the database if it exists.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Key value of the PK.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="updateByPk" id="_updateByPk">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_updateByPk">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#424-449" title="Go to source code">updateByPk</a>( <span>array <var>$pk</var></span>, <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>updateByPk</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>updateByPk</p>
+
+<p>Update and return a record given the PK.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$pk</var></dt>
+					<dd><code>Array</code><br>$pk</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Values to be updated</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteByPk" id="_deleteByPk">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteByPk">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#451-464" title="Go to source code">deleteByPk</a>( <span>array <var>$pk</var></span> )</code>
+
+		<div class="description short">
+			
+<p>deleteByPk</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>deleteByPk</p>
+
+<p>Delete a record from the database given the PK.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$pk</var></dt>
+					<dd><code>Array</code><br>$pk</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="saveOne" id="_saveOne">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_saveOne">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#466-498" title="Go to source code">saveOne</a>( <span><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code> <var>&amp; $object</var></span> )</code>
+
+		<div class="description short">
+			
+<p>saveOne</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>saveOne</p>
+
+<p>Use this to insert or update an object.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$object</var></dt>
+					<dd><code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br>$object</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br>Saved instance.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="updateOne" id="_updateOne">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_updateOne">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#500-551" title="Go to source code">updateOne</a>( <span><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code> <var>&amp; $object</var></span>, <span>array <var>$fields</var></span> )</code>
+
+		<div class="description short">
+			
+<p>updateOne</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>updateOne</p>
+
+<p>Update part of an object. Because this can trigger other changes in the
+database, the object is reloaded and all other changes are discarded.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$object</var></dt>
+					<dd><code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br>$object</dd>
+					<dt><var>$fields</var></dt>
+					<dd><code>Array</code><br>$fields Only these fields will be updated.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteOne" id="_deleteOne">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteOne">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#553-571" title="Go to source code">deleteOne</a>( <span><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code> <var>&amp; $object</var></span> )</code>
+
+		<div class="description short">
+			
+<p>deleteOne</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>deleteOne</p>
+
+<p>Delete the record tied with the given entity.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$object</var></dt>
+					<dd><code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br>$object</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getGroupByFields" id="_getGroupByFields">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getGroupByFields">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#573-586" title="Go to source code">getGroupByFields</a>( <span>String <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>getGroupByFields</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getGroupByFields</p>
+
+<p>When grouping by all fields, this returns the fields with the given alias
+(default null).</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$alias</var></dt>
+					<dd><code>String</code><br>$alias Optional table alias prefix.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>fields to be grouped.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						BaseObjectMap::getField()<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getSelectFields" id="_getSelectFields">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getSelectFields">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#588-601" title="Go to source code">getSelectFields</a>( <span>String <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>getSelectFields</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getSelectFields</p>
+
+<p>Get the list of fields to SELECT. When selecting all fields, this is better
+than *.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$alias</var></dt>
+					<dd><code>String</code><br>$alias the table alias in the query.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						BaseObjectMap::getField()<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFields" id="_getFields">
+
+		<td class="attributes"><code>
+			final public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFields">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#603-622" title="Go to source code">getFields</a>( <span>String <var>$alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>getFields</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getFields</p>
+
+<p>Get the list of field names.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$alias</var></dt>
+					<dd><code>String</code><br>$alias the table alias in the query</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="aliasField" id="_aliasField">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_aliasField">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#624-636" title="Go to source code">aliasField</a>( <span>String <var>$field</var></span>, <span>String <var>$alias</var></span> )</code>
+
+		<div class="description short">
+			
+<p>aliasField</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>aliasField</p>
+
+<p>Output alias.field if alias is provided.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$field</var></dt>
+					<dd><code>String</code><br>$field</dd>
+					<dt><var>$alias</var></dt>
+					<dd><code>String</code><br>$alias</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="formatFieldsWithAlias" id="_formatFieldsWithAlias">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_formatFieldsWithAlias">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#638-658" title="Go to source code">formatFieldsWithAlias</a>( <span>String <var>$field_method</var></span>, <span>String <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>formatFieldsWithAlias</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>formatFieldsWithAlias</p>
+
+<p>This is used when queries need to format fields with column aliases.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$field_method</var></dt>
+					<dd><code>String</code><br>This current map's getFields() method name.</dd>
+					<dt><var>$table_alias</var></dt>
+					<dd><code>String</code><br>Optional table alias.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="formatFields" id="_formatFields">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_formatFields">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#660-677" title="Go to source code">formatFields</a>( <span>String <var>$field_method</var></span>, <span>String <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>formatFields</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>formatFields</p>
+
+<p>This is used when queries need formatted fields with no column alias.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$field_method</var></dt>
+					<dd><code>String</code><br>This current map's getFields() method name.</dd>
+					<dt><var>$table_alias</var></dt>
+					<dd><code>String</code><br>Optional table alias.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="convertToPg" id="_convertToPg">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_convertToPg">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#679-690" title="Go to source code">convertToPg</a>( <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>convertToPg</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>convertToPg</p>
+
+<p>Convert values to Postgresql.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Values to convert.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>Converted values to PG format.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="convertFromPg" id="_convertFromPg">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_convertFromPg">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#692-705" title="Go to source code">convertFromPg</a>( <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>convertFromPg</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>convertFromPg</p>
+
+<p>Convert values from Postgresql.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Values from convert.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>Converted values from PG format.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="checkObject" id="_checkObject">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkObject">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#707-724" title="Go to source code">checkObject</a>( <span><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code> <var>$object</var></span>, <span>String <var>$message</var></span> )</code>
+
+		<div class="description short">
+			
+<p>checkObject</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>checkObject</p>
+
+<p>Check if the instance is from this map corresponding class or throw an
+exception.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$object</var></dt>
+					<dd><code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br>$object</dd>
+					<dt><var>$message</var></dt>
+					<dd><code>String</code><br>$message Will be set in the Exception.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createSqlAndFrom" id="_createSqlAndFrom">
+
+		<td class="attributes"><code>
+			 protected 
+			<code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createSqlAndFrom">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#726-744" title="Go to source code">createSqlAndFrom</a>( <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>createSqlAndFrom</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>createSqlAndFrom</p>
+
+<p>Create a SQL condition from the associative array with AND logical
+operator.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>array</code><br>$values</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createCollectionFromStatement" id="_createCollectionFromStatement">
+
+		<td class="attributes"><code>
+			 protected 
+			<code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createCollectionFromStatement">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#746-758" title="Go to source code">createCollectionFromStatement</a>( <span>resource <var>$result</var></span> )</code>
+
+		<div class="description short">
+			
+<p>createCollectionFromStatement</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>createCollectionFromStatement</p>
+
+<p>Creates a \Pomm\Object\Collection instance from a result resource.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$result</var></dt>
+					<dd><code>resource</code><br>$result</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.Collection.html">Pomm\Object\Collection</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="generateSqlForWhere" id="_generateSqlForWhere">
+
+		<td class="attributes"><code>
+			 protected 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_generateSqlForWhere">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#760-782" title="Go to source code">generateSqlForWhere</a>( <span>Mixed <var>$where</var></span>, <span>String <var>$suffix</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>generateSqlForWhere</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>generateSqlForWhere</p>
+
+<p>Generate the SQL for findWhere and paginateFindWhere methods.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$where</var></dt>
+					<dd><code>Mixed</code><br>$where Can be a String or \Pomm\Query\Where instance.</dd>
+					<dt><var>$suffix</var></dt>
+					<dd><code>String</code><br>$suffix ORDER BY, LIMIT etc.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br>The SQL query.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						BaseObject::findWhere()<br />
+						BaseObject::paginateFindWhere()<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parseForUpdate" id="_parseForUpdate">
+
+		<td class="attributes"><code>
+			 protected 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parseForUpdate">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObjectMap.html#784-805" title="Go to source code">parseForUpdate</a>( <span><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code> <var>$object</var></span> )</code>
+
+		<div class="description short">
+			
+<p>parseForUpdate</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>parseForUpdate</p>
+
+<p>Format the converted values for UPDATE query.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$object</var></dt>
+					<dd><code><code><a href="class-Pomm.Object.BaseObject.html">Pomm\Object\BaseObject</a></code></code><br>$object</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="connection" id="$connection">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Object.BaseObjectMap.html#25" title="Go to source code"><var>$connection</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$connection" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="object_class" id="$object_class">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Object.BaseObjectMap.html#26" title="Go to source code"><var>$object_class</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$object_class" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="object_name" id="$object_name">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Object.BaseObjectMap.html#27" title="Go to source code"><var>$object_name</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$object_name" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="row_structure" id="$row_structure">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Object.BaseObjectMap.html#28" title="Go to source code"><var>$row_structure</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$row_structure" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="virtual_fields" id="$virtual_fields">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Object.BaseObjectMap.html#29" title="Go to source code"><var>$virtual_fields</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$virtual_fields" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="pk_fields" id="$pk_fields">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Object.BaseObjectMap.html#30" title="Go to source code"><var>$pk_fields</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$pk_fields" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="converter" id="$converter">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Object.BaseObjectMap.html#31" title="Go to source code"><var>$converter</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$converter" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Pomm 1.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

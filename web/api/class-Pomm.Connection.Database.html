@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Pomm\Connection\Database | Pomm 1.2</title>
+
+	<script type="text/javascript" src="resources/combined.js?184676627"></script>
+	<script type="text/javascript" src="elementlist.js?1218566668"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-16699784-2"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active main"><a href="namespace-Pomm.html">Pomm<span></span></a>
+						<ul>
+				<li class="active main"><a href="namespace-Pomm.Connection.html">Connection</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Converter.html">Converter</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Exception.html">Exception</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Identity.html">Identity</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Object.html">Object</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Query.html">Query</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Tools.html">Tools</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Type.html">Type</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Pomm.Connection.Connection.html">Connection</a></li>
+				<li class="active"><a href="class-Pomm.Connection.Database.html">Database</a></li>
+				<li><a href="class-Pomm.Connection.Observer.html">Observer</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Pomm.Connection.html" title="Summary of Pomm\Connection"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Database</h1>
+
+
+	<div class="description">
+	
+<p>Pomm\Connection\Database</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Pomm.html">Pomm</a>\<a href="namespace-Pomm.Connection.html">Connection</a><br />
+		<b>Package:</b> Pomm<br />
+
+				<b>Copyright:</b>
+				2011 - 2013 Grégoire HUBERT<br />
+				<b>License:</b>
+				<a href="X11">{@link http://opensource.org/licenses/mit-license.php}</a><br />
+				<b>Author:</b>
+				Grégoire HUBERT &lt;<a
+href="mailto:hubert.greg&#64;gmail.com">hubert.greg&#64;<!---->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				$id$<br />
+		<b>Located at</b> <a href="source-class-Pomm.Connection.Database.html#9-323" title="Go to source code">Connection/Database.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			final public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#26-45" title="Go to source code">__construct</a>( <span>Array <var>$parameters</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>__construct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__construct</p>
+
+<p>Parameters that can be sent : dsn : an url like
+psql://user:pass@host:port/dbname name : the connection name for this database
+(optional) configuration : An array containing configuration settings (see <a
+href="http://www.postgresql.org/docs/9.0/static/runtime-config-client.html">http://www.postgresql.org/docs/9.0/static/runtime-config-client.html</a>)
+isolation : transaction isolation level (default READ COMMITED)</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$parameters</var></dt>
+					<dd><code>Array</code><br>$parameters</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="processDsn" id="_processDsn">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_processDsn">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#47-100" title="Go to source code">processDsn</a>( )</code>
+
+		<div class="description short">
+			
+<p>processDsn Sets the different parameters from the DSN</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>processDsn Sets the different parameters from the DSN</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="initialize" id="_initialize">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_initialize">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#102-118" title="Go to source code">initialize</a>( )</code>
+
+		<div class="description short">
+			
+<p>initialize</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>initialize</p>
+
+<p>This method initializes the parameters for our connection. It can be
+overloaded.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createConnection" id="_createConnection">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createConnection">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#120-133" title="Go to source code">createConnection</a>( <span><code><a href="class-Pomm.Identity.IdentityMapperInterface.html">Pomm\Identity\IdentityMapperInterface</a></code> <var>$mapper</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>createConnection()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>createConnection()</p>
+
+<p>Opens a new connection to the database and stores it. It overrides any
+previous connection.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$mapper</var></dt>
+					<dd><code><code><a href="class-Pomm.Identity.IdentityMapperInterface.html">Pomm\Identity\IdentityMapperInterface</a></code></code><br>$mapper An optional instance of a data mapper.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConnection" id="_getConnection">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConnection">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#135-151" title="Go to source code">getConnection</a>( )</code>
+
+		<div class="description short">
+			
+<p>getConnection</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getConnection</p>
+
+<p>Returns the opened connection if any. If no connection is opened yet, it
+creates a new one with default parameters.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="registerConverter" id="_registerConverter">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Database.html">Pomm\Connection\Database</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_registerConverter">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#153-173" title="Go to source code">registerConverter</a>( <span>String <var>$name</var></span>, <span><code><a href="class-Pomm.Converter.ConverterInterface.html">Pomm\Converter\ConverterInterface</a></code> <var>$converter</var></span>, <span>array <var>$pg_types</var></span> )</code>
+
+		<div class="description short">
+			
+<p>registerConverter</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>registerConverter</p>
+
+<p>Register a new converter</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name The name of the converter.</dd>
+					<dt><var>$converter</var></dt>
+					<dd><code><code><a href="class-Pomm.Converter.ConverterInterface.html">Pomm\Converter\ConverterInterface</a></code></code><br>$converter A converter instance.</dd>
+					<dt><var>$pg_types</var></dt>
+					<dd><code>Array</code><br>$pg_types An array of the mapped postgresql's types.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Database.html">Pomm\Connection\Database</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConverterFor" id="_getConverterFor">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Converter.ConverterInterface.html">Pomm\Converter\ConverterInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConverterFor">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#175-187" title="Go to source code">getConverterFor</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getConverterFor</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getConverterFor</p>
+
+<p>Returns a converter from its designation.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>string</code><br>$name Converter designation.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Converter.ConverterInterface.html">Pomm\Converter\ConverterInterface</a></code></code><br>Converter instance.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConverterForType" id="_getConverterForType">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConverterForType">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#189-216" title="Go to source code">getConverterForType</a>( <span>String <var>$pg_type</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getConverterForType</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getConverterForType</p>
+
+<p>Returns the converter instance for a given a postgresql's type</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$pg_type</var></dt>
+					<dd><code>String</code><br>$pg_type Type name.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br>Converter instance.<br />
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						\Pomm\Exception\Exception if not found.<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="registerTypeForConverter" id="_registerTypeForConverter">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Database.html">Pomm\Connection\Database</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_registerTypeForConverter">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#218-234" title="Go to source code">registerTypeForConverter</a>( <span>String <var>$type</var></span>, <span>String <var>$converter_name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>registerTypeForConverter</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>registerTypeForConverter</p>
+
+<p>Associate an existing converter with a Pg type. This is useful for
+DOMAINs.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd><code>String</code><br>$type Type name</dd>
+					<dt><var>$converter_name</var></dt>
+					<dd><code>String</code><br>$converter_name Converter designation.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Database.html">Pomm\Connection\Database</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getParameterHolder" id="_getParameterHolder">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Tools.ParameterHolder.html">Pomm\Tools\ParameterHolder</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getParameterHolder">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#236-247" title="Go to source code">getParameterHolder</a>( )</code>
+
+		<div class="description short">
+			
+<p>getParameterHolder</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getParameterHolder</p>
+
+<p>Returns the parameter holder</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Tools.ParameterHolder.html">Pomm\Tools\ParameterHolder</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="registerBaseConverters" id="_registerBaseConverters">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_registerBaseConverters">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#249-268" title="Go to source code">registerBaseConverters</a>( )</code>
+
+		<div class="description short">
+			
+<p>registerBaseConverters</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>registerBaseConverters</p>
+
+<p>Register the converters for postgresql's built-in types</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getName" id="_getName">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getName">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#270-282" title="Go to source code">getName</a>( )</code>
+
+		<div class="description short">
+			
+<p>getName</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getName</p>
+
+<p>Returns the database name. This name is used to generate the namespaces for
+the Model files.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setName" id="_setName">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setName">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#284-295" title="Go to source code">setName</a>( <span>String <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>setName</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>setName</p>
+
+<p>Sets the database name.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name Database name</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="initializeConfiguration" id="_initializeConfiguration">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_initializeConfiguration">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#297-309" title="Go to source code">initializeConfiguration</a>( )</code>
+
+		<div class="description short">
+			
+<p>initializeConfiguration</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>initializeConfiguration</p>
+
+<p>Create configuration settings</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConfiguration" id="_getConfiguration">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConfiguration">#</a>
+		<code><a href="source-class-Pomm.Connection.Database.html#311-322" title="Go to source code">getConfiguration</a>( )</code>
+
+		<div class="description short">
+			
+<p>getConfiguration</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getConfiguration</p>
+
+<p>Returns configuration for each connection</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>configuration settings<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="parameter_holder" id="$parameter_holder">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Database.html#20" title="Go to source code"><var>$parameter_holder</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$parameter_holder" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="converters" id="$converters">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Database.html#21" title="Go to source code"><var>$converters</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$converters" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="handled_types" id="$handled_types">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Database.html#22" title="Go to source code"><var>$handled_types</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$handled_types" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="connection" id="$connection">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Database.html#23" title="Go to source code"><var>$connection</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$connection" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="configuration" id="$configuration">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Database.html#24" title="Go to source code"><var>$configuration</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$configuration" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Pomm 1.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

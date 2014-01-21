@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Pomm\Query\Where | Pomm 1.2</title>
+
+	<script type="text/javascript" src="resources/combined.js?184676627"></script>
+	<script type="text/javascript" src="elementlist.js?1218566668"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-16699784-2"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active main"><a href="namespace-Pomm.html">Pomm<span></span></a>
+						<ul>
+				<li class="main"><a href="namespace-Pomm.Connection.html">Connection</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Converter.html">Converter</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Exception.html">Exception</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Identity.html">Identity</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Object.html">Object</a>
+						</li>
+				<li class="active main"><a href="namespace-Pomm.Query.html">Query</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Tools.html">Tools</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Type.html">Type</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Pomm.Query.PreparedQuery.html">PreparedQuery</a></li>
+				<li class="active"><a href="class-Pomm.Query.Where.html">Where</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Pomm.Query.html" title="Summary of Pomm\Query"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Where</h1>
+
+
+	<div class="description">
+	
+<p>Where</p>
+
+<p>This class represents a WHERE clause of a SQL statement. It deals with AND
+&amp; OR operator you can add using handy methods. This allows you to build
+queries dynamically.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Pomm.html">Pomm</a>\<a href="namespace-Pomm.Query.html">Query</a><br />
+		<b>Package:</b> Pomm<br />
+
+				<b>Copyright:</b>
+				2011 - 2013 Grégoire HUBERT<br />
+				<b>License:</b>
+				<a href="X11">{@link http://opensource.org/licenses/mit-license.php}</a><br />
+				<b>Author:</b>
+				Grégoire HUBERT &lt;<a
+href="mailto:hubert.greg&#64;gmail.com">hubert.greg&#64;<!---->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				$id$<br />
+				<b>Used by:</b>
+				<code><code><a href="class-Pomm.Object.BaseObjectMap.html">Pomm\Object\BaseObjectMap</a></code></code> <br />
+		<b>Located at</b> <a href="source-class-Pomm.Query.Where.html#5-319" title="Go to source code">Query/Where.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="create" id="_create">
+
+		<td class="attributes"><code>
+			 public static
+			<code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#25-38" title="Go to source code">create</a>( <span>String <var>$element</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>create</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>create</p>
+
+<p>A constructor you can chain from.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$element</var></dt>
+					<dd><code>String</code><br>$element Optional logical element.</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Optional elements' values.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createWhereIn" id="_createWhereIn">
+
+		<td class="attributes"><code>
+			 public static
+			<code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createWhereIn">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#40-84" title="Go to source code">createWhereIn</a>( <span>String <var>$element</var></span>, <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>createWhereIn</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>createWhereIn</p>
+
+<p>Create an escaped IN clause.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$element</var></dt>
+					<dd><code>String</code><br>$element</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#86-100" title="Go to source code">__construct</a>( <span>String <var>$element</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>__construct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__construct</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$element</var></dt>
+					<dd><code>String</code><br>$element (optional)</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values (optional)</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setOperator" id="_setOperator">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setOperator">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#102-116" title="Go to source code">setOperator</a>( <span>String <var>$operator</var></span> )</code>
+
+		<div class="description short">
+			
+<p>setOperator</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>setOperator</p>
+
+<p>is it an AND or an OR ? or something else (XOR maybe).</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$operator</var></dt>
+					<dd><code>String</code><br>$operator</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isEmpty" id="_isEmpty">
+
+		<td class="attributes"><code>
+			 public 
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isEmpty">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#118-128" title="Go to source code">isEmpty</a>( )</code>
+
+		<div class="description short">
+			
+<p>isEmpty</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>isEmpty</p>
+
+<p>is it a fresh brand new object ?</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="transmute" id="_transmute">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_transmute">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#130-143" title="Go to source code">transmute</a>( <span><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code> <var>$where</var></span> )</code>
+
+		<div class="description short">
+			
+<p>transmute</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>transmute</p>
+
+<p>Absorbing another Where instance.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$where</var></dt>
+					<dd><code><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code></code><br>$where</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addWhere" id="_addWhere">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addWhere">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#145-191" title="Go to source code">addWhere</a>( <span>Mixed <var>$element</var></span>, <span>array <var>$values</var></span>, <span>String <var>$operator</var></span> )</code>
+
+		<div class="description short">
+			
+<p>addWhere</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>addWhere</p>
+
+<p>You can add a new WHERE clause with your own operator.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$element</var></dt>
+					<dd><code>Mixed</code><br>$element</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values</dd>
+					<dt><var>$operator</var></dt>
+					<dd><code>String</code><br>$operator</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="andWhere" id="_andWhere">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_andWhere">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#193-205" title="Go to source code">andWhere</a>( <span>Mixed <var>$element</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>andWhere</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>andWhere</p>
+
+<p>Or use a ready to use AND where clause.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$element</var></dt>
+					<dd><code>Mixed</code><br>$element</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="orWhere" id="_orWhere">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_orWhere">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#207-217" title="Go to source code">orWhere</a>( <span>Mixed <var>$element</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>orWhere</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>orWhere</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$element</var></dt>
+					<dd><code>Mixed</code><br>$element</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setStack" id="_setStack">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setStack">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#219-230" title="Go to source code">setStack</a>( <span>array <var>$stack</var></span> )</code>
+
+		<div class="description short">
+			
+<p>setStack</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>setStack</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$stack</var></dt>
+					<dd><code>Array</code><br>$stack</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Query.Where.html">Pomm\Query\Where</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__toString" id="___toString">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___toString">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#232-249" title="Go to source code">__toString</a>( )</code>
+
+		<div class="description short">
+			
+<p>__toString</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__toString</p>
+
+<p>where your SQL statement is built.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasElement" id="_hasElement">
+
+		<td class="attributes"><code>
+			 public 
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasElement">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#251-259" title="Go to source code">hasElement</a>( )</code>
+
+		<div class="description short">
+			
+<p>hasElement</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>hasElement</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getElement" id="_getElement">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getElement">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#261-269" title="Go to source code">getElement</a>( )</code>
+
+		<div class="description short">
+			
+<p>getElement</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getElement</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="parse" id="_parse">
+
+		<td class="attributes"><code>
+			 protected 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_parse">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#271-291" title="Go to source code">parse</a>( )</code>
+
+		<div class="description short">
+			
+<p>parse</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>parse</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getValues" id="_getValues">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getValues">#</a>
+		<code><a href="source-class-Pomm.Query.Where.html#293-318" title="Go to source code">getValues</a>( )</code>
+
+		<div class="description short">
+			
+<p>getValues</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getValues</p>
+
+<p>Get all the values back for the prepared statement.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="stack" id="$stack">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Query.Where.html#20" title="Go to source code"><var>$stack</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$stack" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="element" id="$element">
+		<td class="attributes"><code>
+			public  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Query.Where.html#21" title="Go to source code"><var>$element</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$element" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="values" id="$values">
+		<td class="attributes"><code>
+			public  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Query.Where.html#22" title="Go to source code"><var>$values</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$values" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="operator" id="$operator">
+		<td class="attributes"><code>
+			public  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Query.Where.html#23" title="Go to source code"><var>$operator</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$operator" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Pomm 1.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

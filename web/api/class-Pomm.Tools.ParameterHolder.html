@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Pomm\Tools\ParameterHolder | Pomm 1.2</title>
+
+	<script type="text/javascript" src="resources/combined.js?184676627"></script>
+	<script type="text/javascript" src="elementlist.js?1218566668"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-16699784-2"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active main"><a href="namespace-Pomm.html">Pomm<span></span></a>
+						<ul>
+				<li class="main"><a href="namespace-Pomm.Connection.html">Connection</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Converter.html">Converter</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Exception.html">Exception</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Identity.html">Identity</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Object.html">Object</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Query.html">Query</a>
+						</li>
+				<li class="active main"><a href="namespace-Pomm.Tools.html">Tools</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Type.html">Type</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Pomm.Tools.BaseTool.html">BaseTool</a></li>
+				<li><a href="class-Pomm.Tools.CreateBaseMapTool.html">CreateBaseMapTool</a></li>
+				<li><a href="class-Pomm.Tools.CreateEntityTool.html">CreateEntityTool</a></li>
+				<li><a href="class-Pomm.Tools.CreateFileTool.html">CreateFileTool</a></li>
+				<li><a href="class-Pomm.Tools.CreateMapTool.html">CreateMapTool</a></li>
+				<li><a href="class-Pomm.Tools.Inflector.html">Inflector</a></li>
+				<li><a href="class-Pomm.Tools.Inspector.html">Inspector</a></li>
+				<li><a href="class-Pomm.Tools.OutputLine.html">OutputLine</a></li>
+				<li><a href="class-Pomm.Tools.OutputLineStack.html">OutputLineStack</a></li>
+				<li class="active"><a href="class-Pomm.Tools.ParameterHolder.html">ParameterHolder</a></li>
+				<li><a href="class-Pomm.Tools.ScanSchemaTool.html">ScanSchemaTool</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Pomm.Tools.html" title="Summary of Pomm\Tools"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ParameterHolder</h1>
+
+
+	<div class="description">
+	
+<p>Pomm\Tools\ParameterHolder</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Pomm\Tools\ParameterHolder</span></b>			
+			 implements 
+<span>ArrayAccess</span>, 
+			
+<span>Iterator</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Pomm.html">Pomm</a>\<a href="namespace-Pomm.Tools.html">Tools</a><br />
+		<b>Package:</b> Pomm<br />
+
+				<b>Copyright:</b>
+				2011 - 2013 Grégoire HUBERT<br />
+				<b>License:</b>
+				<a href="X11">{@link http://opensource.org/licenses/mit-license.php}</a><br />
+				<b>Author:</b>
+				Grégoire HUBERT &lt;<a
+href="mailto:hubert.greg&#64;gmail.com">hubert.greg&#64;<!---->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				$id$<br />
+				<b>Used by:</b>
+				<code><code><a href="class-Pomm.Tools.BaseTool.html">Pomm\Tools\BaseTool</a></code></code> <br />
+		<b>Located at</b> <a href="source-class-Pomm.Tools.ParameterHolder.html#7-234" title="Go to source code">Tools/ParameterHolder.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#20-28" title="Go to source code">__construct</a>( <span>array <var>$parameters</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>__construct()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__construct()</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$parameters</var></dt>
+					<dd><code>Array</code><br>$parameters (optional)</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setParameter" id="_setParameter">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setParameter">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#30-41" title="Go to source code">setParameter</a>( <span>String <var>$name</var></span>, <span>String <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>setParameter</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>setParameter</p>
+
+<p>Set a parameter.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>String</code><br>$value</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasParameter" id="_hasParameter">
+
+		<td class="attributes"><code>
+			 public 
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasParameter">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#43-54" title="Go to source code">hasParameter</a>( <span>String <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>hasParameter</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>hasParameter</p>
+
+<p>check if parameter exists.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getParameter" id="_getParameter">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getParameter">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#56-69" title="Go to source code">getParameter</a>( <span>String <var>$name</var></span>, <span>String <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>getParameter</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getParameter</p>
+
+<p>Returns the parameter "name" or "default" if not set.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name</dd>
+					<dt><var>$default</var></dt>
+					<dd><code>String</code><br>$default Optional default value if name not set.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br>Parameter's value or default.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getParameters" id="_getParameters">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getParameters">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#71-80" title="Go to source code">getParameters</a>( )</code>
+
+		<div class="description short">
+			
+<p>getParameters()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getParameters()</p>
+
+<p>Return the parameters as array</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>the parameters<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="mustHave" id="_mustHave">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_mustHave">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#82-96" title="Go to source code">mustHave</a>( <span>String <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>mustHave()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>mustHave()</p>
+
+<p>Throw an exception if a param is not set</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name the parameter's name</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDefaultValue" id="_setDefaultValue">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDefaultValue">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#98-113" title="Go to source code">setDefaultValue</a>( <span>String <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>setDefaultValue()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>setDefaultValue()</p>
+
+<p>Sets a default value if the param $name is not set</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name the parameter's name</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>mixed</code><br>$value the default value</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="mustBeOneOf" id="_mustBeOneOf">
+
+		<td class="attributes"><code>
+			 public 
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_mustBeOneOf">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#115-133" title="Go to source code">mustBeOneOf</a>( <span>String <var>$name</var></span>, <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>mustBeOneOf()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>mustBeOneOf()</p>
+
+<p>Check if the given parameter is one of the values passed as argument. If not,
+an exception is thrown.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name the parameter's name</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code><br>(true)<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="unsetParameter" id="_unsetParameter">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_unsetParameter">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#135-143" title="Go to source code">unsetParameter</a>( <span>String <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>unsetParameter()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>unsetParameter()</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetExists" id="_offsetExists">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetExists">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#145-153" title="Go to source code">offsetExists</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>offsetExists()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>offsetExists()</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						ArrayAccess<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetGet" id="_offsetGet">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetGet">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#155-163" title="Go to source code">offsetGet</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>offsetGet()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>offsetGet()</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						ArrayAccess<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetSet" id="_offsetSet">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetSet">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#165-173" title="Go to source code">offsetSet</a>( <span>mixed <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>offsetSet()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>offsetSet()</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						ArrayAccess<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetUnset" id="_offsetUnset">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetUnset">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#175-183" title="Go to source code">offsetUnset</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>offsetUnset()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>offsetUnset()</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						ArrayAccess<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="current" id="_current">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_current">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#185-193" title="Go to source code">current</a>( )</code>
+
+		<div class="description short">
+			
+<p>current()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>current()</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						Iterator<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>Iterator::current()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="next" id="_next">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_next">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#195-203" title="Go to source code">next</a>( )</code>
+
+		<div class="description short">
+			
+<p>next()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>next()</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						Iterator<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>Iterator::next()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="key" id="_key">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_key">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#205-213" title="Go to source code">key</a>( )</code>
+
+		<div class="description short">
+			
+<p>key()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>key()</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						Iterator<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>Iterator::key()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="valid" id="_valid">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_valid">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#215-223" title="Go to source code">valid</a>( )</code>
+
+		<div class="description short">
+			
+<p>valid()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>valid()</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						Iterator<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>Iterator::valid()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rewind" id="_rewind">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rewind">#</a>
+		<code><a href="source-class-Pomm.Tools.ParameterHolder.html#225-233" title="Go to source code">rewind</a>( )</code>
+
+		<div class="description short">
+			
+<p>rewind()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>rewind()</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						Iterator<br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>Iterator::rewind()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="parameters" id="$parameters">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Tools.ParameterHolder.html#18" title="Go to source code"><var>$parameters</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$parameters" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Pomm 1.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

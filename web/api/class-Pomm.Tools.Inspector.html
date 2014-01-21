@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Pomm\Tools\Inspector | Pomm 1.2</title>
+
+	<script type="text/javascript" src="resources/combined.js?184676627"></script>
+	<script type="text/javascript" src="elementlist.js?1218566668"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-16699784-2"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active main"><a href="namespace-Pomm.html">Pomm<span></span></a>
+						<ul>
+				<li class="main"><a href="namespace-Pomm.Connection.html">Connection</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Converter.html">Converter</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Exception.html">Exception</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Identity.html">Identity</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Object.html">Object</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Query.html">Query</a>
+						</li>
+				<li class="active main"><a href="namespace-Pomm.Tools.html">Tools</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Type.html">Type</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Pomm.Tools.BaseTool.html">BaseTool</a></li>
+				<li><a href="class-Pomm.Tools.CreateBaseMapTool.html">CreateBaseMapTool</a></li>
+				<li><a href="class-Pomm.Tools.CreateEntityTool.html">CreateEntityTool</a></li>
+				<li><a href="class-Pomm.Tools.CreateFileTool.html">CreateFileTool</a></li>
+				<li><a href="class-Pomm.Tools.CreateMapTool.html">CreateMapTool</a></li>
+				<li><a href="class-Pomm.Tools.Inflector.html">Inflector</a></li>
+				<li class="active"><a href="class-Pomm.Tools.Inspector.html">Inspector</a></li>
+				<li><a href="class-Pomm.Tools.OutputLine.html">OutputLine</a></li>
+				<li><a href="class-Pomm.Tools.OutputLineStack.html">OutputLineStack</a></li>
+				<li><a href="class-Pomm.Tools.ParameterHolder.html">ParameterHolder</a></li>
+				<li><a href="class-Pomm.Tools.ScanSchemaTool.html">ScanSchemaTool</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Pomm.Tools.html" title="Summary of Pomm\Tools"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Inspector</h1>
+
+
+	<div class="description">
+	
+<p>Pomm\Tools\Inspector - The database inspection tool.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Pomm.html">Pomm</a>\<a href="namespace-Pomm.Tools.html">Tools</a><br />
+		<b>Package:</b> Pomm<br />
+
+				<b>Copyright:</b>
+				2011 - 2013 Grégoire HUBERT<br />
+				<b>License:</b>
+				<a href="X11">{@link http://opensource.org/licenses/mit-license.php}</a><br />
+				<b>Author:</b>
+				Grégoire HUBERT &lt;<a
+href="mailto:hubert.greg&#64;gmail.com">hubert.greg&#64;<!---->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				$id$<br />
+		<b>Located at</b> <a href="source-class-Pomm.Tools.Inspector.html#9-269" title="Go to source code">Tools/Inspector.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Pomm.Tools.Inspector.html#22-30" title="Go to source code">__construct</a>( <span><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code> <var>$connection</var></span> )</code>
+
+		<div class="description short">
+			
+<p>__construct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__construct</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$connection</var></dt>
+					<dd><code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code><br>$connection</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTableOid" id="_getTableOid">
+
+		<td class="attributes"><code>
+			 public 
+			Integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTableOid">#</a>
+		<code><a href="source-class-Pomm.Tools.Inspector.html#32-52" title="Go to source code">getTableOid</a>( <span>String <var>$schema</var></span>, <span>String <var>$table</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getTableOid</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getTableOid</p>
+
+<p>Returns a table oid.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$schema</var></dt>
+					<dd><code>String</code><br>$schema</dd>
+					<dt><var>$table</var></dt>
+					<dd><code>String</code><br>$table</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTablesOids" id="_getTablesOids">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTablesOids">#</a>
+		<code><a href="source-class-Pomm.Tools.Inspector.html#54-98" title="Go to source code">getTablesOids</a>( <span>String <var>$schema</var></span>, <span>array <var>$names</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getTablesOids()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getTablesOids()</p>
+
+<p>Return tables oid</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$schema</var></dt>
+					<dd><code>String</code><br>schema name</dd>
+					<dt><var>$names</var></dt>
+					<dd><code>Array</code><br>tables name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>associative array with name =&gt; oid<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTableInformation" id="_getTableInformation">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTableInformation">#</a>
+		<code><a href="source-class-Pomm.Tools.Inspector.html#100-121" title="Go to source code">getTableInformation</a>( <span>Integer <var>$oid</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getTableInformation</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getTableInformation</p>
+
+<p>Returns the object name, type and schema associated to an oid.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$oid</var></dt>
+					<dd><code>Integer</code><br>$oid</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>Informations [table_oid, schema_oid, schema, name]<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTablePrimaryKey" id="_getTablePrimaryKey">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTablePrimaryKey">#</a>
+		<code><a href="source-class-Pomm.Tools.Inspector.html#123-141" title="Go to source code">getTablePrimaryKey</a>( <span>Integer <var>$oid</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getTablePrimaryKey</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getTablePrimaryKey</p>
+
+<p>Returns an array with the fields composing a primary key.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$oid</var></dt>
+					<dd><code>Integer</code><br>$oid</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTableFieldsInformation" id="_getTableFieldsInformation">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTableFieldsInformation">#</a>
+		<code><a href="source-class-Pomm.Tools.Inspector.html#143-197" title="Go to source code">getTableFieldsInformation</a>( <span>Integer <var>$oid</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getTableFieldsInformation()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getTableFieldsInformation()</p>
+
+<p>Get the columns information.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$oid</var></dt>
+					<dd><code>Integer</code><br>$oid</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>Key is the column name, value is the type.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTableParents" id="_getTableParents">
+
+		<td class="attributes"><code>
+			 public 
+			Integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTableParents">#</a>
+		<code><a href="source-class-Pomm.Tools.Inspector.html#199-221" title="Go to source code">getTableParents</a>( <span>Integer <var>$oid</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getTableParent</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getTableParent</p>
+
+<p>Return the oid of the parent table if any, FALSE is returned if there are no
+parent or if there are several parents.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$oid</var></dt>
+					<dd><code>Integer</code><br>$oid</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Integer</code><br>$oid<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTablesInSchema" id="_getTablesInSchema">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTablesInSchema">#</a>
+		<code><a href="source-class-Pomm.Tools.Inspector.html#223-244" title="Go to source code">getTablesInSchema</a>( <span>String <var>$schema</var></span>, <span>array <var>$relkind</var> = <span class="php-keyword1">array</span>(<span class="php-quote">'r'</span>, <span class="php-quote">'v'</span>)</span> )</code>
+
+		<div class="description short">
+			
+<p>getTablesInSchema</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getTablesInSchema</p>
+
+<p>Return the list of the tables within the schema.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$schema</var></dt>
+					<dd><code>String</code><br>$schema</dd>
+					<dt><var>$relkind</var></dt>
+					<dd><code>Array</code><br>$relkind</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>Tables OID<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getStoredProcedureSource" id="_getStoredProcedureSource">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getStoredProcedureSource">#</a>
+		<code><a href="source-class-Pomm.Tools.Inspector.html#246-268" title="Go to source code">getStoredProcedureSource</a>( <span>String <var>$schema</var></span>, <span>String <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getStoredProcedureSource</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getStoredProcedureSource</p>
+
+<p>Return the source code of stored procedure.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$schema</var></dt>
+					<dd><code>String</code><br>$schema</dd>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name Stored procedure's name.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br>Source codes.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="connection" id="$connection">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Tools.Inspector.html#20" title="Go to source code"><var>$connection</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$connection" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Pomm 1.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

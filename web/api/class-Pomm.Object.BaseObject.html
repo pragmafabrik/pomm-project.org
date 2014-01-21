@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Pomm\Object\BaseObject | Pomm 1.2</title>
+
+	<script type="text/javascript" src="resources/combined.js?184676627"></script>
+	<script type="text/javascript" src="elementlist.js?1218566668"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-16699784-2"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active main"><a href="namespace-Pomm.html">Pomm<span></span></a>
+						<ul>
+				<li class="main"><a href="namespace-Pomm.Connection.html">Connection</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Converter.html">Converter</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Exception.html">Exception</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Identity.html">Identity</a>
+						</li>
+				<li class="active main"><a href="namespace-Pomm.Object.html">Object</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Query.html">Query</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Tools.html">Tools</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Type.html">Type</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Pomm.Object.BaseObject.html">BaseObject</a></li>
+				<li><a href="class-Pomm.Object.BaseObjectMap.html">BaseObjectMap</a></li>
+				<li><a href="class-Pomm.Object.Collection.html">Collection</a></li>
+				<li><a href="class-Pomm.Object.Pager.html">Pager</a></li>
+				<li><a href="class-Pomm.Object.RowStructure.html">RowStructure</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Pomm.Object.html" title="Summary of Pomm\Object"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class BaseObject</h1>
+
+
+	<div class="description">
+	
+<p>BaseObject - Parent for entity classes</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Pomm\Object\BaseObject</span></b>			
+			 implements 
+<span>ArrayAccess</span>, 
+			
+<span>IteratorAggregate</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br />
+		
+		<b>Namespace:</b> <a href="namespace-Pomm.html">Pomm</a>\<a href="namespace-Pomm.Object.html">Object</a><br />
+		<b>Package:</b> Pomm<br />
+
+				<b>Copyright:</b>
+				2011 - 2013 Grégoire HUBERT<br />
+				<b>License:</b>
+				<a href="MIT/X11">{@link http://opensource.org/licenses/mit-license.php}</a><br />
+				<b>Author:</b>
+				Grégoire HUBERT &lt;<a
+href="mailto:hubert.greg&#64;gmail.com">hubert.greg&#64;<!---->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				$id$<br />
+				<b>Uses:</b>
+				<code><code><a href="class-Pomm.Exception.Exception.html">Pomm\Exception\Exception</a></code></code> <br />
+				<b>Uses:</b>
+				<code><code><a href="class-Pomm.Tools.Inflector.html">Pomm\Tools\Inflector</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Pomm.Identity.IdentityMapperNone.html">Pomm\Identity\IdentityMapperNone</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Pomm.Identity.IdentityMapperSmart.html">Pomm\Identity\IdentityMapperSmart</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Pomm.Identity.IdentityMapperStrict.html">Pomm\Identity\IdentityMapperStrict</a></code></code> <br />
+				<b>Used by:</b>
+				<code><code><a href="class-Pomm.Identity.IdentityMapperInterface.html">Pomm\Identity\IdentityMapperInterface</a></code></code> <br />
+		<b>Located at</b> <a href="source-class-Pomm.Object.BaseObject.html#8-380" title="Go to source code">Object/BaseObject.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#29-42" title="Go to source code">__construct</a>( <span>array <var>$values</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>__construct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__construct</p>
+
+<p>Instantiate the entity and hydrate it with the given values.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Optional starting values.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			final public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#44-70" title="Go to source code">get</a>( <span>String <var>$var</var></span> )</code>
+
+		<div class="description short">
+			
+<p>get</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>get</p>
+
+<p>Returns the $var value</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$var</var></dt>
+					<dd><code>String</code><br>$var Key you want to retrieve value from.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="has" id="_has">
+
+		<td class="attributes"><code>
+			final public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_has">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#72-84" title="Go to source code">has</a>( <span>string <var>$var</var></span> )</code>
+
+		<div class="description short">
+			
+<p>has</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>has</p>
+
+<p>Returns true if the given key exists.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$var</var></dt>
+					<dd><code>string</code><br>$var</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__call" id="___call">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___call">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#86-121" title="Go to source code">__call</a>( <span>mixed <var>$method</var></span>, <span>mixed <var>$arguments</var></span> )</code>
+
+		<div class="description short">
+			
+<p>__call</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__call</p>
+
+<p>Allows dynamic methods getXxx, setXxx, hasXxx, addXxx or clearXxx.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$method</var></dt>
+					<dd><code>mixed</code><br>$method</dd>
+					<dt><var>$arguments</var></dt>
+					<dd><code>mixed</code><br>$arguments</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hydrate" id="_hydrate">
+
+		<td class="attributes"><code>
+			final public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hydrate">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#123-133" title="Go to source code">hydrate</a>( <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>hydrate</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>hydrate</p>
+
+<p>Merge internal values with given $values in the object.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="convert" id="_convert">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_convert">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#135-151" title="Go to source code">convert</a>( <span>array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>convert</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>convert</p>
+
+<p>Make all keys lowercase and hydrate the object.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_getStatus" id="__getStatus">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__getStatus">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#153-164" title="Go to source code">_getStatus</a>( )</code>
+
+		<div class="description short">
+			
+<p>_getStatus</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>_getStatus</p>
+
+<p>Return the current status of the instance can be self::NONE, self::EXIST and
+SELF::MODIFIED.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="_setStatus" id="__setStatus">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#__setStatus">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#166-176" title="Go to source code">_setStatus</a>( <span>Integer <var>$status</var></span> )</code>
+
+		<div class="description short">
+			
+<p>_setStatus</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>_setStatus</p>
+
+<p>Force the status of the object.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$status</var></dt>
+					<dd><code>Integer</code><br>$status</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="extract" id="_extract">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_extract">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#178-219" title="Go to source code">extract</a>( )</code>
+
+		<div class="description short">
+			
+<p>extract</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>extract</p>
+
+<p>Returns the fields flatten as arrays.</p>
+
+<p>The complex stuff in here is when there is an array, since all elements in
+arrays are the same type, we check only its first value to know if we need to
+traverse it or not.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFields" id="_getFields">
+
+		<td class="attributes"><code>
+			 public 
+			Array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFields">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#221-231" title="Go to source code">getFields</a>( )</code>
+
+		<div class="description short">
+			
+<p>getFields</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getFields</p>
+
+<p>Return the fields array.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Array</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__set" id="___set">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___set">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#233-245" title="Go to source code">__set</a>( <span>String <var>$var</var></span>, <span>Mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>__set</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__set</p>
+
+<p>PHP magic to set attributes.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$var</var></dt>
+					<dd><code>String</code><br>$var Attribute name.</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>Mixed</code><br>$value Attribute value.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__get" id="___get">
+
+		<td class="attributes"><code>
+			 public 
+			Mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___get">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#247-260" title="Go to source code">__get</a>( <span>String <var>$var</var></span> )</code>
+
+		<div class="description short">
+			
+<p>__get</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__get</p>
+
+<p>PHP magic to get attributes.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$var</var></dt>
+					<dd><code>String</code><br>$var Attribute name.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Mixed</code><br>Attribute value.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set" id="_set">
+
+		<td class="attributes"><code>
+			final public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#262-275" title="Go to source code">set</a>( <span>String <var>$var</var></span>, <span>Mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>set</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>set</p>
+
+<p>Set a value in the varholder.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$var</var></dt>
+					<dd><code>String</code><br>$var Attribute name.</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>Mixed</code><br>$value Attribute value.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="add" id="_add">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_add">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#277-296" title="Go to source code">add</a>( <span>string <var>$var</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+<p>add</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>add</p>
+
+<p>When the corresponding attribute is an array, call this method to set
+values.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$var</var></dt>
+					<dd><code>string</code><br>$var</dd>
+					<dt><var>$value</var></dt>
+					<dd><code>mixed</code><br>$value</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clear" id="_clear">
+
+		<td class="attributes"><code>
+			final public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clear">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#298-313" title="Go to source code">clear</a>( <span>String <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			
+<p>clear</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>clear</p>
+
+<p>Drop an attribute from the varholder.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$offset</var></dt>
+					<dd><code>String</code><br>$offset Attribute name.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isNew" id="_isNew">
+
+		<td class="attributes"><code>
+			 public 
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isNew">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#315-325" title="Go to source code">isNew</a>( )</code>
+
+		<div class="description short">
+			
+<p>isNew</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>isNew</p>
+
+<p>is the current object self::NEW (does not it exist in the database already
+?).</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isModified" id="_isModified">
+
+		<td class="attributes"><code>
+			 public 
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isModified">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#327-337" title="Go to source code">isModified</a>( )</code>
+
+		<div class="description short">
+			
+<p>isModified</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>isModified</p>
+
+<p>Has the object been modified since we know it ?</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetExists" id="_offsetExists">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetExists">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#339-347" title="Go to source code">offsetExists</a>( <span>mixed <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetSet" id="_offsetSet">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetSet">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#349-355" title="Go to source code">offsetSet</a>( <span>mixed <var>$offset</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetGet" id="_offsetGet">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetGet">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#357-363" title="Go to source code">offsetGet</a>( <span>mixed <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetUnset" id="_offsetUnset">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetUnset">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#365-371" title="Go to source code">offsetUnset</a>( <span>mixed <var>$offset</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getIterator" id="_getIterator">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getIterator">#</a>
+		<code><a href="source-class-Pomm.Object.BaseObject.html#373-379" title="Go to source code">getIterator</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>IteratorAggregate::getIterator()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="NONE" id="NONE">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name"><code>
+				<a href="source-class-Pomm.Object.BaseObject.html#22" title="Go to source code"><b>NONE</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-num">0</span></code></td>
+		<td class="description"><div>
+			<a href="#NONE" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="EXIST" id="EXIST">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name"><code>
+				<a href="source-class-Pomm.Object.BaseObject.html#23" title="Go to source code"><b>EXIST</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-num">1</span></code></td>
+		<td class="description"><div>
+			<a href="#EXIST" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="MODIFIED" id="MODIFIED">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name"><code>
+				<a href="source-class-Pomm.Object.BaseObject.html#24" title="Go to source code"><b>MODIFIED</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-num">2</span></code></td>
+		<td class="description"><div>
+			<a href="#MODIFIED" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="fields" id="$fields">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Object.BaseObject.html#26" title="Go to source code"><var>$fields</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$fields" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="status" id="$status">
+		<td class="attributes"><code>
+			protected  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Object.BaseObject.html#27" title="Go to source code"><var>$status</var></a>
+		</td>
+		<td class="value"><code><code><a href="class-Pomm.Object.BaseObject.html#NONE">Pomm\Object\BaseObject::<b>NONE</b></a></code></code></td>
+		<td class="description"><div>
+			<a href="#$status" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Pomm 1.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

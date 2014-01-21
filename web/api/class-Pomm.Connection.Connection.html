@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Pomm\Connection\Connection | Pomm 1.2</title>
+
+	<script type="text/javascript" src="resources/combined.js?184676627"></script>
+	<script type="text/javascript" src="elementlist.js?1218566668"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', "UA-16699784-2"]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active main"><a href="namespace-Pomm.html">Pomm<span></span></a>
+						<ul>
+				<li class="active main"><a href="namespace-Pomm.Connection.html">Connection</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Converter.html">Converter</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Exception.html">Exception</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Identity.html">Identity</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Object.html">Object</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Query.html">Query</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Tools.html">Tools</a>
+						</li>
+				<li class="main"><a href="namespace-Pomm.Type.html">Type</a>
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Pomm.Connection.Connection.html">Connection</a></li>
+				<li><a href="class-Pomm.Connection.Database.html">Database</a></li>
+				<li><a href="class-Pomm.Connection.Observer.html">Observer</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Pomm.Connection.html" title="Summary of Pomm\Connection"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Connection</h1>
+
+
+	<div class="description">
+	
+<p>Pomm\Connection\Connection</p>
+
+<p>Manage a connection to the database. Connection is a pool of Map and
+PreparedQuery instances. It holds the IdentityMapper. Connection also proposes
+handy methods to deal with transactions.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Pomm\Connection\Connection</span></b>			
+			 implements 
+<span>Psr\Log\LoggerAwareInterface</span>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Pomm.html">Pomm</a>\<a href="namespace-Pomm.Connection.html">Connection</a><br />
+		<b>Package:</b> Pomm<br />
+
+				<b>Copyright:</b>
+				2011 - 2013 Grégoire HUBERT<br />
+				<b>License:</b>
+				<a href="X11">{@link http://opensource.org/licenses/mit-license.php}</a><br />
+				<b>Author:</b>
+				Grégoire HUBERT &lt;<a
+href="mailto:hubert.greg&#64;gmail.com">hubert.greg&#64;<!---->gmail.com</a>&gt;<br />
+				<b>Version:</b>
+				$id$<br />
+				<b>Used by:</b>
+				<code><code><a href="class-Pomm.Object.BaseObjectMap.html">Pomm\Object\BaseObjectMap</a></code></code> <br />
+		<b>Located at</b> <a href="source-class-Pomm.Connection.Connection.html#14-570" title="Go to source code">Connection/Connection.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#42-77" title="Go to source code">__construct</a>( <span><code><a href="class-Pomm.Connection.Database.html">Pomm\Connection\Database</a></code> <var>$database</var></span>, <span><code><a href="class-Pomm.Identity.IdentityMapperInterface.html">Pomm\Identity\IdentityMapperInterface</a></code> <var>$mapper</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>__construct()</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__construct()</p>
+
+<p>Connection instance to the specified database.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$database</var></dt>
+					<dd><code><code><a href="class-Pomm.Connection.Database.html">Pomm\Connection\Database</a></code></code><br>$database The Database instance.</dd>
+					<dt><var>$mapper</var></dt>
+					<dd><code><code><a href="class-Pomm.Identity.IdentityMapperInterface.html">Pomm\Identity\IdentityMapperInterface</a></code></code><br>$mapper The optional identity mapper instance.</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="launch" id="_launch">
+
+		<td class="attributes"><code>
+			 protected 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_launch">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#79-123" title="Go to source code">launch</a>( )</code>
+
+		<div class="description short">
+			
+<p>launch</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>launch</p>
+
+<p>Open a connection on the database.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__destruct" id="___destruct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___destruct">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#125-135" title="Go to source code">__destruct</a>( )</code>
+
+		<div class="description short">
+			
+<p>__destruct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>__destruct</p>
+
+<p>Destroy the database connection resource.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getHandler" id="_getHandler">
+
+		<td class="attributes"><code>
+			 public 
+			Resource
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getHandler">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#137-153" title="Go to source code">getHandler</a>( )</code>
+
+		<div class="description short">
+			
+<p>getHandler</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getHandler</p>
+
+<p>Returns the resource of the associated connection.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Resource</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getMapFor" id="_getMapFor">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Object.BaseObjectMap.html">Pomm\Object\BaseObjectMap</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getMapFor">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#155-177" title="Go to source code">getMapFor</a>( <span>String <var>$class</var></span>, <span>Bool <var>$force</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>getMapFor</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getMapFor</p>
+
+<p>Returns a Map instance of the given model name from the pool. If such
+instance does not exist, create it.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$class</var></dt>
+					<dd><code>String</code><br>$class The fully qualified class name of the associated entity.</dd>
+					<dt><var>$force</var></dt>
+					<dd><code>Bool</code><br>$force Force the creation of a new Map instance.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Object.BaseObjectMap.html">Pomm\Object\BaseObjectMap</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDatabase" id="_getDatabase">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Database.html">Pomm\Connection\Database</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDatabase">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#179-190" title="Go to source code">getDatabase</a>( )</code>
+
+		<div class="description short">
+			
+<p>getDatabase</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getDatabase</p>
+
+<p>Returns the connection's database.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Database.html">Pomm\Connection\Database</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setLogger" id="_setLogger">
+
+		<td class="attributes"><code>
+			 public 
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setLogger">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#192-206" title="Go to source code">setLogger</a>( <span>Psr\Log\LoggerInterface <var>$logger</var></span> )</code>
+
+		<div class="description short">
+			
+<p>setLogger</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>setLogger</p>
+
+<p>Register a logger. Unfortunately, the specification says this method returns
+null. This prevents us from returning a handy $this.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$logger</var></dt>
+					<dd><code>Psr\Log\LoggerInterface</code></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="begin" id="_begin">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_begin">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#208-224" title="Go to source code">begin</a>( )</code>
+
+		<div class="description short">
+			
+<p>begin</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>begin</p>
+
+<p>Start a new transaction.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code><br>$this<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="commit" id="_commit">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_commit">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#226-242" title="Go to source code">commit</a>( )</code>
+
+		<div class="description short">
+			
+<p>commit</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>commit</p>
+
+<p>Commit a transaction in the database.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code><br>$this<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rollback" id="_rollback">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rollback">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#244-272" title="Go to source code">rollback</a>( <span>String <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>rollback</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>rollback</p>
+
+<p>Rollback a transaction. This can be the whole transaction or, if a savepoint
+name is specified, only the queries since this savepoint.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name Optional name of the savepoint.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code><br>$this<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setSavepoint" id="_setSavepoint">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setSavepoint">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#274-291" title="Go to source code">setSavepoint</a>( <span>String <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>setSavepoint</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>setSavepoint</p>
+
+<p>Set a new savepoint with the given name.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name Savepoint's name.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code><br>$this<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="releaseSavepoint" id="_releaseSavepoint">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_releaseSavepoint">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#293-310" title="Go to source code">releaseSavepoint</a>( <span>String <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>releaseSavepoint</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>releaseSavepoint</p>
+
+<p>Forget the specified savepoint.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name the savepoint's name.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code><br>$this<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isInTransaction" id="_isInTransaction">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isInTransaction">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#312-323" title="Go to source code">isInTransaction</a>( )</code>
+
+		<div class="description short">
+			
+<p>isInTransaction</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>isInTransaction</p>
+
+<p>Check if we are in transaction mode.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTransactionStatus" id="_getTransactionStatus">
+
+		<td class="attributes"><code>
+			 public 
+			Integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTransactionStatus">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#325-337" title="Go to source code">getTransactionStatus</a>( )</code>
+
+		<div class="description short">
+			
+<p>getTransactionStatus</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getTransactionStatus</p>
+
+<p>Return the transaction status of the connection.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Integer</code><br />
+				</div>
+
+
+				<h4>Link</h4>
+				<div class="list">
+						see <a
+href="http://fr2.php.net/manual/en/function.pg-transaction-status.php">http://fr2.php.net/manual/en/function.pg-transaction-status.php</a><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createObserver" id="_createObserver">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Observer.html">Pomm\Connection\Observer</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createObserver">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#339-351" title="Go to source code">createObserver</a>( )</code>
+
+		<div class="description short">
+			
+<p>createObserver</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>createObserver</p>
+
+<p>Return an observer object. This is a convenient method to create an observer
+and chain methods.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Observer.html">Pomm\Connection\Observer</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="notify" id="_notify">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_notify">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#353-380" title="Go to source code">notify</a>( <span>String <var>$name</var></span>, <span>Sting <var>$payload</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>notify</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>notify</p>
+
+<p>Send a server notification.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name the notification name</dd>
+					<dt><var>$payload</var></dt>
+					<dd><code>Sting</code><br>$payload optionnal transmitted data</dd>
+				</dl></div>
+
+
+
+				<h4>Link</h4>
+				<div class="list">
+						see <a
+href="http://www.postgresql.org/docs/9.0/static/sql-notify.html">http://www.postgresql.org/docs/9.0/static/sql-notify.html</a><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createPreparedQuery" id="_createPreparedQuery">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Query.PreparedQuery.html">Pomm\Query\PreparedQuery</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createPreparedQuery">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#382-392" title="Go to source code">createPreparedQuery</a>( <span>String <var>$sql</var></span> )</code>
+
+		<div class="description short">
+			
+<p>createPreparedQuery</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>createPreparedQuery</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd><code>String</code><br>$sql Statement to prepare.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Query.PreparedQuery.html">Pomm\Query\PreparedQuery</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getIdentityMapper" id="_getIdentityMapper">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Identity.IdentityMapperInterface.html">Pomm\Identity\IdentityMapperInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getIdentityMapper">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#394-405" title="Go to source code">getIdentityMapper</a>( )</code>
+
+		<div class="description short">
+			
+<p>getIdentityMapper</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getIdentityMapper</p>
+
+<p>Get connection's related identity mapper.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Identity.IdentityMapperInterface.html">Pomm\Identity\IdentityMapperInterface</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="query" id="_query">
+
+		<td class="attributes"><code>
+			 public 
+			Resource
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_query">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#407-420" title="Go to source code">query</a>( <span>String <var>$sql</var></span>, <span>array <var>$values</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>query</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>query</p>
+
+<p>performs a prepared sql statement</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd><code>String</code><br>$sql The sql statement</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Values to be escaped (default [])</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Resource</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getQuery" id="_getQuery">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Query.PreparedQuery.html">Pomm\Query\PreparedQuery</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getQuery">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#422-442" title="Go to source code">getQuery</a>( <span>mixed <var>$sql</var></span> )</code>
+
+		<div class="description short">
+			
+<p>getquery</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>getquery</p>
+
+<p>Return a prepared query from a sql signature. If no query match the signature
+in the pool, a new query is prepared.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Query.PreparedQuery.html">Pomm\Query\PreparedQuery</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasQuery" id="_hasQuery">
+
+		<td class="attributes"><code>
+			 public 
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasQuery">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#444-456" title="Go to source code">hasQuery</a>( <span>String <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>hasQuery</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>hasQuery</p>
+
+<p>Check if a query with the given signature exists in the pool.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name Query signature.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="executeAnonymousQuery" id="_executeAnonymousQuery">
+
+		<td class="attributes"><code>
+			 public 
+			Resource
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_executeAnonymousQuery">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#458-472" title="Go to source code">executeAnonymousQuery</a>( <span>String <var>$sql</var></span> )</code>
+
+		<div class="description short">
+			
+<p>executeAnonymousQuery</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>executeAnonymousQuery</p>
+
+<p>Performs a raw SQL query</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd><code>String</code><br>$sql The sql statement to execute.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Resource</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="executeParametrizedQuery" id="_executeParametrizedQuery">
+
+		<td class="attributes"><code>
+			 public 
+			Resource
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_executeParametrizedQuery">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#474-489" title="Go to source code">executeParametrizedQuery</a>( <span>String <var>$sql</var></span>, <span>Array <var>$values</var></span> )</code>
+
+		<div class="description short">
+			
+<p>executeParametrizedQuery</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>executeParametrizedQuery</p>
+
+<p>Performs a SQL query with parameters (more secure).</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd><code>String</code><br>$sql Sql statement to execute.</dd>
+					<dt><var>$values</var></dt>
+					<dd><code>Array</code><br>$values Query parameters.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Resource</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="log" id="_log">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_log">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#491-510" title="Go to source code">log</a>( <span>String <var>$level</var></span>, <span>String <var>$message</var></span>, <span>array <var>$env</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>log</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>log</p>
+
+<p>If a logger is defined, log the given message.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$level</var></dt>
+					<dd><code>String</code><br>level</dd>
+					<dt><var>$message</var></dt>
+					<dd><code>String</code><br>message</dd>
+					<dt><var>$env</var></dt>
+					<dd><code>Array</code><br>environnment</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-Pomm.Connection.Connection.html">Pomm\Connection\Connection</a></code></code><br>$this<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<a
+href="https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php">https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php</a><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="throwConnectionException" id="_throwConnectionException">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_throwConnectionException">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#512-526" title="Go to source code">throwConnectionException</a>( <span>String <var>$message</var></span>, <span>String <var>$level</var></span> )</code>
+
+		<div class="description short">
+			
+<p>throwConnectionException</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>throwConnectionException</p>
+
+<p>Log error message and throw a ConnectionException</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$message</var></dt>
+					<dd><code>String</code><br>Error message</dd>
+					<dt><var>$level</var></dt>
+					<dd><code>String</code><br>Error level</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escapeIdentifier" id="_escapeIdentifier">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escapeIdentifier">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#528-550" title="Go to source code">escapeIdentifier</a>( <span>String <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+<p>escapeIdentifier</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>escapeIdentifier</p>
+
+<p>Escape database object's names. This is different from value escaping as
+objects names are surrounded by double quotes. API function does provide a nice
+escaping with -- hopefully -- UTF8 support. This function is only available from
+PHP 5.4.4, a simplistic fallback is provided but it only cares about double
+quotes escaping.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>String</code><br>$name The string to be escaped.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br>the escaped string.<br />
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<a
+href="http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html">http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html</a><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="escapeLiteral" id="_escapeLiteral">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_escapeLiteral">#</a>
+		<code><a href="source-class-Pomm.Connection.Connection.html#552-569" title="Go to source code">escapeLiteral</a>( <span>String <var>$var</var></span> )</code>
+
+		<div class="description short">
+			
+<p>escapeLiteral</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>escapeLiteral</p>
+
+<p>Escape a text value.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$var</var></dt>
+					<dd><code>String</code><br>The string to be escaped</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br>the escaped string.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="ISOLATION_READ_COMMITTED" id="ISOLATION_READ_COMMITTED">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name"><code>
+				<a href="source-class-Pomm.Connection.Connection.html#29" title="Go to source code"><b>ISOLATION_READ_COMMITTED</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-quote">&quot;READ COMMITTED&quot;</span></code></td>
+		<td class="description"><div>
+			<a href="#ISOLATION_READ_COMMITTED" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="ISOLATION_READ_REPEATABLE" id="ISOLATION_READ_REPEATABLE">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name"><code>
+				<a href="source-class-Pomm.Connection.Connection.html#30" title="Go to source code"><b>ISOLATION_READ_REPEATABLE</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-quote">&quot;READ REPEATABLE&quot;</span></code></td>
+		<td class="description"><div>
+			<a href="#ISOLATION_READ_REPEATABLE" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="ISOLATION_SERIALIZABLE" id="ISOLATION_SERIALIZABLE">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name"><code>
+				<a href="source-class-Pomm.Connection.Connection.html#31" title="Go to source code"><b>ISOLATION_SERIALIZABLE</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-quote">&quot;SERIALIZABLE&quot;</span></code></td>
+		<td class="description"><div>
+			<a href="#ISOLATION_SERIALIZABLE" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="handler" id="$handler">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Connection.html#33" title="Go to source code"><var>$handler</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$handler" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="database" id="$database">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Connection.html#34" title="Go to source code"><var>$database</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$database" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="parameter_holder" id="$parameter_holder">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Connection.html#35" title="Go to source code"><var>$parameter_holder</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$parameter_holder" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="isolation" id="$isolation">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Connection.html#36" title="Go to source code"><var>$isolation</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$isolation" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="identity_mapper" id="$identity_mapper">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Connection.html#37" title="Go to source code"><var>$identity_mapper</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$identity_mapper" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="maps" id="$maps">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Connection.html#38" title="Go to source code"><var>$maps</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$maps" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="queries" id="$queries">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Connection.html#39" title="Go to source code"><var>$queries</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>()</code></td>
+		<td class="description"><div>
+			<a href="#$queries" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="logger" id="$logger">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Pomm.Connection.Connection.html#40" title="Go to source code"><var>$logger</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$logger" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Pomm 1.2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
