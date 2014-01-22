@@ -2,7 +2,6 @@
 <div class="section" id="overview">
 <h1><a class="toc-backref" href="#id4">Overview</a></h1>
 <p>Pomm is a fast, lightweight, efficient model manager for Postgresql written in PHP. It can be seen as an enhanced object hydrator above PHP's native Postgresql library with the following features:</p>
-<blockquote>
 <ul class="simple">
 <li>Database Inspector to build automatically your PHP model files (support inheritance).</li>
 <li>Postgresql's schemas are mapped to PHP namespaces.</li>
@@ -12,7 +11,6 @@
 <li>Field selector methods for all SQL queries.</li>
 <li>Identity mapper with several different algorithms available.</li>
 </ul>
-</blockquote>
 </div>
 <div class="section" id="databases-and-converters">
 <h1><a class="toc-backref" href="#id5">Databases and converters</a></h1>
@@ -21,13 +19,11 @@
 <div class="section" id="database-class-and-configuration">
 <h3><a class="toc-backref" href="#id7">Database class and configuration</a></h3>
 <p>The <tt class="docutils literal">Service</tt> class just stores the <tt class="docutils literal">Database</tt> instances and provides convenient methods to create connections from them. It is mainly intended to be used with dependency injection containers used by some popular frameworks. The Database class has different roles:</p>
-<blockquote>
 <ul class="simple">
 <li>Connection builder and pool.</li>
 <li>Converters holder.</li>
 <li>Configuration holder.</li>
 </ul>
-</blockquote>
 <p>It is either possible to instance <cite>Database</cite> class alone or use the <cite>Service</cite> class to do so. The simplest way to get a database instance is:</p>
 <pre class="literal-block">
 $database = new Pomm\Connection\Database(array(
@@ -36,7 +32,6 @@ $database = new Pomm\Connection\Database(array(
     ));
 </pre>
 <p>Database expected parameters are:</p>
-<blockquote>
 <ul class="simple">
 <li>dsn (string, mandatory): Connection string (see <a class="reference internal" href="#dsn">DSN</a>).</li>
 <li>name (string, optional, default: physical database name): Logical database name that is used as primary namespace for PHP entity object.</li>
@@ -44,7 +39,6 @@ $database = new Pomm\Connection\Database(array(
 <li>isolation (string, optional, default: <tt class="docutils literal">ISOLATION_READ_COMMITTED</tt>, see <a class="reference internal" href="#standard-transactions">Standard transactions</a>): isolation level used in transactions.</li>
 <li>identity_mapper (string, optional, default: <tt class="docutils literal">Smart</tt>, see <a class="reference internal" href="#identity-mappers">Identity mappers</a> below): default identity mapper class name for connections.</li>
 </ul>
-</blockquote>
 <p>There are several ways to declare databases to the service class. Either you use the constructor passing an array &quot;name&quot; =&gt; &quot;connection parameters&quot; or you can use the <tt class="docutils literal">setDatabase()</tt> method of the service class.:</p>
 <pre class="literal-block">
 # The two examples below are equivalent
@@ -77,7 +71,6 @@ $service-&gt;setDatabase('db_two', new App\MyDb(array(
 <div class="section" id="dsn">
 <h3><a class="toc-backref" href="#id8">DSN</a></h3>
 <p>The <strong>dsn</strong> parameter format is important because it interacts with Postgresql server's access policy.</p>
-<blockquote>
 <ul class="simple">
 <li><strong>socket connection</strong></li>
 <li><tt class="docutils literal"><span class="pre">pgsql://user/database</span></tt> Connect <em>user</em> to the db <em>database</em> without password through the Unix socket system.</li>
@@ -88,7 +81,6 @@ $service-&gt;setDatabase('db_two', new App\MyDb(array(
 <li><tt class="docutils literal"><span class="pre">pgsql://user&#64;host/database</span></tt> Connect <em>user</em> to the db <em>database</em> on host <em>host</em> using TCP/IP.</li>
 <li><tt class="docutils literal"><span class="pre">pgsql://user:pass&#64;host:port/database</span></tt> The same but with password and TCP port specified.</li>
 </ul>
-</blockquote>
 </div>
 <div class="section" id="connection-configuration">
 <h3><a class="toc-backref" href="#id9">Connection configuration</a></h3>
@@ -298,12 +290,10 @@ $database
 <div class="section" id="spawning-connections">
 <h3><a class="toc-backref" href="#id20">Spawning connections</a></h3>
 <p>Database instances are also connections provider trough two methods:</p>
-<blockquote>
 <ul class="simple">
 <li><tt class="docutils literal">createConnection()</tt> force the creation of a new connection.</li>
 <li><tt class="docutils literal">getConnection()</tt> return an existing <tt class="docutils literal">Connection</tt> instance if any, create it otherwise.</li>
 </ul>
-</blockquote>
 <p>It is important to understand that connections hold a lot of context (entity caching trough the mapper, prepared statements etc.), enforce the creation of a new connection set up a new bare context. The most common way to get a connection is:</p>
 <pre class="literal-block">
 $connection = $database-&gt;getConnection();
@@ -690,13 +680,11 @@ class StudentMap extends BaseStudentMap
 }
 </pre>
 <p>This is the place other finders are going to take place. As it extends <tt class="docutils literal">BaseObjectMap</tt> via <tt class="docutils literal">BaseStudentMap</tt> it already has some useful finders:</p>
-<blockquote>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">findAll(...)</span></tt> return all entities</li>
 <li><tt class="docutils literal"><span class="pre">findByPK(...)</span></tt> return a single entity</li>
 <li><tt class="docutils literal"><span class="pre">findWhere(...)</span></tt> perform a <tt class="docutils literal">SELECT ... FROM my.table WHERE ...</tt></li>
 </ul>
-</blockquote>
 <p>Finders return either a <tt class="docutils literal">Collection</tt> instance virtually containing all entities returned by the query (see <a class="reference internal" href="#collections">Collections</a>) or just a related model entity instance (like <tt class="docutils literal">findByPK</tt>).</p>
 </div>
 <div class="section" id="findall">
@@ -870,12 +858,10 @@ $employee-&gt;get('gravatar'); // 6c3e76d8b31679442f089cd3e7edb48a
 <div class="section" id="fields-formatters">
 <h3><a class="toc-backref" href="#id48">Fields formatters</a></h3>
 <p>Field getters return an array of fields. This array has to be processed to get a string of fields usable in a SQL query. This is the role of the fields formatters methods:</p>
-<blockquote>
 <ul class="simple">
 <li>formatFields('method_name', 'table_alias') returns a string with a comma separated list of fields.</li>
 <li>formatFieldsWithAlias('method_name', 'table_alias') same as above but with fields aliases.</li>
 </ul>
-</blockquote>
 <p>These methods call the fields getter given as <em>method_name</em> and return the formatted list of fields:</p>
 <pre class="literal-block">
 $where = new \Pomm\Query\Where::create(&quot;age &lt; $*&quot;, array(18))
@@ -1203,7 +1189,6 @@ $entity-&gt;get('pika');   // chu
 </div>
 <div class="section" id="extending-entities">
 <h3><a class="toc-backref" href="#id66">Extending entities</a></h3>
-<blockquote>
 <p>It is possible to extend entities providing new accessors. If by example there is an entity with a weight in grams and you would like to have a getter that returns it in ounces:</p>
 <pre class="literal-block">
 public function getWeightInOunce()
@@ -1211,7 +1196,6 @@ public function getWeightInOunce()
   return round($this-&gt;getWeight() * 0.0352739619, 2);
 }
 </pre>
-</blockquote>
 <p>In templates, it is possible to directly benefit from this getter while using the entity as an array:</p>
 <pre class="literal-block">
 // in PHP
@@ -1262,16 +1246,13 @@ $entity-&gt;isModified();      // true
 <div class="section" id="createbasemaptool">
 <h3><a class="toc-backref" href="#id73">CreateBaseMapTool</a></h3>
 <p>This class is the main generator class.</p>
-<blockquote>
 <ul class="simple">
 <li>It inspects the database for the given table / view.</li>
 <li>It creates the directory structure for your namespaces.</li>
 <li>It generates the BaseMap file from the structure detected in the database.</li>
 <li>It generates according empty entity and map files if they do not exist.</li>
 </ul>
-</blockquote>
 <p>This class accepts the following parameters:</p>
-<blockquote>
 <ul class="simple">
 <li>&quot;database&quot; a PommConnectionDatabase instance (mandatory).</li>
 <li>&quot;table&quot; or &quot;oid&quot; (mandatory)</li>
@@ -1282,7 +1263,6 @@ $entity-&gt;isModified();      // true
 <li>&quot;extends&quot; (default to PommObjectBaseObjectMap).</li>
 <li>&quot;class_name&quot; The corresponding entity class. (default camel cased table's name).</li>
 </ul>
-</blockquote>
 <p><strong>table</strong> or <strong>oid</strong></p>
 <p>If you give both, the oid has precedence over the name.</p>
 <p><strong>prefix_dir</strong></p>
@@ -1301,7 +1281,6 @@ In case of generating map class for a view, it may be a good idea to tell Pomm t
 <div class="section" id="scanschematool">
 <h3><a class="toc-backref" href="#id74">ScanSchemaTool</a></h3>
 <p>The schema scanning tool takes a schema name as parameter and then launches CreateBaseMapTool for each table / view it finds in it. The expected parameters are the following:</p>
-<blockquote>
 <ul class="simple">
 <li>&quot;database&quot; a PommConnectionDatabase instance (mandatory).</li>
 <li>&quot;prefix_dir&quot; Where to generate the tree on the disk (mandatory).</li>
@@ -1311,7 +1290,6 @@ In case of generating map class for a view, it may be a good idea to tell Pomm t
 <li>&quot;parent_namespace&quot; When inheritance is found, override the default namespace for parent.</li>
 <li>&quot;exclude&quot; (optional) an array of tables/views not to generate files from.</li>
 </ul>
-</blockquote>
 <p>Most of these parameters are sent to the <tt class="docutils literal">CreateBaseMapTool</tt> as is. The only different parameter is</p>
 <p><strong>exclude</strong>
 An array of tables/views to ignore.</p>
