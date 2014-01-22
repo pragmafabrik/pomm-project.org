@@ -9,7 +9,7 @@
               <blockquote>Imagine an ORM but upside down. That's what Pomm is.</blockquote>
             </p>
             <h3>Classes Vs sets</h3>
-            <p>Object Relational Mappers try to grant developers with an object oriented API of the database. To do so they present database's tables as entities class definitions. Roughly, one class =&gt; one record so one record =&gt; one instance. This static structure definition puts handcuffs on the database engine since relational databases deal with sets and <strong>sets are extendible</strong> by definition. Being extendible does not mean «support for change», of course a database structure can change, extendible means sets can be transformed trough SQL manipulation.</p>
+            <p>Object Relational Mappers try to grant developers with an object oriented API of the database. To do so they present database's tables as entities class definitions. Roughly, one class =&gt; one table so one record =&gt; one instance. This static structure definition puts handcuffs on the database engine since relational databases deal with sets and <strong>sets are extendible</strong> by definition. Being extendible does not mean «support for change», of course a database structure can change, extendible means sets can be transformed trough SQL manipulation.</p>
             <pre class="vim"><span class="lnr">1 </span><span class="Statement">SELECT</span> letter <span class="Special">FROM</span> (<span class="Special">VALUES</span> (<span class="String">'a'</span>, <span class="Number">1</span>), (<span class="String">'b'</span>, <span class="Number">2</span>), (<span class="String">'c'</span>, <span class="Number">3</span>)) <span class="Special">AS</span> my_set (letter, <span class="Function">position</span>);</pre>
             <p>The previous example shows how to project a part of a static set. In a way, <strong>tables are just persistent sets</strong>. To return a set in a SQL database you need to use a projection operator known as <code>SELECT</code> which defines what set the database is going to return. </p>
             <p>Enforcing the cast of a static class definition in the relational world means engraving projections in stone plates hence loosing query control. In some way, ORM can create simplistic joins to fetch several linked entities but still we are far from what SQL can do in terms of combining sets to shape collections of entities.</p>
@@ -68,38 +68,34 @@
 <span class="lnr">2 </span>    <span class="Type">-&gt;</span>andWhere<span class="Delimiter">(</span>'<span class="String">gender = $*</span>', <span class="Delimiter">[</span>'<span class="String">M</span>'<span class="Delimiter">])</span>;
 <span class="lnr">3 </span>
 <span class="lnr">4 </span><span class="Operator">$</span><span class="Identifier">students</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">student_map</span><span class="Type">-&gt;</span>findWhere<span class="Delimiter">(</span><span class="Operator">$</span><span class="Identifier">where</span><span class="Delimiter">)</span>;</pre>
-            For complex queries, SQL is the best candidate for the job. Pomm proposes a smooth integration with the PHP layer using query helpers. The following example fetch a collection of students augmented by the average score taken from a weighted list of exams scores and their ranking in their classroom.<pre class="vim">
-<span class="lnr"> 1 </span><span class="Delimiter">&lt;?php</span> <span class="Comment">// class StudentMap.php</span>
-<span class="lnr"> 2 </span><span class="Comment">// [...]</span>
-<span class="lnr"> 3 </span>    <span class="Type">protected</span> <span class="PreProc">function</span> findWithRankingWhere<span class="Delimiter">(</span>Where <span class="Operator">$</span><span class="Identifier">where</span><span class="Delimiter">)</span>
-<span class="lnr"> 4 </span>    <span class="Delimiter">{</span>
-<span class="lnr"> 5 </span>        <span class="Operator">$</span><span class="Identifier">student_score_map</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>getConnection<span class="Delimiter">()</span><span class="Type">-&gt;</span>getMapFor<span class="Delimiter">(</span>'<span class="String">\School\Student\Student</span>'<span class="Delimiter">)</span>;
-<span class="lnr"> 6 </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Operator">&lt;&lt;&lt;</span><span class="Delimiter">SQL</span>
-<span class="lnr"> 7 </span><span class="Special">WITH</span>
-<span class="lnr"> 8 </span>  student_unweighted_score <span class="Special">AS</span> ( <span class="Statement">SELECT</span> student_id, score <span class="Special">FROM</span> :student_score_table <span class="Special">NATURAL</span> <span class="Special">JOIN</span> :student_table, <span class="Function">generate_series</span>(<span class="Number">1</span>, coeff) <span class="Special">WHERE</span> :condition),
-<span class="lnr"> 9 </span>  student_avg_score <span class="Special">AS</span> ( <span class="Statement">SELECT</span> student_id, <span class="Function">avg</span>(score) <span class="Special">AS</span> score <span class="Special">FROM</span> student_unweighted_score <span class="Special">GROUP</span> <span class="Special">BY</span> student_id)
-<span class="lnr">10 </span><span class="Statement">SELECT</span>
-<span class="lnr">11 </span>  :student_fields,
-<span class="lnr">12 </span>  <span class="Function">round</span>(sas.score, <span class="Number">2</span>) <span class="Special">AS</span> score,
-<span class="lnr">13 </span>  <span class="Function">rank</span>() <span class="Special">OVER</span> (<span class="Special">PARTITION</span> <span class="Special">BY</span> student.class <span class="Special">ORDER</span> <span class="Special">BY</span> sas.score <span class="Special">DESC</span>) <span class="Special">AS</span> <span class="Function">position</span>
-<span class="lnr">14 </span><span class="Special">FROM</span>
-<span class="lnr">15 </span>  student
-<span class="lnr">16 </span>    <span class="Special">NATURAL</span> <span class="Special">JOIN</span> student_avg_score sas
-<span class="lnr">17 </span><span class="Delimiter">SQL</span>;
-<span class="lnr">18 </span>
-<span class="lnr">19 </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Function">strtr</span><span class="Delimiter">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Type">array</span><span class="Delimiter">(</span>
-<span class="lnr">20 </span>            '<span class="String">:student_table</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>getTableName<span class="Delimiter">()</span>,
-<span class="lnr">21 </span>            '<span class="String">:student_score_table</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">student_score_map</span><span class="Type">-&gt;</span>getTableName<span class="Delimiter">()</span>,
-<span class="lnr">22 </span>            '<span class="String">:student_fields</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>formatFields<span class="Delimiter">(</span>'<span class="String">getSelectFields</span>'<span class="Delimiter">)</span>,
-<span class="lnr">23 </span>            '<span class="String">:condition</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Delimiter">(</span><span class="Type">string</span><span class="Delimiter">)</span> <span class="Operator">$</span><span class="Identifier">where</span>
-<span class="lnr">24 </span>        <span class="Delimiter">))</span>;
-<span class="lnr">25 </span>
-<span class="lnr">26 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Type">-&gt;</span>query<span class="Delimiter">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Operator">$</span><span class="Identifier">where</span><span class="Type">-&gt;</span>getValues<span class="Delimiter">())</span>;
-<span class="lnr">27 </span>    <span class="Delimiter">}</span>
+            For complex queries, SQL is the best candidate for the job. Pomm proposes a smooth integration with the PHP layer using query helpers. The following example lists nearest cycle stations with available slots from a given station name. Fields list and table name are replaced by a placeholder wich is substitued at the end so developers keep concentrating on what the query does and this allow structure to change without changing the query. This query will return a collection (an iterator) on <code>Station</code> entities augmented with the <code>distance</code> information.<pre class="vim">
+<span class="lnr">1  </span>    <span class="StorageClass">public</span> <span class="Define">function</span> getNearestFrom<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">name</span><span class="Special">)</span>
+<span class="lnr">2  </span>    <span class="Special">{</span>
+<span class="lnr">3  </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">&lt;&lt;&lt;</span><span class="Special">SQL</span>
+<span class="lnr">4  </span><span class="Statement">SELECT</span>
+<span class="lnr">5  </span>  :station_fields,
+<span class="lnr">6  </span>  station.coord &lt;-&gt; near_station.coord <span class="Special">AS</span> distance
+<span class="lnr">7  </span><span class="Special">FROM</span>
+<span class="lnr">8  </span>  :station_table station
+<span class="lnr">9  </span>    <span class="Function">LEFT</span> <span class="Special">JOIN</span> :station_table near_station <span class="Special">ON</span> near_station.name &lt;&gt; station.name
+<span class="lnr">10 </span><span class="Special">WHERE</span>
+<span class="lnr">11 </span>    station.name = $*
+<span class="lnr">12 </span>  <span class="Statement">AND</span>
+<span class="lnr">13 </span>    near_station.available_slots &gt; <span class="Number">0</span>
+<span class="lnr">14 </span><span class="Special">ORDER</span> <span class="Special">BY</span>
+<span class="lnr">15 </span>  distance <span class="Special">ASC</span>
+<span class="lnr">16 </span><span class="Special">SQL</span>;
+<span class="lnr">17 </span>
+<span class="lnr">18 </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Function">strtr</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Special">[</span>
+<span class="lnr">19 </span>            '<span class="String">:station_fields</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>formatFieldsWithAlias<span class="Special">(</span>'<span class="String">getSelectFields</span>', '<span class="String">near_station</span>'<span class="Special">)</span>,
+<span class="lnr">20 </span>            '<span class="String">:station_table</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>getTableName<span class="Special">()</span>
+<span class="lnr">21 </span>            <span class="Special">])</span>;
+<span class="lnr">22 </span>
+<span class="lnr">23 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>query<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Special">[</span> <span class="Operator">$</span><span class="Identifier">name</span> <span class="Special">])</span>;
+<span class="lnr">24 </span>    <span class="Special">}</span>
 </pre> 
             </p>
             <p>Pomm's ability to integrate SQL as query language allied with schemaless entities and the projection system make developers able to shape exactly the data they need to present with maximum performances.</p>
-            <blockquote>Pomm is the equilibrium point between the imperative, object oriented loosely typed PHP and declarative strongly typed Postgres's SQL.</blockquote>
           </div>
         </div>
 {% endblock %}

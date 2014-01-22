@@ -12,3 +12,5 @@ pre .Number { color: #ff73fd; }
 pre .Function { color: #ffd2a7; }
 pre .Statement { color: #6699cc; }
 pre .Special { color: #e18964; }
+pre .StorageClass { color: #ffcc66; }
+pre .Define { color: #6699cc; }
