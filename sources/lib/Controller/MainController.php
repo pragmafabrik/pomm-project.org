@@ -10,14 +10,19 @@ use \Symfony\Component\HttpFoundation\Response;
 class MainController implements ControllerProviderInterface
 {
     protected $app;
+    protected $releases;
 
     public function connect(Application $app)
     {
         $this->app = $app;
+        $this->releases = array("1.1" => "1.1.4", "1.2" => "1.2.0");
+
         $controller_collection = $app['controllers_factory'];
         $controller_collection->get('/', array($this, 'index'))->bind('main_index');
         $controller_collection->get('/about', array($this, 'about'))->bind('main_about');
         $controller_collection->get('/navbar', array($this, 'navbar'))->bind('main_navbar');
+        $controller_collection->get('/download', array($this, 'download'))->bind('main_download');
+        $controller_collection->get('/howto/install', array($this, 'install'))->bind('main_install');
         $controller_collection->get('/manual-{version}', array($this, 'documentation'))->bind('documentation');
 
         return $controller_collection;
@@ -41,5 +46,15 @@ class MainController implements ControllerProviderInterface
     public function documentation($version)
     {
         return $this->app['twig']->render('documentation.html.twig', array('pomm_version' => $version));
+    }
+
+    public function download()
+    {
+        return $this->app['twig']->render('download.html.twig', array('latest' => $this->releases));
+    }
+
+    public function install()
+    {
+        return $this->app['twig']->render('install.html.twig');
     }
 }

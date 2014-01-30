@@ -1,0 +1,71 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}download{% endblock %}
+
+{% block content %}
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3>Download Pomm</h3>
+              </div>
+              <div class="panel-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Pomm 1.2</th>
+                      <th>Pomm 1.1</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <dl>
+                          <dt>minimum requirements</dt>
+                          <dd>&#10149; PHP 5.3.3 (with pgsql module)</dd>
+                          <dd>&#10149; Postgresql 9.0</dd>
+                        </dl>
+                        <p>Latest release: pomm <span class="badge">{{ latest["1.2"] }}</span> (<a href="https://github.com/chanmix51/Pomm/archive/{{ latest["1.2"] }}.zip">zip</a>) (<a href="https://github.com/chanmix51/Pomm/archive/{{ latest["1.2"] }}.tar.gz">tar.gz</a>)</p>
+                      </td>
+                      <td>
+                        <dl>
+                          <dt>minimum requirements</dt>
+                          <dd>&#10149; PHP 5.2 (with pdo-pgsql module)</dd>
+                          <dd>&#10149; Postgresql 8.4</dd>
+                        </dl>
+                        <p>Latest release: pomm <span class="badge">{{ latest["1.1"] }}</span> (<a href="https://github.com/chanmix51/Pomm/archive/{{ latest["1.1"] }}.zip">zip</a>) (<a href="https://github.com/chanmix51/Pomm/archive/{{ latest["1.1"] }}.tar.gz">tar.gz</a>)</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div><!-- panel -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3>Frameworks</h3>
+              </div>
+              <div class="panel-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Silex µ-framework</th>
+                      <th>Symfony2</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p><a href="#">PommServiceProvider</a></p>
+                      </td>
+                      <td>
+                        <p><a href="#">PommBundle</a></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div><!-- panel -->
+            <div class="alert alert-info"><p>You want to know how to develop a plugin for your favorite framework ? Poke me on <a href="#">github</a></p></div>
+          </div>
+        </div><!-- row -->
+{% endblock %}

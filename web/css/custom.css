@@ -14,3 +14,5 @@ pre .Statement { color: #6699cc; }
 pre .Special { color: #e18964; }
 pre .StorageClass { color: #ffcc66; }
 pre .Define { color: #6699cc; }
+pre .Constant { color: #6d9cbe; }
+pre .Include { color: #cc7833; }

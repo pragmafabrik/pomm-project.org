@@ -1,5 +1,7 @@
 {% extends "layout.html.twig" %}
 
+{% block title %}home{% endblock %}
+
 {% block content %}
         <div class="row">
           <div class="col-md-12">
@@ -9,15 +11,21 @@
               </div>
               <div class="panel-body">
                 <p>
-Pomm is an open source database access framework. Pomm is not an ORM, it is an Object Model Manager. <br />
-It offers an alternative approach than ORM to using database in object oriented web developments. Pomm makes developers able to leverage Postgresql's features to shape data structures that fit business processes while keeping a hand on performances. <a href="{{ app.url_generator.generate('main_about') }}">Read more&#133;</a>
+                  Pomm is an open source database access framework. Pomm is not an ORM, it is an Object Model Manager. <br />
+                  It offers an alternative approach than ORM to using database in object oriented web developments. 
                 <p>
+                <h3>Tired by your ORM limitations ?</h3>
+                <p>
+                  ORM try to enforce an object oriented pattern into the relational world. This implementation added to an abstraction layer strangle the database and let the developers with clumsy structures as only architecture options. This leads to complex, slow and expensive processes to transform data upon business needs.</p>
+                <p>Pomm fits Postgresql relational pattern in an object oriented API. This makes developers to benefit from Postgresql awesome features and performances while getting the data shaped in a way that keeps business processes simple.</p>
+                <p><a href="{{ app.url_generator.generate('main_about') }}">Read more&#133;</a></p>
+                </p>
                   <dl>
                     <dt>Some key features</dt>
                     <dd>&#10149; Faster than any ORM</dd>
                     <dd>&#10149; Object oriented model layer</dd>
                     <dd>&#10149; Native conversion of almost all Postgres types (HSTore, composite types&#133;)</dd>
-                    <dd>&#10149; Unrestricted access to SQL if needed with query helpers</dd>
+                    <dd>&#10149; Unrestricted access to SQL if needed (with query helpers)</dd>
                     <dd>&#10149; Database structure introspection tools</dd>
                     <dd>&#10149; LISTEN / NOTIFY Postgresql asynchronous messaging support</dd>
                   </dl>
@@ -57,12 +65,12 @@ It offers an alternative approach than ORM to using database in object oriented 
                     </td>
                     <td>
                       <dl style="margin-bottom: 0px;">
-                        <dd><a href="#">Install Pomm</a></dd>
+                        <dd><a href="{{ app.url_generator.generate('main_install') }}">Install Pomm</a></dd>
                       </dl>
                     <td>
                       <dl style="margin-bottom: 0px;">
-                        <dd><a href="#">English</a></dd>
-                        <dd><a href="#">French</a></dd>
+                        <dd><a href="https://github.com/chanmix51/elcaro/blob/english/documentation/article.md">English</a></dd>
+                        <dd><a href="https://github.com/chanmix51/elcaro/blob/master/documentation/article.md">French</a></dd>
                       </dl>
                     </td>
                     <td>
@@ -99,8 +107,8 @@ It offers an alternative approach than ORM to using database in object oriented 
                   <tr>
                     <td>
                       <dl style="margin-bottom: 0px;">
-                        <dd><a href="https://github.com/chanmix51/Pomm/archive/master.zip">Pomm 1.2.0</a> (stable)</dd>
-                        <dd><a href="https://github.com/chanmix51/Pomm/archive/1.1.zip">Pomm 1.1.4</a> (stable)</dd>
+                        <dd><a href="https://github.com/chanmix51/Pomm/archive/master.zip">Pomm 1.2</a> (stable)</dd>
+                        <dd><a href="https://github.com/chanmix51/Pomm/archive/1.1.zip">Pomm 1.1</a> (stable)</dd>
                       </dl>
                     </td>
                     <td>
