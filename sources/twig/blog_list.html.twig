@@ -11,12 +11,31 @@
                 <h2 class="panel-title"><a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">{{ new.title }}</a><small> ({{ new.published_at | date('Y-m-d') }})</small></h2>
               </div>
               <div class="panel-body">
-{% autoescape false %}
-              {{ new.content }}... <a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">read more</a>{% endautoescape %}
+                {% autoescape false %}{{ new.content }}... <a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">read more</a>{% endautoescape %}
               </div>
             </div>
   {% endfor %}
-
+            <div class="align-center">
+              <ul class="pagination">
+  {% if news_pager.isPreviousPage %}
+                <li><a href="{{ app.url_generator.generate('blog_index', {"page": news_pager.getPage() - 1 }) }}">&laquo;</a></li>
+  {% else %}
+                <li class="disabled"><a href="#">&laquo;</a></li>
+  {% endif %}
+  {% for page in 1..news_pager.getLastPage() %}
+    {% if page == news_pager.getPage() %}
+                <li class="active"><a href="{{ app.url_generator.generate('blog_index', { "page": page }) }}">{{ page }}</a></li>
+    {% else %}
+                <li><a href="{{ app.url_generator.generate('blog_index', { "page": page }) }}">{{ page }}</a></li>
+    {% endif %}
+  {% endfor %}
+  {% if news_pager.isNextPage() %}
+                <li><a href="{{ app.url_generator.generate('blog_index', {"page": news_pager.getPage() + 1 }) }}">&raquo;</a></li>
+  {% else %}
+                <li class="disabled"><a href="#">&raquo;</a></li>
+  {% endif %}
+              </ul>
+            </div>
           </div>
         </div>
 {% endblock %}
