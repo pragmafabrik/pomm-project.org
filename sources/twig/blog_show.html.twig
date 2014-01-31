@@ -1,0 +1,15 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ news.title }}{% endblock %}
+
+{% block content %}
+        <div class="row">
+          <div class="col-md-12">
+            <h2>{{ news.title }}</h2>
+{% autoescape false %}
+{{ news.content }}
+{% endautoescape %}
+          </div>
+        </div><!-- row -->
+{% endblock %}
+
