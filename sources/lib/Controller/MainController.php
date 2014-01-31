@@ -23,7 +23,8 @@ class MainController implements ControllerProviderInterface
         $controller_collection->get('/navbar', array($this, 'navbar'))->bind('main_navbar');
         $controller_collection->get('/download', array($this, 'download'))->bind('main_download');
         $controller_collection->get('/howto/install', array($this, 'install'))->bind('main_install');
-        $controller_collection->get('/manual-{version}', array($this, 'documentation'))->bind('documentation');
+        $controller_collection->get('/documentation/examples', array($this, 'examples'))->bind('main_examples');
+        $controller_collection->get('/documentation/manual-{version}', array($this, 'documentation'))->bind('documentation');
 
         return $controller_collection;
     }
@@ -51,6 +52,11 @@ class MainController implements ControllerProviderInterface
     public function download()
     {
         return $this->app['twig']->render('download.html.twig', array('latest' => $this->releases));
+    }
+
+    public function examples()
+    {
+        return $this->app['twig']->render('examples.html.twig');
     }
 
     public function install()
