@@ -6,6 +6,6 @@
 // pomm database configuration
 $app['config.pomm.dsn'] = array(
     'prod' => array(),
-    'dev' => array('my_db' => array('dsn' => 'pgsql://greg/greg', 'name' => 'PommProject', 'class' => '\Model\MyDatabase')));
+    'dev' => array('my_db' => array('dsn' => 'pgsql://greg@!/var/run/postgresql!:5435/coolkeums', 'name' => 'PommProject', 'class' => '\Model\MyDatabase')));
 
 // put your configuration here

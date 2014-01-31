@@ -1,0 +1,22 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}home{% endblock %}
+
+{% block content %}
+        <div class="row">
+          <div class="col-md-12">
+  {% for new in news_pager.getCollection() %}
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title"><a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">{{ new.title }}</a><small> ({{ new.published_at | date('Y-m-d') }})</small></h2>
+              </div>
+              <div class="panel-body">
+{% autoescape false %}
+              {{ new.content }}... <a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">read more</a>{% endautoescape %}
+              </div>
+            </div>
+  {% endfor %}
+
+          </div>
+        </div>
+{% endblock %}
