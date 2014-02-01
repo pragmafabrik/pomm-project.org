@@ -10,23 +10,24 @@
 
     <!-- JAVASCRIPT -->
 {% block js %}{% endblock %}
-    <script src="/js/jquery.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="/js/bootstrap.js"></script>
 
 {% if constant('ENV') == "prod" %}
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '']);
-      _gaq.push(['_setDomainName', 'www.pomm-project.org']);
-      _gaq.push(['_trackPageview']);
+<script type="text/javascript">
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16699784-3']);
+  _gaq.push(['_trackPageview']);
 
-    </script>
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+ 
 {% endif %}
     <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,400italic,700italic' rel='stylesheet' type='text/css'>
     <!-- Bootstrap -->

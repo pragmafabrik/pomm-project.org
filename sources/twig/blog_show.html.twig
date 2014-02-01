@@ -9,6 +9,22 @@
 {% autoescape false %}
 {{ news.content }}
 {% endautoescape %}
+            <div>
+            <ul class="pager">
+{% if news.prev_slug != '' %}
+              <li class="previous"><a href="{{ app.url_generator.generate("blog_show", {"slug": news.prev_slug }) }}">&larr; Older</a></li>
+{% else %}
+              <li class="previous disabled"><a href="#">&larr; Older</a></li>
+{% endif %}
+              <li><a href="{{ app.url_generator.generate('blog_index') }}">&uarr; up &uarr;</a></li>
+{% if news.next_slug != '' %}
+              <li class="next"><a href="{{ app.url_generator.generate("blog_show", {"slug": news.next_slug }) }}">Newer &rarr;</a></li>
+{% else %}
+              <li class="next disabled"><a href="#">Newer &rarr;</a></li>
+{% endif %}
+
+            </ul>
+            </div>
           </div>
         </div><!-- row -->
 {% endblock %}

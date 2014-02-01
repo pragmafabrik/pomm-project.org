@@ -35,7 +35,7 @@ class BlogController implements ControllerProviderInterface
     {
         $news = $this->app['pomm.connection']
             ->getMapFor('Model\PommProject\Pomm\News')
-            ->findByPK(array('slug' => $slug));
+            ->findBySlugWithNeighbours($slug);
 
         if (!$news)
         {
