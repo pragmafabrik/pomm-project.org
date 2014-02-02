@@ -14,7 +14,7 @@ class NewsMap extends BaseNewsMap
         $sql = <<<SQL
 SELECT
     :news_fields,
-    cut_nicely(content, 450) AS content
+    cut_nicely(regexp_replace(substr(content, 1, 900), '<[^>]+>', ' ', 'g'), 450) AS content
 FROM 
     :news_table
 ORDER BY news.published_at DESC
