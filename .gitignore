@@ -1,3 +1,4 @@
 vendor/*
 .ctags
 log/*
+sources/config/config.php
