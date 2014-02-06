@@ -38,10 +38,12 @@ WITH
   neighbour AS (
     SELECT
       slug,
-      lag(slug) OVER (ORDER BY published_at DESC) AS next_slug,
-      lead(slug) OVER (ORDER BY published_at DESC) AS prev_slug
+      lag(slug) OVER published_at_wdw AS next_slug,
+      lead(slug) OVER  published_at_wdw AS prev_slug
     FROM
-    :news_table
+      :news_table
+    WINDOW
+      published_at_wdw AS (ORDER BY published_at DESC)
     )
 SELECT
     :news_fields,
