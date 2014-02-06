@@ -5,7 +5,7 @@
 {% block content %}
         <div class="row">
           <div class="col-md-12">
-            <h2>{{ news.title }}</h2>
+            <div class="page-header"><h2>{{ news.title }}</h2> <small>Posted on {{ news.published_at|date('Y-m-d') }}</small></div>
 {% autoescape false %}
 {{ news.content }}
 {% endautoescape %}
