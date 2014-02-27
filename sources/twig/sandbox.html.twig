@@ -122,7 +122,7 @@ sources/lib/Model
 </pre>
             This way, the converter associated with Postgresql's <code>interval</code> type will be used to produce a PHP <code>DateInterval</code> instance.</p>
             <h3>Step 5: Tune the queries</h3>
-            <p>Default queries coming the generated map classes are pretty simple, they just apply the given projection from a given set in the database. Most of the time it is enough but some cases require more informations coming from other databases tables. By example, in a blog post, it would be useful to provide links to the previous and / or next published articles. A custom query can handle that:
+            <p>Default queries coming with the generated map classes are pretty simples, they just apply the given projection from a given set in the database. Most of the time it is enough but some cases require more informations coming from other database tables. By example, in a blog post, it would be useful to provide links to the previous and / or next published articles. A custom query can handle that:
 <pre class="vim">
 <span class="lnr"> 1 </span><span class="Comment">// sources/lib/Model/Sandbox/Blog/PostMap.php</span>
 <span class="lnr"> 2 </span>
