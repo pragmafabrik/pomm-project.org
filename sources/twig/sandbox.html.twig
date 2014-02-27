@@ -45,7 +45,7 @@ bash install.sh</code></pre>
 </code></pre>
             <p>
             <h3>Step 2: Generate the model</h3>
-            <p>You can use the <code>bin/generate_model.php</code> script to generate the model files. You have to pass the schema where your tables are as argument. If you do not know about <a href="http://www.postgresql.org/docs/current/static/ddl-schemas.html">Postgresql schemas</a>, enter <code>public</code> which is the default schema.<pre><code>php bin/generate_model public</code></pre></p>
+            <p>You can use the <code>bin/generate_model.php</code> script to generate the model files. You have to pass the schema where your tables are as argument. If you do not know about <a href="http://www.postgresql.org/docs/current/static/ddl-schemas.html">Postgresql schemas</a>, enter <code>public</code> which is the default schema.<pre><code>php bin/generate_model.php public</code></pre></p>
             <p>This command will generate model files under the <code>sources/lib/Model</code> directory using database name and schema name as namespaces. So it should end like the following:<pre><code>
 sources/lib/Model
     ├── MyDatabase.php
