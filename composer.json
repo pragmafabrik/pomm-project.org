@@ -1,9 +1,9 @@
 {
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
-        "pomm/pomm-service-provider": "dev-master",
-        "monolog/monolog": "1.6.*@dev",
+        "pomm/pomm-service-provider": "1.2.*@dev",
+        "monolog/monolog": "1.6.*",
         "symfony/twig-bridge": "2.3.*",
-        "twig/twig": "dev-master"
+        "twig/twig": "1.*"
     }
 }
