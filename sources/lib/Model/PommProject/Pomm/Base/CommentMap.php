@@ -11,7 +11,7 @@ abstract class CommentMap extends BaseObjectMap
     {
 
         $this->object_class =  'Model\PommProject\Pomm\Comment';
-        $this->object_name  =  'pomm.comment';
+        $this->object_name  =  '"pomm"."comment"';
 
         $this->addField('id', 'int4');
         $this->addField('article_slug', 'varchar');

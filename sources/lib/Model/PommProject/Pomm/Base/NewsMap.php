@@ -11,7 +11,7 @@ abstract class NewsMap extends BaseObjectMap
     {
 
         $this->object_class =  'Model\PommProject\Pomm\News';
-        $this->object_name  =  'pomm.news';
+        $this->object_name  =  '"pomm"."news"';
 
         $this->addField('slug', 'varchar');
         $this->addField('title', 'varchar');
