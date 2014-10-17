@@ -24,24 +24,29 @@ class BlogController implements ControllerProviderInterface
 
     public function index($page)
     {
-        $news_pager = $this->app['pomm.connection']
-            ->getMapFor('Model\PommProject\Pomm\News')
-            ->paginateFindAllShorten(15, $page);
+        $news_pager = $this->app['pomm']['pomm_project']
+            ->getModel('Model\PommProject\PommSchema\NewsModel')
+            ->paginateFindAllShorten(5, $page);
 
-        return $this->app['twig']->render('blog_list.html.twig', array('news_pager' => $news_pager));
+        return $this
+            ->app['twig']
+            ->render('blog_list.html.twig', array('news_pager' => $news_pager))
+            ;
     }
 
     public function show($slug)
     {
-        $news = $this->app['pomm.connection']
-            ->getMapFor('Model\PommProject\Pomm\News')
-            ->findBySlugWithNeighbours($slug);
-
-        if (!$news)
-        {
+        if (!$news = ($this
+            ->app['pomm']['pomm_project']
+            ->getModel('Model\PommProject\PommSchema\NewsModel')
+            ->findBySlugWithNeighbours($slug)
+        )) {
             $this->app->abort(404, "News not found");
         }
 
-        return $this->app['twig']->render('blog_show.html.twig', array('news' => $news));
+        return $this
+            ->app['twig']
+            ->render('blog_show.html.twig', array('news' => $news))
+            ;
     }
 }

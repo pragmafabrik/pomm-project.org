@@ -1,7 +1,10 @@
 {
     "minimum-stability": "stable",
     "require": {
-        "pomm/pomm-service-provider": "1.2.*@dev",
+        "pomm-project/cli": "dev-master",
+        "pomm-project/foundation": "dev-master",
+        "pomm-project/model-manager": "dev-master",
+        "silex/silex":  "1.2.*",
         "monolog/monolog": "1.6.*",
         "symfony/twig-bridge": "2.3.*",
         "twig/twig": "1.*"

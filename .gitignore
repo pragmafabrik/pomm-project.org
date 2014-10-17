@@ -2,3 +2,4 @@ vendor/*
 .ctags
 log/*
 sources/config/config.php
+.pomm_cli_bootstrap.php

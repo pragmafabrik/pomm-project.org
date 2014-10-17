@@ -2,14 +2,8 @@
 
 namespace Model;
 
-use \Pomm\Connection\Database;
+use PommProject\ModelManager\DatabaseConfiguration;
 
-class MyDatabase extends Database
+class MyDatabase extends DatabaseConfiguration
 {
-    protected function initialize()
-    {
-        parent::initialize();
-
-        // register configuration or converters here
-    }
 }

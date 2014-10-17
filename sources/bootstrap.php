@@ -1,6 +1,7 @@
 <?php #sources/bootstrap.php
 
 use Silex\Provider;
+use PommProject\Foundation\Pomm;
 
 // This script sets up the application DI with services.
 
@@ -31,17 +32,12 @@ $app->register(new Provider\SessionServiceProvider());
 $app->register(new Provider\TwigServiceProvider(), array(
     'twig.path' => array(PROJECT_DIR.'/sources/twig'),
 ));
-$app->register(new \Pomm\Silex\PommServiceProvider(), array(
-    'pomm.databases' => $app['config.pomm.dsn'][ENV]
-));
+$app['pomm'] = $app->share(function() use ($app) {
+    return new Pomm($app['config.pomm.dsn'][ENV]);
+});
 
-// Service container customization. 
+// Service container customization.
 $app['loader'] = $loader;
-$app['pomm.connection'] = $app->share(function() use ($app) { return $app['pomm']
-    ->getDatabase()
-    ->createConnection();
-    });
-
 // set DEBUG mode or not
 if (preg_match('/^dev/', ENV))
 {
@@ -49,10 +45,12 @@ if (preg_match('/^dev/', ENV))
     $app->register(new Provider\MonologServiceProvider(), array(
         'monolog.logfile' => PROJECT_DIR.'/log/app.log'
         ));
+    /*
     $app['pomm.connection'] = $app->share($app->extend(
         'pomm.connection',
         function($connection, $app) { $connection->setLogger($app['monolog']); return $connection; }
         ));
+     */
 }
 
 return $app;
