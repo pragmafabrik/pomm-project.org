@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class PommProject\Foundation\Session\Session</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="namespace-PommProject.html">PommProject<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Cli.html">Cli<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Cli.Command.html">Command</a>
+						</li>
+				<li><a href="namespace-PommProject.Cli.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.Cli.Generator.html">Generator</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-PommProject.Foundation.html">Foundation<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Foundation.Client.html">Client</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Converter.html">Converter<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Foundation.Converter.Geometry.html">Geometry</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Converter.Type.html">Type</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.Foundation.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Inspector.html">Inspector</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Listener.html">Listener</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Observer.html">Observer</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+						</li>
+				<li class="active"><a href="namespace-PommProject.Foundation.Session.html">Session</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Tester.html">Tester</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.ModelManager.html">ModelManager<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Converter.html">Converter</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.ModelManager.ModelLayer.html">ModelLayer</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Tester.html">Tester</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-PommProject.Foundation.Session.Connection.html">Connection</a></li>
+				<li><a href="class-PommProject.Foundation.Session.ConnectionConfigurator.html">ConnectionConfigurator</a></li>
+				<li><a href="class-PommProject.Foundation.Session.ResultHandler.html">ResultHandler</a></li>
+				<li class="active"><a href="class-PommProject.Foundation.Session.Session.html">Session</a></li>
+				<li><a href="class-PommProject.Foundation.Session.SessionBuilder.html">SessionBuilder</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-PommProject.Foundation.Session.html" title="Summary of PommProject\Foundation\Session"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Session</h1>
+
+
+	<div class="description">
+	<p>Session</p>
+
+<p>Public API to share the database connection. IO are shared amongst
+clients which are stored in a ClientHolder.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>PommProject\Foundation\Session\Session</span></b>			
+			 implements 
+<span>Psr\Log\LoggerAwareInterface</span>
+			
+			 uses 
+					Psr\Log\LoggerAwareTrait (not available)
+
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> PommProject\Foundation\Session<br>
+		<b>Package:</b> Foundation<br>
+
+				<b>Copyright:</b>
+				2014 Grégoire HUBERT
+<br>
+				<b>License:</b>
+				<a href="X11">{@link http://opensource.org/licenses/mit-license.php}</a><br>
+				<b>Author:</b>
+				Grégoire HUBERT
+<br>
+				<b>See:</b>
+				LoggerAwareInterface
+<br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.Session.Session.html#23-307" title="Go to source code">Session/Session.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#43-64" title="Go to source code">__construct</a>( <span><code><a href="class-PommProject.Foundation.Session.Connection.html">PommProject\Foundation\Session\Connection</a></code> <var>$connection</var></span>, <span><code><a href="class-PommProject.Foundation.Client.ClientHolder.html">PommProject\Foundation\Client\ClientHolder</a></code> <var>$client_holder</var> = <span class="php-keyword1">null</span> </span> )</code>
+
+		<div class="description short">
+			<p>__construct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>__construct</p>
+
+<p>Constructor.
+In order to create a physical connection to the database, it requires a
+'dsn' parameter from the ParameterHolder.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$connection</var></dt>
+					<dd>
+</dd>
+					<dt><var>$client_holder</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__destruct" id="___destruct">
+
+		<td class="attributes"><code>
+			 public 
+
+			null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___destruct">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#66-80" title="Go to source code">__destruct</a>( )</code>
+
+		<div class="description short">
+			<p>__destruct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>__destruct</p>
+
+<p>Gently shutdown all clients when the Session is getting down prior to
+connection termination.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLogger" id="_getLogger">
+
+		<td class="attributes"><code>
+			 public 
+
+			Psr\Log\LoggerInterface|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLogger">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#82-93" title="Go to source code">getLogger</a>( )</code>
+
+		<div class="description short">
+			<p>getLogger</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getLogger</p>
+
+<p>Return the logger if any.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Psr\Log\LoggerInterface|null</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasLogger" id="_hasLogger">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasLogger">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#95-106" title="Go to source code">hasLogger</a>( )</code>
+
+		<div class="description short">
+			<p>hasLogger</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>hasLogger</p>
+
+<p>Return true if a logger is set.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConnection" id="_getConnection">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.Foundation.Session.Connection.html">PommProject\Foundation\Session\Connection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConnection">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#108-119" title="Go to source code">getConnection</a>( )</code>
+
+		<div class="description short">
+			<p>getConnection</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getConnection</p>
+
+<p>Return the database connection.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Session.Connection.html">PommProject\Foundation\Session\Connection</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="registerClient" id="_registerClient">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_registerClient">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#121-144" title="Go to source code">registerClient</a>( <span><code><a href="class-PommProject.Foundation.Client.ClientInterface.html">PommProject\Foundation\Client\ClientInterface</a></code> <var>$client</var></span> )</code>
+
+		<div class="description short">
+			<p>registerClient</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>registerClient</p>
+
+<p>Initialize a connection client with context and register it in the
+client holder.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$client</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code></code><br>$this
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClient" id="_getClient">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClient">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#146-159" title="Go to source code">getClient</a>( <span>string <var>$type</var></span>, <span>string <var>$identifier</var></span> )</code>
+
+		<div class="description short">
+			<p>getClient</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getClient</p>
+
+<p>Return a Client from its type and identifier.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>
+</dd>
+					<dt><var>$identifier</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code></code><br>or null if not found.
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasClient" id="_hasClient">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasClient">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#161-174" title="Go to source code">hasClient</a>( <span>string <var>$type</var></span>, <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>hasClient</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>hasClient</p>
+
+<p>Tell if a client exist or not.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>
+</dd>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="registerClientPooler" id="_registerClientPooler">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_registerClientPooler">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#176-200" title="Go to source code">registerClientPooler</a>( <span><code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">PommProject\Foundation\Client\ClientPoolerInterface</a></code> <var>$client_pooler</var></span> )</code>
+
+		<div class="description short">
+			<p>registerClientPooler</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>registerClientPooler</p>
+
+<p>Add or replace a Client pooler for the specified type.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$client_pooler</var></dt>
+					<dd>$type
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code></code><br>$this
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasPoolerForType" id="_hasPoolerForType">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasPoolerForType">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#202-214" title="Go to source code">hasPoolerForType</a>( <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			<p>hasPoolerForType</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>hasPoolerForType</p>
+
+<p>Tell if a pooler exist or not.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPoolerForType" id="_getPoolerForType">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">PommProject\Foundation\Client\ClientPoolerInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPoolerForType">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#216-239" title="Go to source code">getPoolerForType</a>( <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			<p>getPoolerForType</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getPoolerForType</p>
+
+<p>Get the registered for the given type.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">PommProject\Foundation\Client\ClientPoolerInterface</a></code></code>
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						FoundationException if pooler does not exist
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getAllClientForType" id="_getAllClientForType">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.Foundation.Client.ClientInterface.html">PommProject\Foundation\Client\ClientInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAllClientForType">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#241-253" title="Go to source code">getAllClientForType</a>( <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			<p>getAllClientForType</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getAllClientForType</p>
+
+<p>Return all instances of clients for a given type.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Client.ClientInterface.html">PommProject\Foundation\Client\ClientInterface</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClientUsingPooler" id="_getClientUsingPooler">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.Foundation.Client.ClientInterface.html">PommProject\Foundation\Client\ClientInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClientUsingPooler">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#255-269" title="Go to source code">getClientUsingPooler</a>( <span>string <var>$type</var></span>, <span>string <var>$identifier</var></span> )</code>
+
+		<div class="description short">
+			<p>getClientUsingPooler</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getClientUsingPooler</p>
+
+<p>Summon a pooler to retrieve a client. If the pooler does not exist, a
+FoundationException is thrown.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>
+</dd>
+					<dt><var>$identifier</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Client.ClientInterface.html">PommProject\Foundation\Client\ClientInterface</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__call" id="___call">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.Foundation.Client.ClientInterface.html">PommProject\Foundation\Client\ClientInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___call">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#271-293" title="Go to source code">__call</a>( <span>string <var>$method</var></span>, <span>array <var>$arguments</var></span> )</code>
+
+		<div class="description short">
+			<p>__call</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>__call</p>
+
+<p>Create handy methods to access clients through a pooler.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$method</var></dt>
+					<dd>
+</dd>
+					<dt><var>$arguments</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Client.ClientInterface.html">PommProject\Foundation\Client\ClientInterface</a></code></code>
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						BadFunctionCallException if unknown method
+<br>
+						FoundationException      if no poolers found
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRegisterPoolersNames" id="_getRegisterPoolersNames">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRegisterPoolersNames">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#295-306" title="Go to source code">getRegisterPoolersNames</a>( )</code>
+
+		<div class="description short">
+			<p>getRegisterPoolersNames</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getRegisterPoolersNames</p>
+
+<p>Useful to test &amp; debug.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="connection" id="$connection">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.Foundation.Session.Session.html#37" title="Go to source code"><var>$connection</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$connection" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="client_holder" id="$client_holder">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.Foundation.Session.Session.html#38" title="Go to source code"><var>$client_holder</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$client_holder" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="client_poolers" id="$client_poolers">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.Foundation.Session.Session.html#39" title="Go to source code"><var>$client_poolers</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$client_poolers" class="anchor">#</a>
+				<code>[]</code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?2708423488"></script>
+</body>
+</html>

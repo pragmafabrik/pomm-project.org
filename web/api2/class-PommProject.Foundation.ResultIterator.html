@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class PommProject\Foundation\ResultIterator</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="namespace-PommProject.html">PommProject<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Cli.html">Cli<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Cli.Command.html">Command</a>
+						</li>
+				<li><a href="namespace-PommProject.Cli.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.Cli.Generator.html">Generator</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-PommProject.Foundation.html">Foundation<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Foundation.Client.html">Client</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Converter.html">Converter<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Foundation.Converter.Geometry.html">Geometry</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Converter.Type.html">Type</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.Foundation.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Inspector.html">Inspector</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Listener.html">Listener</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Observer.html">Observer</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Tester.html">Tester</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.ModelManager.html">ModelManager<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Converter.html">Converter</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.ModelManager.ModelLayer.html">ModelLayer</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Tester.html">Tester</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-PommProject.Foundation.ConvertedResultIterator.html">ConvertedResultIterator</a></li>
+				<li><a href="class-PommProject.Foundation.Inflector.html">Inflector</a></li>
+				<li><a href="class-PommProject.Foundation.Pager.html">Pager</a></li>
+				<li><a href="class-PommProject.Foundation.ParameterHolder.html">ParameterHolder</a></li>
+				<li><a href="class-PommProject.Foundation.Pomm.html">Pomm</a></li>
+				<li><a href="class-PommProject.Foundation.QueryParameterExpander.html">QueryParameterExpander</a></li>
+				<li><a href="class-PommProject.Foundation.RawString.html">RawString</a></li>
+				<li class="active"><a href="class-PommProject.Foundation.ResultIterator.html">ResultIterator</a></li>
+				<li><a href="class-PommProject.Foundation.SessionBuilder.html">SessionBuilder</a></li>
+				<li><a href="class-PommProject.Foundation.Where.html">Where</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-PommProject.Foundation.html" title="Summary of PommProject\Foundation"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class ResultIterator</h1>
+
+
+	<div class="description">
+	<p>ResultIterator</p>
+
+<p>Iterator on database results.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>PommProject\Foundation\ResultIterator</span></b>			
+			 implements 
+				<a href="class-Iterator.html"><span>Iterator</span></a>, 
+			
+				<a href="class-Countable.html"><span>Countable</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-PommProject.Foundation.ConvertedResultIterator.html">PommProject\Foundation\ConvertedResultIterator</a>, 
+			<a href="class-PommProject.ModelManager.Model.CollectionIterator.html">PommProject\ModelManager\Model\CollectionIterator</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> PommProject\Foundation<br>
+		<b>Package:</b> Foundation<br>
+
+				<b>Copyright:</b>
+				2014 Grégoire HUBERT
+<br>
+				<b>License:</b>
+				<a href="X11">{@link http://opensource.org/licenses/mit-license.php}</a><br>
+				<b>Author:</b>
+				Grégoire HUBERT
+<br>
+				<b>See:</b>
+				<code><code><a href="class-Iterator.html">Iterator</a></code></code><br>
+				<b>See:</b>
+				<code><code><a href="class-Countable.html">Countable</a></code></code><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.ResultIterator.html#14-236" title="Go to source code">ResultIterator.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#31-45" title="Go to source code">__construct</a>( <span><code><a href="class-PommProject.Foundation.Session.ResultHandler.html">PommProject\Foundation\Session\ResultHandler</a></code> <var>$result</var></span> )</code>
+
+		<div class="description short">
+			<p>__construct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>__construct</p>
+
+<p>Constructor</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$result</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__destruct" id="___destruct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___destruct">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#47-55" title="Go to source code">__destruct</a>( )</code>
+
+		<div class="description short">
+			<p>__destruct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>__destruct</p>
+
+<p>Closes the cursor when the collection is cleared.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#57-70" title="Go to source code">get</a>( <span>integer <var>$index</var></span> )</code>
+
+		<div class="description short">
+			<p>get</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>get</p>
+
+<p>Return a particular result. An array with converted values is returned.
+pg_fetch_array is muted because it produces untrappable warnings on
+errors.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$index</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="has" id="_has">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_has">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#72-83" title="Go to source code">has</a>( <span>integer <var>$index</var></span> )</code>
+
+		<div class="description short">
+			<p>has</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>has</p>
+
+<p>Return true if the given index exists false otherwise.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$index</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="count" id="_count">
+
+		<td class="attributes"><code>
+			 public 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_count">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#85-94" title="Go to source code">count</a>( )</code>
+
+		<div class="description short">
+			<p>count</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>count</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Countable.html">Countable</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Countable.html#_count">Countable::count()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="rewind" id="_rewind">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_rewind">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#96-104" title="Go to source code">rewind</a>( )</code>
+
+		<div class="description short">
+			<p>rewind</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>rewind</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Iterator.html">Iterator</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Iterator.html#_rewind">Iterator::rewind()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="current" id="_current">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_current">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#106-114" title="Go to source code">current</a>( )</code>
+
+		<div class="description short">
+			<p>current</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>current</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Iterator.html">Iterator</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Iterator.html#_current">Iterator::current()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="key" id="_key">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_key">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#116-124" title="Go to source code">key</a>( )</code>
+
+		<div class="description short">
+			<p>key</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>key</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Iterator.html">Iterator</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Iterator.html#_key">Iterator::key()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="next" id="_next">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_next">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#126-134" title="Go to source code">next</a>( )</code>
+
+		<div class="description short">
+			<p>next</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>next</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Iterator.html">Iterator</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Iterator.html#_next">Iterator::next()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="valid" id="_valid">
+
+		<td class="attributes"><code>
+			 public 
+
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_valid">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#136-145" title="Go to source code">valid</a>( )</code>
+
+		<div class="description short">
+			<p>valid</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>valid</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-Iterator.html">Iterator</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Iterator.html#_valid">Iterator::valid()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isFirst" id="_isFirst">
+
+		<td class="attributes"><code>
+			 public 
+
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isFirst">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#147-156" title="Go to source code">isFirst</a>( )</code>
+
+		<div class="description short">
+			<p>isFirst
+Is the iterator on the first element ?</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>isFirst
+Is the iterator on the first element ?</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isLast" id="_isLast">
+
+		<td class="attributes"><code>
+			 public 
+
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isLast">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#158-168" title="Go to source code">isLast</a>( )</code>
+
+		<div class="description short">
+			<p>isLast</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>isLast</p>
+
+<p>Is the iterator on the last element ?</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isEmpty" id="_isEmpty">
+
+		<td class="attributes"><code>
+			 public 
+
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isEmpty">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#170-180" title="Go to source code">isEmpty</a>( )</code>
+
+		<div class="description short">
+			<p>isEmpty</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>isEmpty</p>
+
+<p>Is the collection empty (no element) ?</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isEven" id="_isEven">
+
+		<td class="attributes"><code>
+			 public 
+
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isEven">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#182-192" title="Go to source code">isEven</a>( )</code>
+
+		<div class="description short">
+			<p>isEven</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>isEven</p>
+
+<p>Is the iterator on an even position ?</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isOdd" id="_isOdd">
+
+		<td class="attributes"><code>
+			 public 
+
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isOdd">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#194-204" title="Go to source code">isOdd</a>( )</code>
+
+		<div class="description short">
+			<p>isOdd</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>isOdd</p>
+
+<p>Is the iterator on an odd position ?</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getOddEven" id="_getOddEven">
+
+		<td class="attributes"><code>
+			 public 
+
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getOddEven">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#206-218" title="Go to source code">getOddEven</a>( )</code>
+
+		<div class="description short">
+			<p>getOddEven</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getOddEven</p>
+
+<p>Return 'odd' or 'even' depending on the element index position.
+Useful to style list elements when printing lists to do
+<li class="line_<?php $list->getOddEven() ?>">.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="slice" id="_slice">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_slice">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#220-235" title="Go to source code">slice</a>( <span>string <var>$field</var></span> )</code>
+
+		<div class="description short">
+			<p>slice</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>slice</p>
+
+<p>Extract an array of values for one column.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$field</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>values
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="result" id="$result">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.Foundation.ResultIterator.html#29" title="Go to source code"><var>$result</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$result" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?2708423488"></script>
+</body>
+</html>

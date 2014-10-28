@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class PommProject\Foundation\Query\QueryPooler</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="namespace-PommProject.html">PommProject<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Cli.html">Cli<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Cli.Command.html">Command</a>
+						</li>
+				<li><a href="namespace-PommProject.Cli.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.Cli.Generator.html">Generator</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-PommProject.Foundation.html">Foundation<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Foundation.Client.html">Client</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Converter.html">Converter<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Foundation.Converter.Geometry.html">Geometry</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Converter.Type.html">Type</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.Foundation.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Inspector.html">Inspector</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Listener.html">Listener</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Observer.html">Observer</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
+						</li>
+				<li class="active"><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Tester.html">Tester</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.ModelManager.html">ModelManager<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Converter.html">Converter</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.ModelManager.ModelLayer.html">ModelLayer</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Tester.html">Tester</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-PommProject.Foundation.Query.QueryPooler.html">QueryPooler</a></li>
+				<li><a href="class-PommProject.Foundation.Query.SimpleQuery.html">SimpleQuery</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-PommProject.Foundation.Query.html" title="Summary of PommProject\Foundation\Query"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class QueryPooler</h1>
+
+
+	<div class="description">
+	<p>ClientPooler</p>
+
+<p>Base class for client poolers. ClientPooler instances are factories for
+Session's Client. The workflow of the ClientPooler is the following:
+When a client is called
+1   It is fetched from the pool
+2.0 If no client is found:
+2.1 The createClient() method is triggered.
+2.2 The client is registered to the session
+3   The client is returned back</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-PommProject.Foundation.Client.ClientPooler.html"><span>PommProject\Foundation\Client\ClientPooler</span></a>
+			
+			 implements 
+				<a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html"><span>PommProject\Foundation\Client\ClientPoolerInterface</span></a>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>PommProject\Foundation\Query\QueryPooler</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> PommProject\Foundation\Query<br>
+		<b>Package:</b> Foundation<br>
+
+				<b>Copyright:</b>
+				2014 Grégoire HUBERT
+<br>
+				<b>License:</b>
+				<a href="X11">{@link http://opensource.org/licenses/mit-license.php}</a><br>
+				<b>Author:</b>
+				Grégoire HUBERT
+<br>
+				<b>See:</b>
+				ClientPoolerInterface
+<br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.Query.QueryPooler.html#16-78" title="Go to source code">Query/QueryPooler.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="getPoolerType" id="_getPoolerType">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPoolerType">#</a>
+		<code><a href="source-class-PommProject.Foundation.Query.QueryPooler.html#19-27" title="Go to source code">getPoolerType</a>( )</code>
+
+		<div class="description short">
+			<p>getPoolerType</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getPoolerType</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						ClientPoolerInterface
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClientFromPool" id="_getClientFromPool">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClientFromPool">#</a>
+		<code><a href="source-class-PommProject.Foundation.Query.QueryPooler.html#29-41" title="Go to source code">getClientFromPool</a>( <span>string <var>$client</var></span> )</code>
+
+		<div class="description short">
+			<p>getClientFromPool</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getClientFromPool</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$client</var></dt>
+					<dd>$identifier
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code></code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-PommProject.Foundation.Client.ClientPooler.html">PommProject\Foundation\Client\ClientPooler</a></code></code><br>
+				</div>
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PommProject.Foundation.Client.ClientPooler.html#_getClientFromPool">PommProject\Foundation\Client\ClientPooler::getClientFromPool()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createClient" id="_createClient">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createClient">#</a>
+		<code><a href="source-class-PommProject.Foundation.Query.QueryPooler.html#43-63" title="Go to source code">createClient</a>( <span>string <var>$client</var></span> )</code>
+
+		<div class="description short">
+			<p>createClient</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>createClient</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$client</var></dt>
+					<dd>$client_class_name
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code></code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-PommProject.Foundation.Client.ClientPooler.html">PommProject\Foundation\Client\ClientPooler</a></code></code><br>
+				</div>
+				<h4>Throw</h4>
+				<div class="list">
+						FoundationException
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClient" id="_getClient">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClient">#</a>
+		<code><a href="source-class-PommProject.Foundation.Query.QueryPooler.html#65-77" title="Go to source code">getClient</a>( <span>string <var>$client</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>getPoolerType</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getPoolerType</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$client</var></dt>
+					<dd>$identifier
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code></code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-PommProject.Foundation.Client.ClientPooler.html">PommProject\Foundation\Client\ClientPooler</a></code></code><br>
+				</div>
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PommProject.Foundation.Client.ClientPooler.html#_getClient">PommProject\Foundation\Client\ClientPooler::getClient()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.ClientPooler.html#methods">PommProject\Foundation\Client\ClientPooler</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.Foundation.Client.ClientPooler.html#_getSession">getSession()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPooler.html#_register">register()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="listeners" id="$listeners">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.Foundation.Query.QueryPooler.html#18" title="Go to source code"><var>$listeners</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$listeners" class="anchor">#</a>
+				<code>[]</code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?2708423488"></script>
+</body>
+</html>

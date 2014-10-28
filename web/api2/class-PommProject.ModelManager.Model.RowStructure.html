@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class PommProject\ModelManager\Model\RowStructure</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="namespace-PommProject.html">PommProject<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Cli.html">Cli<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Cli.Command.html">Command</a>
+						</li>
+				<li><a href="namespace-PommProject.Cli.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.Cli.Generator.html">Generator</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.Foundation.html">Foundation<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Foundation.Client.html">Client</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Converter.html">Converter<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Foundation.Converter.Geometry.html">Geometry</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Converter.Type.html">Type</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.Foundation.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Inspector.html">Inspector</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Listener.html">Listener</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Observer.html">Observer</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Tester.html">Tester</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-PommProject.ModelManager.html">ModelManager<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Converter.html">Converter</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
+						</li>
+				<li class="active"><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.ModelManager.ModelLayer.html">ModelLayer</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Tester.html">Tester</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-PommProject.ModelManager.Model.CollectionIterator.html">CollectionIterator</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.CollectionQuery.html">CollectionQuery</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.HydrationPlan.html">HydrationPlan</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.IdentityMapper.html">IdentityMapper</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.Model.html">Model</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.ModelPooler.html">ModelPooler</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.Projection.html">Projection</a></li>
+				<li class="active"><a href="class-PommProject.ModelManager.Model.RowStructure.html">RowStructure</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-PommProject.ModelManager.Model.html" title="Summary of PommProject\ModelManager\Model"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class RowStructure</h1>
+
+
+	<div class="description">
+	<p>RowStructure</p>
+
+<p>Represent a composite structure like table or row.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>PommProject\ModelManager\Model\RowStructure</span></b>			
+			 implements 
+				<a href="class-ArrayAccess.html"><span>ArrayAccess</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> PommProject\ModelManager\Model<br>
+		<b>Package:</b> ModelManager<br>
+
+				<b>Copyright:</b>
+				2014 Grégoire HUBERT
+<br>
+				<b>License:</b>
+				<a href="MIT/X11">{@link http://opensource.org/licenses/mit-license.php}</a><br>
+				<b>Author:</b>
+				Grégoire HUBERT <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;:&#x68;&#x75;&#x62;&#x65;&#114;&#116;&#46;g&#x72;&#x65;&#x67;&#64;&#103;&#109;&#97;i&#x6c;&#x2e;&#x63;&#111;&#109;">&#x68;&#x75;&#x62;&#x65;&#114;&#116;&#46;g&#x72;&#x65;&#x67;&#64;&#103;&#109;&#97;i&#x6c;&#x2e;&#x63;&#111;&#109;</a>
+<br>
+		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.RowStructure.html#14-268" title="Go to source code">Model/RowStructure.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="setDefinition" id="_setDefinition">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDefinition">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#31-45" title="Go to source code">setDefinition</a>( <span>array <var>$definition</var></span> )</code>
+
+		<div class="description short">
+			<p>setDefinition</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>setDefinition</p>
+
+<p>Add a complete definition.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$definition</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code></code><br>$this
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="inherits" id="_inherits">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_inherits">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#47-63" title="Go to source code">inherits</a>( <span><code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code> <var>$structure</var></span> )</code>
+
+		<div class="description short">
+			<p>inherits</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>inherits</p>
+
+<p>Add inherited structure.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$structure</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code></code><br>$this
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setRelation" id="_setRelation">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setRelation">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#65-79" title="Go to source code">setRelation</a>( <span>string <var>$relation</var></span> )</code>
+
+		<div class="description short">
+			<p>setRelation</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>setRelation</p>
+
+<p>Set or change the relation.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$relation</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code></code><br>$this
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setPrimaryKey" id="_setPrimaryKey">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setPrimaryKey">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#81-95" title="Go to source code">setPrimaryKey</a>( <span>array <var>$primary_key</var></span> )</code>
+
+		<div class="description short">
+			<p>setPrimaryKey</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>setPrimaryKey</p>
+
+<p>Set or change the primary key definition.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$primary_key</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code></code><br>$this
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addField" id="_addField">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addField">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#97-115" title="Go to source code">addField</a>( <span>string <var>$name</var></span>, <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			<p>addField</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>addField</p>
+
+<p>Add a new field structure.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+					<dt><var>$type</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.ModelManager.Model.RowStructure.html">PommProject\ModelManager\Model\RowStructure</a></code></code><br>$this
+
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						ModelException if type or name is null
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFieldNames" id="_getFieldNames">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFieldNames">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#117-128" title="Go to source code">getFieldNames</a>( )</code>
+
+		<div class="description short">
+			<p>getFieldNames</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getFieldNames</p>
+
+<p>Return an array of all field names</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasField" id="_hasField">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasField">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#130-143" title="Go to source code">hasField</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>hasField</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>hasField</p>
+
+<p>Check if a field exist in the structure</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						ModelException if $name is null
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTypeFor" id="_getTypeFor">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTypeFor">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#145-158" title="Go to source code">getTypeFor</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>getTypeFor</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getTypeFor</p>
+
+<p>Return the type associated with the field</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>$type
+
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						ModelException if $name is null or name does not exist.
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDefinition" id="_getDefinition">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDefinition">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#160-170" title="Go to source code">getDefinition</a>( )</code>
+
+		<div class="description short">
+			<p>getDefinition</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getDefinition</p>
+
+<p>Return all fields and types</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRelation" id="_getRelation">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRelation">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#172-183" title="Go to source code">getRelation</a>( )</code>
+
+		<div class="description short">
+			<p>getRelation</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getRelation</p>
+
+<p>Return the relation name.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPrimaryKey" id="_getPrimaryKey">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPrimaryKey">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#185-196" title="Go to source code">getPrimaryKey</a>( )</code>
+
+		<div class="description short">
+			<p>getPrimaryKey</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getPrimaryKey</p>
+
+<p>Return the primary key definition.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetSet" id="_offsetSet">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetSet">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#237-243" title="Go to source code">offsetSet</a>( <span>mixed <var>$name</var></span>, <span>mixed <var>$type</var></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-ArrayAccess.html">ArrayAccess</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-ArrayAccess.html#_offsetSet">ArrayAccess::offsetSet()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetGet" id="_offsetGet">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetGet">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#245-251" title="Go to source code">offsetGet</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-ArrayAccess.html">ArrayAccess</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-ArrayAccess.html#_offsetGet">ArrayAccess::offsetGet()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetExists" id="_offsetExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetExists">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#253-259" title="Go to source code">offsetExists</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-ArrayAccess.html">ArrayAccess</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-ArrayAccess.html#_offsetExists">ArrayAccess::offsetExists()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetUnset" id="_offsetUnset">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetUnset">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.RowStructure.html#261-267" title="Go to source code">offsetUnset</a>( <span>mixed <var>$name</var></span> )</code>
+
+		<div class="description short">
+			
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-ArrayAccess.html">ArrayAccess</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-ArrayAccess.html#_offsetUnset">ArrayAccess::offsetUnset()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="primary_key" id="$primary_key">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.ModelManager.Model.RowStructure.html#27" title="Go to source code"><var>$primary_key</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$primary_key" class="anchor">#</a>
+				<code>[]</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="field_definitions" id="$field_definitions">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.ModelManager.Model.RowStructure.html#28" title="Go to source code"><var>$field_definitions</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$field_definitions" class="anchor">#</a>
+				<code>[]</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="relation" id="$relation">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.ModelManager.Model.RowStructure.html#29" title="Go to source code"><var>$relation</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$relation" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?2708423488"></script>
+</body>
+</html>

@@ -13,7 +13,7 @@ use PommProject\ModelManager\Model\RowStructure;
  * News
  *
  * Structure class for relation pomm.news.
- *
+ * 
  * Class and fields comments are inspected from table and fields comments.
  * Just add comments in your database and they will appear here.
  * @see http://www.postgresql.org/docs/9.0/static/sql-comment.html
@@ -25,11 +25,14 @@ use PommProject\ModelManager\Model\RowStructure;
 class News extends RowStructure
 {
     /**
-     * initialize
+     * __construct
      *
-     * @see RowStructure
+     * Structure definition.
+     *
+     * @access public
+     * @return null
      */
-    protected function initialize()
+    public function __construct()
     {
         $this
             ->setRelation('pomm.news')

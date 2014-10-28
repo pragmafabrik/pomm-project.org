@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class PommProject\ModelManager\Model\Projection</title>
+
+	<link rel="stylesheet" href="resources/style.css?1648332946">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+				<li class="active"><a href="namespace-PommProject.html">PommProject<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Cli.html">Cli<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Cli.Command.html">Command</a>
+						</li>
+				<li><a href="namespace-PommProject.Cli.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.Cli.Generator.html">Generator</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.Foundation.html">Foundation<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Foundation.Client.html">Client</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Converter.html">Converter<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.Foundation.Converter.Geometry.html">Geometry</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Converter.Type.html">Type</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.Foundation.Exception.html">Exception</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Inspector.html">Inspector</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Listener.html">Listener</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Observer.html">Observer</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
+						</li>
+				<li><a href="namespace-PommProject.Foundation.Tester.html">Tester</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-PommProject.ModelManager.html">ModelManager<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Converter.html">Converter</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
+						</li>
+				<li class="active"><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
+						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
+						</li>
+							</ul></li>
+				<li><a href="namespace-PommProject.ModelManager.ModelLayer.html">ModelLayer</a>
+						</li>
+				<li><a href="namespace-PommProject.ModelManager.Tester.html">Tester</a>
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-PommProject.ModelManager.Model.CollectionIterator.html">CollectionIterator</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.CollectionQuery.html">CollectionQuery</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.HydrationPlan.html">HydrationPlan</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.IdentityMapper.html">IdentityMapper</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.Model.html">Model</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.ModelPooler.html">ModelPooler</a></li>
+				<li class="active"><a href="class-PommProject.ModelManager.Model.Projection.html">Projection</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.RowStructure.html">RowStructure</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-PommProject.ModelManager.Model.html" title="Summary of PommProject\ModelManager\Model"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Projection</h1>
+
+
+	<div class="description">
+	<p>Projection</p>
+
+<p>Define the content of SELECT or RETURNING (projection) statements.</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> PommProject\ModelManager\Model<br>
+		<b>Package:</b> Pomm<br>
+
+				<b>Copyright:</b>
+				2014 Grégoire HUBERT
+<br>
+				<b>License:</b>
+				<a href="X11">{@link http://opensource.org/licenses/mit-license.php}</a><br>
+				<b>Author:</b>
+				Grégoire HUBERT
+<br>
+		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.Projection.html#14-334" title="Go to source code">Model/Projection.php</a><br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#30-46" title="Go to source code">__construct</a>( <span>array <var>$flexible_entity_class</var></span>, <span>array <var>$structure</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>__construct</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>__construct</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$flexible_entity_class</var></dt>
+					<dd>$structure list of field names with types.
+</dd>
+					<dt><var>$structure</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFlexibleEntityClass" id="_getFlexibleEntityClass">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFlexibleEntityClass">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#48-59" title="Go to source code">getFlexibleEntityClass</a>( )</code>
+
+		<div class="description short">
+			<p>getFlexibleEntityClass</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getFlexibleEntityClass</p>
+
+<p>Get the flexible entity class associated with this projection.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setField" id="_setField">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setField">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#61-83" title="Go to source code">setField</a>( <span>string <var>$name</var></span>, <span>string <var>$content</var></span>, <span>string <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>setField</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>setField</p>
+
+<p>Set a field with a content. This override previous definition if exist.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+					<dt><var>$content</var></dt>
+					<dd>
+</dd>
+					<dt><var>$type</var></dt>
+					<dd>(null)
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code></code><br>$this
+
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						InvalidArgumentException if $name or $content is null
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setFieldType" id="_setFieldType">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setFieldType">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#85-101" title="Go to source code">setFieldType</a>( <span>string <var>$name</var></span>, <span>string <var>$type</var></span> )</code>
+
+		<div class="description short">
+			<p>setFieldType</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>setFieldType</p>
+
+<p>Set or override a field type definition.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+					<dt><var>$type</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code></code><br>$this
+
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						ModelException if name is null or does not exist.
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="unsetField" id="_unsetField">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_unsetField">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#103-120" title="Go to source code">unsetField</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>unsetField</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>unsetField</p>
+
+<p>Unset an existing field</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code></code><br>$this
+
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						ModelException if field $name does not exist.
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hasField" id="_hasField">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hasField">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#122-134" title="Go to source code">hasField</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>hasField</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>hasField</p>
+
+<p>Return if the given field exist.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFieldType" id="_getFieldType">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFieldType">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#136-151" title="Go to source code">getFieldType</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>getFieldType</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getFieldType</p>
+
+<p>Return the type associated with the given field.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>null if type is not set
+
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						ModelException if $name is null or field does not exist
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isArray" id="_isArray">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isArray">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#153-167" title="Go to source code">isArray</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>isArray</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>isArray</p>
+
+<p>Tel if a field is an array.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code>
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						ModelException if $name does not exist.
+<br>
+						InvalidArgumentException if $name is null
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFieldNames" id="_getFieldNames">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFieldNames">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#169-180" title="Go to source code">getFieldNames</a>( )</code>
+
+		<div class="description short">
+			<p>getFieldNames</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getFieldNames</p>
+
+<p>Return fields names list.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>fields list
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFieldTypes" id="_getFieldTypes">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFieldTypes">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#182-201" title="Go to source code">getFieldTypes</a>( )</code>
+
+		<div class="description short">
+			<p>getFieldTypes</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getFieldTypes</p>
+
+<p>Return an array with the known types.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFieldWithTableAlias" id="_getFieldWithTableAlias">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFieldWithTableAlias">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#203-220" title="Go to source code">getFieldWithTableAlias</a>( <span>string <var>$name</var></span>, <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>getFieldWithTableAlias</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getFieldWithTableAlias</p>
+
+<p>Prepend the field name with alias if given.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>
+</dd>
+					<dt><var>$table_alias</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						ModelException if $name does not exist.
+<br>
+						InvalidArgumentException if $name is null
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getFieldsWithTableAlias" id="_getFieldsWithTableAlias">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getFieldsWithTableAlias">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#222-241" title="Go to source code">getFieldsWithTableAlias</a>( <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>getFieldsWithTableAlias</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getFieldsWithTableAlias</p>
+
+<p>Return the array of fields with table aliases expanded.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_alias</var></dt>
+					<dd>(null)
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="formatFields" id="_formatFields">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_formatFields">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#243-256" title="Go to source code">formatFields</a>( <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>formatFields</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>formatFields</p>
+
+<p>Return a formatted string with fields like
+a.field1, a.field2, ..., a.fieldN</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_alias</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="formatFieldsWithFieldAlias" id="_formatFieldsWithFieldAlias">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_formatFieldsWithFieldAlias">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#258-282" title="Go to source code">formatFieldsWithFieldAlias</a>( <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>formatFieldsWithFieldAlias</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>formatFieldsWithFieldAlias</p>
+
+<p>Return a formatted string with fields like
+a.field1 AS field1, a.field2 AS fields2, ...</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$table_alias</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__toString" id="___toString">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___toString">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#284-295" title="Go to source code">__toString</a>( )</code>
+
+		<div class="description short">
+			<p>__toString</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>__toString</p>
+
+<p>String representation = formatFieldsWithFieldAlias().</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="flexible_entity_class" id="$flexible_entity_class">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.ModelManager.Model.Projection.html#26" title="Go to source code"><var>$flexible_entity_class</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$flexible_entity_class" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="fields" id="$fields">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.ModelManager.Model.Projection.html#27" title="Go to source code"><var>$fields</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$fields" class="anchor">#</a>
+				<code>[]</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="types" id="$types">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.ModelManager.Model.Projection.html#28" title="Go to source code"><var>$types</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$types" class="anchor">#</a>
+				<code>[]</code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?721046668"></script>
+<script src="elementlist.js?2708423488"></script>
+</body>
+</html>

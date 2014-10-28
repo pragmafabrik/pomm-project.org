@@ -45,12 +45,10 @@ if (preg_match('/^dev/', ENV))
     $app->register(new Provider\MonologServiceProvider(), array(
         'monolog.logfile' => PROJECT_DIR.'/log/app.log'
         ));
-    /*
-    $app['pomm.connection'] = $app->share($app->extend(
-        'pomm.connection',
-        function($connection, $app) { $connection->setLogger($app['monolog']); return $connection; }
+    $app['pomm'] = $app->share($app->extend(
+        'pomm',
+        function($pomm, $app) { $pomm->setLogger($app['monolog']); return $pomm;}
         ));
-     */
 }
 
 return $app;
