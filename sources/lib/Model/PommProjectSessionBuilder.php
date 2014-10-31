@@ -21,4 +21,15 @@ use Psr\Log\LoggerInterface;
  */
 class PommProjectSessionBuilder extends SessionBuilder
 {
+    protected function postConfigure(Session $session)
+    {
+        parent::postConfigure($session);
+
+        $session
+            ->getClientUsingPooler('listener', 'query')
+            ->attachAction(function($name, $data, $session) {
+                $session->hasLogger() &&
+                    $session->getLogger()->info('SQL query', $data);
+            });
+    }
 }

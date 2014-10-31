@@ -56,7 +56,6 @@ select
 from
     :news_table n
 order by n.published_at desc
-offset $* limit $*
 SQL;
 
         $projection = $this
@@ -65,18 +64,17 @@ SQL;
             ->setField('content', "cut_nicely(regexp_replace(substr(%content, 1, 900), '<[^>]+>', ' ', 'g'), 450)", 'text')
             ;
 
-        $sql = strtr($sql, array(
-            ':news_fields' => $projection->formatFieldsWithFieldAlias('n'),
-            ':news_table' => $this->structure->getRelation(),
-        ));
+        $sql = strtr(
+            $sql,
+            [
+                ':news_fields' => $projection->formatFieldsWithFieldAlias('n'),
+                ':news_table' => $this->structure->getRelation(),
+            ]
+        );
 
-        $offset = (int) ($page - 1) * $mpp;
-        $limit  = (int) $mpp;
-
-        $collection = $this->query($sql, [$offset, $limit], $projection);
         $count = $this->countWhere(new Where());
 
-        return new Pager($collection, $count, $mpp, $page);
+        return $this->paginateQuery($sql, [], $count, $mpp, $page, $projection);
     }
 
     /**
