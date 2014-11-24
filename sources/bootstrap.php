@@ -1,7 +1,6 @@
 <?php #sources/bootstrap.php
 
 use Silex\Provider;
-use PommProject\Foundation\Pomm;
 
 // This script sets up the application DI with services.
 
@@ -32,9 +31,9 @@ $app->register(new Provider\SessionServiceProvider());
 $app->register(new Provider\TwigServiceProvider(), array(
     'twig.path' => array(PROJECT_DIR.'/sources/twig'),
 ));
-$app['pomm'] = $app->share(function() use ($app) {
-    return new Pomm($app['config.pomm.dsn'][ENV]);
-});
+$app->register(new PommProject\Silex\ServiceProvider\PommServiceProvider(), array(
+    'pomm.configuration' => $app['config.pomm.dsn'][ENV]
+));
 
 // Service container customization.
 $app['loader'] = $loader;
@@ -43,11 +42,8 @@ if (preg_match('/^dev/', ENV))
 {
     $app['debug'] = true;
     $app->register(new Provider\MonologServiceProvider(), array(
-        'monolog.logfile' => PROJECT_DIR.'/log/app.log'
-        ));
-    $app['pomm'] = $app->share($app->extend(
-        'pomm',
-        function($pomm, $app) { $pomm->setLogger($app['monolog']); return $pomm;}
+        'monolog.logfile' => PROJECT_DIR.'/log/app.log',
+        'monolog.level'   => Monolog\Logger::INFO,
         ));
 }
 

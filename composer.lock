@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "df2ac2e6261ef8cb201779eddddafbb1",
+    "hash": "85fad2c048f35f70bf59b0bcdc4a2f8a",
     "packages": [
         {
             "name": "monolog/monolog",
@@ -176,12 +176,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/Foundation.git",
-                "reference": "7fff12fbbfd17da5a6892ca73396e83a20c6fe6c"
+                "reference": "95289b0d772b401f6fd14e420a8bbd3829ef1cde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/7fff12fbbfd17da5a6892ca73396e83a20c6fe6c",
-                "reference": "7fff12fbbfd17da5a6892ca73396e83a20c6fe6c",
+                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/95289b0d772b401f6fd14e420a8bbd3829ef1cde",
+                "reference": "95289b0d772b401f6fd14e420a8bbd3829ef1cde",
                 "shasum": ""
             },
             "require": {
@@ -216,7 +216,7 @@
                 "framework",
                 "postgresql"
             ],
-            "time": "2014-10-30 15:29:47"
+            "time": "2014-11-23 20:47:42"
         },
         {
             "name": "pomm-project/model-manager",
@@ -224,12 +224,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/ModelManager.git",
-                "reference": "35bbe5352e18a834602ec16904831ceb4c2e2357"
+                "reference": "272e91775d772eda642f123e2128781fd87fe016"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/ModelManager/zipball/35bbe5352e18a834602ec16904831ceb4c2e2357",
-                "reference": "35bbe5352e18a834602ec16904831ceb4c2e2357",
+                "url": "https://api.github.com/repos/pomm-project/ModelManager/zipball/272e91775d772eda642f123e2128781fd87fe016",
+                "reference": "272e91775d772eda642f123e2128781fd87fe016",
                 "shasum": ""
             },
             "require": {
@@ -268,7 +268,50 @@
                 "orm",
                 "postgresql"
             ],
-            "time": "2014-10-30 13:38:15"
+            "time": "2014-11-12 23:38:00"
+        },
+        {
+            "name": "pomm-project/pomm-service-provider",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pomm-project/pomm-service-provider.git",
+                "reference": "70b0fb71edcb0a9ca6925c3b25103b2e1a9dca3f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pomm-project/pomm-service-provider/zipball/70b0fb71edcb0a9ca6925c3b25103b2e1a9dca3f",
+                "reference": "70b0fb71edcb0a9ca6925c3b25103b2e1a9dca3f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.4",
+                "pomm-project/foundation": "dev-master",
+                "silex/silex": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PommProject\\Silex\\ServiceProvider\\": "sources/lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire HUBERT",
+                    "email": "hubert.greg@gmail.com"
+                }
+            ],
+            "description": "Pomm Service Provider for the Silex microframework.",
+            "homepage": "http://www.pomm-project.org",
+            "keywords": [
+                "pomm",
+                "silex"
+            ],
+            "time": "2014-11-23 21:11:07"
         },
         {
             "name": "psr/log",
@@ -393,17 +436,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.5.6",
+            "version": "v2.5.7",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "6f177fca24200a5b97aef5ce7a5c98124a0f0db0"
+                "reference": "61b13c27c9258e97009249d4ef193c964bf346b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/6f177fca24200a5b97aef5ce7a5c98124a0f0db0",
-                "reference": "6f177fca24200a5b97aef5ce7a5c98124a0f0db0",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/61b13c27c9258e97009249d4ef193c964bf346b7",
+                "reference": "61b13c27c9258e97009249d4ef193c964bf346b7",
                 "shasum": ""
             },
             "require": {
@@ -444,21 +487,21 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-10-05 13:57:04"
+            "time": "2014-11-20 13:22:25"
         },
         {
             "name": "symfony/debug",
-            "version": "v2.5.6",
+            "version": "v2.5.7",
             "target-dir": "Symfony/Component/Debug",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "2538d5099b9728b6ca09b261566a766f4f847459"
+                "reference": "6a7289a58ddcb270568b42f1e46e0cfc60a3e6ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/2538d5099b9728b6ca09b261566a766f4f847459",
-                "reference": "2538d5099b9728b6ca09b261566a766f4f847459",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/6a7289a58ddcb270568b42f1e46e0cfc60a3e6ba",
+                "reference": "6a7289a58ddcb270568b42f1e46e0cfc60a3e6ba",
                 "shasum": ""
             },
             "require": {
@@ -499,21 +542,21 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2014-10-24 05:49:22"
+            "time": "2014-11-20 13:22:25"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.5.6",
+            "version": "v2.5.7",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "804eb28dbbfba9ffdab21fe2066744906cea2212"
+                "reference": "bb6fc12085cd195dceaf48016087b12b632df497"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/804eb28dbbfba9ffdab21fe2066744906cea2212",
-                "reference": "804eb28dbbfba9ffdab21fe2066744906cea2212",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/bb6fc12085cd195dceaf48016087b12b632df497",
+                "reference": "bb6fc12085cd195dceaf48016087b12b632df497",
                 "shasum": ""
             },
             "require": {
@@ -556,21 +599,21 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-10-01 15:43:05"
+            "time": "2014-10-30 20:17:55"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v2.5.6",
+            "version": "v2.5.7",
             "target-dir": "Symfony/Component/HttpFoundation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "56111fc8ba8bcad93d367532babecc6ce17f66ce"
+                "reference": "24545d3def96e6d6c3d7f1efdb48f330f27e244d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/56111fc8ba8bcad93d367532babecc6ce17f66ce",
-                "reference": "56111fc8ba8bcad93d367532babecc6ce17f66ce",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/24545d3def96e6d6c3d7f1efdb48f330f27e244d",
+                "reference": "24545d3def96e6d6c3d7f1efdb48f330f27e244d",
                 "shasum": ""
             },
             "require": {
@@ -609,21 +652,21 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-10-24 05:49:22"
+            "time": "2014-11-20 13:22:25"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v2.5.6",
+            "version": "v2.5.7",
             "target-dir": "Symfony/Component/HttpKernel",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "cf8f6935f383cf5501499fef7677c36d4205e398"
+                "reference": "03b9f8fbfe75044ff6ca923e6471f117faf7b965"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/cf8f6935f383cf5501499fef7677c36d4205e398",
-                "reference": "cf8f6935f383cf5501499fef7677c36d4205e398",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/03b9f8fbfe75044ff6ca923e6471f117faf7b965",
+                "reference": "03b9f8fbfe75044ff6ca923e6471f117faf7b965",
                 "shasum": ""
             },
             "require": {
@@ -681,21 +724,21 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2014-10-24 06:55:39"
+            "time": "2014-11-20 16:00:03"
         },
         {
             "name": "symfony/routing",
-            "version": "v2.5.6",
+            "version": "v2.5.7",
             "target-dir": "Symfony/Component/Routing",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
-                "reference": "c7e381f571aac1de9e06f2bac2097984c543096a"
+                "reference": "f3f5f31d5e227c51eed7ba8b1ed809a97ebaa341"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Routing/zipball/c7e381f571aac1de9e06f2bac2097984c543096a",
-                "reference": "c7e381f571aac1de9e06f2bac2097984c543096a",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/f3f5f31d5e227c51eed7ba8b1ed809a97ebaa341",
+                "reference": "f3f5f31d5e227c51eed7ba8b1ed809a97ebaa341",
                 "shasum": ""
             },
             "require": {
@@ -748,21 +791,21 @@
                 "uri",
                 "url"
             ],
-            "time": "2014-10-24 05:49:22"
+            "time": "2014-11-03 20:24:10"
         },
         {
             "name": "symfony/twig-bridge",
-            "version": "v2.3.21",
+            "version": "v2.3.22",
             "target-dir": "Symfony/Bridge/Twig",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/TwigBridge.git",
-                "reference": "95391a8511a998bb065abc125efe8a212394a448"
+                "reference": "a5e63c78fb235073c542b343ab39b1cf2787e589"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/TwigBridge/zipball/95391a8511a998bb065abc125efe8a212394a448",
-                "reference": "95391a8511a998bb065abc125efe8a212394a448",
+                "url": "https://api.github.com/repos/symfony/TwigBridge/zipball/a5e63c78fb235073c542b343ab39b1cf2787e589",
+                "reference": "a5e63c78fb235073c542b343ab39b1cf2787e589",
                 "shasum": ""
             },
             "require": {
@@ -770,6 +813,7 @@
                 "twig/twig": "~1.12"
             },
             "require-dev": {
+                "symfony/finder": "~2.3",
                 "symfony/form": "~2.2",
                 "symfony/http-kernel": "~2.2",
                 "symfony/routing": "~2.2",
@@ -779,6 +823,7 @@
                 "symfony/yaml": "~2.0"
             },
             "suggest": {
+                "symfony/finder": "",
                 "symfony/form": "",
                 "symfony/http-kernel": "",
                 "symfony/routing": "",
@@ -814,7 +859,7 @@
             ],
             "description": "Symfony Twig Bridge",
             "homepage": "http://symfony.com",
-            "time": "2014-10-10 22:07:13"
+            "time": "2014-11-17 16:27:42"
         },
         {
             "name": "twig/twig",
@@ -878,9 +923,10 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "pomm-project/pomm-service-provider": 20,
         "pomm-project/cli": 20,
-        "pomm-project/foundation": 20,
-        "pomm-project/model-manager": 20
+        "pomm-project/model-manager": 20,
+        "pomm-project/foundation": 20
     },
     "prefer-stable": false,
     "platform": [],
