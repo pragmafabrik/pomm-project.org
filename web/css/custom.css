@@ -1,3 +1,13 @@
+body {
+  margin-top: 10px;
+ }
+
+html {
+  background:url('/images/background.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 blockquote { font-style: italic; font-size: 120%; }
 pre.vim { white-space: pre-wrap; font-family: monospace; color: #f6f3e8; background-color: #000000; }
 pre .lnr { color: #3d3d3d; background-color: #000000; }
