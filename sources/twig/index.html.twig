@@ -1,22 +1,10 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}home{% endblock %}
+{% block css %}        <link href="/css/index.css" rel="stylesheet" media="screen" />
+{% endblock %}
 
 {% block content %}
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-                <h3><img src="/images/flag.png" width="32" /> About Pomm</h3>
-              </div>
-              <div class="panel-body">
-                <p style="font-size: 140%; font-style: italic;">
-                  Pomm is an open source PHP database access framework coupled with an Object Model Manager dedicated to the Postgresql™ database. It offers an alternative approach than ORM to using database in web developments.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="row">
           <div class="col-md-4">
             <div class="panel panel-info">
@@ -37,7 +25,7 @@
               </div>
               <div class="panel-body">
               <strong>Be productive in a matter of seconds.</strong>
-              <p>With its client oriented kernel, Pomm2 gives an easy access to powerful Postgresql features. It also comes with a CLI tool to help developers inspect database structures and generate mapping classes.<br />Using a modular distribution is the best way to comply with everyone way of doing the things done.</p>
+              <p>With its client oriented kernel, Pomm2 gives an easy access to powerful Postgresql features. It also comes with a CLI tool to help developers inspect database structures and generate mapping classes.<br />Using a modular distribution is the best way to comply with everyone's way of doing the things done.</p>
               </div>
             </div>
           </div>
