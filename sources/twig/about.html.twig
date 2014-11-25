@@ -2,6 +2,9 @@
 
 {% block title %}About Pomm{% endblock %}
 
+{% block css %}    <link href="/css/vim.css" rel="stylesheet" media="screen" />
+{% endblock %}
+
 {% block content %}
         <div class="row">
           <div class="col-md-12">
@@ -16,14 +19,16 @@
               </p>
               <h3>Classes Vs sets</h3>
               <p>Object Relational Mappers try to grant developers with an object oriented API of the database. To do so they present database's tables as entities class definitions. Roughly, one class =&gt; one table so one record =&gt; one instance. This static structure definition puts handcuffs on the database engine since relational databases deal with sets and <strong>sets are extendible</strong> by definition. Being extendible does not mean «support for change», of course a database structure can change, extendible means sets can be transformed through SQL manipulation.</p>
-              <pre class="vim"><span class="lnr">1 </span><span class="Statement">SELECT</span> letter <span class="Special">FROM</span> (<span class="Special">VALUES</span> (<span class="String">'a'</span>, <span class="Number">1</span>), (<span class="String">'b'</span>, <span class="Number">2</span>), (<span class="String">'c'</span>, <span class="Number">3</span>)) <span class="Special">AS</span> my_set (letter, <span class="Function">position</span>);</pre>
+              <pre class="vimsql"><span class="Statement">SELECT</span> letter <span class="Special">FROM</span> (<span class="Special">VALUES</span> (<span class="String">'a'</span>, <span class="Number">1</span>), (<span class="String">'b'</span>, <span class="Number">2</span>), (<span class="String">'c'</span>, <span class="Number">3</span>)) <span class="Special">AS</span> my_set (letter, <span class="Function">position</span>);</pre>
               <p>The example below shows how to project a part of a static set. In a way, <strong>tables are just persistent sets</strong>. To return a set in a SQL database you need to use a projection operator known as <code>SELECT</code> which defines what set the database is going to return. </p>
               <p>Enforcing the cast of a static class definition in the relational world means engraving projections in stone plates hence loosing query control. In some way, ORM can create simplistic joins to fetch several linked entities but still we are far from what SQL can do in terms of combining sets to shape collections of entities.</p>
               <div class="row">
               <div class="col-md-6"><img src="/images/pomm-entity.png" width="448"/></div>
               <div class="col-md-6"><p>In Pomm, a set database structure is held by a mapping class instance. It defines a projection between the set and a schemaless entity class. In fact, each query defines a set developers choose to inject into typed schemaless entities.</p><p>For example, if a <code>student</code> in the database holds the student password, it is possible to change the projection not to hydrate <code>Student</code> entities with this information, it is also possible to add a new attribute named <code>age</code> computed by the database from the student's birth date.</p>
               <p>This projection operator works with every builtin queries and there are helpers to use it in custom queries. It is even possible to create custom projection methods.</p>
-              <p>Postgresql also proposes another projection operator: <code>RETURNING</code>. It can turn every <code>INSERT, UPDATE, DELETE</code> into a projection. With Pomm you can do:<pre class="vim"><span class="lnr">1 </span><span class="Operator">$</span><span class="Identifier">student</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">student_map</span><span class="Type">-&gt;</span>deleteByPK<span class="Delimiter">(</span><span class="Type">array</span><span class="Delimiter">(</span>'<span class="String">student_id</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Number">2</span><span class="Delimiter">))</span>;</pre> It will delete the given student from the database and if it exists, return an according entity hydrated using the configured projection.</p> </div>
+              <p>Postgresql also proposes another projection operator: <code>RETURNING</code>. It can turn every <code>INSERT, UPDATE, DELETE</code> into a projection. With Pomm you can do:
+              <pre class="vimphp"><span class="Operator">$</span><span class="Identifier">student</span> <span class="Operator">=</span>
+    <span class="Operator">$</span><span class="Identifier">student_map</span><span class="Type">-&gt;</span>deleteByPK<span class="Delimiter">(</span><span class="Type">array</span><span class="Delimiter">(</span>'<span class="String">student_id</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Number">2</span><span class="Delimiter">))</span>;</pre> It will delete the given student from the database and if it exists, return an according entity hydrated using the configured projection.</p> </div>
               </div><!-- row -->
               <h3>The cost of database abstraction (DBAL)</h3>
               <p>Database abstraction is a very interesting promise for developers: they can access and use all different databases the same way. It makes general purpose frameworks able to give developers access to any databases and it allows to write generic software (forum or blog plate-form) without the itch of managing database specific code.</p>
@@ -49,9 +54,7 @@
               <dd>&#10149; custom types</dd>
               </dl>
               Postgresql also proposes a bunch of functions and operators that interact with those types. The example below asks the database if a circle centered in <code>(1,1)</code> with radius 1 owns the point <code>(0,0)</code>:
-              <pre class="vim">
-              <span class="lnr">1 </span><span class="Statement">SELECT</span> <span class="Type">circle</span> <span class="String">'((1,1), 1)'</span> @&gt; <span class="Type">point</span> <span class="String">'(0,0)'</span>; <span class="Comment">-- returns false</span>
-              </pre> This makes developers to easily query and sort results on distance, position etc.</p>
+              <pre class="vimsql"><span class="Statement">SELECT</span> <span class="Type">circle</span> <span class="String">'((1,1), 1)'</span> @&gt; <span class="Type">point</span> <span class="String">'(0,0)'</span>; <span class="Comment">-- returns false</span></pre> This makes developers to easily query and sort results on distance, position etc.</p>
               <div class="row">
               <div class="col-md-6"><img src="/images/pomm-converter.png" width="448" /></div>
               <div class="col-md-6">
@@ -60,46 +63,44 @@
               </div>
               <h3>Heading for performances</h3>
               <p>Like many ORM do today, in order to combine performances and security, all statements are prepared prior to execution. With Pomm, prepared statements are also pooled so if they are issued more than once, the prepared query is re-used automatically.
-              <pre class="vim">
-              <span class="lnr">1 </span><span class="Operator">$</span><span class="Identifier">map</span><span class="Type">-&gt;</span>findWhere<span class="Delimiter">(</span>'<span class="String">birth_date &gt;= $* AND gender = $*</span>', <span class="Delimiter">[</span> <span class="PreProc">new</span> \DateTime<span class="Delimiter">(</span>'<span class="String">1994-01-01</span>'<span class="Delimiter">)</span>, '<span class="String">M</span>' <span class="Delimiter">])</span>;
-              <span class="lnr">2 </span><span class="Operator">$</span><span class="Identifier">map</span><span class="Type">-&gt;</span>findWhere<span class="Delimiter">(</span>'<span class="String">birth_date &gt;= $* AND gender = $*</span>', <span class="Delimiter">[</span> <span class="PreProc">new</span> \DateTime<span class="Delimiter">(</span>'<span class="String">1996-05-31</span>'<span class="Delimiter">)</span>, '<span class="String">F</span>' <span class="Delimiter">])</span>;
-              </pre>
+              <pre class="vimphp">
+<span class="Operator">$</span><span class="Identifier">map</span><span class="Type">-&gt;</span>findWhere<span class="Delimiter">(</span>'<span class="String">birth_date &gt;= $* AND gender = $*</span>', <span class="Delimiter">[</span> <span class="PreProc">new</span> \DateTime<span class="Delimiter">(</span>'<span class="String">1994-01-01</span>'<span class="Delimiter">)</span>, '<span class="String">M</span>' <span class="Delimiter">])</span>;
+<span class="Operator">$</span><span class="Identifier">map</span><span class="Type">-&gt;</span>findWhere<span class="Delimiter">(</span>'<span class="String">birth_date &gt;= $* AND gender = $*</span>', <span class="Delimiter">[</span> <span class="PreProc">new</span> \DateTime<span class="Delimiter">(</span>'<span class="String">1996-05-31</span>'<span class="Delimiter">)</span>, '<span class="String">F</span>' <span class="Delimiter">])</span>;</pre>
               Both queries above use the same prepared statement.</p>
               <p>Pomm 1.2 switched from PDO to native PHP's Postgresql API. This resulted in a real performances boost in addition of consuming less memory to fetch data from database. PDO's postgresql driver does not support scrollable cursor on results, collection had to keep results in memory to be iterated over more than once.</p>
               <h3>SQL as query language</h3>
               <p>Structured Query Language has 40 years of experience in manipulating sets and querying data. Programmers in the past had problem building dynamic queries. This has been replaced today with ORM's query builders. Of course using an object oriented API to build queries is easier and more testable than using old tedious string operations but in the end, the result shows same complexity with added tables as joins, added conditions in the <code>WHERE</code> clause, added fields in the <code>SELECT</code> part.</p>
               <p>Pomm chose not to propose a query builder but a <code>Where</code> clause builder that could be used in generic methods and custom SQL queries instead.</p>
-              <pre class="vim">
-              <span class="lnr">1 </span><span class="Operator">$</span><span class="Identifier">where</span> <span class="Operator">=</span> \Pomm\Query\Where<span class="Operator">::</span>create<span class="Delimiter">(</span>'<span class="String">birth_date &gt;= $*</span>', <span class="Delimiter">[</span> <span class="PreProc">new</span> \DateTime<span class="Delimiter">(</span>'<span class="String">1994-01-01</span>'<span class="Delimiter">)</span> <span class="Delimiter">])</span>
-              <span class="lnr">2 </span>    <span class="Type">-&gt;</span>andWhere<span class="Delimiter">(</span>'<span class="String">gender = $*</span>', <span class="Delimiter">[</span>'<span class="String">M</span>'<span class="Delimiter">])</span>;
-              <span class="lnr">3 </span>
-              <span class="lnr">4 </span><span class="Operator">$</span><span class="Identifier">students</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">student_map</span><span class="Type">-&gt;</span>findWhere<span class="Delimiter">(</span><span class="Operator">$</span><span class="Identifier">where</span><span class="Delimiter">)</span>;</pre>
-              <p>For complex queries, SQL is the best candidate for the job. Pomm proposes a smooth integration with the PHP layer using query helpers. The following example lists nearest cycle stations with available slots from a given station name. Fields list and table name are replaced by a placeholder wich is substitued at the end so developers keep concentrating on what the query does and this allow structure to change without changing the query. This query will return a collection (an iterator) on <code>Station</code> entities augmented with the <code>distance</code> information.</p><pre class="vim">
-              <span class="lnr">1  </span>    <span class="StorageClass">public</span> <span class="Define">function</span> getNearestFrom<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">name</span><span class="Special">)</span>
-              <span class="lnr">2  </span>    <span class="Special">{</span>
-                <span class="lnr">3  </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">&lt;&lt;&lt;</span><span class="Special">SQL</span>
-                  <span class="lnr">4  </span><span class="Statement">SELECT</span>
-                  <span class="lnr">5  </span>  :station_fields,
-                  <span class="lnr">6  </span>  station.coord &lt;-&gt; near_station.coord <span class="Special">AS</span> distance
-                    <span class="lnr">7  </span><span class="Special">FROM</span>
-                    <span class="lnr">8  </span>  :station_table station
-                    <span class="lnr">9  </span>    <span class="Function">LEFT</span> <span class="Special">JOIN</span> :station_table near_station <span class="Special">ON</span> near_station.name &lt;&gt; station.name
-                    <span class="lnr">10 </span><span class="Special">WHERE</span>
-                    <span class="lnr">11 </span>    station.name = $*
-                    <span class="lnr">12 </span>  <span class="Statement">AND</span>
-                    <span class="lnr">13 </span>    near_station.available_slots &gt; <span class="Number">0</span>
-                    <span class="lnr">14 </span><span class="Special">ORDER</span> <span class="Special">BY</span>
-                    <span class="lnr">15 </span>  distance <span class="Special">ASC</span>
-                    <span class="lnr">16 </span><span class="Special">SQL</span>;
-                <span class="lnr">17 </span>
-                  <span class="lnr">18 </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Function">strtr</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Special">[</span>
-                      <span class="lnr">19 </span>            '<span class="String">:station_fields</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>formatFieldsWithAlias<span class="Special">(</span>'<span class="String">getSelectFields</span>', '<span class="String">near_station</span>'<span class="Special">)</span>,
-                      <span class="lnr">20 </span>            '<span class="String">:station_table</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>getTableName<span class="Special">()</span>
-                      <span class="lnr">21 </span>            <span class="Special">])</span>;
-                <span class="lnr">22 </span>
-                  <span class="lnr">23 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>query<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Special">[</span> <span class="Operator">$</span><span class="Identifier">name</span> <span class="Special">])</span>;
-                <span class="lnr">24 </span>    <span class="Special">}</span>
-                </pre> 
+<pre class="vimphp">
+<span class="Operator">$</span><span class="Identifier">where</span> <span class="Operator">=</span> \Pomm\Query\Where<span class="Operator">::</span>create<span class="Delimiter">(</span>'<span class="String">birth_date &gt;= $*</span>', <span class="Delimiter">[</span> <span class="PreProc">new</span> \DateTime<span class="Delimiter">(</span>'<span class="String">1994-01-01</span>'<span class="Delimiter">)</span> <span class="Delimiter">])</span>
+    <span class="Type">-&gt;</span>andWhere<span class="Delimiter">(</span>'<span class="String">gender = $*</span>', <span class="Delimiter">[</span>'<span class="String">M</span>'<span class="Delimiter">])</span>;
+
+<span class="Operator">$</span><span class="Identifier">students</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">student_map</span><span class="Type">-&gt;</span>findWhere<span class="Delimiter">(</span><span class="Operator">$</span><span class="Identifier">where</span><span class="Delimiter">)</span>;</pre>
+              <p>For complex queries, SQL is the best candidate for the job. Pomm proposes a smooth integration with the PHP layer using query helpers. The following example lists nearest cycle stations with available slots from a given station name. Fields list and table name are replaced by a placeholder wich is substitued at the end so developers keep concentrating on what the query does and this allow structure to change without changing the query. This query will return a collection (an iterator) on <code>Station</code> entities augmented with the <code>distance</code> information.</p><pre class="vimphp">
+<span class="StorageClass">public</span> <span class="Define">function</span> getNearestFrom<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">name</span><span class="Special">)</span>
+<span class="Special">{</span>
+    <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">&lt;&lt;&lt;</span><span class="Special">SQL</span>
+<span class="Statement">SELECT</span>
+  :station_fields,
+  station.coord &lt;-&gt; near_station.coord <span class="Special">AS</span> distance
+<span class="Special">FROM</span>
+  :station_table station
+    <span class="Function">LEFT</span> <span class="Special">JOIN</span> :station_table near_station <span class="Special">ON</span> near_station.name &lt;&gt; station.name
+<span class="Special">WHERE</span>
+    station.name = $*
+  <span class="Statement">AND</span>
+    near_station.available_slots &gt; <span class="Number">0</span>
+<span class="Special">ORDER</span> <span class="Special">BY</span>
+  distance <span class="Special">ASC</span>
+<span class="Special">SQL</span>;
+
+    <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Function">strtr</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Special">[</span>
+        '<span class="String">:station_fields</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>formatFieldsWithAlias<span class="Special">(</span>'<span class="String">getSelectFields</span>', '<span class="String">near_station</span>'<span class="Special">)</span>,
+        '<span class="String">:station_table</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>getTableName<span class="Special">()</span>
+        <span class="Special">])</span>;
+
+    <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>query<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Special">[</span> <span class="Operator">$</span><span class="Identifier">name</span> <span class="Special">])</span>;
+<span class="Special">}</span></pre>
                 <p>The whole SQL language's features are available: <code>WITH</code> statements, window functions, foreign data wrappers, custom functions etc.</p>
                 <p>Pomm's ability to integrate SQL as query language allied with schemaless entities and the projection system make developers able to shape exactly the data they need to present with maximum performances.</p>
               </div>

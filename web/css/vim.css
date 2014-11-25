@@ -1,5 +1,5 @@
 blockquote { font-style: italic; font-size: 120%; }
-pre.vimphp { white-space: pre-wrap; font-family: monospace; color: #f6f3e8; background-color: #000000; font-size: 14px;}
+pre.vimphp { white-space: pre-wrap; font-family: monospace; color: #f6f3e8; background-color: #000000; font-size: 16px;}
 pre.vimphp .lnr { color: #3d3d3d; background-color: #000000; }
 pre.vimphp .Type { color: #ffffb7; }
 pre.vimphp .PreProc { color: #96cbfe; }
@@ -17,7 +17,7 @@ pre.vimphp .Define { color: #6699cc; }
 pre.vimphp .Constant { color: #6d9cbe; }
 pre.vimphp .Include { color: #cc7833; }
 
-pre.vimsql { white-space: pre-wrap; font-family: monospace; color: #000000; background-color: #ffffff; font-size: 14px;}
+pre.vimsql { white-space: pre-wrap; font-family: monospace; color: #000000; background-color: #eeeeee; font-size: 16px;}
 pre.vimsql .Constant { color: #ff00ff; }
 pre.vimsql .Statement { color: #a52a2a; }
 pre.vimsql .LineNr { color: #a52a2a; }
