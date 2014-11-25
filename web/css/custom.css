@@ -3,13 +3,13 @@ body {
  }
 
 html {
-  background:url('/images/background.png');
+  background:url('/images/background.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
 blockquote { font-style: italic; font-size: 120%; }
-pre.vim { white-space: pre-wrap; font-family: monospace; color: #f6f3e8; background-color: #000000; }
+pre.vim { white-space: pre-wrap; font-family: monospace; color: #f6f3e8; background-color: #000000; font-size: 16px; }
 pre .lnr { color: #3d3d3d; background-color: #000000; }
 pre .Type { color: #ffffb7; }
 pre .PreProc { color: #96cbfe; }

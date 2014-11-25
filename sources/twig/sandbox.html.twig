@@ -5,182 +5,185 @@
 {% block content %}
         <div class="row">
           <div class="col-md-12">
-            <h2>Pomm in few steps</h2>
-            <hr />
-            <p><strong>This page is covering Pomm 1.x only.</strong></p>
-            <p>We are going to show a simple application as quick Pomm test sandbox.</p>
-            <p>
-              <dl>
-                <dt>requirements:</dt>
-                <dd>&#10149; PHP 5.4 CLI</dd>
-                <dd>&#10149; A working Postgresql database</dd>
-              </dl>
-            </p>
-            <h3>Step 1: Install the sandbox</h3>
-            <p>Fire up a terminal, and enter the following line to download and launch the quick installer:
-            <pre><code>wget -O - 'https://gist.github.com/chanmix51/9192161/download' 2&gt;/dev/null |tar xzO &gt; install.sh
-bash install.sh</code></pre>
-              It will prompt you for useful informations about your database connection and bootstrap a ready to run <a href="http://silex.sensiolabs.org/">Silex</a> application for you. When the script is over, open your browser and enter the URL <code>http://localhost:1025</code>, you should be granted with a «Hello world» page saying your database connection is working. If not, you may have wrong connection settings, check the file <code>sources/config/config.php</code> to change your connection parameters.
-            </p>
-            <p>The sandbox is like the following (omitting the <code>vendor</code> directory and some more files):<pre><code>
-.
-├── bin
-│   └── generate_model.php
-├── sources
-│   ├── application.php
-│   ├── bootstrap.php
-│   ├── config
-│   │   ├── config.php
-│   │   └── environment.php
-│   ├── lib
-│   │   ├── Controller
-│   │   │   └── DumbController.php
-│   │   └── Model
-│   │       └── MyDatabase.php
-│   └── twig
-│       ├── error.html.twig
-│       └── index.html.twig
-└── web
-    ├── favicon.ico
-    └── index.php
-</code></pre>
-            <p>
-            <h3>Step 2: Generate the model</h3>
-            <p>You can use the <code>bin/generate_model.php</code> script to generate the model files. You have to pass the schema where your tables are as argument. If you do not know about <a href="http://www.postgresql.org/docs/current/static/ddl-schemas.html">Postgresql schemas</a>, enter <code>public</code> which is the default schema.<pre><code>php bin/generate_model.php public</code></pre></p>
-            <p>This command will generate model files under the <code>sources/lib/Model</code> directory using database name and schema name as namespaces. So it should end like the following:<pre><code>
-sources/lib/Model
-    ├── MyDatabase.php
-    └── Sandbox
-        └── PublicSchema
-            ├── Base
-            │   ├── FactoryMap.php
-            │   ├── MeasureMap.php
-            │   ├── StationMap.php
-            │   └── StatisticMap.php
-            ├── FactoryMap.php
-            ├── Factory.php
-            ├── MeasureMap.php
-            ├── Measure.php
-            ├── StationMap.php
-            ├── Station.php
-            ├── StatisticMap.php
-            └── Statistic.php
-</code></pre></p>
-            <h3>Step 3: Query the database</h3>
-            <p>Once map classes set up, you can create your controllers method. From your controller, use the map class to fetch data from your model:
-            
-<pre class='vim'>
-<span class="lnr"> 1 </span><span class="Comment">// sources/lib/Controller/DumbController.php</span>
-<span class="lnr"> 2 </span>    <span class="StorageClass">public</span> <span class="Define">function</span> listItem<span class="Special">()</span>
-<span class="lnr"> 3 </span>    <span class="Special">{</span>
-<span class="lnr"> 4 </span>        <span class="Operator">$</span><span class="Identifier">stations</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>app<span class="Special">[</span>'<span class="String">pomm.connection</span>'<span class="Special">]</span>
-<span class="lnr"> 5 </span>            <span class="Structure">-&gt;</span>getMapFor<span class="Special">(</span>'<span class="String">\Sandbox\PublicSchema\Station</span>'<span class="Special">)</span>
-<span class="lnr"> 6 </span>            <span class="Structure">-&gt;</span>findWhere<span class="Special">(</span>'<span class="String">name LIKE $*</span>', <span class="Special">[</span> '<span class="String">%some_place%</span>' <span class="Special">])</span>;
-<span class="lnr"> 7 </span>
-<span class="lnr"> 8 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>app<span class="Special">[</span>'<span class="String">twig</span>'<span class="Special">]</span><span class="Structure">-&gt;</span>render<span class="Special">(</span>'<span class="String">list_stations.html.twig</span>', <span class="Special">[</span> '<span class="String">stations</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">stations</span> <span class="Special">])</span>;
-<span class="lnr">9 </span>     <span class="Special">}</span>
-<span class="lnr">10 </span>
-</pre></p>
-            <p>In your template, iterating over the collection or using the entities getters is pretty straightforward:
-{% raw %}
-<pre class="vim">
-<span class="lnr">1 </span><span class="Function">&lt;</span><span class="StorageClass">ul</span><span class="Function">&gt;</span>
-<span class="lnr">2 </span>{% for station in stations %}
-<span class="lnr">3 </span>    <span class="Function">&lt;</span><span class="StorageClass">li</span><span class="Function">&gt;</span>name: <span class="Function">&lt;</span><span class="StorageClass">a</span><span class="Function"> </span><span class="Type">href</span><span class="Function">=</span><span class="String">&quot;/station/{{ station.station_id }}&quot;</span><span class="Function">&gt;</span><span class="Underlined">{{ station.name }}</span><span class="Identifier">&lt;/</span><span class="StorageClass">a</span><span class="Identifier">&gt;</span>
-<span class="lnr">4 </span>      operate since {{ station.created_at | date('Y-m-d') }}<span class="Identifier">&lt;/</span><span class="StorageClass">li</span><span class="Identifier">&gt;</span>
-<span class="lnr">5 </span>{% endfor %}
-<span class="lnr">6 </span><span class="Identifier">&lt;/</span><span class="StorageClass">ul</span><span class="Identifier">&gt;</span>
-</pre>
-{% endraw %}</p>
-            <h3>Step 4: Tune projection and converter</h3>
-            <p>Unlike ORMs, Pomm maps database sets into schemaless entities. Map classes define a projection and trigger data conversion between PHP and the database. If by example the database holds sensitive data like encryption keys, it is possible to remove them from the projection hence they will not be fetched from the database. It is also possible to add fields. If we prefer having the age of the station entity instead of giving its creation date, we can modify the projection so the database adds the age to other fields:
-<pre class="vim">
-<span class="lnr"> 1 </span><span class="Comment">// sources/lib/Model/Sandbox/PublicSchema/StationMap.php</span>
-<span class="lnr"> 2 </span>
-<span class="lnr"> 3 </span>    <span class="StorageClass">public</span> <span class="Define">function</span> getSelectFields<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">alias</span> <span class="Operator">=</span> <span class="Type">null</span><span class="Special">)</span>
-<span class="lnr"> 4 </span>    <span class="Special">{</span>
-<span class="lnr"> 5 </span>        <span class="Operator">$</span><span class="Identifier">fields</span> <span class="Operator">=</span> <span class="Structure">parent</span><span class="Operator">::</span>getSelectFields<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">alias</span><span class="Special">)</span>;
-<span class="lnr"> 6 </span>        <span class="Operator">unset</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">fields</span><span class="Special">[</span>'<span class="String">encryption_key</span>'<span class="Special">])</span>;
-<span class="lnr"> 7 </span>        <span class="Operator">$</span><span class="Identifier">fields</span><span class="Special">[</span>'<span class="String">age</span>'<span class="Special">]</span> <span class="Operator">=</span> <span class="Function">sprintf</span><span class="Special">(</span>&quot;<span class="String">age(%s)</span>&quot;, <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>aliasField<span class="Special">(</span>'<span class="String">created_at</span>', <span class="Operator">$</span><span class="Identifier">alias</span><span class="Special">))</span>;
-<span class="lnr"> 8 </span>
-<span class="lnr"> 9 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">fields</span>;
-<span class="lnr">10 </span>    <span class="Special">}</span>
-<span class="lnr">11 </span>
-</pre>
-            </p>
-            <p>
-            Adding fields to the default projection is easy but without more information, Pomm will assume there are strings. In the case above, the Postgresql's function <code>age</code> returns an interval so it would be nice to tell the map file to manage the <code>age</code> as such:
-<pre class="vim">
-<span class="lnr"> 1 </span><span class="Comment">// sources/lib/Model/Sandbox/PublicSchema/StationMap.php</span>
-<span class="lnr"> 2 </span>
-<span class="lnr"> 3 </span>    <span class="StorageClass">public</span> <span class="Define">function</span> initialize<span class="Special">()</span>
-<span class="lnr"> 4 </span>    <span class="Special">{</span>
-<span class="lnr"> 5 </span>        <span class="Structure">parent</span><span class="Operator">::</span>initialize<span class="Special">()</span>;
-<span class="lnr"> 6 </span>
-<span class="lnr"> 7 </span>        <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>addVirtualField<span class="Special">(</span>'<span class="String">age</span>', '<span class="String">interval</span>'<span class="Special">)</span>;
-<span class="lnr"> 8 </span>    <span class="Special">}</span>
-<span class="lnr"> 9 </span>
-</pre>
-            This way, the converter associated with Postgresql's <code>interval</code> type will be used to produce a PHP <code>DateInterval</code> instance.</p>
-            <h3>Step 5: Tune the queries</h3>
-            <p>Default queries coming with the generated map classes are pretty simples, they just apply the given projection from a given set in the database. Most of the time it is enough but some cases require more informations coming from other database tables. By example, in a blog post, it would be useful to provide links to the previous and / or next published articles. A custom query can handle that:
-<pre class="vim">
-<span class="lnr"> 1 </span><span class="Comment">// sources/lib/Model/Sandbox/Blog/PostMap.php</span>
-<span class="lnr"> 2 </span>
-<span class="lnr"> 3 </span>    <span class="StorageClass">public</span> <span class="Define">function</span> findBySlugWithNeighbours<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">slug</span><span class="Special">)</span>
-<span class="lnr"> 4 </span>    <span class="Special">{</span>
-<span class="lnr"> 5 </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Operator">&lt;&lt;&lt;</span><span class="Special">SQL</span>
-<span class="lnr"> 6 </span><span class="Special">WITH</span>
-<span class="lnr"> 7 </span>  neighbour <span class="Special">AS</span> (
-<span class="lnr"> 8 </span>    <span class="Statement">SELECT</span>
-<span class="lnr"> 9 </span>      slug,
-<span class="lnr">10 </span>      <span class="Function">lag</span>(slug) <span class="Special">OVER</span> published_at_wdw <span class="Special">AS</span> next_slug,
-<span class="lnr">11 </span>      <span class="Function">lead</span>(slug) <span class="Special">OVER</span>  published_at_wdw <span class="Special">AS</span> prev_slug
-<span class="lnr">12 </span>    <span class="Special">FROM</span>
-<span class="lnr">13 </span>      :news_table
-<span class="lnr">14 </span>    <span class="Special">WINDOW</span>
-<span class="lnr">15 </span>      published_at_wdw <span class="Special">AS</span> (<span class="Special">ORDER</span> <span class="Special">BY</span> published_at <span class="Special">DESC</span>)
-<span class="lnr">16 </span>    )
-<span class="lnr">17 </span><span class="Statement">SELECT</span>
-<span class="lnr">18 </span>    :news_fields,
-<span class="lnr">19 </span>    n.next_slug <span class="Special">AS</span> next_slug,
-<span class="lnr">20 </span>    n.prev_slug <span class="Special">AS</span> prev_slug
-<span class="lnr">21 </span><span class="Special">FROM</span>
-<span class="lnr">22 </span>    :news_table
-<span class="lnr">23 </span>      <span class="Special">NATURAL</span> <span class="Special">JOIN</span> neighbour n
-<span class="lnr">24 </span><span class="Special">WHERE</span>
-<span class="lnr">25 </span>    news.slug = $*
-<span class="lnr">26 </span><span class="Special">SQL</span>;
-<span class="lnr">27 </span>
-<span class="lnr">28 </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Function">strtr</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Type">array</span><span class="Special">(</span>
-<span class="lnr">29 </span>            '<span class="String">:news_fields</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>formatFields<span class="Special">(</span>'<span class="String">getSelectFields</span>'<span class="Special">)</span>,
-<span class="lnr">30 </span>            '<span class="String">:news_table</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>getTableName<span class="Special">()</span>
-<span class="lnr">31 </span>        <span class="Special">))</span>;
-<span class="lnr">32 </span>
-<span class="lnr">33 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>query<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Type">array</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">slug</span><span class="Special">))</span><span class="Structure">-&gt;</span>current<span class="Special">()</span>;
-<span class="lnr">34 </span>    <span class="Special">}</span>
-</pre>
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <h2>Pomm 1.x in few steps</h2>
+              </div>
+              <div class="panel-body">
+                <p>We are going to show a simple application as quick Pomm test sandbox.</p>
+                <p>
+                  <dl>
+                    <dt>requirements:</dt>
+                    <dd>&#10149; PHP 5.4 CLI</dd>
+                    <dd>&#10149; A working Postgresql database</dd>
+                  </dl>
+                </p>
+                <h3>Step 1: Install the sandbox</h3>
+                <p>Fire up a terminal, and enter the following line to download and launch the quick installer:
+                <pre><code>wget -O - 'https://gist.github.com/chanmix51/9192161/download' 2&gt;/dev/null |tar xzO &gt; install.sh
+    bash install.sh</code></pre>
+                  It will prompt you for useful informations about your database connection and bootstrap a ready to run <a href="http://silex.sensiolabs.org/">Silex</a> application for you. When the script is over, open your browser and enter the URL <code>http://localhost:1025</code>, you should be granted with a «Hello world» page saying your database connection is working. If not, you may have wrong connection settings, check the file <code>sources/config/config.php</code> to change your connection parameters.
+                </p>
+                <p>The sandbox is like the following (omitting the <code>vendor</code> directory and some more files):<pre><code>
+    .
+    ├── bin
+    │   └── generate_model.php
+    ├── sources
+    │   ├── application.php
+    │   ├── bootstrap.php
+    │   ├── config
+    │   │   ├── config.php
+    │   │   └── environment.php
+    │   ├── lib
+    │   │   ├── Controller
+    │   │   │   └── DumbController.php
+    │   │   └── Model
+    │   │       └── MyDatabase.php
+    │   └── twig
+    │       ├── error.html.twig
+    │       └── index.html.twig
+    └── web
+        ├── favicon.ico
+        └── index.php
+    </code></pre>
+                <p>
+                <h3>Step 2: Generate the model</h3>
+                <p>You can use the <code>bin/generate_model.php</code> script to generate the model files. You have to pass the schema where your tables are as argument. If you do not know about <a href="http://www.postgresql.org/docs/current/static/ddl-schemas.html">Postgresql schemas</a>, enter <code>public</code> which is the default schema.<pre><code>php bin/generate_model.php public</code></pre></p>
+                <p>This command will generate model files under the <code>sources/lib/Model</code> directory using database name and schema name as namespaces. So it should end like the following:<pre><code>
+    sources/lib/Model
+        ├── MyDatabase.php
+        └── Sandbox
+            └── PublicSchema
+                ├── Base
+                │   ├── FactoryMap.php
+                │   ├── MeasureMap.php
+                │   ├── StationMap.php
+                │   └── StatisticMap.php
+                ├── FactoryMap.php
+                ├── Factory.php
+                ├── MeasureMap.php
+                ├── Measure.php
+                ├── StationMap.php
+                ├── Station.php
+                ├── StatisticMap.php
+                └── Statistic.php
+    </code></pre></p>
+                <h3>Step 3: Query the database</h3>
+                <p>Once map classes set up, you can create your controllers method. From your controller, use the map class to fetch data from your model:
+                
+    <pre class='vim'>
+    <span class="lnr"> 1 </span><span class="Comment">// sources/lib/Controller/DumbController.php</span>
+    <span class="lnr"> 2 </span>    <span class="StorageClass">public</span> <span class="Define">function</span> listItem<span class="Special">()</span>
+    <span class="lnr"> 3 </span>    <span class="Special">{</span>
+    <span class="lnr"> 4 </span>        <span class="Operator">$</span><span class="Identifier">stations</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>app<span class="Special">[</span>'<span class="String">pomm.connection</span>'<span class="Special">]</span>
+    <span class="lnr"> 5 </span>            <span class="Structure">-&gt;</span>getMapFor<span class="Special">(</span>'<span class="String">\Sandbox\PublicSchema\Station</span>'<span class="Special">)</span>
+    <span class="lnr"> 6 </span>            <span class="Structure">-&gt;</span>findWhere<span class="Special">(</span>'<span class="String">name LIKE $*</span>', <span class="Special">[</span> '<span class="String">%some_place%</span>' <span class="Special">])</span>;
+    <span class="lnr"> 7 </span>
+    <span class="lnr"> 8 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>app<span class="Special">[</span>'<span class="String">twig</span>'<span class="Special">]</span><span class="Structure">-&gt;</span>render<span class="Special">(</span>'<span class="String">list_stations.html.twig</span>', <span class="Special">[</span> '<span class="String">stations</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">stations</span> <span class="Special">])</span>;
+    <span class="lnr">9 </span>     <span class="Special">}</span>
+    <span class="lnr">10 </span>
+    </pre></p>
+                <p>In your template, iterating over the collection or using the entities getters is pretty straightforward:
+    {% raw %}
+    <pre class="vim">
+    <span class="lnr">1 </span><span class="Function">&lt;</span><span class="StorageClass">ul</span><span class="Function">&gt;</span>
+    <span class="lnr">2 </span>{% for station in stations %}
+    <span class="lnr">3 </span>    <span class="Function">&lt;</span><span class="StorageClass">li</span><span class="Function">&gt;</span>name: <span class="Function">&lt;</span><span class="StorageClass">a</span><span class="Function"> </span><span class="Type">href</span><span class="Function">=</span><span class="String">&quot;/station/{{ station.station_id }}&quot;</span><span class="Function">&gt;</span><span class="Underlined">{{ station.name }}</span><span class="Identifier">&lt;/</span><span class="StorageClass">a</span><span class="Identifier">&gt;</span>
+    <span class="lnr">4 </span>      operate since {{ station.created_at | date('Y-m-d') }}<span class="Identifier">&lt;/</span><span class="StorageClass">li</span><span class="Identifier">&gt;</span>
+    <span class="lnr">5 </span>{% endfor %}
+    <span class="lnr">6 </span><span class="Identifier">&lt;/</span><span class="StorageClass">ul</span><span class="Identifier">&gt;</span>
+    </pre>
+    {% endraw %}</p>
+                <h3>Step 4: Tune projection and converter</h3>
+                <p>Unlike ORMs, Pomm maps database sets into schemaless entities. Map classes define a projection and trigger data conversion between PHP and the database. If by example the database holds sensitive data like encryption keys, it is possible to remove them from the projection hence they will not be fetched from the database. It is also possible to add fields. If we prefer having the age of the station entity instead of giving its creation date, we can modify the projection so the database adds the age to other fields:
+    <pre class="vim">
+    <span class="lnr"> 1 </span><span class="Comment">// sources/lib/Model/Sandbox/PublicSchema/StationMap.php</span>
+    <span class="lnr"> 2 </span>
+    <span class="lnr"> 3 </span>    <span class="StorageClass">public</span> <span class="Define">function</span> getSelectFields<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">alias</span> <span class="Operator">=</span> <span class="Type">null</span><span class="Special">)</span>
+    <span class="lnr"> 4 </span>    <span class="Special">{</span>
+    <span class="lnr"> 5 </span>        <span class="Operator">$</span><span class="Identifier">fields</span> <span class="Operator">=</span> <span class="Structure">parent</span><span class="Operator">::</span>getSelectFields<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">alias</span><span class="Special">)</span>;
+    <span class="lnr"> 6 </span>        <span class="Operator">unset</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">fields</span><span class="Special">[</span>'<span class="String">encryption_key</span>'<span class="Special">])</span>;
+    <span class="lnr"> 7 </span>        <span class="Operator">$</span><span class="Identifier">fields</span><span class="Special">[</span>'<span class="String">age</span>'<span class="Special">]</span> <span class="Operator">=</span> <span class="Function">sprintf</span><span class="Special">(</span>&quot;<span class="String">age(%s)</span>&quot;, <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>aliasField<span class="Special">(</span>'<span class="String">created_at</span>', <span class="Operator">$</span><span class="Identifier">alias</span><span class="Special">))</span>;
+    <span class="lnr"> 8 </span>
+    <span class="lnr"> 9 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">fields</span>;
+    <span class="lnr">10 </span>    <span class="Special">}</span>
+    <span class="lnr">11 </span>
+    </pre>
+                </p>
+                <p>
+                Adding fields to the default projection is easy but without more information, Pomm will assume there are strings. In the case above, the Postgresql's function <code>age</code> returns an interval so it would be nice to tell the map file to manage the <code>age</code> as such:
+    <pre class="vim">
+    <span class="lnr"> 1 </span><span class="Comment">// sources/lib/Model/Sandbox/PublicSchema/StationMap.php</span>
+    <span class="lnr"> 2 </span>
+    <span class="lnr"> 3 </span>    <span class="StorageClass">public</span> <span class="Define">function</span> initialize<span class="Special">()</span>
+    <span class="lnr"> 4 </span>    <span class="Special">{</span>
+    <span class="lnr"> 5 </span>        <span class="Structure">parent</span><span class="Operator">::</span>initialize<span class="Special">()</span>;
+    <span class="lnr"> 6 </span>
+    <span class="lnr"> 7 </span>        <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>addVirtualField<span class="Special">(</span>'<span class="String">age</span>', '<span class="String">interval</span>'<span class="Special">)</span>;
+    <span class="lnr"> 8 </span>    <span class="Special">}</span>
+    <span class="lnr"> 9 </span>
+    </pre>
+                This way, the converter associated with Postgresql's <code>interval</code> type will be used to produce a PHP <code>DateInterval</code> instance.</p>
+                <h3>Step 5: Tune the queries</h3>
+                <p>Default queries coming with the generated map classes are pretty simples, they just apply the given projection from a given set in the database. Most of the time it is enough but some cases require more informations coming from other database tables. By example, in a blog post, it would be useful to provide links to the previous and / or next published articles. A custom query can handle that:
+    <pre class="vim">
+    <span class="lnr"> 1 </span><span class="Comment">// sources/lib/Model/Sandbox/Blog/PostMap.php</span>
+    <span class="lnr"> 2 </span>
+    <span class="lnr"> 3 </span>    <span class="StorageClass">public</span> <span class="Define">function</span> findBySlugWithNeighbours<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">slug</span><span class="Special">)</span>
+    <span class="lnr"> 4 </span>    <span class="Special">{</span>
+    <span class="lnr"> 5 </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Operator">&lt;&lt;&lt;</span><span class="Special">SQL</span>
+    <span class="lnr"> 6 </span><span class="Special">WITH</span>
+    <span class="lnr"> 7 </span>  neighbour <span class="Special">AS</span> (
+    <span class="lnr"> 8 </span>    <span class="Statement">SELECT</span>
+    <span class="lnr"> 9 </span>      slug,
+    <span class="lnr">10 </span>      <span class="Function">lag</span>(slug) <span class="Special">OVER</span> published_at_wdw <span class="Special">AS</span> next_slug,
+    <span class="lnr">11 </span>      <span class="Function">lead</span>(slug) <span class="Special">OVER</span>  published_at_wdw <span class="Special">AS</span> prev_slug
+    <span class="lnr">12 </span>    <span class="Special">FROM</span>
+    <span class="lnr">13 </span>      :news_table
+    <span class="lnr">14 </span>    <span class="Special">WINDOW</span>
+    <span class="lnr">15 </span>      published_at_wdw <span class="Special">AS</span> (<span class="Special">ORDER</span> <span class="Special">BY</span> published_at <span class="Special">DESC</span>)
+    <span class="lnr">16 </span>    )
+    <span class="lnr">17 </span><span class="Statement">SELECT</span>
+    <span class="lnr">18 </span>    :news_fields,
+    <span class="lnr">19 </span>    n.next_slug <span class="Special">AS</span> next_slug,
+    <span class="lnr">20 </span>    n.prev_slug <span class="Special">AS</span> prev_slug
+    <span class="lnr">21 </span><span class="Special">FROM</span>
+    <span class="lnr">22 </span>    :news_table
+    <span class="lnr">23 </span>      <span class="Special">NATURAL</span> <span class="Special">JOIN</span> neighbour n
+    <span class="lnr">24 </span><span class="Special">WHERE</span>
+    <span class="lnr">25 </span>    news.slug = $*
+    <span class="lnr">26 </span><span class="Special">SQL</span>;
+    <span class="lnr">27 </span>
+    <span class="lnr">28 </span>        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Function">strtr</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Type">array</span><span class="Special">(</span>
+    <span class="lnr">29 </span>            '<span class="String">:news_fields</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>formatFields<span class="Special">(</span>'<span class="String">getSelectFields</span>'<span class="Special">)</span>,
+    <span class="lnr">30 </span>            '<span class="String">:news_table</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>getTableName<span class="Special">()</span>
+    <span class="lnr">31 </span>        <span class="Special">))</span>;
+    <span class="lnr">32 </span>
+    <span class="lnr">33 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>query<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Type">array</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">slug</span><span class="Special">))</span><span class="Structure">-&gt;</span>current<span class="Special">()</span>;
+    <span class="lnr">34 </span>    <span class="Special">}</span>
+    </pre>
+              At first glance this looks complicated but it is not that complex. The method defines a custom SQL query using placeholders (<code>:news_table</code> and <code>:news_fields</code>). A first set named <code>neighbour</code> is defined, containing every slug with the previous and following slugs based on publishing date (window function). From that set, only the asked blog post is picked up with its time based neighbours' slug. Placeholders are expanded with the default projection using the <code>formatFields()</code> formatter. Since <code>slug</code> is the primary key for that table, only the first element (if it exists) it returned using the <code>current()</code> method.</p>
+              <p>The controller is a simple as:
+    <pre class="vim">
+    <span class="lnr"> 1 </span>
+    <span class="lnr"> 2 </span><span class="Comment">// sources/lib/Controller/DumbController.php</span>
+    <span class="lnr"> 3 </span>
+    <span class="lnr"> 4 </span>    <span class="StorageClass">public</span> <span class="Define">function</span> showPost<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">slug</span><span class="Special">)</span>
+    <span class="lnr"> 5 </span>    <span class="Special">{</span>
+    <span class="lnr"> 6 </span>        <span class="Operator">$</span><span class="Identifier">post</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>app<span class="Special">[</span>'<span class="String">pomm.connection</span>'<span class="Special">]</span>
+    <span class="lnr"> 7 </span>            <span class="Structure">-&gt;</span>getMapFor<span class="Special">(</span>'<span class="String">\Sandbox\Blog\Post</span>'<span class="Special">)</span>
+    <span class="lnr"> 8 </span>            <span class="Structure">-&gt;</span>findBySlugWithNeighbours<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">slug</span><span class="Special">)</span>;
+    <span class="lnr"> 9 </span>
+    <span class="lnr">10 </span>        <span class="Statement">if</span> <span class="Special">(</span><span class="Operator">!</span><span class="Operator">$</span><span class="Identifier">post</span><span class="Special">)</span>
+    <span class="lnr">11 </span>        <span class="Special">{</span>
+    <span class="lnr">12 </span>            <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>app<span class="Structure">-&gt;</span>abort<span class="Special">(</span><span class="Number">404</span>, &quot;<span class="String">No such post sorry</span>&quot;<span class="Special">)</span>;
+    <span class="lnr">13 </span>        <span class="Special">}</span>
+    <span class="lnr">14 </span>
+    <span class="lnr">15 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>app<span class="Special">[</span>'<span class="String">twig</span>'<span class="Special">]</span><span class="Structure">-&gt;</span>render<span class="Special">(</span>'<span class="String">show_post.html.twig</span>', <span class="Special">[</span> &quot;<span class="String">post</span>&quot; <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">post</span> <span class="Special">])</span>;
+    <span class="lnr">16 </span>    <span class="Special">}</span>
+    </pre>
+              </p>
+            </div>
           </div>
-          At first glance this looks complicated but it is not that complex. The method defines a custom SQL query using placeholders (<code>:news_table</code> and <code>:news_fields</code>). A first set named <code>neighbour</code> is defined, containing every slug with the previous and following slugs based on publishing date (window function). From that set, only the asked blog post is picked up with its time based neighbours' slug. Placeholders are expanded with the default projection using the <code>formatFields()</code> formatter. Since <code>slug</code> is the primary key for that table, only the first element (if it exists) it returned using the <code>current()</code> method.</p>
-          <p>The controller is a simple as:
-<pre class="vim">
-<span class="lnr"> 1 </span>
-<span class="lnr"> 2 </span><span class="Comment">// sources/lib/Controller/DumbController.php</span>
-<span class="lnr"> 3 </span>
-<span class="lnr"> 4 </span>    <span class="StorageClass">public</span> <span class="Define">function</span> showPost<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">slug</span><span class="Special">)</span>
-<span class="lnr"> 5 </span>    <span class="Special">{</span>
-<span class="lnr"> 6 </span>        <span class="Operator">$</span><span class="Identifier">post</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>app<span class="Special">[</span>'<span class="String">pomm.connection</span>'<span class="Special">]</span>
-<span class="lnr"> 7 </span>            <span class="Structure">-&gt;</span>getMapFor<span class="Special">(</span>'<span class="String">\Sandbox\Blog\Post</span>'<span class="Special">)</span>
-<span class="lnr"> 8 </span>            <span class="Structure">-&gt;</span>findBySlugWithNeighbours<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">slug</span><span class="Special">)</span>;
-<span class="lnr"> 9 </span>
-<span class="lnr">10 </span>        <span class="Statement">if</span> <span class="Special">(</span><span class="Operator">!</span><span class="Operator">$</span><span class="Identifier">post</span><span class="Special">)</span>
-<span class="lnr">11 </span>        <span class="Special">{</span>
-<span class="lnr">12 </span>            <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>app<span class="Structure">-&gt;</span>abort<span class="Special">(</span><span class="Number">404</span>, &quot;<span class="String">No such post sorry</span>&quot;<span class="Special">)</span>;
-<span class="lnr">13 </span>        <span class="Special">}</span>
-<span class="lnr">14 </span>
-<span class="lnr">15 </span>        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>app<span class="Special">[</span>'<span class="String">twig</span>'<span class="Special">]</span><span class="Structure">-&gt;</span>render<span class="Special">(</span>'<span class="String">show_post.html.twig</span>', <span class="Special">[</span> &quot;<span class="String">post</span>&quot; <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">post</span> <span class="Special">])</span>;
-<span class="lnr">16 </span>    <span class="Special">}</span>
-</pre>
-          </p>
         </div><!-- row -->
 {% endblock %}

@@ -5,7 +5,9 @@
 {% block content %}
     <div class="row">
       <div class="col-md-3">
+        <div class="panel panel-info">
 {% include 'documentation/toc_' ~ pomm_version ~ '.html.twig' %}
+        </div>
       </div>
       <div class="col-md-9">
 {% include 'documentation/doc_' ~ pomm_version ~ '.html.twig' %}
