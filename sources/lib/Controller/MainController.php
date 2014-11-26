@@ -25,6 +25,7 @@ class MainController implements ControllerProviderInterface
         $controller_collection->get('/howto/install', array($this, 'install'))->bind('main_install');
         $controller_collection->get('/documentation/examples', array($this, 'examples'))->bind('main_examples');
         $controller_collection->get('/documentation/sandbox', array($this, 'sandbox'))->bind('main_sandbox');
+        $controller_collection->get('/documentation/sandbox2', array($this, 'sandbox2'))->bind('main_sandbox2');
         $controller_collection->get('/documentation/manual-{version}', array($this, 'documentation'))->bind('documentation');
 
         return $controller_collection;
@@ -68,5 +69,10 @@ class MainController implements ControllerProviderInterface
     public function sandbox()
     {
         return $this->app['twig']->render('sandbox.html.twig');
+    }
+
+    public function sandbox2()
+    {
+        return $this->app['twig']->render('sandbox2.html.twig');
     }
 }
