@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Unleash Postgresql features in your PHP developments</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-16699784-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Unleash Postgresql features in your PHP developments</h1>
+          <p>
+            <small>Created by <a href="http://www.pomm-project.org">Grégoire HUBERT</a> / <a href="http://twitter.com/chanmix51">@chanmix51</a></small>
+          </p>
+        </section>
+
+        <section>
+          <h2>About Me</h2>
+          <p>
+          <p><img src="images/greg.jpeg" height="240" width="240" style="border: 0;" /></p>
+            <ul>
+              <li>Grégoire HUBERT <a href="https://twitter.com/chanmix51">@chanmix51</a></li>
+              <li>Author of <a href="http://www.pomm-project.org">Pomm</a></li>
+              <li>Founder of <a href="http://www.pragmafabrik.com/en/">PragmaFabrik</a></li>
+              <li>joind.in  <a href="https://joind.in/12955">https://joind.in/12955</a></li>
+            </ul>
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <h2>There is a (r)evolution going on</h2>
+            <ul>
+              <li>Python / Ruby / Js are racing at supporting Postgresql features</li>
+              <li>Play2 (ANorm) / .NET (LinQ)  / Java (JOOQ) alternative to ORM</li>
+            </ul>
+          </section>
+          <section>
+            <h2>There is a (r)evolution going on</h2>
+            <img src="images/django.png" />
+          </section>
+          <section>
+            <h2>Why is it important ?</h2>
+            <ul>
+              <li class="fragment">Business oriented applications</li>
+              <li class="fragment">&#10149; complex models</li>
+              <li class="fragment">&#10149; complex queries</li>
+              <li class="fragment">&#10149; complex interactions</li>
+              <li class="fragment">Model driven developments</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Tools matter</h2>
+            <img src="images/machine_pince.jpg" width="500" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>SQL has been made for that !</h2>
+            <ul>
+              <li>&#10149; First version in 1974 (IBM)</li>
+              <li>&#10149; 8 ISO revisions since 1986</li>
+              <li>&#10149; CTE (SQL99)</li>
+              <li>&#10149; Window functions (SQL 2003 &amp; 2008)</li>
+              <li>&#10149; Even XML (SQL 2003 &amp; 2008)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Declarative language</h2>
+            <small><a href="http://en.wikipedia.org/wiki/Declarative_programming#Definition">Wikipedia definition</a> says:</small>
+            <ul>
+              <li>&#10149; Express the <u>what</u> not the <u>how</u>.</li>
+              <li>&#10149; No side effects.</li>
+              <li>&#10149; Clear correspondance to mathematical model.</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Postgres</h2>
+            <ul>
+              <li class="fragment">&#10149; Fully supports SQL2008</li>
+              <li class="fragment">&#10149; Procedural languages (Perl/Python/R/JsV8…)</li>
+              <li class="fragment">&#10149; Namespaces</li>
+              <li class="fragment">&#10149; Complex types (inet, ts_vector, points, array, hstore, json…)</li>
+              <li class="fragment">&#10149; Foreign data wrappers</li>
+              <li class="fragment">&#10149; Asynchronous messaging system</li>
+              <li class="fragment">&#10149; Extensible</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Tools matter</h2>
+            <img src="images/tracteur.jpg" />
+          </section>
+          <section>
+            <h2>How to use it efficiently ?</h2>
+            <img src="images/gotlib.jpg" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Pomm: a take on ORM limitations</h2>
+            <ul>
+              <li>&#10149; Do not enforce OO in relational</li>
+              <li>&#10149; Do not use database abstraction</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Defining structure in a class</h2>
+            <ul>
+              <li class="fragment">&#10149; Does not define data structure where it is the more constrained.</li>
+              <li class="fragment">&#10149; Hard coupling between projection and class definition.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Structure definition by constraint</h2>
+            <ul>
+              <li>&#10149; Types are constraints</li>
+              <li>&#10149; <code>NOT NULL</code>, <code>UNIQUE</code>…</li>
+              <li>&#10149; <code>CHECK</code> makes your data consistent.</li>
+              <li>&#10149; Structuring data is business logic in the database.</li>
+            </ul>
+            <br /><br />
+            <h2 class="fragment">Relax !</h2>
+          </section>
+          <section>
+            <h2>Coupling projection and class</h2>
+            <ul>
+              <li>&#10149; Means <code>SELECT * FROM …</code></li>
+              <li>&#10149; No distinction between technical and business data.</li>
+              <li>&#10149; Turns the database into an entity database.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Coupling projection and class</h2>
+            <p>Defining an entity</p>
+            <img src="images/beer-icon.png" width=300" style="border: 0;" />
+          </section>
+          <section>
+            <h2>Coupling projection and class</h2>
+            <p>Turns the database into an entity store</p>
+            <img src="images/fridge.png" width=400" style="border: 0;" />
+          </section>
+          <section>
+            <h2>Coupling projection and class</h2>
+            <p>In which the relational db has poor added value</p>
+            <img src="images/square-peg-round-hole.jpg" width=400" style="border: 0;" />
+          </section>
+          <section data-background="images/yoda.jpg" data-background-size="1000px">
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>The power of the projection</h2>
+            <img src="images/map.png" border="0" />
+          </section>
+          <section>
+            <h2>The power of the projection</h2>
+            <code><pre class="vimphp"><span class="Special">&lt;?php</span>
+
+<span class="Operator">$</span><span class="Identifier">pomm</span> <span class="Operator">=</span> <span class="Include">require</span> <span class="Constant">__DIR__</span><span class="Operator">.</span>'<span class="String">/.pomm_cli_bootstrap.php</span>';
+
+<span class="Operator">$</span><span class="Identifier">student</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">pomm</span><span class="Special">[</span>'<span class="String">my_db</span>'<span class="Special">]</span>
+    <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\MyDb\PublicSchema\StudentModel</span>'<span class="Special">)</span>
+    <span class="Structure">-&gt;</span>findByPK<span class="Special">([</span>'<span class="String">student_id</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Number">1</span><span class="Special">])</span>
+    ;
+
+<span class="Define">print</span> <span class="Function">json_encode</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">student</span><span class="Structure">-&gt;</span><span class="Operator">extract</span><span class="Special">())</span>;
+
+            </pre></code>
+          </section>
+          <section>
+            <h2>The power of the projection</h2>
+            <code><pre class="vimphp"><span class="Special">{</span>
+   <span class="Statement">student_id</span> : <span class="Number">1</span>,
+   <span class="Statement">first_name</span> : <span class="String">linus</span>,
+   <span class="Statement">last_name</span> : <span class="String">torvalds</span>,
+   <span class="Statement">login</span> : <span class="String">linus</span>,
+   <span class="Statement">password</span> : <span class="String">$1$.ZypdL0E$YddOp4JpO76z3Dig9.QZB.</span>,
+   <span class="Statement">birthdate</span> : <span class="Special">{</span>
+      <span class="Statement">timezone</span> : <span class="String">Europe/Paris</span>,
+      <span class="Statement">date</span> : <span class="String">1968-12-28 00:00:00</span>,
+      <span class="Statement">timezone_type</span> : <span class="Number">3</span>
+   <span class="Special">}</span>,
+   <span class="Statement">section</span> : <span class="String">4A3</span>
+<span class="Special">}</span></pre></code>
+              <code><pre class="vimsql">
+<span class="Statement">SELECT</span> s.student_id, s.first_name, … <span class="Special">FROM</span> student s <span class="Special">WHERE</span> …
+              </pre></code>
+            </section>
+            <section>
+              <h2>The power of the projection</h2>
+              <code><pre class="vimphp"><span class="Special">&lt;?php</span> <span class="Comment">// StudentModel.php</span>
+<span class="Comment">//…</span>
+    <span class="StorageClass">public</span> <span class="Define">function</span> createProjection<span class="Special">()</span>
+    <span class="Special">{</span>
+        <span class="Statement">return</span> <span class="Structure">parent</span><span class="Operator">::</span>createProjection<span class="Special">()</span>
+            <span class="Structure">-&gt;</span>unsetField<span class="Special">(</span>'<span class="String">password</span>'<span class="Special">)</span>
+            <span class="Structure">-&gt;</span>unsetField<span class="Special">(</span>'<span class="String">birthdate</span>'<span class="Special">)</span>
+            <span class="Structure">-&gt;</span>setField<span class="Special">(</span>'<span class="String">age</span>', '<span class="String">age(%birthdate)</span>', '<span class="String">interval</span>'<span class="Special">)</span>
+            ;
+    <span class="Special">}</span>
+
+                </pre>
+              </code>
+            </section>
+            <section>
+              <h2>The power of the projection</h2>
+              <code><pre class="vimphp"><span class="Special">{</span>
+   <span class="Statement">student_id</span> : <span class="Number">1</span>,
+   <span class="Statement">first_name</span> : <span class="String">linus</span>,
+   <span class="Statement">last_name</span> : <span class="String">torvalds</span>,
+   <span class="Statement">login</span> : <span class="String">linus</span>,
+   <span class="Statement">section</span> : <span class="String">4A3</span>,
+   <span class="Statement">age</span> : <span class="Special">{</span>
+      <span class="Statement">weekday</span> : <span class="Number">0</span>,
+      <span class="Statement">special_type</span> : <span class="Number">0</span>,
+      …
+      <span class="Statement">y</span> : <span class="Number">45</span>,
+      …
+   <span class="Special">}</span>
+<span class="Special">}</span></pre></code>
+                <code><pre class="vimsql"><span class="Statement">SELECT</span> student_id, …, <span class="Function">age</span>(s.birthdate) <span class="Special">as</span> <span class="Function">age</span>, … <span class="Special">FROM</span> student s <span class="Special">WHERE</span> … </pre></code>
+            </section>
+            <section>
+              <h2>The power of the projection</h2>
+<code><pre class="vimphp">
+<span class="Special">&lt;?php</span>
+
+<span class="Operator">$</span><span class="Identifier">pomm</span> <span class="Operator">=</span> <span class="Include">require</span> <span class="Constant">__DIR__</span><span class="Operator">.</span>'<span class="String">/.pomm_cli_bootstrap.php</span>';
+
+<span class="Operator">$</span><span class="Identifier">student</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">pomm</span><span class="Special">[</span>'<span class="String">my_db</span>'<span class="Special">]</span>
+    <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\MyDb\PublicSchema\StudentModel</span>'<span class="Special">)</span>
+    <span class="Structure">-&gt;</span>deleteByPK<span class="Special">([</span>'<span class="String">student_id</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Number">1</span><span class="Special">])</span>
+    ;
+
+<span class="Define">print</span> <span class="Function">json_encode</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">student</span><span class="Structure">-&gt;</span><span class="Operator">extract</span><span class="Special">())</span>;
+
+</pre></code>
+<code><pre class="vimsql">
+<span class="Statement">DELETE</span> <span class="Special">FROM</span> student <span class="Special">WHERE</span> … <span class="Special">RETURNING</span> student_id, …
+</pre></code>
+            </section>
+            <section>
+              <h2>Projection driven REST API</h2>
+<code><pre class="vimphp"><span class="StorageClass">public</span> <span class="Define">function</span> deleteStudentController<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">id</span><span class="Special">)</span>
+<span class="Special">{</span>
+    <span class="Operator">$</span><span class="Identifier">student</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>getService<span class="Special">(</span>'<span class="String">pomm</span>'<span class="Special">)[</span>'<span class="String">my_db</span>'<span class="Special">]</span>
+        <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\MyDB\PublicSchema\StudentModel</span>'<span class="Special">)</span>
+        <span class="Structure">-&gt;</span>deleteByPK<span class="Special">([</span>'<span class="String">student_id</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">id</span><span class="Special">])</span>
+        ;
+
+    <span class="Statement">if</span> <span class="Special">(</span><span class="Operator">!</span><span class="Operator">$</span><span class="Identifier">student</span><span class="Special">)</span> <span class="Special">{</span>
+        <span class="Statement">throw</span> <span class="Define">new</span> NotFound404Exception<span class="Special">(</span>
+            <span class="Function">sprintf</span><span class="Special">(</span>&quot;<span class="String">No such student id = '%s'.</span>&quot;, <span class="Operator">$</span><span class="Identifier">id</span><span class="Special">)</span>
+        <span class="Special">)</span>;
+    <span class="Special">}</span>
+
+    <span class="Statement">return</span> <span class="Define">new</span> JsonResponse<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">student</span><span class="Structure">-&gt;</span><span class="Operator">extract</span><span class="Special">())</span>;
+<span class="Special">}</span>
+</pre></code>
+            </section>
+          </section>
+          <section>
+            <section data-background="images/data-types.png" data-background-size="1000px">
+              <h2 class="fragment">Queries and types</h2>
+            </section>
+            <section data-transition="none">
+              <h2>Some types supported by Postgresql</h2>
+              <ul style="list-style-type: none;">
+                <li>&#10149; boolean, bitchar, bitvar</li>
+                <li>&#10149; strings, uuid, xml, json, inet</li>
+                <li>&#10149; numbers, timestamps with time zone, intervals</li>
+                <li>&#10149; integer and timestamps, ranges</li>
+                <li>&#10149; point, circle, segment, box, polygon</li>
+                <li>&#10149; HStore, LTree, ts_vector, bytea</li>
+                <li>&#10149; custom types, objects</li>
+                <li>&#10149; arrays of all the types above</li>
+                <li>&#10149; <font color="red">Enter your type here</font></li>
+              </ul>
+            </section>
+            <section data-transition="none">
+              <h2>Types converted by Pomm</h2>
+              <ul style="list-style-type: none;">
+                <li>&#10149; boolean, <strike>bitchar</strike>, <strike>bitvar</strike></li>
+                <li>&#10149; strings, uuid, xml, json, inet</li>
+                <li>&#10149; numbers, timestamps with time zone, intervals</li>
+                <li>&#10149; integer and timestamps, ranges</li>
+                <li>&#10149; point, circle, segment, <strike>box</strike>, <strike>polygon</strike></li>
+                <li>&#10149; HStore, LTree, ts_vector, bytea</li>
+                <li>&#10149; custom types, objects</li>
+                <li>&#10149; arrays of all the types above</li>
+                <li>&#10149; <font color="red">Enter your type here</font></li>
+              </ul>
+            </section>
+            <section>
+              <h2>The power of the conversion</h2>
+              <img src="images/map.png" border="0" />
+            </section>
+            <section>
+              <h2>UUID are your friends</h2>
+              <ul>
+                <li>How do you recognize a friend ?</li>
+                <li class="fragment">&#10149; He is unique !</li>
+                <li class="fragment">&#10149; No more sequences and ID collisions</li>
+                <li class="fragment">&#10149; No more temptation to sort by ID</li>
+              </ul>
+            </section>
+            <section>
+              <h2>Timestamps with timezone</h3>
+              <ul>
+                <li>How to compare timestamps from different locations ?</li>
+                <li class="fragment">&#10149; 1° Assume the world is flat (easy).<li>
+                <li class="fragment">&#10149; 2° Use timestamptz (as easy as above)</li>
+              </ul>
+              <img src="images/world.png" width="400" />
+            </section>
+            <section>
+              <h2>Ranges</h2>
+              <ul>
+                <li class="fragment">&#10149; What is the next session in this room ?</li>
+                <li class="fragment">&#10149; Does an electronic component comply ?</li>
+              </ul>
+              <img class="fragment" src="images/farnell1.png" />
+              <img class="fragment" src="images/farnell2.png" />
+            </section>
+            <section>
+              <h2>Ranges</h2>
+              <code>
+<pre class="vimsql"><span class="Statement">create</span> <span class="Special">table</span> room_reservation (
+    room_id <span class="Type">uuid</span> <span class="Statement">not</span> <span class="Special">null</span>,
+    schedule tsrange <span class="Statement">not</span> <span class="Special">null</span>,
+    …
+    exclude <span class="Special">using</span> gist (<span class="Special">cast</span>(room_id <span class="Special">as</span> <span class="Type">text</span>) <span class="Special">with</span> =, schedule <span class="Special">with</span> &amp;&amp;)
+)
+</pre>
+              </code>
+            </section>
+            <section>
+              <h2>Inet type</h2>
+              <code>
+<pre class="vimphp">
+
+<span class="Operator">$</span><span class="Identifier">computers</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">session</span>
+    <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\Application\NetworkSchema\ComputerModel</span>'<span class="Special">)</span>
+    <span class="Structure">-&gt;</span>findWhere<span class="Special">(</span>'<span class="String">interface &lt;&lt; $*</span>', <span class="Special">[</span>'<span class="String">192.168.101.1/24</span>'<span class="Special">])</span>
+    ;
+
+</pre>
+
+</code>
+            </section>
+            <section>
+              <h2>Arrays of…</h2>
+              <code>
+                <pre class="vimphp">
+
+<span class="Operator">$</span><span class="Identifier">computers</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">session</span>
+    <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\Application\NetworkSchema\ComputerModel</span>'<span class="Special">)</span>
+    <span class="Structure">-&gt;</span>findWhere<span class="Special">(</span>'<span class="String">$* &gt;&gt; any (interfaces)</span>', <span class="Special">[</span>'<span class="String">192.168.101.1/24</span>'<span class="Special">])</span>
+    ;
+
+</pre>
+</code>
+            </section>
+            <section>
+              <h2>Geometric types</h2>
+              <ul>
+                <li>&#10149; Complete function set</li>
+                <li>&#10149; Point, Circle, Segment, Box, Polygon</li>
+                <li>&#10149; Operators to test intersection, parallelism, alignments etc.</li>
+                <li>&#10149; Operators to test containment, lenght, translation, rotation etc.</li>
+              </ul>
+            </section>
+            <section>
+              <h2>Geometric types</h2>
+              <code><pre class="vimphp">
+<span class="Operator">$</span><span class="Identifier">stations</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">session</span>
+    <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\Application\BikeSchema\StationModel</span>'<span class="Special">)</span>
+    <span class="Structure">-&gt;</span>findWhere<span class="Special">(</span>
+        '<span class="String">circle(point($*, $*), $*) @&gt; position</span>',
+        <span class="Special">[</span>
+            <span class="Operator">$</span><span class="Identifier">latitude</span>,
+            <span class="Operator">$</span><span class="Identifier">longitude</span>,
+            <span class="Operator">$</span><span class="Identifier">radius</span>,
+        <span class="Special">]</span>
+    <span class="Special">)</span>;</pre></code>
+            </section>
+            <section>
+              <h2>HStore</h2>
+              <ul>
+                <li>&#10149; Dictionnary in a database</li>
+                <li>&#10149; great tool for I18N when coupled with projection</li>
+                <li>&#10149; Can store strings only</li>
+              </ul>
+            </section>
+            <section>
+              <h2>JSON</h2>
+              <code><pre class="vimsql">
+<span class="Statement">select</span> row_to_json(notification) <span class="Special">from</span> notification;
+┌───────────────────────────────────────────────────────
+│
+├───────────────────────────────────────────────────────
+│ {<span class="String">&quot;notification_id&quot;</span>:<span class="Number">3</span>,<span class="String">&quot;name&quot;</span>:<span class="String">&quot;observer&quot;</span>,<span class="String">&quot;data&quot;</span>:{<span class="String">&quot;messag…</span>
+│ {<span class="String">&quot;notification_id&quot;</span>:<span class="Number">4</span>,<span class="String">&quot;name&quot;</span>:<span class="String">&quot;observer&quot;</span>,<span class="String">&quot;data&quot;</span>:{<span class="String">&quot;messag…</span>
+│ {<span class="String">&quot;notification_id&quot;</span>:<span class="Number">5</span>,<span class="String">&quot;name&quot;</span>:<span class="String">&quot;observer&quot;</span>,<span class="String">&quot;data&quot;</span>:{<span class="String">&quot;messag…</span>
+│ {<span class="String">&quot;notification_id&quot;</span>:<span class="Number">6</span>,<span class="String">&quot;name&quot;</span>:<span class="String">&quot;observer&quot;</span>,<span class="String">&quot;data&quot;</span>:{<span class="String">&quot;messag…</span>
+└───────────────────────────────────────────────────────
+</pre></code>
+            </section>
+            <section>
+              <h2>Complex types</h2>
+              <code><pre class="vimsql">
+<span class="Statement">select</span> notification <span class="Special">from</span> notification;
+┌─────────────────────────────────────────────
+│
+├─────────────────────────────────────────────
+│ (<span class="Number">3</span>,observer,<span class="String">&quot;{&quot;&quot;message&quot;&quot;:&quot;&quot;pika&quot;&quot;,&quot;&quot;pid&quot;&quot;:1&quot;</span>…
+│ (<span class="Number">4</span>,observer,<span class="String">&quot;{&quot;&quot;message&quot;&quot;:&quot;&quot;pika&quot;&quot;,&quot;&quot;pid&quot;&quot;:1&quot;</span>…
+│ (<span class="Number">5</span>,observer,<span class="String">&quot;{&quot;&quot;message&quot;&quot;:&quot;&quot;pika&quot;&quot;,&quot;&quot;pid&quot;&quot;:1&quot;</span>…
+│ (<span class="Number">6</span>,observer,<span class="String">&quot;{&quot;&quot;message&quot;&quot;:&quot;&quot;pika&quot;&quot;,&quot;&quot;pid&quot;&quot;:1&quot;</span>…
+└─────────────────────────────────────────────
+              </pre></code>
+              <ul>
+                <li class="fragment">Defining a table in Postgres is defining a type</li>
+              </ul>
+            </section>
+          </section>
+          <section>
+            <section data-background="images/Eniac.jpg" data-background-size="1000px">
+              <h2 style="color: red;">SQL in 2014</h2>
+            </section>
+            <section>
+              <h2>SQL has poor reputation</h2>
+              <ul>
+                <li>&#10149; Uneasy because stateless</li>
+                <li>&#10149; Hard to read when complex</li>
+                <li>&#10149; Tiedous to maintain list of fields</li>
+              </ul>
+            </section>
+            <section>
+              <h2>But SQL has got kicking ass features</h2>
+              <ul>
+                <li class="fragment">&#10149; Declarative paradigm</li>
+                <li class="fragment">&#10149; Transform sets of tuples</li>
+                <li class="fragment">&#10149; Common traits with functionnal programming</li>
+              </ul>
+            </section>
+            <section>
+              <h2>Common Table Expressions (SQL99)</h2>
+              <h3>before</h3>
+              <code><pre class="vimsql"><span class="Statement">select</span>
+  …
+<span class="Special">from</span> a_table
+  <span class="Special">join</span> (<span class="Statement">select</span> … <span class="Special">from</span> another_table <span class="Special">where</span> …)
+…
+</pre></code>
+              <ul>
+                <li class="fragment">&#10149; Complex to maintain</li>
+              </ul>
+            </section>
+            <section>
+              <h2>Common Table Expressions (SQL99)</h2>
+              <h3>after</h3>
+              <code><pre class="vimsql">
+<span class="Special">with</span>
+  set_a (field1, …) <span class="Special">as</span> (<span class="Statement">select</span> … )
+<span class="Statement">select</span> field1, … <span class="Special">from</span> a_table
+    <span class="Special">join</span> set_a <span class="Special">using</span> (a_field)
+<span class="Special">where</span> …
+</pre></code>
+            </section>
+            <section>
+              <h2>Common Table Expressions (SQL99)</h2>
+              <h3>A bit more complex</h3>
+              <code>
+<pre class="vimsql">
+<span class="Special">with</span>
+  set_a (field1, …) <span class="Special">as</span> (<span class="Statement">select</span> … ),
+  set_b (field1, …) <span class="Special">as</span> (<span class="Statement">select</span> … ),
+  set_c (field1, …) <span class="Special">as</span> (<span class="Statement">select</span> … <span class="Special">from</span> set_b <span class="Special">join</span> set_a <span class="Special">using</span> (a_field) <span class="Special">where</span> …)
+<span class="Statement">select</span>
+    field1,
+    …
+<span class="Special">from</span>
+    some_table
+       <span class="Special">join</span> set_c <span class="Special">using</span> (a_field)
+<span class="Special">where</span> …
+</pre>
+              </code>
+            </section>
+            <section>
+              <h2>Common Table Expressions (SQL99)</h2>
+              <h3>writeable</h3>
+              <code>
+<pre class="vimsql">
+<span class="Special">with</span>
+    set_a <span class="Special">as</span> (<span class="Statement">delete</span> <span class="Special">from</span> a_table <span class="Special">returning</span> *)
+<span class="Statement">insert</span> <span class="Special">into</span> another_table <span class="Statement">select</span> … <span class="Special">from</span> set_a <span class="Special">returning</span> *;
+</pre>
+              </code>
+            </section>
+            <section>
+              <h2>Common Table Expressions (SQL99)</h2>
+              <h3>recursive</h3>
+              <code><pre class="vimsql">
+<span class="Special">with</span> <span class="Special">recursive</span>
+    set_a <span class="Special">as</span> (
+        <span class="Statement">select</span> … <span class="Special">from</span> something
+      <span class="Statement">union</span> <span class="Statement">all</span>
+        <span class="Statement">select</span> … <span class="Special">from</span> set_a
+      )
+<span class="Statement">select</span> … <span class="Special">from</span> set_a <span class="Special">where</span> …
+              </pre></code>
+            </section>
+            <section>
+              <h2>Window functions</h2>
+              <p>Functions on windows of data</p>
+              <code><pre class="vimsql">
+<span class="Statement">select</span>
+  …,
+  <span class="Function">rank</span>() <span class="Special">over</span> (<span class="Special">partition</span> <span class="Special">by</span> country <span class="Special">order</span> <span class="Special">by</span> production <span class="Special">desc</span>) <span class="Special">as</span> ranking,
+</pre>
+              </code>
+            </section>
+            <section>
+              <h2>Window functions</h2>
+              <p>Be able to propose a link to next and previous blog articles.</p>
+              <code><pre class="vimsql">
+<span class="Statement">select</span>
+  slug,
+  <span class="Function">lag</span>(slug) <span class="Special">over</span> published_at_wdw <span class="Special">as</span> next_slug,
+  <span class="Function">lead</span>(slug) <span class="Special">over</span>  published_at_wdw <span class="Special">as</span> prev_slug
+<span class="Special">from</span>
+  blog_post
+<span class="Special">window</span>
+  published_at_wdw <span class="Special">as</span> (<span class="Special">order</span> <span class="Special">by</span> published_at <span class="Special">desc</span>)</pre></code>
+            </section>
+            <section>
+              <h2>Sorry, we won't talk about…</h2>
+              <ul>
+                <li class="fragment">&#10149; Transactionnable DDLs</li>
+                <li class="fragment">&#10149; Materialized views</li>
+                <li class="fragment">&#10149; Full text search</li>
+                <li class="fragment">&#10149; Procedural languages</li>
+                <li class="fragment">&#10149; Indexes</li>
+                <li class="fragment">&#10149; And so much more…</li>
+              </ul>
+            </section>
+          </section>
+          <section>
+            <section>
+              <h2>How to hug an elephant ?</h2>
+              <ul>
+                <li class="fragment">Organize the code</li>
+                <li class="fragment">Speak SQL</li>
+              </ul>
+            </section>
+            <section>
+              <h2>Organize the code</h2>
+              <img src="images/map.png" border="0" />
+            </section>
+            <section>
+              <h2>Organize the code</h2>
+              <ul>
+                <li class="fragment"><code>Model</code> map projection with a flexible entity</li>
+                <li class="fragment"><code>Model</code> can be auto generated by inspecting the database</li>
+                <li class="fragment"><code>Model</code> support Postgresql relation multiple inheritance</li>
+              </ul>
+            </section>
+            <section>
+              <h2>Organize the code</h2>
+              <p>Model class</p>
+              <code><pre class="vimphp">
+<span class="Special">&lt;?php</span>
+<span class="Structure">namespace</span> Model\Blog\PublicSchema;
+<span class="Comment">//…</span>
+<span class="Structure">class</span> ComputerModel <span class="Structure">extends</span> Model
+<span class="Special">{</span>
+    <span class="Include">use</span> WriteQueries;
+
+    <span class="StorageClass">public</span> <span class="Define">function</span> <span class="Operator">__construct</span><span class="Special">()</span>
+    <span class="Special">{</span>
+        <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>structure <span class="Operator">=</span> <span class="Define">new</span> ComputerStructure;
+        <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>flexible_entity_class <span class="Operator">=</span> &quot;<span class="String">\Model\PommProject\PommSchema\Computer</span>&quot;;
+    <span class="Special">}</span>
+</pre></code>
+            </section>
+            <section>
+              <h2>Speak SQL</h2>
+              <code>
+<pre class="vimphp">
+    <span class="StorageClass">public</span> <span class="Define">function</span> findBySlugWithNeighbours<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">slug</span><span class="Special">)</span>
+    <span class="Special">{</span>
+        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Operator">&lt;&lt;&lt;</span><span class="Special">SQL</span>
+<span class="Special">with</span>
+  neighbour <span class="Special">as</span> (
+…
+    )
+<span class="Statement">select</span>
+    :news_fields
+<span class="Special">from</span>
+    :news_table
+      <span class="Function">left</span> <span class="Special">join</span> neighbour n <span class="Special">using</span> (slug)
+<span class="Special">where</span>
+    news.slug = $*
+<span class="Special">SQL</span>;
+</pre>
+              </code>
+            </section>
+            <section>
+              <h2>Organize the code</h2>
+              <img src="images/mvc.png" />
+            </section>
+            <section>
+              <h2>Organize the SQL &amp; code</h2>
+              <img src="images/mv2c.png" />
+            </section>
+          </section>
+          <section>
+            <section>
+              <h2>Postgresql is the database<br />of the future</h2>
+              <ul>
+                <li class="fragment">5 years to get stable version</li>
+                <li class="fragment">5 years to comply to SQL standard</li>
+                <li class="fragment">5 years to be enterprise ready</li>
+                <li class="fragment">And innovating since then !</li>
+              </ul>
+            </section>
+            <section>
+              <h2>Pomm: 5 years of Postgres</h2>
+              <ul>
+                <li class="fragment">sfPgLookPlugin (2010)</li>
+                <li class="fragment">Pomm (2011 - 2015)</li>
+                <li class="fragment">Pomm2 (2015 - ?)</li>
+                <li class="fragment">Pragmatic, efficient, easy</li>
+              </ul>
+            </section>
+            <section>
+              <h2>You can join us !</h2>
+              <ul>
+                <li class="fragment">Play with Postgres</li>
+                <li class="fragment">Its documentation is heaven</li>
+                <li class="fragment">Ported by a very open and talented community</li>
+                <li class="fragment">Play with Pomm2</li>
+                <li class="fragment">Your experience is <strong>very</strong> valuable</li>
+                <li class="fragment">Help us to make the best tool for database in PHP</li>
+              </ul>
+            </section>
+          </section>
+          <section data-background="images/background.jpg">
+            <h2>Thank you</h2>
+            <hr />
+            <ul>
+              <li><strong>joind.in</strong>&nbsp; https://joind.in/12955</li>
+              <li><strong>twitter</strong>&nbsp; @chanmix51, @PommProject</li>
+            </ul>
+            <hr />
+            <h3>Any questions ?</h3>
+          </section>
+      </div>
+
+    <div id="logo" style=" background:url('images/backgrund.png'); position: absolute; bottom: 30px; left: 30px; width: 260px; height: 100px; background-repeat: no-repeat; "></div>
+    <div id="pomm-project" style=" background:url('images/pomm-project.png'); position: absolute; top: 30px; right: 30px; height: 50px; width: 350px; background-repeat: no-repeat; "></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

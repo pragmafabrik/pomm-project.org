@@ -43,8 +43,14 @@ if (preg_match('/^dev/', ENV))
     $app['debug'] = true;
     $app->register(new Provider\MonologServiceProvider(), array(
         'monolog.logfile' => PROJECT_DIR.'/log/app.log',
-        'monolog.level'   => Monolog\Logger::INFO,
+        'monolog.level'   => Monolog\Logger::DEBUG,
         ));
+    $app->register(new Silex\Provider\ServiceControllerServiceProvider());
+    $app->register(new Provider\WebProfilerServiceProvider(), array(
+        'profiler.cache_dir' => PROJECT_DIR.'/cache/profiler',
+        'profiler.mount_prefix' => '/_profiler', // this is the default
+    ));
+    $app->register(new PommProject\Silex\ProfilerServiceProvider\PommProfilerServiceProvider());
 }
 
 return $app;

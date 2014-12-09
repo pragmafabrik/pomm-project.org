@@ -25,9 +25,9 @@
                 <p>Installing Pomm 2 is as simple as adding the following packages in a <code>composer.json</code> file:
 <code><pre class="vimphp"><span class="Special">{</span>
     <span class="Statement">"require"</span>: <span class="Special">{</span>
-        <span class="Statement">"pomm-project/cli"</span>: <span class="String">"dev-master"</span>,
-        <span class="Statement">"pomm-project/model-manager"</span>: <span class="String">"dev-master"</span>,
-        <span class="Statement">"pomm-project/foundation"</span>: <span class="String">"dev-master"</span>
+        <span class="Statement">"pomm-project/cli"</span>: <span class="String">"2.0.*@dev"</span>,
+        <span class="Statement">"pomm-project/model-manager"</span>: <span class="String">"2.0.*@dev"</span>,
+        <span class="Statement">"pomm-project/foundation"</span>: <span class="String">"2.0.*@dev"</span>
     <span class="Special">}</span>
 <span class="Special">}</span></pre></code></p>
                 <p>Launch <code>composer.phar install</code> and it will install Pomm2 and sets the autoloader accordingly.</p>
@@ -72,7 +72,7 @@ $ php vendor/bin/pomm.php generate:schema-all my_db public
                   </ul>
                 </p>
                 <h3>Step 3: tune the projection</h3>
-                <p>Let's consider the following script that use the <code>ComputerModel</code>:
+                <p>Let's consider the following script that uses the <code>ComputerModel</code>:
 <code><pre class="vimphp">
 <span class="Special">&lt;?php</span>
 

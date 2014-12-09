@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Bureau/madrid2014/Untitled.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="php">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+<meta name="colorscheme" content="symfony">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #222222; }
+body { font-family: monospace; color: #ffffff; background-color: #222222; }
+* { font-size: 1em; }
+.String { color: #99ff00; }
+.Statement { color: #ff8400; background-color: #222222; padding-bottom: 1px; font-weight: bold; }
+.Define { color: #ffcc66; }
+.Operator { color: #f0f0f0; }
+.StorageClass { color: #ffcc66; }
+.Structure { color: #ffcc66; }
+.LineNr { color: #2b2b2b; background-color: #c0c0ff; padding-bottom: 1px; }
+.Comment { color: #bd48b3; }
+.Special { color: #ffcc66; }
+.Identifier { color: #6d9cbe; }
+.Function { color: #ffcc66; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<code><pre id='vimCodeElement'><span class="Special">&lt;?php</span> <span class="Comment">// controller class</span>
+
+<span class="StorageClass">public</span> <span class="Define">function</span> deleteStudentController<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">id</span><span class="Special">)</span>
+<span class="Special">{</span>
+    <span class="Operator">$</span><span class="Identifier">student</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>getService<span class="Special">(</span>'<span class="String">pomm</span>'<span class="Special">)[</span>'<span class="String">my_db</span>'<span class="Special">]</span>
+        <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\MyDB\PublicSchema\StudentModel</span>'<span class="Special">)</span>
+        <span class="Structure">-&gt;</span>deleteByPK<span class="Special">([</span>'<span class="String">student_id</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">id</span><span class="Special">])</span>
+        ;
+
+    <span class="Statement">if</span> <span class="Special">(</span><span class="Operator">!</span><span class="Operator">$</span><span class="Identifier">student</span><span class="Special">)</span> <span class="Special">{</span>
+        <span class="Statement">throw</span> <span class="Define">new</span> NotFound404Exception<span class="Special">(</span>
+            <span class="Function">sprintf</span><span class="Special">(</span>&quot;<span class="String">No such student id = '%s'.</span>&quot;, <span class="Operator">$</span><span class="Identifier">id</span><span class="Special">)</span>
+        <span class="Special">)</span>;
+    <span class="Special">}</span>
+
+    <span class="Statement">return</span> <span class="Define">new</span> JsonResponse<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">student</span><span class="Structure">-&gt;</span><span class="Operator">extract</span><span class="Special">())</span>;
+<span class="Special">}</span>
+</pre></code>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

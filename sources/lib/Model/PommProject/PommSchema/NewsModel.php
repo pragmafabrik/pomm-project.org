@@ -118,7 +118,7 @@ SQL;
 
         $sql = strtr($sql,
             [
-            ':news_fields' => $projection->formatFieldsWithFieldAlias(),
+            ':news_fields' => $projection,
             ':news_table' => $this->structure->getRelation(),
             ]
         );

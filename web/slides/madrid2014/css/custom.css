@@ -1,0 +1,26 @@
+blockquote { font-style: italic; font-size: 120%; }
+pre.vimphp { white-space: pre-wrap; font-family: monospace; color: #f6f3e8; background-color: #000000; font-size: 24px;}
+pre.vimphp .lnr { color: #3d3d3d; background-color: #000000; }
+pre.vimphp .Type { color: #ffffb7; }
+pre.vimphp .PreProc { color: #96cbfe; }
+pre.vimphp .String { color: #a8ff60; }
+pre.vimphp .Identifier { color: #c6c5fe; }
+pre.vimphp .Operator { color: #6699cc; }
+pre.vimphp .Delimiter { color: #00a0a0; }
+pre.vimphp .Comment { color: #7c7c7c; }
+pre.vimphp .Number { color: #ff73fd; }
+pre.vimphp .Function { color: #ffd2a7; }
+pre.vimphp .Statement { color: #6699cc; }
+pre.vimphp .Special { color: #e18964; }
+pre.vimphp .StorageClass { color: #ffcc66; }
+pre.vimphp .Define { color: #6699cc; }
+pre.vimphp .Constant { color: #6d9cbe; }
+pre.vimphp .Include { color: #cc7833; }
+
+pre.vimsql { white-space: pre-wrap; font-family: monospace; color: #000000; background-color: #ffffff; font-size: 24px;}
+pre.vimsql .Constant { color: #ff00ff; }
+pre.vimsql .Statement { color: #a52a2a; }
+pre.vimsql .LineNr { color: #a52a2a; }
+pre.vimsql .Type { color: #0000ff; }
+pre.vimsql .Special { color: #ff00ff; }
+pre.vimsql .Identifier { color: #0000ff; }
