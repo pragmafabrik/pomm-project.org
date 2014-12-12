@@ -341,12 +341,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/pomm-profiler-service-provider.git",
-                "reference": "ced9eeb4689270519535b706b01caa205452e54e"
+                "reference": "da8750a9c1a64d6ee781d7b0b91d749966c6a393"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/pomm-profiler-service-provider/zipball/ced9eeb4689270519535b706b01caa205452e54e",
-                "reference": "ced9eeb4689270519535b706b01caa205452e54e",
+                "url": "https://api.github.com/repos/pomm-project/pomm-profiler-service-provider/zipball/da8750a9c1a64d6ee781d7b0b91d749966c6a393",
+                "reference": "da8750a9c1a64d6ee781d7b0b91d749966c6a393",
                 "shasum": ""
             },
             "require": {
@@ -387,7 +387,7 @@
                 "pomm",
                 "silex"
             ],
-            "time": "2014-12-08 21:24:46"
+            "time": "2014-12-09 10:23:47"
         },
         {
             "name": "pomm-project/pomm-service-provider",
