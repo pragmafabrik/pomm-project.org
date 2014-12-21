@@ -6,6 +6,7 @@
         "pomm-project/cli": "2.0.*@dev",
         "pomm-project/model-manager": "2.0.*@dev",
         "pomm-project/foundation": "2.0.*@dev",
+        "pomm-project/pomm-symfony-bridge": "2.0.*@dev",
         "silex/silex":  "1.2.*",
         "monolog/monolog": "1.6.*",
         "symfony/monolog-bridge": "2.*",

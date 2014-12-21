@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "26bf2b412aa698a9a02128c25bba7c0e",
+    "hash": "da2f56e5b890b6aed23765486e64e597",
     "packages": [
         {
             "name": "jdorn/sql-formatter",
@@ -172,12 +172,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/Cli.git",
-                "reference": "5eecca417a25a2561139d304253947372800bc56"
+                "reference": "4861f5456856701f87e52c04159f592ee0906ede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/Cli/zipball/5eecca417a25a2561139d304253947372800bc56",
-                "reference": "5eecca417a25a2561139d304253947372800bc56",
+                "url": "https://api.github.com/repos/pomm-project/Cli/zipball/4861f5456856701f87e52c04159f592ee0906ede",
+                "reference": "4861f5456856701f87e52c04159f592ee0906ede",
                 "shasum": ""
             },
             "require": {
@@ -186,7 +186,7 @@
                 "pomm-project/foundation": "2.0.*@dev",
                 "pomm-project/model-manager": "2.0.*@dev",
                 "psr/log": "~1.0",
-                "symfony/console": "2.5.*"
+                "symfony/console": "~2.5"
             },
             "require-dev": {
                 "atoum/atoum": "dev-master"
@@ -224,7 +224,7 @@
                 "pomm",
                 "postgresql"
             ],
-            "time": "2014-12-17 11:53:34"
+            "time": "2014-12-17 16:43:37"
         },
         {
             "name": "pomm-project/foundation",
@@ -232,12 +232,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/Foundation.git",
-                "reference": "cec3a4c40d89a9643579a1105cb0dda84018cd09"
+                "reference": "afbf4fac6ff06899a933e066aad53b5f60663590"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/cec3a4c40d89a9643579a1105cb0dda84018cd09",
-                "reference": "cec3a4c40d89a9643579a1105cb0dda84018cd09",
+                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/afbf4fac6ff06899a933e066aad53b5f60663590",
+                "reference": "afbf4fac6ff06899a933e066aad53b5f60663590",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
                 "pomm",
                 "postgresql"
             ],
-            "time": "2014-12-17 11:49:52"
+            "time": "2014-12-19 23:00:08"
         },
         {
             "name": "pomm-project/model-manager",
@@ -344,18 +344,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/pomm-profiler-service-provider.git",
-                "reference": "da8750a9c1a64d6ee781d7b0b91d749966c6a393"
+                "reference": "7010ba9b028793488733912d5bf9c759557a1c4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/pomm-profiler-service-provider/zipball/da8750a9c1a64d6ee781d7b0b91d749966c6a393",
-                "reference": "da8750a9c1a64d6ee781d7b0b91d749966c6a393",
+                "url": "https://api.github.com/repos/pomm-project/pomm-profiler-service-provider/zipball/7010ba9b028793488733912d5bf9c759557a1c4b",
+                "reference": "7010ba9b028793488733912d5bf9c759557a1c4b",
                 "shasum": ""
             },
             "require": {
                 "jdorn/sql-formatter": "~1.2",
                 "php": ">=5.4.4",
-                "pomm-project/foundation": "2.0.*@dev",
+                "pomm-project/pomm-service-provider": "dev-silex-1",
+                "pomm-project/pomm-symfony-bridge": "2.0.*@dev",
                 "silex/silex": "~1.0",
                 "symfony/twig-bridge": "~2.5",
                 "symfony/yaml": "~2.5"
@@ -390,7 +391,7 @@
                 "pomm",
                 "silex"
             ],
-            "time": "2014-12-09 10:23:47"
+            "time": "2014-12-18 16:02:45"
         },
         {
             "name": "pomm-project/pomm-service-provider",
@@ -434,6 +435,67 @@
                 "silex"
             ],
             "time": "2014-12-08 20:05:17"
+        },
+        {
+            "name": "pomm-project/pomm-symfony-bridge",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pomm-project/pomm-symfony-bridge.git",
+                "reference": "d214f565bfa7b9d0097852b9ff14d8c682e749a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pomm-project/pomm-symfony-bridge/zipball/d214f565bfa7b9d0097852b9ff14d8c682e749a9",
+                "reference": "d214f565bfa7b9d0097852b9ff14d8c682e749a9",
+                "shasum": ""
+            },
+            "require": {
+                "pomm-project/foundation": "2.0.*@dev",
+                "symfony/http-foundation": "~2.5",
+                "symfony/http-kernel": "~2.5"
+            },
+            "suggest": {
+                "pomm-project/cli": "2.0.*@dev",
+                "pomm-project/model-manager": "2.0.*@dev",
+                "silex/silex": "~1.0",
+                "symfony/symfony": "~2.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PommProject\\SymfonyBridge\\": "sources/lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jérôme MACIAS",
+                    "email": "jerome.macias@gmail.com"
+                },
+                {
+                    "name": "Grégoire HUBERT",
+                    "email": "hubert.greg@gmail.com"
+                }
+            ],
+            "description": "Pomm2 shared elements between Silex and Symfony.",
+            "homepage": "http://www.pomm-project.org",
+            "keywords": [
+                "debug",
+                "pomm",
+                "profiler",
+                "silex",
+                "symfony"
+            ],
+            "time": "2014-12-18 17:28:22"
         },
         {
             "name": "psr/log",
@@ -603,17 +665,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.5.8",
+            "version": "v2.6.1",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "806e29280b4b9700693b32d055ce1b1a491dec39"
+                "reference": "ef825fd9f809d275926547c9e57cbf14968793e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/806e29280b4b9700693b32d055ce1b1a491dec39",
-                "reference": "806e29280b4b9700693b32d055ce1b1a491dec39",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/ef825fd9f809d275926547c9e57cbf14968793e8",
+                "reference": "ef825fd9f809d275926547c9e57cbf14968793e8",
                 "shasum": ""
             },
             "require": {
@@ -621,16 +683,18 @@
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.1"
+                "symfony/event-dispatcher": "~2.1",
+                "symfony/process": "~2.1"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
-                "symfony/event-dispatcher": ""
+                "symfony/event-dispatcher": "",
+                "symfony/process": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.6-dev"
                 }
             },
             "autoload": {
@@ -654,7 +718,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-02 20:15:53"
+            "time": "2014-12-02 20:19:20"
         },
         {
             "name": "symfony/debug",
@@ -1427,7 +1491,8 @@
         "pomm-project/pomm-profiler-service-provider": 20,
         "pomm-project/cli": 20,
         "pomm-project/model-manager": 20,
-        "pomm-project/foundation": 20
+        "pomm-project/foundation": 20,
+        "pomm-project/pomm-symfony-bridge": 20
     },
     "prefer-stable": false,
     "platform": [],
