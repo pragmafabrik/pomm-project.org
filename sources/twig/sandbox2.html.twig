@@ -47,8 +47,8 @@
     <span class="Special">]</span>
 <span class="Special">])</span>;</pre></code>
                 The name of the database is important since it will be used in the namespace for generated classes.</p>
-                <p>At this point, the CLI tool should be functional, just enter <code>php vendor/bin/pomm</code> in a terminal, it should grant you with a help message. Try to launch a <code>inspect:database</code> command, it should output something similar to:
-                <code><pre>$ php vendor/bin/pomm.php inspect:database my_db
+                <p>At this point, the CLI tool should be functional, just enter <code>php vendor/bin/pomm.php</code> in a terminal, it should grant you with a help message. Try to launch a <code>pomm:inspect:database</code> command, it should output something similar to:
+                <code><pre>$ php vendor/bin/pomm.php pomm:inspect:database my_db
 Found 1 schemas in database.
 +-----------+--------+-----------+-------------------------+
 | name      | oid    | relations | comment                 |
@@ -59,7 +59,7 @@ Found 1 schemas in database.
                 <h3>Step 2: Generate model classes</h3>
                 <p>The CLI can also be used to generate model files. If you want to generate model files for all the relations in a schema, just enter:
 <code><pre>
-$ php vendor/bin/pomm.php generate:schema-all my_db public
+$ php vendor/bin/pomm.php pomm:generate:schema-all my_db public
  ✓  Creating file './MyDb/PublicSchema/AutoStructure/Computer.php'.
  ✓  Creating file './MyDb/PublicSchema/ComputerModel.php'.
  ✓  Creating file './MyDb/PublicSchema/Computer.php'.

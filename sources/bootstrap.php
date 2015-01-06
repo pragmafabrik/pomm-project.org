@@ -38,8 +38,7 @@ $app->register(new PommProject\Silex\ServiceProvider\PommServiceProvider(), arra
 // Service container customization.
 $app['loader'] = $loader;
 // set DEBUG mode or not
-if (preg_match('/^dev/', ENV))
-{
+if (preg_match('/^dev/', ENV)) {
     $app['debug'] = true;
     $app->register(new Provider\MonologServiceProvider(), array(
         'monolog.logfile' => PROJECT_DIR.'/log/app.log',
