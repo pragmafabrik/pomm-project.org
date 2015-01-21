@@ -13,12 +13,14 @@ use PommProject\ModelManager\Model\RowStructure;
  * News
  *
  * Structure class for relation pomm.news.
- * 
- * Class and fields comments are inspected from table and fields comments.
- * Just add comments in your database and they will appear here.
- * @see http://www.postgresql.org/docs/9.0/static/sql-comment.html
+ * The slugs are generated automatically from the title using a trigger.
  *
- *
+ * slug:
+ * The slugs are generated automatically from the title using a trigger.
+ * title:
+ * Titles are rendered in a h1 tag.
+ * published_at:
+ * When null, the news is not published.
  *
  * @see RowStructure
  */
@@ -42,7 +44,6 @@ class News extends RowStructure
             ->addField('created_at', 'timestamp')
             ->addField('published_at', 'timestamp')
             ->addField('content', 'text')
-            ->addField('accept_comments', 'bool')
             ;
     }
 }

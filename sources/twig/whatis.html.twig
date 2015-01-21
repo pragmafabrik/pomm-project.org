@@ -1,0 +1,180 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}What is Pomm 2{% endblock %}
+
+{% block css %}    <link href="/css/vim.css" rel="stylesheet" media="screen" />
+{% endblock %}
+
+{% block content %}
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <h2>What is Pomm 2</h2>
+              </div>
+              <div class="panel-body">
+                <p>
+                Pomm 2 is a small database access framework for PHP dedicated to Postgresql. <a href="{{ app.url_generator.generate('main_about') }}">Pomm is different from an ORM</a>. For convenience, Pomm library has been divided into small packages:
+                  <ul>
+                    <li>Foundation</li>
+                    <li>ModelManager</li>
+                    <li>Cli</li>
+                  </ul>
+                </p>
+                <h3>Foundation</h3>
+                <p>The foundation package is a library that shares a database &quot;physical&quot; connection between clients through a session. Thare are different kind of clients, pametrized statements, prepared queries, converter, database inspector. These different kind of clients are managed by pool managers abbreviated as &quot;poolers&quot;.</p>
+                <div class="row">
+                  <div class="col-md-4">
+                    <img src="/images/session.png" />
+                  </div> <!-- col-md-4 -->
+                  <div class="col-md-8">
+                    <p>Each client registered to the session can access the connection or summon other client's methods. The example below shows how the system work and how transparent it is:
+                          <code><pre class="vimphp">
+<span class="Operator">$</span><span class="Identifier">iterator</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">session</span>
+    <span class="Structure">-&gt;</span>getQueryManager<span class="Special">()</span>
+    <span class="Structure">-&gt;</span>query<span class="Special">(</span>'<span class="String">select * from a_table where a_field = $*</span>', <span class="Special">[</span>'<span class="String">a value</span>'<span class="Special">])</span>
+    ;
+
+<span class="Statement">foreach</span> <span class="Special">(</span><span class="Operator">$</span><span class="Identifier">iterator</span> <span class="Statement">as</span> <span class="Operator">$</span><span class="Identifier">row</span><span class="Special">)</span> <span class="Special">{</span>
+  <span class="Function">print_r</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">row</span><span class="Special">)</span>;
+<span class="Special">}</span>
+</pre></code>
+                    </p>
+                  </div> <!--col-md-8 -->
+                </div><!-- row -->
+                <p>
+                  The code example above shows how to ask the QueryManager pooler to give us a client able to perform a query. The returned result iterator owns a reference to the session. Each time a result is fetched from the iterator, the converter pooler is used to get a converter client. This way, each converter can access the session which is useful to use Postgresql <a href="http://php.net/manual/en/function.pg-escape-literal.php">configuration dependant escaping functions</a>. The following usefull poolers come configured with the default session builder:
+                  <ul>
+                    <li>QueryManager (can use <code>PreparedQueryPooler</code> to use prepared statements)</li>
+                    <li>Converter</li>
+                    <li>Observer (to take advantage of Postgresql listen/notify feature)</li>
+                    <li>Inspector</li>
+                    <li>Listener (trigger code on events within Pomm)</li>
+                  </ul>
+                </p>
+                <h3>Model Manager</h3>
+                <p>Pomm's model manager is a package adding extra clients to Foundation in order to map database records with object oriented entities. This greatly eases all the write operations and enhances data conversion, allowing the use of composite types and embedded entities.</p>
+                <p>Each <code>Model</code> class maps a database relation to a <code>FlexibleEntity</code> using a <code>Projection</code>. There is <a href="{{ app.url_generator.generate('main_about') }}">more about this here</a>. A typical model file looks like the following:
+                <code><pre class="vimphp">
+<span class="Special">&lt;?php</span>
+<span class="Comment">// …</span>
+<span class="Structure">class</span> NewsModel <span class="Structure">extends</span> Model
+<span class="Special">{</span>
+    <span class="Include">use</span> WriteQueries; <span class="Comment">// ← This model can perform write SQL statements.</span>
+
+    <span class="StorageClass">public</span> <span class="Define">function</span> <span class="Operator">__construct</span><span class="Special">()</span>
+    <span class="Special">{</span>
+        <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>structure <span class="Operator">=</span> <span class="Define">new</span> NewsStructure; <span class="Comment">// ← natural structure of the mapped relation.</span>
+        <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>flexible_entity_class <span class="Operator">=</span> &quot;<span class="String">\Model\PommProject\PommSchema\News</span>&quot;;
+    <span class="Special">}</span>   <span class="Comment">// ↑ The flexible entity associated with this model</span>
+<span class="Special">}</span>
+</pre></code>
+                The actual code above has been stripped of `namespace` and `use` statements for readability. Using this model class is as easy as using any other Foundation's clients:
+                <code><pre class="vimphp">
+<span class="Special">&lt;?php</span>
+<span class="Comment">// …</span>
+<span class="Operator">$</span><span class="Identifier">iterator</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">session</span>
+    <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\Model\PommProject\PommSchema\NewsModel</span>'<span class="Special">)</span>
+    <span class="Structure">-&gt;</span>findWhere<span class="Special">(</span>'<span class="String">content LIKE $*</span>', '<span class="String">%pika%</span>'<span class="Special">)</span> <span class="Comment">// ← parameter escaping</span>
+    <span class="Comment">// ↑ SELECT $projection FROM pomm.news WHERE content LIKE '%pika%'</span>
+    ;
+
+<span class="Statement">foreach</span> <span class="Special">(</span><span class="Operator">$</span><span class="Identifier">iterator</span> <span class="Statement">as</span> <span class="Operator">$</span><span class="Identifier">news</span><span class="Special">)</span> <span class="Special">{</span> <span class="Comment">//← results are loaded and converted on demand</span>
+    <span class="Function">printf</span><span class="Special">(</span>            <span class="Comment">// ↑ news are object oriented entities</span>
+        &quot;<span class="String">date: %s, title « %s ».</span><span class="Special">\n</span>&quot;,  <span class="Comment">// ↓ timestamps are converted to DateTime</span>
+        <span class="Operator">$</span><span class="Identifier">news</span><span class="Structure">-&gt;</span>getCreatedAt<span class="Special">()</span><span class="Structure">-&gt;</span>format<span class="Special">(</span>&quot;<span class="String">Y-m-d</span>&quot;<span class="Special">)</span>, <span class="Comment">// ← automatic accessor</span>
+        <span class="Operator">$</span><span class="Identifier">news</span><span class="Special">[</span>&quot;<span class="String">title</span>&quot;<span class="Special">]</span> <span class="Comment">// ← equivalent to getTitle()</span>
+      <span class="Special">)</span>;
+<span class="Special">}</span></pre></code></p>
+                <p>Each entity's model class defines the projection that is used by the queries to hydrate them. The projection is represented by a <code>Projection</code> instance initialized by the model class upon relation natural definition. It is possible to tune this projection by overloading the model's <code>createProjection()</code> method. Let's imagine we are interested in the age of a publication instead of just showing the publication date:
+                <code><pre class="vimphp">
+    <span class="StorageClass">public</span> <span class="Define">function</span> createProjection<span class="Special">()</span>
+    <span class="Special">{</span>
+        <span class="Statement">return</span> <span class="Structure">parent</span><span class="Operator">::</span>createProjection<span class="Special">()</span>
+            <span class="Structure">-&gt;</span>setField<span class="Special">(</span>'<span class="String">age</span>', '<span class="String">age(%published_at)</span>', '<span class="String">interval</span>'<span class="Special">)</span>
+            ;
+    <span class="Special">}</span></pre></code>
+                Now all <code>News</code> entities returned by queries will have an extra field <code>age</code> containing the age of the publication in a <code>\DateInterval</code>. All the default queries are sensible to the projection:
+                  <dl>
+                    <dt>Ready queries trait</dt>
+                    <dd>findAll()</dd>
+                    <dd>findWhere()</dd>
+                    <dd>findByPk()</dd>
+                    <dd>countWhere()</dd>
+                    <dt>Write queries trait</dt>
+                    <dd>createAndSave()</dd>
+                    <dd>insertOne()</dd>
+                    <dd>updateOne()</dd>
+                    <dd>deleteOne()</dd>
+                    <dd>updateByPk()</dd>
+                    <dd>deleteByPk()</dd>
+                  </dl>
+                  It may appear weird at first glance an update query uses the projection but actually Postgresql <code>UPDATE</code> statements can return a project through the <code>RETURNING</code> statements. </p>
+                  <p>It is now possible to create a custom accessor in the <code>News</code> entity to display the interval easily:
+                  <code><pre class="vimphp">
+    <span class="StorageClass">public</span> <span class="Define">function</span> getAge<span class="Special">()</span>
+    <span class="Special">{</span>
+        <span class="Operator">$</span><span class="Identifier">interval</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>get<span class="Special">(</span>'<span class="String">age</span>'<span class="Special">)</span>;
+
+        <span class="Statement">if</span> <span class="Special">(</span><span class="Operator">$</span><span class="Identifier">interval</span><span class="Structure">-&gt;</span>y <span class="Statement">&gt;</span> <span class="Number">0</span><span class="Special">)</span> <span class="Special">{</span>
+            <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">interval</span><span class="Structure">-&gt;</span>y <span class="Statement">&gt;</span> <span class="Number">1</span>
+                <span class="Operator">?</span> <span class="Function">sprintf</span><span class="Special">(</span>&quot;<span class="String">%d years ago</span>&quot;, <span class="Operator">$</span><span class="Identifier">interval</span><span class="Structure">-&gt;</span>y<span class="Special">)</span>
+                <span class="Operator">:</span> '<span class="String">last year</span>'
+                ;
+        <span class="Special">}</span> <span class="Statement">elseif</span> <span class="Special">(</span><span class="Operator">$</span><span class="Identifier">interval</span><span class="Structure">-&gt;</span>m <span class="Statement">&gt;</span> <span class="Number">0</span><span class="Special">)</span> <span class="Special">{</span>
+            <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">interval</span><span class="Structure">-&gt;</span>m <span class="Statement">&gt;</span> <span class="Number">1</span>
+                <span class="Operator">?</span> <span class="Function">sprintf</span><span class="Special">(</span>&quot;<span class="String">%d months ago</span>&quot;, <span class="Operator">$</span><span class="Identifier">interval</span><span class="Structure">-&gt;</span>m<span class="Special">)</span>
+                <span class="Operator">:</span> '<span class="String">last month</span>'
+                ;
+        <span class="Special">}</span> <span class="Statement">elseif</span> <span class="Special">(</span><span class="Operator">$</span><span class="Identifier">interval</span><span class="Structure">-&gt;</span>d <span class="Statement">&gt;</span> <span class="Number">0</span><span class="Special">)</span> <span class="Special">{</span>
+            <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">interval</span><span class="Structure">-&gt;</span>d <span class="Statement">&gt;</span> <span class="Number">1</span>
+                <span class="Operator">?</span> <span class="Function">sprintf</span><span class="Special">(</span>&quot;<span class="String">%d days ago</span>&quot;, <span class="Operator">$</span><span class="Identifier">interval</span><span class="Structure">-&gt;</span>d<span class="Special">)</span>
+                <span class="Operator">:</span> '<span class="String">yesterday</span>'
+                ;
+        <span class="Special">}</span> <span class="Statement">else</span> <span class="Special">{</span> <span class="Statement">return</span> '<span class="String">today</span>'; <span class="Special">}</span>
+    <span class="Special">}</span>
+</pre></code>
+                </p>
+                <h3>Commend Line Interface (CLI)</h3>
+                <p>The CLI package crafts a command line thats uses Foundation and ModelManager clients to inspect the database structure or to generate classes for the model manager.</p>
+                <code><pre><b>$</b> php vendor/bin/pomm.php pomm:inspect:relation pomm_project news pomm
+Relation pomm.news
++----+--------------+-----------+---------+---------+-----------------------------------------------------------------------+
+| pk | name         | type      | default | notnull | comment                                                               |
++----+--------------+-----------+---------+---------+-----------------------------------------------------------------------+
+| *  | slug         | varchar   |         | yes     | The slugs are generated automatically from the title using a trigger. |
+|    | title        | varchar   |         | yes     | Titles are rendered in a h1 tag.                                      |
+|    | created_at   | timestamp | now()   | yes     |                                                                       |
+|    | published_at | timestamp | now()   | no      | When null, the news is not published.                                 |
+|    | content      | text      |         | yes     |                                                                       |
++----+--------------+-----------+---------+---------+-----------------------------------------------------------------------+</pre></code>
+                As shown above, comments are first class citizen of the CLI. There are immensely useful for the developers. Even though developers have been brain storming on the structure of the database, it is foolish to assume one can keep in mind the wood ball of details it contains. Postgresql is capable to set comments on almost everything (schemas, table, rows, constraints, indexes, functions etc.) Pomm takes advantage of this feature to self document the database.</p>
+                <p>The code generator keeps the same respect for comments. Its main goal is to generate relations structure classes every time they change in the database, but it can also generates model and entity classes if they do not exist, it can even overwrite them if one forces it to do so.
+                  <code><pre><b>$</b> php vendor/bin/pomm.php pomm:generate:relation-all -d sources/lib -a Model -v pomm_project news pomm
+ ✓  Overwriting file 'sources/lib/Model/PommProject/PommSchema/AutoStructure/News.php'.
+ ✗  Preserving existing model file 'sources/lib/Model/PommProject/PommSchema/NewsModel.php'.
+ ✗  Preserving existing entity file 'sources/lib/Model/PommProject/PommSchema/News.php'. </pre></code>
+                The generated structure file looks like the following (namespace related statements and comments have been removed for clarity):
+                  <code><pre class="vimphp"><span class="Structure">class</span> News <span class="Structure">extends</span> RowStructure
+<span class="Special">{</span>
+    <span class="StorageClass">public</span> <span class="Define">function</span> <span class="Operator">__construct</span><span class="Special">()</span>
+    <span class="Special">{</span>
+        <span class="Operator">$</span><span class="Identifier">this</span>
+            <span class="Structure">-&gt;</span>setRelation<span class="Special">(</span>'<span class="String">pomm.news</span>'<span class="Special">)</span>
+            <span class="Structure">-&gt;</span>setPrimaryKey<span class="Special">([</span>'<span class="String">slug</span>'<span class="Special">])</span>
+            <span class="Structure">-&gt;</span>addField<span class="Special">(</span>'<span class="String">slug</span>', '<span class="String">varchar</span>'<span class="Special">)</span>
+            <span class="Structure">-&gt;</span>addField<span class="Special">(</span>'<span class="String">title</span>', '<span class="String">varchar</span>'<span class="Special">)</span>
+            <span class="Structure">-&gt;</span>addField<span class="Special">(</span>'<span class="String">created_at</span>', '<span class="String">timestamp</span>'<span class="Special">)</span>
+            <span class="Structure">-&gt;</span>addField<span class="Special">(</span>'<span class="String">published_at</span>', '<span class="String">timestamp</span>'<span class="Special">)</span>
+            <span class="Structure">-&gt;</span>addField<span class="Special">(</span>'<span class="String">content</span>', '<span class="String">text</span>'<span class="Special">)</span>
+            ;
+    <span class="Special">}</span>
+<span class="Special">}</span></pre></code></p>
+                <h3>What else…</h3>
+                <p>Pomm2 is usable directly from any PHP development but it also integrates with <a href="http://silex.sensiolabs.org/">Silex</a> and <a href="http://symfony.com/">Symfony™</a> frameworks. <a href="https://packagist.org/packages/pomm-project/pomm-service-provider">PommServiceProvider</a> and <a href="https://packagist.org/packages/pomm-project/pomm-bundle">PommBundle</a> proposes a nifty panel in the web debug toolbar giving useful informations about queries sent to the server. It is even possible to display an <code>EXPLAIN</code> execution plan:</p>
+                <img src="/images/toolbar.png" />
+              </div><!-- panel-body -->
+            </div><!-- panel-warning -->
+          </div><!-- col-md-12 -->
+        </div><!-- row -->
+{% endblock %}

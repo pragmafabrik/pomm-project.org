@@ -20,6 +20,7 @@ class MainController implements ControllerProviderInterface
         $controller_collection = $app['controllers_factory'];
         $controller_collection->get('/', array($this, 'index'))->bind('main_index');
         $controller_collection->get('/about', array($this, 'about'))->bind('main_about');
+        $controller_collection->get('/whatis', array($this, 'whatIs'))->bind('main_whatis');
         $controller_collection->get('/navbar', array($this, 'navbar'))->bind('main_navbar');
         $controller_collection->get('/download', array($this, 'download'))->bind('main_download');
         $controller_collection->get('/howto/install', array($this, 'install'))->bind('main_install');
@@ -44,6 +45,11 @@ class MainController implements ControllerProviderInterface
     public function about()
     {
         return $this->app['twig']->render('about.html.twig');
+    }
+
+    public function whatIs()
+    {
+        return $this->app['twig']->render('whatis.html.twig');
     }
 
     public function documentation($version)

@@ -38,6 +38,20 @@ class NewsModel extends Model
     }
 
     /**
+     * createProjection
+     *
+     * Default projection.
+     *
+     * @return Projection
+     */
+    public function createProjection()
+    {
+        return parent::createProjection()
+            ->setField('age', 'age(%published_at)', 'interval')
+            ;
+    }
+
+    /**
      * paginateFindAllShorten
      *
      * Return a paginated list of news with content cut to a defined number of
