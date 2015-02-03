@@ -53,7 +53,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li class="active"><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -66,8 +66,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -316,10 +320,10 @@
 </span></span><span id="183" class="l"><a class="l" href="#183">183: </a><span class="php-comment">     */</span>
 </span><span id="184" class="l"><a class="l" href="#184">184: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_getFieldNumber" href="#_getFieldNumber">getFieldNumber</a>(<span class="php-var">$name</span>)
 </span><span id="185" class="l"><a class="l" href="#185">185: </a>    {
-</span><span id="186" class="l"><a class="l" href="#186">186: </a>        <span class="php-var">$no</span> = <span class="php-keyword2">pg_field_num</span>(<span class="php-var">$this</span>-&gt;handler, <span class="php-var">$name</span>);
+</span><span id="186" class="l"><a class="l" href="#186">186: </a>        <span class="php-var">$no</span> = <span class="php-keyword2">pg_field_num</span>(<span class="php-var">$this</span>-&gt;handler, <span class="php-keyword2">sprintf</span>(<span class="php-quote">'&quot;%s&quot;'</span>, <span class="php-var">$name</span>));
 </span><span id="187" class="l"><a class="l" href="#187">187: </a>
 </span><span id="188" class="l"><a class="l" href="#188">188: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$no</span> ===  -<span class="php-num">1</span>) {
-</span><span id="189" class="l"><a class="l" href="#189">189: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-keyword2">sprintf</span>(<span class="php-quote">&quot;Cound not find field name '%s'.&quot;</span>, <span class="php-var">$name</span>));
+</span><span id="189" class="l"><a class="l" href="#189">189: </a>            <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \InvalidArgumentException(<span class="php-keyword2">sprintf</span>(<span class="php-quote">&quot;Cound not find field name '%s'. Available fields are {%s}.&quot;</span>, <span class="php-var">$name</span>, <span class="php-keyword2">join</span>(<span class="php-quote">', '</span>, <span class="php-keyword2">array_keys</span>(<span class="php-keyword2">pg_fetch_assoc</span>(<span class="php-var">$this</span>-&gt;handler)))));
 </span><span id="190" class="l"><a class="l" href="#190">190: </a>        }
 </span><span id="191" class="l"><a class="l" href="#191">191: </a>
 </span><span id="192" class="l"><a class="l" href="#192">192: </a>        <span class="php-keyword1">return</span> <span class="php-var">$no</span>;
@@ -387,6 +391,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

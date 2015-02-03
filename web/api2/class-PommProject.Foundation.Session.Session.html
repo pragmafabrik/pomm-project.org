@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li class="active"><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -178,7 +182,7 @@ clients which are stored in a ClientHolder.</p>
 				<b>See:</b>
 				LoggerAwareInterface
 <br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.Session.Session.html#23-307" title="Go to source code">Session/Session.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.Session.Session.html#23-322" title="Go to source code">Session/Session.php</a><br>
 	</div>
 
 
@@ -197,7 +201,7 @@ clients which are stored in a ClientHolder.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#43-64" title="Go to source code">__construct</a>( <span><code><a href="class-PommProject.Foundation.Session.Connection.html">PommProject\Foundation\Session\Connection</a></code> <var>$connection</var></span>, <span><code><a href="class-PommProject.Foundation.Client.ClientHolder.html">PommProject\Foundation\Client\ClientHolder</a></code> <var>$client_holder</var> = <span class="php-keyword1">null</span> </span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#44-67" title="Go to source code">__construct</a>( <span><code><a href="class-PommProject.Foundation.Session.Connection.html">PommProject\Foundation\Session\Connection</a></code> <var>$connection</var></span>, <span><code><a href="class-PommProject.Foundation.Client.ClientHolder.html">PommProject\Foundation\Client\ClientHolder</a></code> <var>$client_holder</var> = <span class="php-keyword1">null</span></span>, <span>mixed <var>$stamp</var> = <span class="php-keyword1">null</span> </span> )</code>
 
 		<div class="description short">
 			<p>__construct</p>
@@ -219,6 +223,9 @@ In order to create a physical connection to the database, it requires a
 					<dd>
 </dd>
 					<dt><var>$client_holder</var></dt>
+					<dd>$stamp
+</dd>
+					<dt><var>$stamp</var></dt>
 					<dd>
 </dd>
 				</dl></div>
@@ -246,7 +253,7 @@ In order to create a physical connection to the database, it requires a
 
 		<td class="name"><div>
 		<a class="anchor" href="#___destruct">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#66-80" title="Go to source code">__destruct</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#69-83" title="Go to source code">__destruct</a>( )</code>
 
 		<div class="description short">
 			<p>__destruct</p>
@@ -273,6 +280,44 @@ connection termination.</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getStamp" id="_getStamp">
+
+		<td class="attributes"><code>
+			 public 
+
+			string|null
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getStamp">#</a>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#85-96" title="Go to source code">getStamp</a>( )</code>
+
+		<div class="description short">
+			<p>getStamp</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getStamp</p>
+
+<p>Return the session's stamp if any</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string|null</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getLogger" id="_getLogger">
 
 		<td class="attributes"><code>
@@ -285,7 +330,7 @@ connection termination.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getLogger">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#82-93" title="Go to source code">getLogger</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#98-109" title="Go to source code">getLogger</a>( )</code>
 
 		<div class="description short">
 			<p>getLogger</p>
@@ -323,7 +368,7 @@ connection termination.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasLogger">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#95-106" title="Go to source code">hasLogger</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#111-122" title="Go to source code">hasLogger</a>( )</code>
 
 		<div class="description short">
 			<p>hasLogger</p>
@@ -361,7 +406,7 @@ connection termination.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getConnection">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#108-119" title="Go to source code">getConnection</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#124-135" title="Go to source code">getConnection</a>( )</code>
 
 		<div class="description short">
 			<p>getConnection</p>
@@ -399,7 +444,7 @@ connection termination.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_registerClient">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#121-144" title="Go to source code">registerClient</a>( <span><code><a href="class-PommProject.Foundation.Client.ClientInterface.html">PommProject\Foundation\Client\ClientInterface</a></code> <var>$client</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#137-160" title="Go to source code">registerClient</a>( <span><code><a href="class-PommProject.Foundation.Client.ClientInterface.html">PommProject\Foundation\Client\ClientInterface</a></code> <var>$client</var></span> )</code>
 
 		<div class="description short">
 			<p>registerClient</p>
@@ -445,7 +490,7 @@ client holder.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getClient">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#146-159" title="Go to source code">getClient</a>( <span>string <var>$type</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#162-175" title="Go to source code">getClient</a>( <span>string <var>$type</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>getClient</p>
@@ -493,7 +538,7 @@ client holder.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasClient">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#161-174" title="Go to source code">hasClient</a>( <span>string <var>$type</var></span>, <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#177-190" title="Go to source code">hasClient</a>( <span>string <var>$type</var></span>, <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>hasClient</p>
@@ -540,7 +585,7 @@ client holder.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_registerClientPooler">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#176-200" title="Go to source code">registerClientPooler</a>( <span><code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">PommProject\Foundation\Client\ClientPoolerInterface</a></code> <var>$client_pooler</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#192-215" title="Go to source code">registerClientPooler</a>( <span><code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">PommProject\Foundation\Client\ClientPoolerInterface</a></code> <var>$client_pooler</var></span> )</code>
 
 		<div class="description short">
 			<p>registerClientPooler</p>
@@ -557,7 +602,7 @@ client holder.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$client_pooler</var></dt>
-					<dd>$type
+					<dd>
 </dd>
 				</dl></div>
 
@@ -585,7 +630,7 @@ client holder.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasPoolerForType">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#202-214" title="Go to source code">hasPoolerForType</a>( <span>string <var>$type</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#217-229" title="Go to source code">hasPoolerForType</a>( <span>string <var>$type</var></span> )</code>
 
 		<div class="description short">
 			<p>hasPoolerForType</p>
@@ -629,7 +674,7 @@ client holder.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getPoolerForType">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#216-239" title="Go to source code">getPoolerForType</a>( <span>string <var>$type</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#231-254" title="Go to source code">getPoolerForType</a>( <span>string <var>$type</var></span> )</code>
 
 		<div class="description short">
 			<p>getPoolerForType</p>
@@ -678,7 +723,7 @@ client holder.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAllClientForType">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#241-253" title="Go to source code">getAllClientForType</a>( <span>string <var>$type</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#256-268" title="Go to source code">getAllClientForType</a>( <span>string <var>$type</var></span> )</code>
 
 		<div class="description short">
 			<p>getAllClientForType</p>
@@ -722,7 +767,7 @@ client holder.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getClientUsingPooler">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#255-269" title="Go to source code">getClientUsingPooler</a>( <span>string <var>$type</var></span>, <span>string <var>$identifier</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#270-284" title="Go to source code">getClientUsingPooler</a>( <span>string <var>$type</var></span>, <span>string <var>$identifier</var></span> )</code>
 
 		<div class="description short">
 			<p>getClientUsingPooler</p>
@@ -770,7 +815,7 @@ FoundationException is thrown.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___call">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#271-293" title="Go to source code">__call</a>( <span>string <var>$method</var></span>, <span>array <var>$arguments</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#286-308" title="Go to source code">__call</a>( <span>string <var>$method</var></span>, <span>array <var>$arguments</var></span> )</code>
 
 		<div class="description short">
 			<p>__call</p>
@@ -824,7 +869,7 @@ FoundationException is thrown.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getRegisterPoolersNames">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.Session.html#295-306" title="Go to source code">getRegisterPoolersNames</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.Session.html#310-321" title="Go to source code">getRegisterPoolersNames</a>( )</code>
 
 		<div class="description short">
 			<p>getRegisterPoolersNames</p>
@@ -946,6 +991,33 @@ FoundationException is thrown.</p>
 			</div>
 		</td>
 	</tr>
+	<tr data-order="stamp" id="$stamp">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.Foundation.Session.Session.html#40" title="Go to source code"><var>$stamp</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$stamp" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	</table>
 
 
@@ -961,6 +1033,6 @@ FoundationException is thrown.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

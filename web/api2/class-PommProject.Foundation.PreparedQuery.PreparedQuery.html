@@ -52,7 +52,7 @@
 						</li>
 				<li class="active"><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -85,8 +89,8 @@
 			<h3>Classes</h3>
 			<ul>
 				<li class="active"><a href="class-PommProject.Foundation.PreparedQuery.PreparedQuery.html">PreparedQuery</a></li>
+				<li><a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryManager.html">PreparedQueryManager</a></li>
 				<li><a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryPooler.html">PreparedQueryPooler</a></li>
-				<li><a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryQuery.html">PreparedQueryQuery</a></li>
 			</ul>
 
 
@@ -143,6 +147,8 @@
 			 implements 
 				<a href="class-PommProject.Foundation.Client.ClientInterface.html"><span>PommProject\Foundation\Client\ClientInterface</span></a>
 			
+			 uses 
+					<a href="class-PommProject.Foundation.Client.ClientTrait.html"><span>PommProject\Foundation\Client\ClientTrait</span></a>
 			
 		</dd>
 		<dd style="padding-left:30px">
@@ -174,7 +180,7 @@
 				<b>Author:</b>
 				Grégoire HUBERT <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;:&#x68;&#x75;&#x62;&#x65;&#114;&#116;&#46;g&#x72;&#x65;&#x67;&#64;&#103;&#109;&#97;i&#x6c;&#x2e;&#x63;&#111;&#109;">&#x68;&#x75;&#x62;&#x65;&#114;&#116;&#46;g&#x72;&#x65;&#x67;&#64;&#103;&#109;&#97;i&#x6c;&#x2e;&#x63;&#111;&#109;</a>
 <br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.PreparedQuery.PreparedQuery.html#15-179" title="Go to source code">PreparedQuery/PreparedQuery.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.PreparedQuery.PreparedQuery.html#15-159" title="Go to source code">PreparedQuery/PreparedQuery.php</a><br>
 	</div>
 
 
@@ -511,15 +517,23 @@
 	</table>
 
 	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.Client.html#methods">PommProject\Foundation\Client\Client</a></caption>
+	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.ClientInterface.html#methods">PommProject\Foundation\Client\ClientInterface</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-PommProject.Foundation.Client.Client.html#_getSession">getSession()</a>, 
-			<a href="class-PommProject.Foundation.Client.Client.html#_initialize">initialize()</a>
+			<a href="class-PommProject.Foundation.Client.ClientInterface.html#_initialize">initialize()</a>
 		</code></td>
 	</tr>
 	</table>
 
+	<table class="summary used">
+	<caption>Methods used from <a href="class-PommProject.Foundation.Client.ClientTrait.html#methods">PommProject\Foundation\Client\ClientTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_getSession">getSession()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_initialize">initialize()</a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
@@ -574,6 +588,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

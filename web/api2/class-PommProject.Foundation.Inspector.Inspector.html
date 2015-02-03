@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -144,6 +148,8 @@
 			 implements 
 				<a href="class-PommProject.Foundation.Client.ClientInterface.html"><span>PommProject\Foundation\Client\ClientInterface</span></a>
 			
+			 uses 
+					<a href="class-PommProject.Foundation.Client.ClientTrait.html"><span>PommProject\Foundation\Client\ClientTrait</span></a>
 			
 		</dd>
 		<dd style="padding-left:30px">
@@ -177,7 +183,7 @@
 <br>
 				<b>See:</b>
 				<code><code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code></code><br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.Inspector.Inspector.html#15-423" title="Go to source code">Inspector/Inspector.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.Inspector.Inspector.html#16-449" title="Go to source code">Inspector/Inspector.php</a><br>
 	</div>
 
 
@@ -196,7 +202,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getClientType">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#28-36" title="Go to source code">getClientType</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#29-37" title="Go to source code">getClientType</a>( )</code>
 
 		<div class="description short">
 			<p>getClientType</p>
@@ -237,7 +243,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getClientIdentifier">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#38-46" title="Go to source code">getClientIdentifier</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#39-47" title="Go to source code">getClientIdentifier</a>( )</code>
 
 		<div class="description short">
 			<p>getClientIdentifier</p>
@@ -278,7 +284,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getSchemas">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#48-74" title="Go to source code">getSchemas</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#49-75" title="Go to source code">getSchemas</a>( )</code>
 
 		<div class="description short">
 			<p>getSchemas</p>
@@ -316,7 +322,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTableOid">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#76-106" title="Go to source code">getTableOid</a>( <span>string <var>$schema</var></span>, <span>string <var>$table</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#77-107" title="Go to source code">getTableOid</a>( <span>string <var>$schema</var></span>, <span>string <var>$table</var></span> )</code>
 
 		<div class="description short">
 			<p>getTableOid</p>
@@ -364,7 +370,7 @@ is returned.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTableFieldInformation">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#108-151" title="Go to source code">getTableFieldInformation</a>( <span>integer <var>$oid</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#109-152" title="Go to source code">getTableFieldInformation</a>( <span>integer <var>$oid</var></span> )</code>
 
 		<div class="description short">
 			<p>getTableFieldInformation</p>
@@ -409,7 +415,7 @@ returned.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getSchemaOid">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#153-181" title="Go to source code">getSchemaOid</a>( <span>string <var>$schema</var></span>, <span><code><a href="class-PommProject.Foundation.Where.html">PommProject\Foundation\Where</a></code> <var>$where</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#154-182" title="Go to source code">getSchemaOid</a>( <span>string <var>$schema</var></span>, <span><code><a href="class-PommProject.Foundation.Where.html">PommProject\Foundation\Where</a></code> <var>$where</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>getSchemaOid</p>
@@ -456,7 +462,7 @@ returned.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getPrimaryKey">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#183-216" title="Go to source code">getPrimaryKey</a>( <span>integer <var>$table_oid</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#184-217" title="Go to source code">getPrimaryKey</a>( <span>integer <var>$table_oid</var></span> )</code>
 
 		<div class="description short">
 			<p>getPrimaryKey</p>
@@ -500,7 +506,7 @@ returned.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getSchemaRelations">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#218-255" title="Go to source code">getSchemaRelations</a>( <span>integer <var>$schema_oid</var></span>, <span><code><a href="class-PommProject.Foundation.Where.html">PommProject\Foundation\Where</a></code> <var>$where</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#219-258" title="Go to source code">getSchemaRelations</a>( <span>integer <var>$schema_oid</var></span>, <span><code><a href="class-PommProject.Foundation.Where.html">PommProject\Foundation\Where</a></code> <var>$where</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>getSchemaRelations</p>
@@ -548,7 +554,7 @@ condition can be passed to filter against other criterias.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTableComment">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#257-276" title="Go to source code">getTableComment</a>( <span>integer <var>$table_oid</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#260-279" title="Go to source code">getTableComment</a>( <span>integer <var>$table_oid</var></span> )</code>
 
 		<div class="description short">
 			<p>getTableComment</p>
@@ -592,7 +598,7 @@ condition can be passed to filter against other criterias.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTypeInformation">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#278-312" title="Go to source code">getTypeInformation</a>( <span>string <var>$type_name</var></span>, <span>string <var>$type_schema</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#281-315" title="Go to source code">getTypeInformation</a>( <span>string <var>$type_name</var></span>, <span>string <var>$type_schema</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>getTypeInformation</p>
@@ -640,7 +646,7 @@ It Additionally returns the type category.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTypeCategory">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#314-341" title="Go to source code">getTypeCategory</a>( <span>integer <var>$oid</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#317-344" title="Go to source code">getTypeCategory</a>( <span>integer <var>$oid</var></span> )</code>
 
 		<div class="description short">
 			<p>getTypeCategory</p>
@@ -684,7 +690,7 @@ It Additionally returns the type category.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTypeEnumValues">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#343-373" title="Go to source code">getTypeEnumValues</a>( <span>integer <var>$oid</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#346-376" title="Go to source code">getTypeEnumValues</a>( <span>integer <var>$oid</var></span> )</code>
 
 		<div class="description short">
 			<p>getTypeEnumValues</p>
@@ -728,7 +734,7 @@ It Additionally returns the type category.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getCompositeInformation">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#375-400" title="Go to source code">getCompositeInformation</a>( <span>integer <var>$oid</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#378-403" title="Go to source code">getCompositeInformation</a>( <span>integer <var>$oid</var></span> )</code>
 
 		<div class="description short">
 			<p>getCompositeInformation</p>
@@ -760,6 +766,49 @@ It Additionally returns the type category.</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getVersion" id="_getVersion">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getVersion">#</a>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#405-426" title="Go to source code">getVersion</a>( )</code>
+
+		<div class="description short">
+			<p>getVersion</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getVersion</p>
+
+<p>Return server version.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
+				</div>
+
+
+				<h4>Throw</h4>
+				<div class="list">
+						FoundationException if invalid string.
+<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="executeSql" id="_executeSql">
 
 		<td class="attributes"><code>
@@ -772,7 +821,7 @@ It Additionally returns the type category.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_executeSql">#</a>
-		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#402-422" title="Go to source code">executeSql</a>( <span>string <var>$sql</var></span>, <span><code><a href="class-PommProject.Foundation.Where.html">PommProject\Foundation\Where</a></code> <var>$condition</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Inspector.Inspector.html#428-448" title="Go to source code">executeSql</a>( <span>string <var>$sql</var></span>, <span><code><a href="class-PommProject.Foundation.Where.html">PommProject\Foundation\Where</a></code> <var>$condition</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>executeSql</p>
@@ -810,16 +859,25 @@ It Additionally returns the type category.</p>
 	</table>
 
 	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.Client.html#methods">PommProject\Foundation\Client\Client</a></caption>
+	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.ClientInterface.html#methods">PommProject\Foundation\Client\ClientInterface</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-PommProject.Foundation.Client.Client.html#_getSession">getSession()</a>, 
-			<a href="class-PommProject.Foundation.Client.Client.html#_initialize">initialize()</a>, 
-			<a href="class-PommProject.Foundation.Client.Client.html#_shutdown">shutdown()</a>
+			<a href="class-PommProject.Foundation.Client.ClientInterface.html#_initialize">initialize()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientInterface.html#_shutdown">shutdown()</a>
 		</code></td>
 	</tr>
 	</table>
 
+	<table class="summary used">
+	<caption>Methods used from <a href="class-PommProject.Foundation.Client.ClientTrait.html#methods">PommProject\Foundation\Client\ClientTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_getSession">getSession()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_initialize">initialize()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_shutdown">shutdown()</a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
@@ -844,6 +902,6 @@ It Additionally returns the type category.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

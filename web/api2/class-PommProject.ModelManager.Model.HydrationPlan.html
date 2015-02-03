@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li class="active"><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -85,7 +89,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-PommProject.ModelManager.Model.CollectionIterator.html">CollectionIterator</a></li>
-				<li><a href="class-PommProject.ModelManager.Model.CollectionQuery.html">CollectionQuery</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.CollectionQueryManager.html">CollectionQueryManager</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a></li>
 				<li class="active"><a href="class-PommProject.ModelManager.Model.HydrationPlan.html">HydrationPlan</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.IdentityMapper.html">IdentityMapper</a></li>
@@ -144,15 +148,6 @@
 
 	</div>
 
-	<dl class="tree">
-		<dd style="padding-left:0px">
-<b><span>PommProject\ModelManager\Model\HydrationPlan</span></b>			
-			 implements 
-				<a href="class-IteratorAggregate.html"><span>IteratorAggregate</span></a>
-			
-			
-		</dd>
-	</dl>
 
 
 
@@ -177,7 +172,7 @@
 <br>
 				<b>See:</b>
 				<code><code><a href="class-IteratorAggregate.html">IteratorAggregate</a></code></code><br>
-		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#15-161" title="Go to source code">Model/HydrationPlan.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#15-202" title="Go to source code">Model/HydrationPlan.php</a><br>
 	</div>
 
 
@@ -196,7 +191,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#33-46" title="Go to source code">__construct</a>( <span><code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code> <var>$projection</var></span>, <span>array <var>$values</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#34-49" title="Go to source code">__construct</a>( <span><code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code> <var>$projection</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
 
 		<div class="description short">
 			<p>__construct</p>
@@ -215,7 +210,7 @@
 					<dt><var>$projection</var></dt>
 					<dd>
 </dd>
-					<dt><var>$values</var></dt>
+					<dt><var>$session</var></dt>
 					<dd>
 </dd>
 				</dl></div>
@@ -227,37 +222,42 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getIterator" id="_getIterator">
+	<tr data-order="loadConverters" id="_loadConverters">
 
 		<td class="attributes"><code>
-			 public 
+			 protected 
 
-			
+			<code><a href="class-PommProject.ModelManager.Model.HydrationPlan.html">PommProject\ModelManager\Model\HydrationPlan</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getIterator">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#48-54" title="Go to source code">getIterator</a>( )</code>
+		<a class="anchor" href="#_loadConverters">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#51-76" title="Go to source code">loadConverters</a>( )</code>
 
 		<div class="description short">
-			<p>see \IteratorAggregate</p>
+			<p>loadConverters</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>see \IteratorAggregate</p>
+			<p>loadConverters</p>
+
+<p>Cache converters needed for this result set.</p>
 
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.ModelManager.Model.HydrationPlan.html">PommProject\ModelManager\Model\HydrationPlan</a></code></code><br>$this
+
+				</div>
 
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-IteratorAggregate.html#_getIterator">IteratorAggregate::getIterator()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -273,7 +273,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFieldType">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#56-68" title="Go to source code">getFieldType</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#79-91" title="Go to source code">getFieldType</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>getFieldType</p>
@@ -317,7 +317,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isArray">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#70-82" title="Go to source code">isArray</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#93-105" title="Go to source code">isArray</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>isArray</p>
@@ -354,14 +354,14 @@
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
+			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hydrate">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#85-100" title="Go to source code">hydrate</a>( <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#108-122" title="Go to source code">hydrate</a>( <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>hydrate</p>
@@ -372,20 +372,14 @@
 			<p>hydrate</p>
 
 <p>Take values fetched from the database, launch conversion system and
-hydrate the FlexibleEntity through the mapper.</p>
+hydrate the FlexibleEntityInterface through the mapper.</p>
 
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$session</var></dt>
-					<dd>
-</dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code>
+					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code>
 				</div>
 
 
@@ -406,7 +400,7 @@ hydrate the FlexibleEntity through the mapper.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_dry">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#102-114" title="Go to source code">dry</a>( <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#124-136" title="Go to source code">dry</a>( <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>dry</p>
@@ -422,7 +416,7 @@ hydrate the FlexibleEntity through the mapper.</p>
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$session</var></dt>
+					<dt><var>$values</var></dt>
 					<dd>
 </dd>
 				</dl></div>
@@ -450,7 +444,7 @@ hydrate the FlexibleEntity through the mapper.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_convert">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#116-144" title="Go to source code">convert</a>( <span>string <var>$from_to</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#138-159" title="Go to source code">convert</a>( <span>string <var>$from_to</var></span>, <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>convert</p>
@@ -469,7 +463,7 @@ hydrate the FlexibleEntity through the mapper.</p>
 					<dt><var>$from_to</var></dt>
 					<dd>
 </dd>
-					<dt><var>$session</var></dt>
+					<dt><var>$values</var></dt>
 					<dd>
 </dd>
 				</dl></div>
@@ -490,14 +484,14 @@ hydrate the FlexibleEntity through the mapper.</p>
 		<td class="attributes"><code>
 			 protected 
 
-			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
+			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createEntity">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#146-160" title="Go to source code">createEntity</a>( <span>array <var>$values</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#161-177" title="Go to source code">createEntity</a>( <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>createEntity</p>
@@ -507,7 +501,7 @@ hydrate the FlexibleEntity through the mapper.</p>
 		<div class="description detailed hidden">
 			<p>createEntity</p>
 
-<p>Instanciate FlexibleEntity from converted values.</p>
+<p>Instanciate FlexibleEntityInterface from converted values.</p>
 
 
 
@@ -520,7 +514,51 @@ hydrate the FlexibleEntity through the mapper.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code>
+					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConverterForField" id="_getConverterForField">
+
+		<td class="attributes"><code>
+			 public 
+
+			ConverterClient
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConverterForField">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#179-201" title="Go to source code">getConverterForField</a>( <span>string <var>$field_name</var></span> )</code>
+
+		<div class="description short">
+			<p>getConverterForField</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getConverterForField</p>
+
+<p>Return the converter client associated with a field.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$field_name</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>ConverterClient</code>
 				</div>
 
 
@@ -544,14 +582,14 @@ hydrate the FlexibleEntity through the mapper.</p>
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="values" id="$values">
+	<tr data-order="session" id="$session">
 		<td class="attributes"><code>
 			protected  
-			array
+			mixed
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#30" title="Go to source code"><var>$values</var></a>
+				<a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#30" title="Go to source code"><var>$session</var></a>
 
 			<div class="description short">
 				
@@ -566,8 +604,8 @@ hydrate the FlexibleEntity through the mapper.</p>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$values" class="anchor">#</a>
-				<code>[]</code>
+				<a href="#$session" class="anchor">#</a>
+				<code></code>
 			</div>
 		</td>
 	</tr>
@@ -598,6 +636,33 @@ hydrate the FlexibleEntity through the mapper.</p>
 			</div>
 		</td>
 	</tr>
+	<tr data-order="converters" id="$converters">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.ModelManager.Model.HydrationPlan.html#32" title="Go to source code"><var>$converters</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$converters" class="anchor">#</a>
+				<code>[]</code>
+			</div>
+		</td>
+	</tr>
 	</table>
 
 
@@ -613,6 +678,6 @@ hydrate the FlexibleEntity through the mapper.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

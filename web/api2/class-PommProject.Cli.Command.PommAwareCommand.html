@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -89,12 +93,14 @@
 				<li><a href="class-PommProject.Cli.Command.GenerateForSchema.html">GenerateForSchema</a></li>
 				<li><a href="class-PommProject.Cli.Command.GenerateRelationModel.html">GenerateRelationModel</a></li>
 				<li><a href="class-PommProject.Cli.Command.GenerateRelationStructure.html">GenerateRelationStructure</a></li>
+				<li><a href="class-PommProject.Cli.Command.InspectConfig.html">InspectConfig</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectDatabase.html">InspectDatabase</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectRelation.html">InspectRelation</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectSchema.html">InspectSchema</a></li>
 				<li class="active"><a href="class-PommProject.Cli.Command.PommAwareCommand.html">PommAwareCommand</a></li>
 				<li><a href="class-PommProject.Cli.Command.RelationAwareCommand.html">RelationAwareCommand</a></li>
 				<li><a href="class-PommProject.Cli.Command.SchemaAwareCommand.html">SchemaAwareCommand</a></li>
+				<li><a href="class-PommProject.Cli.Command.SessionAwareCommand.html">SessionAwareCommand</a></li>
 			</ul>
 
 
@@ -163,8 +169,8 @@ Symfony\Component\Console\Command\Command
 
 	<div>
 		<h4>Direct known subclasses</h4>
-			<a href="class-PommProject.Cli.Command.InspectDatabase.html">PommProject\Cli\Command\InspectDatabase</a>, 
-			<a href="class-PommProject.Cli.Command.SchemaAwareCommand.html">PommProject\Cli\Command\SchemaAwareCommand</a>
+			<a href="class-PommProject.Cli.Command.InspectConfig.html">PommProject\Cli\Command\InspectConfig</a>, 
+			<a href="class-PommProject.Cli.Command.SessionAwareCommand.html">PommProject\Cli\Command\SessionAwareCommand</a>
 	</div>
 
 	<div>
@@ -174,9 +180,11 @@ Symfony\Component\Console\Command\Command
 			<a href="class-PommProject.Cli.Command.GenerateForSchema.html">PommProject\Cli\Command\GenerateForSchema</a>, 
 			<a href="class-PommProject.Cli.Command.GenerateRelationModel.html">PommProject\Cli\Command\GenerateRelationModel</a>, 
 			<a href="class-PommProject.Cli.Command.GenerateRelationStructure.html">PommProject\Cli\Command\GenerateRelationStructure</a>, 
+			<a href="class-PommProject.Cli.Command.InspectDatabase.html">PommProject\Cli\Command\InspectDatabase</a>, 
 			<a href="class-PommProject.Cli.Command.InspectRelation.html">PommProject\Cli\Command\InspectRelation</a>, 
 			<a href="class-PommProject.Cli.Command.InspectSchema.html">PommProject\Cli\Command\InspectSchema</a>, 
-			<a href="class-PommProject.Cli.Command.RelationAwareCommand.html">PommProject\Cli\Command\RelationAwareCommand</a>
+			<a href="class-PommProject.Cli.Command.RelationAwareCommand.html">PommProject\Cli\Command\RelationAwareCommand</a>, 
+			<a href="class-PommProject.Cli.Command.SchemaAwareCommand.html">PommProject\Cli\Command\SchemaAwareCommand</a>
 	</div>
 
 
@@ -187,7 +195,7 @@ Symfony\Component\Console\Command\Command
 		
 		
 		<b>Namespace:</b> PommProject\Cli\Command<br>
-		<b>Package:</b> Pomm<br>
+		<b>Package:</b> Cli<br>
 
 				<b>Copyright:</b>
 				2014 Grégoire HUBERT
@@ -200,7 +208,7 @@ Symfony\Component\Console\Command\Command
 				<b>See:</b>
 				Command
 <br>
-		<b>Located at</b> <a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#23-172" title="Go to source code">Command/PommAwareCommand.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#23-146" title="Go to source code">Command/PommAwareCommand.php</a><br>
 	</div>
 
 
@@ -219,7 +227,7 @@ Symfony\Component\Console\Command\Command
 
 		<td class="name"><div>
 		<a class="anchor" href="#_execute">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#43-54" title="Go to source code">execute</a>( <span>Symfony\Component\Console\Input\InputInterface <var>$input</var></span>, <span>Symfony\Component\Console\Output\OutputInterface <var>$output</var></span> )</code>
+		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#42-52" title="Go to source code">execute</a>( <span>Symfony\Component\Console\Input\InputInterface <var>$input</var></span>, <span>Symfony\Component\Console\Output\OutputInterface <var>$output</var></span> )</code>
 
 		<div class="description short">
 			<p>execute</p>
@@ -258,7 +266,7 @@ Symfony\Component\Console\Command\Command
 
 		<td class="name"><div>
 		<a class="anchor" href="#_configureRequiredArguments">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#56-76" title="Go to source code">configureRequiredArguments</a>( )</code>
+		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#54-66" title="Go to source code">configureRequiredArguments</a>( )</code>
 
 		<div class="description short">
 			<p>configureRequiredArguments</p>
@@ -298,7 +306,7 @@ necessary to be able to declare base required fields before subcommands.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_configureOptionals">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#78-100" title="Go to source code">configureOptionals</a>( )</code>
+		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#68-90" title="Go to source code">configureOptionals</a>( )</code>
 
 		<div class="description short">
 			<p>configureOptionals</p>
@@ -338,7 +346,7 @@ necessary to be able to declare base required fields before subcommands.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_configure">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#102-113" title="Go to source code">configure</a>( )</code>
+		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#92-103" title="Go to source code">configure</a>( )</code>
 
 		<div class="description short">
 			<p>configure</p>
@@ -363,36 +371,36 @@ necessary to be able to declare base required fields before subcommands.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="loadSession" id="_loadSession">
+	<tr data-order="getPomm" id="_getPomm">
 
 		<td class="attributes"><code>
 			 protected 
 
-			<code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code>
+			<code><a href="class-PommProject.Foundation.Pomm.html">PommProject\Foundation\Pomm</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_loadSession">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#115-137" title="Go to source code">loadSession</a>( )</code>
+		<a class="anchor" href="#_getPomm">#</a>
+		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#105-128" title="Go to source code">getPomm</a>( )</code>
 
 		<div class="description short">
-			<p>loadSession</p>
+			<p>getPomm</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>loadSession</p>
+			<p>getPomm</p>
 
-<p>Load session bootstrap file.</p>
+<p>Return the Pomm instance.</p>
 
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code></code>
+					<code><code><a href="class-PommProject.Foundation.Pomm.html">PommProject\Foundation\Pomm</a></code></code>
 				</div>
 
 
@@ -401,45 +409,7 @@ necessary to be able to declare base required fields before subcommands.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getSession" id="_getSession">
-
-		<td class="attributes"><code>
-			 protected 
-
-			<code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getSession">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#139-155" title="Go to source code">getSession</a>( )</code>
-
-		<div class="description short">
-			<p>getSession</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			<p>getSession</p>
-
-<p>Return a session.</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code></code>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setSession" id="_setSession">
+	<tr data-order="setPomm" id="_setPomm">
 
 		<td class="attributes"><code>
 			 public 
@@ -450,24 +420,25 @@ necessary to be able to declare base required fields before subcommands.</p>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_setSession">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#157-171" title="Go to source code">setSession</a>( <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<a class="anchor" href="#_setPomm">#</a>
+		<code><a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#130-145" title="Go to source code">setPomm</a>( <span><code><a href="class-PommProject.Foundation.Pomm.html">PommProject\Foundation\Pomm</a></code> <var>$pomm</var></span> )</code>
 
 		<div class="description short">
-			<p>setSession</p>
+			<p>setPomm</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>setSession</p>
+			<p>setPomm</p>
 
-<p>When testing, it is useful to provide directly the session to be used.</p>
+<p>When used with a framework, it is useful to get the Pomm instance from
+the framwork configuration mechanism.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$session</var></dt>
+					<dt><var>$pomm</var></dt>
 					<dd>
 </dd>
 				</dl></div>
@@ -525,33 +496,6 @@ necessary to be able to declare base required fields before subcommands.</p>
 			</div>
 		</td>
 	</tr>
-	<tr data-order="config_name" id="$config_name">
-		<td class="attributes"><code>
-			protected  
-			mixed
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-PommProject.Cli.Command.PommAwareCommand.html#41" title="Go to source code"><var>$config_name</var></a>
-
-			<div class="description short">
-				
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$config_name" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
 	</table>
 
 
@@ -567,6 +511,6 @@ necessary to be able to declare base required fields before subcommands.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

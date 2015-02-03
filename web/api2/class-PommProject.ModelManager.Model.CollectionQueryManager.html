@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class PommProject\ModelManager\Model\CollectionQuery</title>
+	<title>Class PommProject\ModelManager\Model\CollectionQueryManager</title>
 
 	<link rel="stylesheet" href="resources/style.css?1648332946">
 
@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li class="active"><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -85,7 +89,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-PommProject.ModelManager.Model.CollectionIterator.html">CollectionIterator</a></li>
-				<li class="active"><a href="class-PommProject.ModelManager.Model.CollectionQuery.html">CollectionQuery</a></li>
+				<li class="active"><a href="class-PommProject.ModelManager.Model.CollectionQueryManager.html">CollectionQueryManager</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.HydrationPlan.html">HydrationPlan</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.IdentityMapper.html">IdentityMapper</a></li>
@@ -134,13 +138,13 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class CollectionQuery</h1>
+	<h1>Class CollectionQueryManager</h1>
 
 
 	<div class="description">
-	<p>CollectionQuery</p>
+	<p>CollectionQueryManager</p>
 
-<p>Query manager for CollectionIterator.</p>
+<p>Query manager client for CollectionIterator.</p>
 
 	</div>
 
@@ -151,11 +155,13 @@
 			 implements 
 				<a href="class-PommProject.Foundation.Client.ClientInterface.html"><span>PommProject\Foundation\Client\ClientInterface</span></a>
 			
+			 uses 
+					<a href="class-PommProject.Foundation.Client.ClientTrait.html"><span>PommProject\Foundation\Client\ClientTrait</span></a>
 			
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b><span>PommProject\ModelManager\Model\CollectionQuery</span></b>			
+<b><span>PommProject\ModelManager\Model\CollectionQueryManager</span></b>			
 			
 			 uses 
 					<a href="class-PommProject.Foundation.Listener.SendNotificationTrait.html"><span>PommProject\Foundation\Listener\SendNotificationTrait</span></a>
@@ -186,7 +192,7 @@
 <br>
 				<b>See:</b>
 				<code><code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code></code><br>
-		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.CollectionQuery.html#17-104" title="Go to source code">Model/CollectionQuery.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.CollectionQueryManager.html#16-114" title="Go to source code">Model/CollectionQueryManager.php</a><br>
 	</div>
 
 
@@ -205,7 +211,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getClientType">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionQuery.html#32-35" title="Go to source code">getClientType</a>( )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionQueryManager.html#31-39" title="Go to source code">getClientType</a>( )</code>
 
 		<div class="description short">
 			<p>getClientType</p>
@@ -214,9 +220,6 @@
 
 		<div class="description detailed hidden">
 			<p>getClientType</p>
-
-<p>Must return the type of the session client. You may have several
-classes for each type of client.</p>
 
 
 
@@ -227,6 +230,11 @@ classes for each type of client.</p>
 				</div>
 
 
+				<h4>See</h4>
+				<div class="list">
+						ClientInterface
+<br>
+				</div>
 
 
 		</div>
@@ -244,18 +252,15 @@ classes for each type of client.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getClientIdentifier">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionQuery.html#37-40" title="Go to source code">getClientIdentifier</a>( )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionQueryManager.html#41-49" title="Go to source code">getClientIdentifier</a>( )</code>
 
 		<div class="description short">
-			<p>getClientIdentifier</p>
+			<p>getClientType</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>getClientIdentifier</p>
-
-<p>Each client must have a unique identifier so it will be pooled in by the
-Session</p>
+			<p>getClientType</p>
 
 
 
@@ -266,6 +271,11 @@ Session</p>
 				</div>
 
 
+				<h4>See</h4>
+				<div class="list">
+						ClientInterface
+<br>
+				</div>
 
 
 		</div>
@@ -283,7 +293,7 @@ Session</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_query">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionQuery.html#42-84" title="Go to source code">query</a>( <span>string <var>$sql</var></span>, <span>array <var>$parameters</var></span>, <span><code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code> <var>$projection</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionQueryManager.html#51-94" title="Go to source code">query</a>( <span>string <var>$sql</var></span>, <span>array <var>$parameters</var></span>, <span><code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code> <var>$projection</var></span> )</code>
 
 		<div class="description short">
 			<p>query</p>
@@ -333,7 +343,7 @@ Session</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_doQuery">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionQuery.html#86-103" title="Go to source code">doQuery</a>( <span>string <var>$sql</var></span>, <span>array <var>$parameters</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionQueryManager.html#96-113" title="Go to source code">doQuery</a>( <span>string <var>$sql</var></span>, <span>array <var>$parameters</var></span> )</code>
 
 		<div class="description short">
 			<p>doQuery</p>
@@ -371,12 +381,11 @@ Session</p>
 	</table>
 
 	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.Client.html#methods">PommProject\Foundation\Client\Client</a></caption>
+	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.ClientInterface.html#methods">PommProject\Foundation\Client\ClientInterface</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-PommProject.Foundation.Client.Client.html#_getSession">getSession()</a>, 
-			<a href="class-PommProject.Foundation.Client.Client.html#_initialize">initialize()</a>, 
-			<a href="class-PommProject.Foundation.Client.Client.html#_shutdown">shutdown()</a>
+			<a href="class-PommProject.Foundation.Client.ClientInterface.html#_initialize">initialize()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientInterface.html#_shutdown">shutdown()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -387,6 +396,15 @@ Session</p>
 		<td><code>
 			<a href="class-PommProject.Foundation.Listener.SendNotificationTrait.html#_getSession">getSession()</a>, 
 			<a href="class-PommProject.Foundation.Listener.SendNotificationTrait.html#_sendNotification">sendNotification()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Methods used from <a href="class-PommProject.Foundation.Client.ClientTrait.html#methods">PommProject\Foundation\Client\ClientTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_initialize">initialize()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_shutdown">shutdown()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -414,6 +432,6 @@ Session</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

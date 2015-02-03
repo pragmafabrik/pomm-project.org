@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex">
 
-	<title>File PreparedQuery/PreparedQueryQuery.php</title>
+	<title>File PreparedQuery/PreparedQueryManager.php</title>
 
 	<link rel="stylesheet" href="resources/style.css?1648332946">
 
@@ -53,7 +53,7 @@
 						</li>
 				<li class="active"><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -66,8 +66,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -86,8 +90,8 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-PommProject.Foundation.PreparedQuery.PreparedQuery.html">PreparedQuery</a></li>
+				<li class="active"><a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryManager.html">PreparedQueryManager</a></li>
 				<li><a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryPooler.html">PreparedQueryPooler</a></li>
-				<li class="active"><a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryQuery.html">PreparedQueryQuery</a></li>
 			</ul>
 
 
@@ -117,7 +121,7 @@
 				<a href="namespace-PommProject.Foundation.PreparedQuery.html" title="Summary of PommProject\Foundation\PreparedQuery"><span>Namespace</span></a>
 			</li>
 			<li>
-				<a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryQuery.html" title="Summary of PommProject\Foundation\PreparedQuery\PreparedQueryQuery"><span>Class</span></a>
+				<a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryManager.html" title="Summary of PommProject\Foundation\PreparedQuery\PreparedQueryManager"><span>Class</span></a>
 			</li>
 		</ul>
 		<ul>
@@ -141,12 +145,12 @@
 </span><span id="10" class="l"><a class="l" href="#10">10: </a><span class="php-keyword1">namespace</span> PommProject\Foundation\PreparedQuery;
 </span><span id="11" class="l"><a class="l" href="#11">11: </a>
 </span><span id="12" class="l"><a class="l" href="#12">12: </a><span class="php-keyword1">use</span> PommProject\Foundation\ResultHandler;
-</span><span id="13" class="l"><a class="l" href="#13">13: </a><span class="php-keyword1">use</span> PommProject\Foundation\Query\SimpleQuery;
+</span><span id="13" class="l"><a class="l" href="#13">13: </a><span class="php-keyword1">use</span> PommProject\Foundation\QueryManager\SimpleQueryManager;
 </span><span id="14" class="l"><a class="l" href="#14">14: </a>
 </span><span id="15" class="l"><a class="l" href="#15">15: </a><span class="php-comment">/**
-</span></span><span id="16" class="l"><a class="l" href="#16">16: </a><span class="php-comment"> * PreparedQueryQuery
+</span></span><span id="16" class="l"><a class="l" href="#16">16: </a><span class="php-comment"> * PreparedQueryManager
 </span></span><span id="17" class="l"><a class="l" href="#17">17: </a><span class="php-comment"> *
-</span></span><span id="18" class="l"><a class="l" href="#18">18: </a><span class="php-comment"> * Query using the prepared_statement client.
+</span></span><span id="18" class="l"><a class="l" href="#18">18: </a><span class="php-comment"> * Query manager using the prepared_statement client.
 </span></span><span id="19" class="l"><a class="l" href="#19">19: </a><span class="php-comment"> *
 </span></span><span id="20" class="l"><a class="l" href="#20">20: </a><span class="php-comment"> * @package Foundation
 </span></span><span id="21" class="l"><a class="l" href="#21">21: </a><span class="php-comment"> * @copyright 2014 Grégoire HUBERT
@@ -154,7 +158,7 @@
 </span></span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-comment"> * @license X11 {@link http://opensource.org/licenses/mit-license.php}
 </span></span><span id="24" class="l"><a class="l" href="#24">24: </a><span class="php-comment"> * @see SimpleQuery
 </span></span><span id="25" class="l"><a class="l" href="#25">25: </a><span class="php-comment"> */</span>
-</span><span id="26" class="l"><a class="l" href="#26">26: </a><span class="php-keyword1">class</span> <a id="PreparedQueryQuery" href="#PreparedQueryQuery">PreparedQueryQuery</a> <span class="php-keyword1">extends</span> SimpleQuery
+</span><span id="26" class="l"><a class="l" href="#26">26: </a><span class="php-keyword1">class</span> <a id="PreparedQueryManager" href="#PreparedQueryManager">PreparedQueryManager</a> <span class="php-keyword1">extends</span> SimpleQueryManager
 </span><span id="27" class="l"><a class="l" href="#27">27: </a>{
 </span><span id="28" class="l"><a class="l" href="#28">28: </a>    <span class="php-comment">/**
 </span></span><span id="29" class="l"><a class="l" href="#29">29: </a><span class="php-comment">     * doQuery
@@ -168,10 +172,9 @@
 </span><span id="37" class="l"><a class="l" href="#37">37: </a>            -&gt;getClientUsingPooler(<span class="php-quote">'prepared_query'</span>, <span class="php-var">$sql</span>)
 </span><span id="38" class="l"><a class="l" href="#38">38: </a>            -&gt;execute(<span class="php-var">$parameters</span>)
 </span><span id="39" class="l"><a class="l" href="#39">39: </a>            ;
-</span><span id="40" class="l"><a class="l" href="#40">40: </a>
-</span><span id="41" class="l"><a class="l" href="#41">41: </a>    }
-</span><span id="42" class="l"><a class="l" href="#42">42: </a>}
-</span><span id="43" class="l"><a class="l" href="#43">43: </a></span></code></pre>
+</span><span id="40" class="l"><a class="l" href="#40">40: </a>    }
+</span><span id="41" class="l"><a class="l" href="#41">41: </a>}
+</span><span id="42" class="l"><a class="l" href="#42">42: </a></span></code></pre>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -179,6 +182,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

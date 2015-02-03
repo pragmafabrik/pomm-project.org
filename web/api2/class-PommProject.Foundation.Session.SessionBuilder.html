@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li class="active"><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -172,7 +176,7 @@ default configuration for session and is dedicated to be overloaded.</p>
 				<b>Author:</b>
 				Grégoire HUBERT
 <br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#19-231" title="Go to source code">Session/SessionBuilder.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#19-237" title="Go to source code">Session/SessionBuilder.php</a><br>
 	</div>
 
 
@@ -191,7 +195,7 @@ default configuration for session and is dedicated to be overloaded.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#36-63" title="Go to source code">__construct</a>( <span>array <var>$configuration</var></span>, <span><code><a href="class-PommProject.Foundation.Converter.ConverterHolder.html">PommProject\Foundation\Converter\ConverterHolder</a></code> <var>$converter_holder</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#36-65" title="Go to source code">__construct</a>( <span>array <var>$configuration</var></span>, <span><code><a href="class-PommProject.Foundation.Converter.ConverterHolder.html">PommProject\Foundation\Converter\ConverterHolder</a></code> <var>$converter_holder</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>__construct</p>
@@ -242,7 +246,7 @@ name: database logical name</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_addParameter">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#65-80" title="Go to source code">addParameter</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#67-82" title="Go to source code">addParameter</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>addParameter</p>
@@ -290,7 +294,7 @@ name: database logical name</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getConverterHolder">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#82-93" title="Go to source code">getConverterHolder</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#84-95" title="Go to source code">getConverterHolder</a>( )</code>
 
 		<div class="description short">
 			<p>getConverterHolder</p>
@@ -328,7 +332,7 @@ name: database logical name</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_buildSession">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#95-121" title="Go to source code">buildSession</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#97-125" title="Go to source code">buildSession</a>( <span>string <var>$stamp</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>buildSession</p>
@@ -342,6 +346,12 @@ name: database logical name</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$stamp</var></dt>
+					<dd>
+</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
@@ -366,7 +376,7 @@ name: database logical name</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getDefaultConfiguration">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#123-144" title="Go to source code">getDefaultConfiguration</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#127-148" title="Go to source code">getDefaultConfiguration</a>( )</code>
 
 		<div class="description short">
 			<p>getDefaultConfiguration</p>
@@ -406,7 +416,7 @@ this builder.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_preConfigure">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#146-158" title="Go to source code">preConfigure</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#150-162" title="Go to source code">preConfigure</a>( )</code>
 
 		<div class="description short">
 			<p>preConfigure</p>
@@ -446,7 +456,7 @@ creation, it goes here.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createConnection">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#160-173" title="Go to source code">createConnection</a>( <span>string <var>$dsn</var></span>, <span>string <var>$connection_configuration</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#164-177" title="Go to source code">createConnection</a>( <span>string <var>$dsn</var></span>, <span>string <var>$connection_configuration</var></span> )</code>
 
 		<div class="description short">
 			<p>createConnection</p>
@@ -493,7 +503,7 @@ creation, it goes here.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createSession">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#175-188" title="Go to source code">createSession</a>( <span><code><a href="class-PommProject.Foundation.Session.Connection.html">PommProject\Foundation\Session\Connection</a></code> <var>$connection</var></span>, <span><code><a href="class-PommProject.Foundation.Client.ClientHolder.html">PommProject\Foundation\Client\ClientHolder</a></code> <var>$client_holder</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#179-193" title="Go to source code">createSession</a>( <span><code><a href="class-PommProject.Foundation.Session.Connection.html">PommProject\Foundation\Session\Connection</a></code> <var>$connection</var></span>, <span><code><a href="class-PommProject.Foundation.Client.ClientHolder.html">PommProject\Foundation\Client\ClientHolder</a></code> <var>$client_holder</var></span>, <span>string|null <var>$stamp</var></span> )</code>
 
 		<div class="description short">
 			<p>createSession</p>
@@ -513,6 +523,9 @@ creation, it goes here.</p>
 					<dd>
 </dd>
 					<dt><var>$client_holder</var></dt>
+					<dd>
+</dd>
+					<dt><var>$stamp</var></dt>
 					<dd>
 </dd>
 				</dl></div>
@@ -540,7 +553,7 @@ creation, it goes here.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createClientHolder">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#190-201" title="Go to source code">createClientHolder</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#195-206" title="Go to source code">createClientHolder</a>( )</code>
 
 		<div class="description short">
 			<p>createClientHolder</p>
@@ -578,7 +591,7 @@ creation, it goes here.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_postConfigure">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#203-216" title="Go to source code">postConfigure</a>( <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#208-221" title="Go to source code">postConfigure</a>( <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
 
 		<div class="description short">
 			<p>postConfigure</p>
@@ -624,7 +637,7 @@ All pooler registration stuff goes here.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_initializeConverterHolder">#</a>
-		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#218-230" title="Go to source code">initializeConverterHolder</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Session.SessionBuilder.html#223-236" title="Go to source code">initializeConverterHolder</a>( <span><code><a href="class-PommProject.Foundation.Converter.ConverterHolder.html">PommProject\Foundation\Converter\ConverterHolder</a></code> <var>$converter_holder</var></span> )</code>
 
 		<div class="description short">
 			<p>initializeConverterHolder</p>
@@ -639,6 +652,12 @@ If new converters are to be registered, it goes here.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$converter_holder</var></dt>
+					<dd>
+</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
@@ -736,6 +755,6 @@ If new converters are to be registered, it goes here.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

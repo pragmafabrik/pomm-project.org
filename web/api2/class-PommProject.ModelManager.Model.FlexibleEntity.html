@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li class="active"><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -85,7 +89,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-PommProject.ModelManager.Model.CollectionIterator.html">CollectionIterator</a></li>
-				<li><a href="class-PommProject.ModelManager.Model.CollectionQuery.html">CollectionQuery</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.CollectionQueryManager.html">CollectionQueryManager</a></li>
 				<li class="active"><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.HydrationPlan.html">HydrationPlan</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.IdentityMapper.html">IdentityMapper</a></li>
@@ -146,11 +150,22 @@
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
-<b><span>PommProject\ModelManager\Model\FlexibleEntity</span></b>			
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html"><span>PommProject\ModelManager\Model\FlexibleEntity\FlexibleContainer</span></a>
+			
 			 implements 
-				<a href="class-ArrayAccess.html"><span>ArrayAccess</span></a>, 
+				<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html"><span>PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</span></a>, 
 			
 				<a href="class-IteratorAggregate.html"><span>IteratorAggregate</span></a>
+			
+			 uses 
+					<a href="class-PommProject.ModelManager.Model.FlexibleEntity.StatefullEntityTrait.html"><span>PommProject\ModelManager\Model\FlexibleEntity\StatefullEntityTrait</span></a>
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>PommProject\ModelManager\Model\FlexibleEntity</span></b>			
+			 implements 
+				<a href="class-ArrayAccess.html"><span>ArrayAccess</span></a>
 			
 			
 		</dd>
@@ -177,7 +192,7 @@
 				<b>Author:</b>
 				Grégoire HUBERT <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;:&#x68;&#x75;&#x62;&#x65;&#114;&#116;&#46;g&#x72;&#x65;&#x67;&#64;&#103;&#109;&#97;i&#x6c;&#x2e;&#x63;&#111;&#109;">&#x68;&#x75;&#x62;&#x65;&#114;&#116;&#46;g&#x72;&#x65;&#x67;&#64;&#103;&#109;&#97;i&#x6c;&#x2e;&#x63;&#111;&#109;</a>
 <br>
-		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#15-416" title="Go to source code">Model/FlexibleEntity.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#17-396" title="Go to source code">Model/FlexibleEntity.php</a><br>
 	</div>
 
 
@@ -196,7 +211,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#37-51" title="Go to source code">__construct</a>( <span>array <var>$values</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#33-47" title="Go to source code">__construct</a>( <span>array <var>$values</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>__construct</p>
@@ -236,7 +251,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#53-75" title="Go to source code">get</a>( <span>string|array <var>$var</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#49-71" title="Go to source code">get</a>( <span>string|array <var>$var</var></span> )</code>
 
 		<div class="description short">
 			<p>get</p>
@@ -285,7 +300,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_has">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#77-90" title="Go to source code">has</a>( <span>string <var>$var</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#73-86" title="Go to source code">has</a>( <span>string <var>$var</var></span> )</code>
 
 		<div class="description short">
 			<p>has</p>
@@ -329,7 +344,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_set">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#92-109" title="Go to source code">set</a>( <span>String <var>$var</var></span>, <span>Mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#88-105" title="Go to source code">set</a>( <span>String <var>$var</var></span>, <span>Mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>set</p>
@@ -377,7 +392,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_add">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#111-135" title="Go to source code">add</a>( <span>string <var>$var</var></span>, <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#107-131" title="Go to source code">add</a>( <span>string <var>$var</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>add</p>
@@ -426,7 +441,7 @@ to set values.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clear">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#137-155" title="Go to source code">clear</a>( <span>String <var>$offset</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#133-151" title="Go to source code">clear</a>( <span>String <var>$offset</var></span> )</code>
 
 		<div class="description short">
 			<p>clear</p>
@@ -471,7 +486,7 @@ to set values.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___call">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#157-193" title="Go to source code">__call</a>( <span>mixed <var>$method</var></span>, <span>mixed <var>$arguments</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#153-182" title="Go to source code">__call</a>( <span>mixed <var>$method</var></span>, <span>mixed <var>$arguments</var></span> )</code>
 
 		<div class="description short">
 			<p>__call</p>
@@ -507,51 +522,8 @@ to set values.</p>
 <br>
 				</div>
 
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="hydrate" id="_hydrate">
-
-		<td class="attributes"><code>
-			final public 
-
-			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_hydrate">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#195-209" title="Go to source code">hydrate</a>( <span>array <var>$values</var></span> )</code>
-
-		<div class="description short">
-			<p>hydrate</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			<p>hydrate</p>
-
-<p>Merge internal values with given $values in the object.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$values</var></dt>
-					<dd>
-</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code><br>$this
-
-				</div>
-
-
-
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html#___call">PommProject\ModelManager\Model\FlexibleEntity\FlexibleContainer::__call()</a></code></div>
 
 		</div>
 		</div></td>
@@ -568,7 +540,7 @@ to set values.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_convert">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#211-229" title="Go to source code">convert</a>( <span>array <var>$values</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#184-202" title="Go to source code">convert</a>( <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>convert</p>
@@ -605,14 +577,14 @@ to set values.</p>
 		<td class="attributes"><code>
 			 public 
 
-			Array
+			array
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_extract">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#231-266" title="Go to source code">extract</a>( )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#204-239" title="Go to source code">extract</a>( )</code>
 
 		<div class="description short">
 			<p>extract</p>
@@ -633,49 +605,55 @@ to traverse it or not.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>Array</code>
+					<code>array</code>
 				</div>
 
 
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code><br>
+				</div>
 
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html#_extract">PommProject\ModelManager\Model\FlexibleEntity\FlexibleContainer::extract()</a></code></div>
 
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="fields" id="_fields">
+	<tr data-order="getIterator" id="_getIterator">
 
 		<td class="attributes"><code>
 			 public 
 
-			Array
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_fields">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#268-279" title="Go to source code">fields</a>( )</code>
+		<a class="anchor" href="#_getIterator">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#266-274" title="Go to source code">getIterator</a>( )</code>
 
 		<div class="description short">
-			<p>fields</p>
+			<p>getIterator</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>fields</p>
-
-<p>Return the fields array.</p>
+			<p>getIterator</p>
 
 
 
 
-				<h4>Returns</h4>
+
+
+				<h4>See</h4>
 				<div class="list">
-					<code>Array</code>
+						<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code><br>
 				</div>
 
-
-
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html#_getIterator">PommProject\ModelManager\Model\FlexibleEntity\FlexibleContainer::getIterator()</a></code></div>
 
 		</div>
 		</div></td>
@@ -692,7 +670,7 @@ to traverse it or not.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___set">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#281-297" title="Go to source code">__set</a>( <span>String <var>$var</var></span>, <span>Mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#276-292" title="Go to source code">__set</a>( <span>String <var>$var</var></span>, <span>Mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>__set</p>
@@ -740,7 +718,7 @@ to traverse it or not.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___get">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#299-313" title="Go to source code">__get</a>( <span>String <var>$var</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#294-308" title="Go to source code">__get</a>( <span>String <var>$var</var></span> )</code>
 
 		<div class="description short">
 			<p>__get</p>
@@ -773,82 +751,41 @@ to traverse it or not.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="status" id="_status">
+	<tr data-order="__isset" id="___isset">
 
 		<td class="attributes"><code>
 			 public 
 
-			integer|<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
+			boolean
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_status">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#315-336" title="Go to source code">status</a>( <span>integer <var>$status</var> = <span class="php-keyword1">null</span></span> )</code>
+		<a class="anchor" href="#___isset">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#310-324" title="Go to source code">__isset</a>( <span>string <var>$var</var></span> )</code>
 
 		<div class="description short">
-			<p>status</p>
+			<p>__isset</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>status</p>
+			<p>__isset</p>
 
-<p>Return or set the current status of the instance. Status can be
-self::NONE, self::EXIST and SELF::MODIFIED.
-If a status is set, it returns itself. If no status are provided, it
-returns the current status.</p>
+<p>Easy value check.</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$status</var></dt>
-					<dd>(null)
+					<dt><var>$var</var></dt>
+					<dd>
 </dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>integer|<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="isNew" id="_isNew">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_isNew">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#338-349" title="Go to source code">isNew</a>( )</code>
-
-		<div class="description short">
-			<p>isNew</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			<p>isNew</p>
-
-<p>is the current object self::NEW (does not it exist in the database already ?).</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
 					<code>boolean</code>
 				</div>
 
@@ -858,36 +795,43 @@ returns the current status.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="isModified" id="_isModified">
+	<tr data-order="__unset" id="___unset">
 
 		<td class="attributes"><code>
 			 public 
 
-			boolean
+			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_isModified">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#351-362" title="Go to source code">isModified</a>( )</code>
+		<a class="anchor" href="#___unset">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#326-340" title="Go to source code">__unset</a>( <span>string <var>$var</var></span> )</code>
 
 		<div class="description short">
-			<p>isModified</p>
+			<p>__unset</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>isModified</p>
+			<p>__unset</p>
 
-<p>Has the object been modified since we know it ?</p>
+<p>Clear an attribute.</p>
 
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$var</var></dt>
+					<dd>
+</dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>boolean</code>
+					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code><br>$this
+
 				</div>
 
 
@@ -908,7 +852,7 @@ returns the current status.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetExists">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#364-372" title="Go to source code">offsetExists</a>( <span>mixed <var>$offset</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#342-350" title="Go to source code">offsetExists</a>( <span>mixed <var>$offset</var></span> )</code>
 
 		<div class="description short">
 			
@@ -942,7 +886,7 @@ returns the current status.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetSet">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#374-380" title="Go to source code">offsetSet</a>( <span>mixed <var>$offset</var></span>, <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#352-358" title="Go to source code">offsetSet</a>( <span>mixed <var>$offset</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			
@@ -976,7 +920,7 @@ returns the current status.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetGet">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#382-388" title="Go to source code">offsetGet</a>( <span>mixed <var>$offset</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#360-366" title="Go to source code">offsetGet</a>( <span>mixed <var>$offset</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1010,7 +954,7 @@ returns the current status.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetUnset">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#390-396" title="Go to source code">offsetUnset</a>( <span>mixed <var>$offset</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#368-374" title="Go to source code">offsetUnset</a>( <span>mixed <var>$offset</var></span> )</code>
 
 		<div class="description short">
 			
@@ -1032,131 +976,99 @@ returns the current status.</p>
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getIterator" id="_getIterator">
+	<tr data-order="fillHasMethods" id="_fillHasMethods">
 
 		<td class="attributes"><code>
-			 public 
+			 protected static
 
-			
+			null
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getIterator">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#398-415" title="Go to source code">getIterator</a>( )</code>
+		<a class="anchor" href="#_fillHasMethods">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#376-395" title="Go to source code">fillHasMethods</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code> <var>$entity</var></span> )</code>
 
 		<div class="description short">
-			
+			<p>fillHasMethods</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			
+			<p>fillHasMethods</p>
+
+<p>When getIterator is called the first time, the list of "has" methods is
+set in a static attribute to boost performances.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$entity</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>null</code>
+				</div>
 
 
 
 
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-IteratorAggregate.html#_getIterator">IteratorAggregate::getIterator()</a></code></div>
 		</div>
 		</div></td>
 	</tr>
 	</table>
 
-
-
-
-
-
-
-
-	<table class="summary constants" id="constants">
-	<caption>Constants summary</caption>
-	<tr data-order="NONE" id="NONE">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name">
-			<code>
-				<a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#28" title="Go to source code"><b>NONE</b></a>
-			</code>
-
-			<div class="description short">
-				
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#NONE" class="anchor">#</a>
-				<code><span class="php-num">0</span></code>
-			</div>
-		</td>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html#methods">PommProject\ModelManager\Model\FlexibleEntity\FlexibleContainer</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html#_checkAttribute">checkAttribute()</a>, 
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html#_extractMethodName">extractMethodName()</a>, 
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html#_fields">fields()</a>, 
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html#_hydrate">hydrate()</a>
+		</code></td>
 	</tr>
-	<tr data-order="EXIST" id="EXIST">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name">
-			<code>
-				<a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#29" title="Go to source code"><b>EXIST</b></a>
-			</code>
-
-			<div class="description short">
-				
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#EXIST" class="anchor">#</a>
-				<code><span class="php-num">1</span></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="MODIFIED" id="MODIFIED">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name">
-			<code>
-				<a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#30" title="Go to source code"><b>MODIFIED</b></a>
-			</code>
-
-			<div class="description short">
-				
-
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#MODIFIED" class="anchor">#</a>
-				<code><span class="php-num">2</span></code>
-			</div>
-		</td>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html#methods">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html#_status">status()</a>
+		</code></td>
 	</tr>
 	</table>
 
+	<table class="summary used">
+	<caption>Methods used from <a href="class-PommProject.ModelManager.Model.FlexibleEntity.StatefullEntityTrait.html#methods">PommProject\ModelManager\Model\FlexibleEntity\StatefullEntityTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.StatefullEntityTrait.html#_status">status()</a>, 
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.StatefullEntityTrait.html#_touch">touch()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Constants inherited from <a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html#constants">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html#STATUS_EXIST"><b>STATUS_EXIST</b></a>, 
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html#STATUS_MODIFIED"><b>STATUS_MODIFIED</b></a>, 
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html#STATUS_NONE"><b>STATUS_NONE</b></a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
@@ -1169,7 +1081,7 @@ returns the current status.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#32" title="Go to source code"><var>$strict</var></a>
+				<a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#30" title="Go to source code"><var>$strict</var></a>
 
 			<div class="description short">
 				
@@ -1189,8 +1101,43 @@ returns the current status.</p>
 			</div>
 		</td>
 	</tr>
+	<tr data-order="has_methods" id="$has_methods">
+		<td class="attributes"><code>
+			protected static 
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.ModelManager.Model.FlexibleEntity.html#31" title="Go to source code"><var>$has_methods</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$has_methods" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	</table>
 
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html#properties">PommProject\ModelManager\Model\FlexibleEntity\FlexibleContainer</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleContainer.html#$container"><var>$container</var></a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
@@ -1204,6 +1151,6 @@ returns the current status.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

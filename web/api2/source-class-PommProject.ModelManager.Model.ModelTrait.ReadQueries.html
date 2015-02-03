@@ -53,7 +53,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -66,8 +66,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li class="active"><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li class="active"><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -178,7 +182,7 @@
 </span><span id="47" class="l"><a class="l" href="#47"> 47: </a>        <span class="php-var">$sql</span> = <span class="php-keyword2">strtr</span>(
 </span><span id="48" class="l"><a class="l" href="#48"> 48: </a>            <span class="php-quote">&quot;select :fields from :table :suffix&quot;</span>,
 </span><span id="49" class="l"><a class="l" href="#49"> 49: </a>            [
-</span><span id="50" class="l"><a class="l" href="#50"> 50: </a>                <span class="php-quote">':fields'</span> =&gt; <span class="php-var">$this</span>-&gt;createProjection()-&gt;formatFields(),
+</span><span id="50" class="l"><a class="l" href="#50"> 50: </a>                <span class="php-quote">':fields'</span> =&gt; <span class="php-var">$this</span>-&gt;createProjection()-&gt;formatFieldsWithFieldAlias(),
 </span><span id="51" class="l"><a class="l" href="#51"> 51: </a>                <span class="php-quote">':table'</span>  =&gt; <span class="php-var">$this</span>-&gt;getStructure()-&gt;getRelation(),
 </span><span id="52" class="l"><a class="l" href="#52"> 52: </a>                <span class="php-quote">':suffix'</span> =&gt; <span class="php-var">$suffix</span>,
 </span><span id="53" class="l"><a class="l" href="#53"> 53: </a>            ]
@@ -217,7 +221,7 @@
 </span></span><span id="86" class="l"><a class="l" href="#86"> 86: </a><span class="php-comment">     *
 </span></span><span id="87" class="l"><a class="l" href="#87"> 87: </a><span class="php-comment">     * @access public
 </span></span><span id="88" class="l"><a class="l" href="#88"> 88: </a><span class="php-comment">     * @param  array          $primary_key
-</span></span><span id="89" class="l"><a class="l" href="#89"> 89: </a><span class="php-comment">     * @return FlexibleEntity
+</span></span><span id="89" class="l"><a class="l" href="#89"> 89: </a><span class="php-comment">     * @return FlexibleEntityInterface
 </span></span><span id="90" class="l"><a class="l" href="#90"> 90: </a><span class="php-comment">     */</span>
 </span><span id="91" class="l"><a class="l" href="#91"> 91: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_findByPK" href="#_findByPK">findByPK</a>(<span class="php-keyword1">array</span> <span class="php-var">$primary_key</span>)
 </span><span id="92" class="l"><a class="l" href="#92"> 92: </a>    {
@@ -411,6 +415,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

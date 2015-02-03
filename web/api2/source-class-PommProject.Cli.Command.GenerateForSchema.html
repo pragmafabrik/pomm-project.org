@@ -53,7 +53,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -66,8 +66,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -90,12 +94,14 @@
 				<li class="active"><a href="class-PommProject.Cli.Command.GenerateForSchema.html">GenerateForSchema</a></li>
 				<li><a href="class-PommProject.Cli.Command.GenerateRelationModel.html">GenerateRelationModel</a></li>
 				<li><a href="class-PommProject.Cli.Command.GenerateRelationStructure.html">GenerateRelationStructure</a></li>
+				<li><a href="class-PommProject.Cli.Command.InspectConfig.html">InspectConfig</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectDatabase.html">InspectDatabase</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectRelation.html">InspectRelation</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectSchema.html">InspectSchema</a></li>
 				<li><a href="class-PommProject.Cli.Command.PommAwareCommand.html">PommAwareCommand</a></li>
 				<li><a href="class-PommProject.Cli.Command.RelationAwareCommand.html">RelationAwareCommand</a></li>
 				<li><a href="class-PommProject.Cli.Command.SchemaAwareCommand.html">SchemaAwareCommand</a></li>
+				<li><a href="class-PommProject.Cli.Command.SessionAwareCommand.html">SessionAwareCommand</a></li>
 			</ul>
 
 
@@ -176,7 +182,7 @@
 </span><span id="37" class="l"><a class="l" href="#37">37: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_configure" href="#_configure">configure</a>()
 </span><span id="38" class="l"><a class="l" href="#38">38: </a>    {
 </span><span id="39" class="l"><a class="l" href="#39">39: </a>        <span class="php-var">$this</span>
-</span><span id="40" class="l"><a class="l" href="#40">40: </a>            -&gt;setName(<span class="php-quote">'generate:schema-all'</span>)
+</span><span id="40" class="l"><a class="l" href="#40">40: </a>            -&gt;setName(<span class="php-quote">'pomm:generate:schema-all'</span>)
 </span><span id="41" class="l"><a class="l" href="#41">41: </a>            -&gt;setDescription(<span class="php-quote">'Generate structure, model and entity file for all relations in a schema.'</span>)
 </span><span id="42" class="l"><a class="l" href="#42">42: </a>            ;
 </span><span id="43" class="l"><a class="l" href="#43">43: </a>        parent::configure();
@@ -206,9 +212,9 @@
 </span><span id="67" class="l"><a class="l" href="#67">67: </a>        );
 </span><span id="68" class="l"><a class="l" href="#68">68: </a>
 </span><span id="69" class="l"><a class="l" href="#69">69: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$relations</span> <span class="php-keyword1">as</span> <span class="php-var">$relation_info</span>) {
-</span><span id="70" class="l"><a class="l" href="#70">70: </a>            <span class="php-var">$command</span> = <span class="php-var">$this</span>-&gt;getApplication()-&gt;find(<span class="php-quote">'generate:relation-all'</span>);
+</span><span id="70" class="l"><a class="l" href="#70">70: </a>            <span class="php-var">$command</span> = <span class="php-var">$this</span>-&gt;getApplication()-&gt;find(<span class="php-quote">'pomm:generate:relation-all'</span>);
 </span><span id="71" class="l"><a class="l" href="#71">71: </a>            <span class="php-var">$arguments</span> = [
-</span><span id="72" class="l"><a class="l" href="#72">72: </a>                <span class="php-quote">'command'</span>          =&gt; <span class="php-quote">'generate:relation-all'</span>,
+</span><span id="72" class="l"><a class="l" href="#72">72: </a>                <span class="php-quote">'command'</span>          =&gt; <span class="php-quote">'pomm:generate:relation-all'</span>,
 </span><span id="73" class="l"><a class="l" href="#73">73: </a>                <span class="php-quote">'config-name'</span>      =&gt; <span class="php-var">$this</span>-&gt;config_name,
 </span><span id="74" class="l"><a class="l" href="#74">74: </a>                <span class="php-quote">'relation'</span>         =&gt; <span class="php-var">$relation_info</span>[<span class="php-quote">'name'</span>],
 </span><span id="75" class="l"><a class="l" href="#75">75: </a>                <span class="php-quote">'schema'</span>           =&gt; <span class="php-var">$this</span>-&gt;schema,
@@ -216,12 +222,13 @@
 </span><span id="77" class="l"><a class="l" href="#77">77: </a>                <span class="php-quote">'--bootstrap-file'</span> =&gt; <span class="php-var">$input</span>-&gt;getOption(<span class="php-quote">'bootstrap-file'</span>),
 </span><span id="78" class="l"><a class="l" href="#78">78: </a>                <span class="php-quote">'--prefix-dir'</span>     =&gt; <span class="php-var">$input</span>-&gt;getOption(<span class="php-quote">'prefix-dir'</span>),
 </span><span id="79" class="l"><a class="l" href="#79">79: </a>                <span class="php-quote">'--prefix-ns'</span>      =&gt; <span class="php-var">$input</span>-&gt;getOption(<span class="php-quote">'prefix-ns'</span>),
-</span><span id="80" class="l"><a class="l" href="#80">80: </a>                ];
-</span><span id="81" class="l"><a class="l" href="#81">81: </a>            <span class="php-var">$command</span>-&gt;run(<span class="php-keyword1">new</span> ArrayInput(<span class="php-var">$arguments</span>), <span class="php-var">$output</span>);
-</span><span id="82" class="l"><a class="l" href="#82">82: </a>        }
-</span><span id="83" class="l"><a class="l" href="#83">83: </a>    }
-</span><span id="84" class="l"><a class="l" href="#84">84: </a>}
-</span><span id="85" class="l"><a class="l" href="#85">85: </a></span></code></pre>
+</span><span id="80" class="l"><a class="l" href="#80">80: </a>                <span class="php-quote">'--flexible-container'</span> =&gt; <span class="php-var">$input</span>-&gt;getOption(<span class="php-quote">'flexible-container'</span>)
+</span><span id="81" class="l"><a class="l" href="#81">81: </a>            ];
+</span><span id="82" class="l"><a class="l" href="#82">82: </a>            <span class="php-var">$command</span>-&gt;run(<span class="php-keyword1">new</span> ArrayInput(<span class="php-var">$arguments</span>), <span class="php-var">$output</span>);
+</span><span id="83" class="l"><a class="l" href="#83">83: </a>        }
+</span><span id="84" class="l"><a class="l" href="#84">84: </a>    }
+</span><span id="85" class="l"><a class="l" href="#85">85: </a>}
+</span><span id="86" class="l"><a class="l" href="#86">86: </a></span></code></pre>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -229,6 +236,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

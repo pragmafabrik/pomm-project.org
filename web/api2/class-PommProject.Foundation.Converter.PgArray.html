@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -188,7 +192,7 @@
 <br>
 				<b>See:</b>
 				<code><code><a href="class-PommProject.Foundation.Converter.ConverterInterface.html">PommProject\Foundation\Converter\ConverterInterface</a></code></code><br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.Converter.PgArray.html#15-67" title="Go to source code">Converter/PgArray.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.Converter.PgArray.html#15-111" title="Go to source code">Converter/PgArray.php</a><br>
 	</div>
 
 
@@ -207,7 +211,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_fromPg">#</a>
-		<code><a href="source-class-PommProject.Foundation.Converter.PgArray.html#28-46" title="Go to source code">fromPg</a>( <span>string <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Converter.PgArray.html#31-49" title="Go to source code">fromPg</a>( <span>string <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
 
 		<div class="description short">
 			
@@ -262,7 +266,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toPg">#</a>
-		<code><a href="source-class-PommProject.Foundation.Converter.PgArray.html#48-66" title="Go to source code">toPg</a>( <span>mixed <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Converter.PgArray.html#51-66" title="Go to source code">toPg</a>( <span>mixed <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
 
 		<div class="description short">
 			
@@ -305,6 +309,99 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="checkArray" id="_checkArray">
+
+		<td class="attributes"><code>
+			 protected 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkArray">#</a>
+		<code><a href="source-class-PommProject.Foundation.Converter.PgArray.html#68-89" title="Go to source code">checkArray</a>( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>checkArray</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>checkArray</p>
+
+<p>Check if the data is an array.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code><br>$data
+
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getSubtypeConverter" id="_getSubtypeConverter">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-PommProject.Foundation.Converter.ConverterInterface.html">PommProject\Foundation\Converter\ConverterInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getSubtypeConverter">#</a>
+		<code><a href="source-class-PommProject.Foundation.Converter.PgArray.html#91-109" title="Go to source code">getSubtypeConverter</a>( <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+
+		<div class="description short">
+			<p>getSubtypeConverter</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getSubtypeConverter</p>
+
+<p>Since the arrays in Postgresql have the same sub type, it is useful to
+cache it here to ovoid summoning the ClientHolder all the time.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$type</var></dt>
+					<dd>
+</dd>
+					<dt><var>$session</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Converter.ConverterInterface.html">PommProject\Foundation\Converter\ConverterInterface</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	</table>
 
 
@@ -318,6 +415,36 @@
 
 
 
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="subtype_converter" id="$subtype_converter">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.Foundation.Converter.PgArray.html#29" title="Go to source code"><var>$subtype_converter</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$subtype_converter" class="anchor">#</a>
+				<code>[]</code>
+			</div>
+		</td>
+	</tr>
+	</table>
 
 
 
@@ -332,6 +459,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

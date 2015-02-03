@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -89,12 +93,14 @@
 				<li><a href="class-PommProject.Cli.Command.GenerateForSchema.html">GenerateForSchema</a></li>
 				<li><a href="class-PommProject.Cli.Command.GenerateRelationModel.html">GenerateRelationModel</a></li>
 				<li><a href="class-PommProject.Cli.Command.GenerateRelationStructure.html">GenerateRelationStructure</a></li>
+				<li><a href="class-PommProject.Cli.Command.InspectConfig.html">InspectConfig</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectDatabase.html">InspectDatabase</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectRelation.html">InspectRelation</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectSchema.html">InspectSchema</a></li>
 				<li><a href="class-PommProject.Cli.Command.PommAwareCommand.html">PommAwareCommand</a></li>
 				<li><a href="class-PommProject.Cli.Command.RelationAwareCommand.html">RelationAwareCommand</a></li>
 				<li class="active"><a href="class-PommProject.Cli.Command.SchemaAwareCommand.html">SchemaAwareCommand</a></li>
+				<li><a href="class-PommProject.Cli.Command.SessionAwareCommand.html">SessionAwareCommand</a></li>
 			</ul>
 
 
@@ -161,6 +167,13 @@ Symfony\Component\Console\Command\Command
 		</dd>
 		<dd style="padding-left:60px">
 			<img src="resources/inherit.png" alt="Extended by">
+			<a href="class-PommProject.Cli.Command.SessionAwareCommand.html"><span>PommProject\Cli\Command\SessionAwareCommand</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:90px">
+			<img src="resources/inherit.png" alt="Extended by">
 <b><span>PommProject\Cli\Command\SchemaAwareCommand</span></b>			
 			
 			
@@ -204,7 +217,7 @@ Symfony\Component\Console\Command\Command
 <br>
 				<b>See:</b>
 				<code><code><a href="class-PommProject.Cli.Command.PommAwareCommand.html">PommProject\Cli\Command\PommAwareCommand</a></code></code><br>
-		<b>Located at</b> <a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#21-180" title="Go to source code">Command/SchemaAwareCommand.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#22-190" title="Go to source code">Command/SchemaAwareCommand.php</a><br>
 	</div>
 
 
@@ -223,7 +236,7 @@ Symfony\Component\Console\Command\Command
 
 		<td class="name"><div>
 		<a class="anchor" href="#_configureRequiredArguments">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#41-67" title="Go to source code">configureRequiredArguments</a>( )</code>
+		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#43-69" title="Go to source code">configureRequiredArguments</a>( )</code>
 
 		<div class="description short">
 			<p>configure</p>
@@ -249,7 +262,7 @@ Symfony\Component\Console\Command\Command
 				</div>
 
 				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-PommProject.Cli.Command.PommAwareCommand.html#_configureRequiredArguments">PommProject\Cli\Command\PommAwareCommand::configureRequiredArguments()</a></code></div>
+				<div class="list"><code><a href="class-PommProject.Cli.Command.SessionAwareCommand.html#_configureRequiredArguments">PommProject\Cli\Command\SessionAwareCommand::configureRequiredArguments()</a></code></div>
 
 		</div>
 		</div></td>
@@ -266,7 +279,7 @@ Symfony\Component\Console\Command\Command
 
 		<td class="name"><div>
 		<a class="anchor" href="#_configureOptionals">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#69-86" title="Go to source code">configureOptionals</a>( )</code>
+		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#71-95" title="Go to source code">configureOptionals</a>( )</code>
 
 		<div class="description short">
 			<p>configureOptionals</p>
@@ -309,7 +322,7 @@ Symfony\Component\Console\Command\Command
 
 		<td class="name"><div>
 		<a class="anchor" href="#_execute">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#87-103" title="Go to source code">execute</a>( <span>Symfony\Component\Console\Input\InputInterface <var>$input</var></span>, <span>Symfony\Component\Console\Output\OutputInterface <var>$output</var></span> )</code>
+		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#96-113" title="Go to source code">execute</a>( <span>Symfony\Component\Console\Input\InputInterface <var>$input</var></span>, <span>Symfony\Component\Console\Output\OutputInterface <var>$output</var></span> )</code>
 
 		<div class="description short">
 			<p>execute</p>
@@ -328,7 +341,7 @@ Symfony\Component\Console\Command\Command
 
 
 				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-PommProject.Cli.Command.PommAwareCommand.html#_execute">PommProject\Cli\Command\PommAwareCommand::execute()</a></code></div>
+				<div class="list"><code><a href="class-PommProject.Cli.Command.SessionAwareCommand.html#_execute">PommProject\Cli\Command\SessionAwareCommand::execute()</a></code></div>
 
 		</div>
 		</div></td>
@@ -345,7 +358,7 @@ Symfony\Component\Console\Command\Command
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFileName">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#105-128" title="Go to source code">getFileName</a>( <span>string <var>$config_name</var></span>, <span>string <var>$file_suffix</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$extra_dir</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#115-138" title="Go to source code">getFileName</a>( <span>string <var>$config_name</var></span>, <span>string <var>$file_suffix</var> = <span class="php-quote">''</span></span>, <span>mixed <var>$extra_dir</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			<p>getFileName</p>
@@ -395,7 +408,7 @@ Symfony\Component\Console\Command\Command
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getNamespace">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#130-151" title="Go to source code">getNamespace</a>( <span>string <var>$config_name</var></span>, <span>string <var>$extra_ns</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#140-161" title="Go to source code">getNamespace</a>( <span>string <var>$config_name</var></span>, <span>string <var>$extra_ns</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			<p>getNamespace</p>
@@ -442,7 +455,7 @@ Symfony\Component\Console\Command\Command
 
 		<td class="name"><div>
 		<a class="anchor" href="#_fetchSchemaOid">#</a>
-		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#153-179" title="Go to source code">fetchSchemaOid</a>( )</code>
+		<code><a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#163-189" title="Go to source code">fetchSchemaOid</a>( )</code>
 
 		<div class="description short">
 			<p>fetchSchemaOid</p>
@@ -472,13 +485,21 @@ Symfony\Component\Console\Command\Command
 	</table>
 
 	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-PommProject.Cli.Command.SessionAwareCommand.html#methods">PommProject\Cli\Command\SessionAwareCommand</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.Cli.Command.SessionAwareCommand.html#_getSession">getSession()</a>, 
+			<a href="class-PommProject.Cli.Command.SessionAwareCommand.html#_setSession">setSession()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
 	<caption>Methods inherited from <a href="class-PommProject.Cli.Command.PommAwareCommand.html#methods">PommProject\Cli\Command\PommAwareCommand</a></caption>
 	<tr>
 		<td><code>
 			<a href="class-PommProject.Cli.Command.PommAwareCommand.html#_configure">configure()</a>, 
-			<a href="class-PommProject.Cli.Command.PommAwareCommand.html#_getSession">getSession()</a>, 
-			<a href="class-PommProject.Cli.Command.PommAwareCommand.html#_loadSession">loadSession()</a>, 
-			<a href="class-PommProject.Cli.Command.PommAwareCommand.html#_setSession">setSession()</a>
+			<a href="class-PommProject.Cli.Command.PommAwareCommand.html#_getPomm">getPomm()</a>, 
+			<a href="class-PommProject.Cli.Command.PommAwareCommand.html#_setPomm">setPomm()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -502,7 +523,7 @@ Symfony\Component\Console\Command\Command
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#35" title="Go to source code"><var>$schema</var></a>
+				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#36" title="Go to source code"><var>$schema</var></a>
 
 			<div class="description short">
 				
@@ -529,7 +550,7 @@ Symfony\Component\Console\Command\Command
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#36" title="Go to source code"><var>$prefix_dir</var></a>
+				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#37" title="Go to source code"><var>$prefix_dir</var></a>
 
 			<div class="description short">
 				
@@ -556,7 +577,7 @@ Symfony\Component\Console\Command\Command
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#37" title="Go to source code"><var>$prefix_ns</var></a>
+				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#38" title="Go to source code"><var>$prefix_ns</var></a>
 
 			<div class="description short">
 				
@@ -583,7 +604,7 @@ Symfony\Component\Console\Command\Command
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#38" title="Go to source code"><var>$filename</var></a>
+				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#39" title="Go to source code"><var>$filename</var></a>
 
 			<div class="description short">
 				
@@ -610,7 +631,7 @@ Symfony\Component\Console\Command\Command
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#39" title="Go to source code"><var>$namespace</var></a>
+				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#40" title="Go to source code"><var>$namespace</var></a>
 
 			<div class="description short">
 				
@@ -630,14 +651,48 @@ Symfony\Component\Console\Command\Command
 			</div>
 		</td>
 	</tr>
+	<tr data-order="flexible_container" id="$flexible_container">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.Cli.Command.SchemaAwareCommand.html#41" title="Go to source code"><var>$flexible_container</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$flexible_container" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	</table>
 
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-PommProject.Cli.Command.SessionAwareCommand.html#properties">PommProject\Cli\Command\SessionAwareCommand</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.Cli.Command.SessionAwareCommand.html#$config_name"><var>$config_name</var></a>
+		</code></td>
+	</tr>
+	</table>
 	<table class="summary inherited">
 	<caption>Properties inherited from <a href="class-PommProject.Cli.Command.PommAwareCommand.html#properties">PommProject\Cli\Command\PommAwareCommand</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-PommProject.Cli.Command.PommAwareCommand.html#$config_file"><var>$config_file</var></a>, 
-			<a href="class-PommProject.Cli.Command.PommAwareCommand.html#$config_name"><var>$config_name</var></a>
+			<a href="class-PommProject.Cli.Command.PommAwareCommand.html#$config_file"><var>$config_file</var></a>
 		</code></td>
 	</tr>
 	</table>
@@ -654,6 +709,6 @@ Symfony\Component\Console\Command\Command
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

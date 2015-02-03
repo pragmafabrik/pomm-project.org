@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -171,13 +175,10 @@ numrange etc.</p>
 		<h4>Direct known subclasses</h4>
 			<a href="class-PommProject.Foundation.Converter.Geometry.PgCircle.html">PommProject\Foundation\Converter\Geometry\PgCircle</a>, 
 			<a href="class-PommProject.Foundation.Converter.Geometry.PgPoint.html">PommProject\Foundation\Converter\Geometry\PgPoint</a>, 
-			<a href="class-PommProject.Foundation.Converter.PgNumRange.html">PommProject\Foundation\Converter\PgNumRange</a>
-	</div>
-
-	<div>
-		<h4>Indirect known subclasses</h4>
+			<a href="class-PommProject.Foundation.Converter.PgNumRange.html">PommProject\Foundation\Converter\PgNumRange</a>, 
 			<a href="class-PommProject.Foundation.Converter.PgTsRange.html">PommProject\Foundation\Converter\PgTsRange</a>
 	</div>
+
 
 
 
@@ -197,7 +198,7 @@ numrange etc.</p>
 				<b>Author:</b>
 				Grégoire HUBERT
 <br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#15-102" title="Go to source code">Converter/TypeConverter.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#16-132" title="Go to source code">Converter/TypeConverter.php</a><br>
 	</div>
 
 
@@ -216,7 +217,7 @@ numrange etc.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTypeClassName">#</a>
-		<code><a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#31-39" title="Go to source code">getTypeClassName</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#32-40" title="Go to source code">getTypeClassName</a>( )</code>
 
 		<div class="description short">
 			<p>getTypeClassName</p>
@@ -254,7 +255,7 @@ numrange etc.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#41-57" title="Go to source code">__construct</a>( <span>string <var>$class_name</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#42-58" title="Go to source code">__construct</a>( <span>string <var>$class_name</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>__construct</p>
@@ -294,7 +295,7 @@ numrange etc.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_fromPg">#</a>
-		<code><a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#59-81" title="Go to source code">fromPg</a>( <span>string <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#60-72" title="Go to source code">fromPg</a>( <span>string <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
 
 		<div class="description short">
 			<p>fromPg</p>
@@ -349,7 +350,7 @@ numrange etc.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toPg">#</a>
-		<code><a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#83-101" title="Go to source code">toPg</a>( <span>mixed <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#74-86" title="Go to source code">toPg</a>( <span>mixed <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
 
 		<div class="description short">
 			<p>toPg</p>
@@ -392,6 +393,95 @@ numrange etc.</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="checkData" id="_checkData">
+
+		<td class="attributes"><code>
+			 public 
+
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_checkData">#</a>
+		<code><a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#88-106" title="Go to source code">checkData</a>( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>checkData</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>checkData</p>
+
+<p>Check if data is suitable for Pg conversion. If not an attempt is made to build the object from the given definition.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createObjectFrom" id="_createObjectFrom">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-PommProject.Foundation.Converter.Type.BaseRange.html">PommProject\Foundation\Converter\Type\BaseRange</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createObjectFrom">#</a>
+		<code><a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#108-131" title="Go to source code">createObjectFrom</a>( <span>mixed <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>createObjectFrom</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>createObjectFrom</p>
+
+<p>Create a range object from a given definition. If the object creation
+fails, an exception is thrown.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Converter.Type.BaseRange.html">PommProject\Foundation\Converter\Type\BaseRange</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	</table>
 
 
@@ -414,7 +504,7 @@ numrange etc.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#29" title="Go to source code"><var>$class_name</var></a>
+				<a href="source-class-PommProject.Foundation.Converter.TypeConverter.html#30" title="Go to source code"><var>$class_name</var></a>
 
 			<div class="description short">
 				
@@ -449,6 +539,6 @@ numrange etc.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

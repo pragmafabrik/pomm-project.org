@@ -53,7 +53,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -66,8 +66,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -200,8 +204,8 @@
 </span><span id="66" class="l"><a class="l" href="#66"> 66: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_notify" href="#_notify">notify</a>(<span class="php-var">$identifiers</span>, <span class="php-keyword1">array</span> <span class="php-var">$data</span>)
 </span><span id="67" class="l"><a class="l" href="#67"> 67: </a>    {
 </span><span id="68" class="l"><a class="l" href="#68"> 68: </a>        <span class="php-var">$this</span>-&gt;getSession()-&gt;hasLogger() &amp;&amp;
-</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>            <span class="php-var">$this</span>-&gt;getSession()-&gt;getLogger()-&gt;info(
-</span><span id="70" class="l"><a class="l" href="#70"> 70: </a>                <span class="php-quote">&quot;ListenerPooler: notification received.&quot;</span>,
+</span><span id="69" class="l"><a class="l" href="#69"> 69: </a>            <span class="php-var">$this</span>-&gt;getSession()-&gt;getLogger()-&gt;debug(
+</span><span id="70" class="l"><a class="l" href="#70"> 70: </a>                <span class="php-quote">&quot;Pomm: ListenerPooler: notification received.&quot;</span>,
 </span><span id="71" class="l"><a class="l" href="#71"> 71: </a>                [
 </span><span id="72" class="l"><a class="l" href="#72"> 72: </a>                    <span class="php-quote">'receivers'</span> =&gt; <span class="php-var">$identifiers</span>,
 </span><span id="73" class="l"><a class="l" href="#73"> 73: </a>                ]
@@ -277,6 +281,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

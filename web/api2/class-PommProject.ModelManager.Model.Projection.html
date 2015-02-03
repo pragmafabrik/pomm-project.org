@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li class="active"><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -85,7 +89,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-PommProject.ModelManager.Model.CollectionIterator.html">CollectionIterator</a></li>
-				<li><a href="class-PommProject.ModelManager.Model.CollectionQuery.html">CollectionQuery</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.CollectionQueryManager.html">CollectionQueryManager</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.HydrationPlan.html">HydrationPlan</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.IdentityMapper.html">IdentityMapper</a></li>
@@ -144,6 +148,15 @@
 
 	</div>
 
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>PommProject\ModelManager\Model\Projection</span></b>			
+			 implements 
+				<a href="class-IteratorAggregate.html"><span>IteratorAggregate</span></a>
+			
+			
+		</dd>
+	</dl>
 
 
 
@@ -166,7 +179,7 @@
 				<b>Author:</b>
 				Grégoire HUBERT
 <br>
-		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.Projection.html#14-334" title="Go to source code">Model/Projection.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.Projection.html#14-349" title="Go to source code">Model/Projection.php</a><br>
 	</div>
 
 
@@ -214,6 +227,51 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="getIterator" id="_getIterator">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-ArrayIterator.html">ArrayIterator</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getIterator">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#48-61" title="Go to source code">getIterator</a>( )</code>
+
+		<div class="description short">
+			<p>getIterator</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getIterator</p>
+
+<p>This returns an ArrayIterator using the name => type association of the
+projection.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-ArrayIterator.html">ArrayIterator</a></code></code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-IteratorAggregate.html">IteratorAggregate</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-IteratorAggregate.html#_getIterator">IteratorAggregate::getIterator()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="getFlexibleEntityClass" id="_getFlexibleEntityClass">
 
 		<td class="attributes"><code>
@@ -226,7 +284,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFlexibleEntityClass">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#48-59" title="Go to source code">getFlexibleEntityClass</a>( )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#63-74" title="Go to source code">getFlexibleEntityClass</a>( )</code>
 
 		<div class="description short">
 			<p>getFlexibleEntityClass</p>
@@ -264,7 +322,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setField">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#61-83" title="Go to source code">setField</a>( <span>string <var>$name</var></span>, <span>string <var>$content</var></span>, <span>string <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#76-98" title="Go to source code">setField</a>( <span>string <var>$name</var></span>, <span>string <var>$content</var></span>, <span>string <var>$type</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>setField</p>
@@ -320,7 +378,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFieldType">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#85-101" title="Go to source code">setFieldType</a>( <span>string <var>$name</var></span>, <span>string <var>$type</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#100-116" title="Go to source code">setFieldType</a>( <span>string <var>$name</var></span>, <span>string <var>$type</var></span> )</code>
 
 		<div class="description short">
 			<p>setFieldType</p>
@@ -373,7 +431,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_unsetField">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#103-120" title="Go to source code">unsetField</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#118-135" title="Go to source code">unsetField</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>unsetField</p>
@@ -423,7 +481,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasField">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#122-134" title="Go to source code">hasField</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#137-149" title="Go to source code">hasField</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>hasField</p>
@@ -467,7 +525,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFieldType">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#136-151" title="Go to source code">getFieldType</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#151-166" title="Go to source code">getFieldType</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>getFieldType</p>
@@ -517,7 +575,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isArray">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#153-167" title="Go to source code">isArray</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#168-182" title="Go to source code">isArray</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>isArray</p>
@@ -568,7 +626,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFieldNames">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#169-180" title="Go to source code">getFieldNames</a>( )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#184-195" title="Go to source code">getFieldNames</a>( )</code>
 
 		<div class="description short">
 			<p>getFieldNames</p>
@@ -607,7 +665,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFieldTypes">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#182-201" title="Go to source code">getFieldTypes</a>( )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#197-216" title="Go to source code">getFieldTypes</a>( )</code>
 
 		<div class="description short">
 			<p>getFieldTypes</p>
@@ -645,7 +703,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFieldWithTableAlias">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#203-220" title="Go to source code">getFieldWithTableAlias</a>( <span>string <var>$name</var></span>, <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#218-235" title="Go to source code">getFieldWithTableAlias</a>( <span>string <var>$name</var></span>, <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>getFieldWithTableAlias</p>
@@ -699,7 +757,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFieldsWithTableAlias">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#222-241" title="Go to source code">getFieldsWithTableAlias</a>( <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#237-256" title="Go to source code">getFieldsWithTableAlias</a>( <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>getFieldsWithTableAlias</p>
@@ -743,7 +801,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_formatFields">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#243-256" title="Go to source code">formatFields</a>( <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#258-271" title="Go to source code">formatFields</a>( <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>formatFields</p>
@@ -788,7 +846,7 @@ a.field1, a.field2, ..., a.fieldN</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_formatFieldsWithFieldAlias">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#258-282" title="Go to source code">formatFieldsWithFieldAlias</a>( <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#273-297" title="Go to source code">formatFieldsWithFieldAlias</a>( <span>string <var>$table_alias</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>formatFieldsWithFieldAlias</p>
@@ -833,7 +891,7 @@ a.field1 AS field1, a.field2 AS fields2, ...</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___toString">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#284-295" title="Go to source code">__toString</a>( )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.Projection.html#299-310" title="Go to source code">__toString</a>( )</code>
 
 		<div class="description short">
 			<p>__toString</p>
@@ -970,6 +1028,6 @@ a.field1 AS field1, a.field2 AS fields2, ...</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

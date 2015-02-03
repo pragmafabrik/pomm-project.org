@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -166,13 +170,6 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by">
-			<a href="class-PommProject.Foundation.Converter.PgNumRange.html"><span>PommProject\Foundation\Converter\PgNumRange</span></a>
-			
-			
-			
-		</dd>
-		<dd style="padding-left:60px">
-			<img src="resources/inherit.png" alt="Extended by">
 <b><span>PommProject\Foundation\Converter\PgTsRange</span></b>			
 			
 			
@@ -201,8 +198,8 @@
 				Grégoire HUBERT
 <br>
 				<b>See:</b>
-				<code><code><a href="class-PommProject.Foundation.Converter.PgNumRange.html">PommProject\Foundation\Converter\PgNumRange</a></code></code><br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.Converter.PgTsRange.html#12-31" title="Go to source code">Converter/PgTsRange.php</a><br>
+				<code><code><a href="class-PommProject.Foundation.Converter.TypeConverter.html">PommProject\Foundation\Converter\TypeConverter</a></code></code><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.Converter.PgTsRange.html#14-31" title="Go to source code">Converter/PgTsRange.php</a><br>
 	</div>
 
 
@@ -231,6 +228,8 @@
 		<div class="description detailed hidden">
 			<p>getTypeClassName</p>
 
+<p>Return the type class name</p>
+
 
 
 
@@ -240,13 +239,7 @@
 				</div>
 
 
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-PommProject.Foundation.Converter.TypeConverter.html">PommProject\Foundation\Converter\TypeConverter</a></code></code><br>
-				</div>
 
-				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-PommProject.Foundation.Converter.PgNumRange.html#_getTypeClassName">PommProject\Foundation\Converter\PgNumRange::getTypeClassName()</a></code></div>
 
 		</div>
 		</div></td>
@@ -254,19 +247,14 @@
 	</table>
 
 	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-PommProject.Foundation.Converter.PgNumRange.html#methods">PommProject\Foundation\Converter\PgNumRange</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-PommProject.Foundation.Converter.PgNumRange.html#_toPg">toPg()</a>
-		</code></td>
-	</tr>
-	</table>
-	<table class="summary inherited">
 	<caption>Methods inherited from <a href="class-PommProject.Foundation.Converter.TypeConverter.html#methods">PommProject\Foundation\Converter\TypeConverter</a></caption>
 	<tr>
 		<td><code>
 			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#___construct">__construct()</a>, 
-			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#_fromPg">fromPg()</a>
+			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#_checkData">checkData()</a>, 
+			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#_createObjectFrom">createObjectFrom()</a>, 
+			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#_fromPg">fromPg()</a>, 
+			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#_toPg">toPg()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -303,6 +291,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

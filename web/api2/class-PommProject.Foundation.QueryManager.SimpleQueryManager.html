@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class PommProject\Foundation\PreparedQuery\PreparedQueryQuery</title>
+	<title>Class PommProject\Foundation\QueryManager\SimpleQueryManager</title>
 
 	<link rel="stylesheet" href="resources/style.css?1648332946">
 
@@ -50,9 +50,9 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Observer.html">Observer</a>
 						</li>
-				<li class="active"><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
+				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li class="active"><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -84,9 +88,8 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-PommProject.Foundation.PreparedQuery.PreparedQuery.html">PreparedQuery</a></li>
-				<li><a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryPooler.html">PreparedQueryPooler</a></li>
-				<li class="active"><a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryQuery.html">PreparedQueryQuery</a></li>
+				<li><a href="class-PommProject.Foundation.QueryManager.QueryManagerPooler.html">QueryManagerPooler</a></li>
+				<li class="active"><a href="class-PommProject.Foundation.QueryManager.SimpleQueryManager.html">SimpleQueryManager</a></li>
 			</ul>
 
 
@@ -113,7 +116,7 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-				<a href="namespace-PommProject.Foundation.PreparedQuery.html" title="Summary of PommProject\Foundation\PreparedQuery"><span>Namespace</span></a>
+				<a href="namespace-PommProject.Foundation.QueryManager.html" title="Summary of PommProject\Foundation\QueryManager"><span>Namespace</span></a>
 			</li>
 			<li class="active">
 <span>Class</span>			</li>
@@ -128,13 +131,13 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class PreparedQueryQuery</h1>
+	<h1>Class SimpleQueryManager</h1>
 
 
 	<div class="description">
-	<p>PreparedQueryQuery</p>
+	<p>SimpleQueryManager</p>
 
-<p>Query using the prepared_statement client.</p>
+<p>Query system as a client.</p>
 
 	</div>
 
@@ -145,26 +148,25 @@
 			 implements 
 				<a href="class-PommProject.Foundation.Client.ClientInterface.html"><span>PommProject\Foundation\Client\ClientInterface</span></a>
 			
+			 uses 
+					<a href="class-PommProject.Foundation.Client.ClientTrait.html"><span>PommProject\Foundation\Client\ClientTrait</span></a>
 			
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by">
-			<a href="class-PommProject.Foundation.Query.SimpleQuery.html"><span>PommProject\Foundation\Query\SimpleQuery</span></a>
-			
+<b><span>PommProject\Foundation\QueryManager\SimpleQueryManager</span></b>			
 			
 			 uses 
 					<a href="class-PommProject.Foundation.Listener.SendNotificationTrait.html"><span>PommProject\Foundation\Listener\SendNotificationTrait</span></a>
 			
 		</dd>
-		<dd style="padding-left:60px">
-			<img src="resources/inherit.png" alt="Extended by">
-<b><span>PommProject\Foundation\PreparedQuery\PreparedQueryQuery</span></b>			
-			
-			
-		</dd>
 	</dl>
 
 
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryManager.html">PommProject\Foundation\PreparedQuery\PreparedQueryManager</a>
+	</div>
 
 
 
@@ -174,7 +176,7 @@
 	<div class="info">
 		
 		
-		<b>Namespace:</b> PommProject\Foundation\PreparedQuery<br>
+		<b>Namespace:</b> PommProject\Foundation\QueryManager<br>
 		<b>Package:</b> Foundation<br>
 
 				<b>Copyright:</b>
@@ -185,36 +187,36 @@
 				<b>Author:</b>
 				Grégoire HUBERT
 <br>
-				<b>See:</b>
-				<code><code><a href="class-PommProject.Foundation.Query.SimpleQuery.html">PommProject\Foundation\Query\SimpleQuery</a></code></code><br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.PreparedQuery.PreparedQueryQuery.html#15-42" title="Go to source code">PreparedQuery/PreparedQueryQuery.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.QueryManager.SimpleQueryManager.html#17-108" title="Go to source code">QueryManager/SimpleQueryManager.php</a><br>
 	</div>
 
 
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="doQuery" id="_doQuery">
+	<tr data-order="query" id="_query">
 
 		<td class="attributes"><code>
-			 protected 
+			 public 
 
-			PommProject\Foundation\ResultHandler
+			<code><a href="class-PommProject.Foundation.ConvertedResultIterator.html">PommProject\Foundation\ConvertedResultIterator</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_doQuery">#</a>
-		<code><a href="source-class-PommProject.Foundation.PreparedQuery.PreparedQueryQuery.html#28-41" title="Go to source code">doQuery</a>( <span>string <var>$sql</var></span>, <span>array <var>$parameters</var></span> )</code>
+		<a class="anchor" href="#_query">#</a>
+		<code><a href="source-class-PommProject.Foundation.QueryManager.SimpleQueryManager.html#31-68" title="Go to source code">query</a>( <span>sting <var>$sql</var></span>, <span>array <var>$parameters</var> = []</span> )</code>
 
 		<div class="description short">
-			<p>doQuery</p>
+			<p>query</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>doQuery</p>
+			<p>query</p>
+
+<p>Perform a simple escaped query and return converted result iterator.</p>
 
 
 
@@ -230,17 +232,140 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>PommProject\Foundation\ResultHandler</code>
+					<code><code><a href="class-PommProject.Foundation.ConvertedResultIterator.html">PommProject\Foundation\ConvertedResultIterator</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="doQuery" id="_doQuery">
+
+		<td class="attributes"><code>
+			 protected 
+
+			ResultHandler
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_doQuery">#</a>
+		<code><a href="source-class-PommProject.Foundation.QueryManager.SimpleQueryManager.html#70-87" title="Go to source code">doQuery</a>( <span>string <var>$sql</var></span>, <span>array <var>$parameters</var></span> )</code>
+
+		<div class="description short">
+			<p>doQuery</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>doQuery</p>
+
+<p>Perform the query</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sql</var></dt>
+					<dd>
+</dd>
+					<dt><var>$parameters</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>ResultHandler</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClientType" id="_getClientType">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClientType">#</a>
+		<code><a href="source-class-PommProject.Foundation.QueryManager.SimpleQueryManager.html#89-97" title="Go to source code">getClientType</a>( )</code>
+
+		<div class="description short">
+			<p>getClientType</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getClientType</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
 				</div>
 
 
 				<h4>See</h4>
 				<div class="list">
-						<code><code><a href="class-PommProject.Foundation.Query.SimpleQuery.html">PommProject\Foundation\Query\SimpleQuery</a></code></code><br>
+						ClientInterface
+<br>
 				</div>
 
-				<h4>Overrides</h4>
-				<div class="list"><code><a href="class-PommProject.Foundation.Query.SimpleQuery.html#_doQuery">PommProject\Foundation\Query\SimpleQuery::doQuery()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClientIdentifier" id="_getClientIdentifier">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClientIdentifier">#</a>
+		<code><a href="source-class-PommProject.Foundation.QueryManager.SimpleQueryManager.html#99-107" title="Go to source code">getClientIdentifier</a>( )</code>
+
+		<div class="description short">
+			<p>getClientIdentifier</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getClientIdentifier</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code>
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						ClientInterface
+<br>
+				</div>
+
 
 		</div>
 		</div></td>
@@ -248,22 +373,11 @@
 	</table>
 
 	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-PommProject.Foundation.Query.SimpleQuery.html#methods">PommProject\Foundation\Query\SimpleQuery</a></caption>
+	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.ClientInterface.html#methods">PommProject\Foundation\Client\ClientInterface</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-PommProject.Foundation.Query.SimpleQuery.html#_getClientIdentifier">getClientIdentifier()</a>, 
-			<a href="class-PommProject.Foundation.Query.SimpleQuery.html#_getClientType">getClientType()</a>, 
-			<a href="class-PommProject.Foundation.Query.SimpleQuery.html#_query">query()</a>
-		</code></td>
-	</tr>
-	</table>
-	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.Client.html#methods">PommProject\Foundation\Client\Client</a></caption>
-	<tr>
-		<td><code>
-			<a href="class-PommProject.Foundation.Client.Client.html#_getSession">getSession()</a>, 
-			<a href="class-PommProject.Foundation.Client.Client.html#_initialize">initialize()</a>, 
-			<a href="class-PommProject.Foundation.Client.Client.html#_shutdown">shutdown()</a>
+			<a href="class-PommProject.Foundation.Client.ClientInterface.html#_initialize">initialize()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientInterface.html#_shutdown">shutdown()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -274,6 +388,15 @@
 		<td><code>
 			<a href="class-PommProject.Foundation.Listener.SendNotificationTrait.html#_getSession">getSession()</a>, 
 			<a href="class-PommProject.Foundation.Listener.SendNotificationTrait.html#_sendNotification">sendNotification()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary used">
+	<caption>Methods used from <a href="class-PommProject.Foundation.Client.ClientTrait.html#methods">PommProject\Foundation\Client\ClientTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_initialize">initialize()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_shutdown">shutdown()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -301,6 +424,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

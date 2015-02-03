@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -149,6 +153,8 @@ This class may attach actions that are triggered by events.</p>
 			 implements 
 				<a href="class-PommProject.Foundation.Client.ClientInterface.html"><span>PommProject\Foundation\Client\ClientInterface</span></a>
 			
+			 uses 
+					<a href="class-PommProject.Foundation.Client.ClientTrait.html"><span>PommProject\Foundation\Client\ClientTrait</span></a>
 			
 		</dd>
 		<dd style="padding-left:30px">
@@ -417,16 +423,25 @@ Session  $session the current session</p>
 	</table>
 
 	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.Client.html#methods">PommProject\Foundation\Client\Client</a></caption>
+	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.ClientInterface.html#methods">PommProject\Foundation\Client\ClientInterface</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-PommProject.Foundation.Client.Client.html#_getSession">getSession()</a>, 
-			<a href="class-PommProject.Foundation.Client.Client.html#_initialize">initialize()</a>, 
-			<a href="class-PommProject.Foundation.Client.Client.html#_shutdown">shutdown()</a>
+			<a href="class-PommProject.Foundation.Client.ClientInterface.html#_initialize">initialize()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientInterface.html#_shutdown">shutdown()</a>
 		</code></td>
 	</tr>
 	</table>
 
+	<table class="summary used">
+	<caption>Methods used from <a href="class-PommProject.Foundation.Client.ClientTrait.html#methods">PommProject\Foundation\Client\ClientTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_getSession">getSession()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_initialize">initialize()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientTrait.html#_shutdown">shutdown()</a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
@@ -508,6 +523,6 @@ Session  $session the current session</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

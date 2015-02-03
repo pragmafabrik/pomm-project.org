@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -170,7 +174,7 @@ It handles row types and composite types.</p>
 <br>
 				<b>See:</b>
 				<code><code><a href="class-PommProject.Foundation.Converter.ConverterInterface.html">PommProject\Foundation\Converter\ConverterInterface</a></code></code><br>
-		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Converter.PgEntity.html#21-164" title="Go to source code">Converter/PgEntity.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Converter.PgEntity.html#21-166" title="Go to source code">Converter/PgEntity.php</a><br>
 	</div>
 
 
@@ -239,7 +243,7 @@ It handles row types and composite types.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_fromPg">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Converter.PgEntity.html#61-90" title="Go to source code">fromPg</a>( <span>string <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Converter.PgEntity.html#61-92" title="Go to source code">fromPg</a>( <span>string <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
 
 		<div class="description short">
 			<p>fromPg</p>
@@ -248,6 +252,8 @@ It handles row types and composite types.</p>
 
 		<div class="description detailed hidden">
 			<p>fromPg</p>
+
+<p>Embedable entities are converted here.</p>
 
 
 
@@ -287,14 +293,14 @@ It handles row types and composite types.</p>
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
+			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_cacheEntity">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Converter.PgEntity.html#116-131" title="Go to source code">cacheEntity</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code> <var>$entity</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Converter.PgEntity.html#118-133" title="Go to source code">cacheEntity</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code> <var>$entity</var></span> )</code>
 
 		<div class="description short">
 			<p>cacheEntity</p>
@@ -317,7 +323,7 @@ It handles row types and composite types.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code>
+					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code>
 				</div>
 
 
@@ -338,7 +344,7 @@ It handles row types and composite types.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_toPg">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Converter.PgEntity.html#133-163" title="Go to source code">toPg</a>( <span>mixed <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Converter.PgEntity.html#135-165" title="Go to source code">toPg</a>( <span>mixed <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
 
 		<div class="description short">
 			<p>toPg</p>
@@ -492,6 +498,6 @@ It handles row types and composite types.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

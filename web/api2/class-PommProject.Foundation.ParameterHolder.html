@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -178,7 +182,7 @@
 				<b>Author:</b>
 				Grégoire HUBERT <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;:&#x68;&#x75;&#x62;&#x65;&#114;&#116;&#46;g&#x72;&#x65;&#x67;&#64;&#103;&#109;&#97;i&#x6c;&#x2e;&#x63;&#111;&#109;">&#x68;&#x75;&#x62;&#x65;&#114;&#116;&#46;g&#x72;&#x65;&#x67;&#64;&#103;&#109;&#97;i&#x6c;&#x2e;&#x63;&#111;&#109;</a>
 <br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.ParameterHolder.html#15-216" title="Go to source code">ParameterHolder.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.ParameterHolder.html#23-224" title="Go to source code">ParameterHolder.php</a><br>
 	</div>
 
 
@@ -197,7 +201,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#27-37" title="Go to source code">__construct</a>( <span>array <var>$parameters</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#35-45" title="Go to source code">__construct</a>( <span>array <var>$parameters</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>__construct()</p>
@@ -235,7 +239,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setParameter">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#39-54" title="Go to source code">setParameter</a>( <span>string <var>$name</var></span>, <span>string|array <var>$value</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#47-62" title="Go to source code">setParameter</a>( <span>string <var>$name</var></span>, <span>string|array <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>setParameter</p>
@@ -283,7 +287,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_hasParameter">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#56-68" title="Go to source code">hasParameter</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#64-76" title="Go to source code">hasParameter</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>hasParameter</p>
@@ -327,7 +331,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getParameter">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#70-83" title="Go to source code">getParameter</a>( <span>string <var>$name</var></span>, <span>string <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#78-91" title="Go to source code">getParameter</a>( <span>string <var>$name</var></span>, <span>string <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>getParameter</p>
@@ -375,7 +379,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_mustHave">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#85-102" title="Go to source code">mustHave</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#93-110" title="Go to source code">mustHave</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>mustHave()</p>
@@ -425,7 +429,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDefaultValue">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#104-121" title="Go to source code">setDefaultValue</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#112-129" title="Go to source code">setDefaultValue</a>( <span>string <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>setDefaultValue()</p>
@@ -473,7 +477,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_mustBeOneOf">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#123-142" title="Go to source code">mustBeOneOf</a>( <span>string <var>$name</var></span>, <span>array <var>$values</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#131-150" title="Go to source code">mustBeOneOf</a>( <span>string <var>$name</var></span>, <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>mustBeOneOf()</p>
@@ -527,7 +531,7 @@ not, an exception is thrown.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_unsetParameter">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#144-156" title="Go to source code">unsetParameter</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#152-164" title="Go to source code">unsetParameter</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>unsetParameter()</p>
@@ -570,7 +574,7 @@ not, an exception is thrown.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetExists">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#158-166" title="Go to source code">offsetExists</a>( <span>mixed <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#166-174" title="Go to source code">offsetExists</a>( <span>mixed <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>offsetExists()</p>
@@ -608,7 +612,7 @@ not, an exception is thrown.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetGet">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#168-176" title="Go to source code">offsetGet</a>( <span>mixed <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#176-184" title="Go to source code">offsetGet</a>( <span>mixed <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>offsetGet()</p>
@@ -646,7 +650,7 @@ not, an exception is thrown.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetSet">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#178-186" title="Go to source code">offsetSet</a>( <span>mixed <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#186-194" title="Go to source code">offsetSet</a>( <span>mixed <var>$name</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>offsetSet()</p>
@@ -684,7 +688,7 @@ not, an exception is thrown.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_offsetUnset">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#188-196" title="Go to source code">offsetUnset</a>( <span>mixed <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#196-204" title="Go to source code">offsetUnset</a>( <span>mixed <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>offsetUnset()</p>
@@ -722,7 +726,7 @@ not, an exception is thrown.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_count">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#198-205" title="Go to source code">count</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#206-213" title="Go to source code">count</a>( )</code>
 
 		<div class="description short">
 			
@@ -760,7 +764,7 @@ not, an exception is thrown.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getIterator">#</a>
-		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#207-215" title="Go to source code">getIterator</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.ParameterHolder.html#215-223" title="Go to source code">getIterator</a>( )</code>
 
 		<div class="description short">
 			<p>getIterator()</p>
@@ -808,7 +812,7 @@ not, an exception is thrown.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.Foundation.ParameterHolder.html#25" title="Go to source code"><var>$parameters</var></a>
+				<a href="source-class-PommProject.Foundation.ParameterHolder.html#33" title="Go to source code"><var>$parameters</var></a>
 
 			<div class="description short">
 				
@@ -843,6 +847,6 @@ not, an exception is thrown.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

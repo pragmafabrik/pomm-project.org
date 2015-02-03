@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -151,7 +155,9 @@
 			 implements 
 				<a href="class-Iterator.html"><span>Iterator</span></a>, 
 			
-				<a href="class-Countable.html"><span>Countable</span></a>
+				<a href="class-Countable.html"><span>Countable</span></a>, 
+			
+				<a href="class-JsonSerializable.html"><span>JsonSerializable</span></a>
 			
 			
 		</dd>
@@ -187,7 +193,7 @@
 				<code><code><a href="class-Iterator.html">Iterator</a></code></code><br>
 				<b>See:</b>
 				<code><code><a href="class-Countable.html">Countable</a></code></code><br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.ResultIterator.html#14-236" title="Go to source code">ResultIterator.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.ResultIterator.html#14-267" title="Go to source code">ResultIterator.php</a><br>
 	</div>
 
 
@@ -869,6 +875,84 @@ Useful to style list elements when printing lists to do
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="extract" id="_extract">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_extract">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#237-256" title="Go to source code">extract</a>( )</code>
+
+		<div class="description short">
+			<p>extract</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>extract</p>
+
+<p>Dump an iterator.
+This actually stores all the results in PHP allocated memory.
+THIS MAY USE A LOT OF MEMORY.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="jsonSerialize" id="_jsonSerialize">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_jsonSerialize">#</a>
+		<code><a href="source-class-PommProject.Foundation.ResultIterator.html#258-266" title="Go to source code">jsonSerialize</a>( )</code>
+
+		<div class="description short">
+			<p>jsonSerialize</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>jsonSerialize</p>
+
+
+
+
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-JsonSerializable.html">JsonSerializable</a></code></code><br>
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-JsonSerializable.html#_jsonSerialize">JsonSerializable::jsonSerialize()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
 	</table>
 
 
@@ -926,6 +1010,6 @@ Useful to style list elements when printing lists to do
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

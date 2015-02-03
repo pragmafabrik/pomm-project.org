@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li class="active"><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -85,7 +89,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li><a href="class-PommProject.ModelManager.Model.CollectionIterator.html">CollectionIterator</a></li>
-				<li><a href="class-PommProject.ModelManager.Model.CollectionQuery.html">CollectionQuery</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.CollectionQueryManager.html">CollectionQueryManager</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.HydrationPlan.html">HydrationPlan</a></li>
 				<li class="active"><a href="class-PommProject.ModelManager.Model.IdentityMapper.html">IdentityMapper</a></li>
@@ -140,7 +144,7 @@
 	<div class="description">
 	<p>IdentityMapper</p>
 
-<p>Cache for FlexibleEntity instances to ensure there are no different
+<p>Cache for FlexibleEntityInterface instances to ensure there are no different
 instances for the same data.</p>
 
 	</div>
@@ -167,7 +171,7 @@ instances for the same data.</p>
 				<b>Author:</b>
 				Grégoire HUBERT
 <br>
-		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.IdentityMapper.html#12-75" title="Go to source code">Model/IdentityMapper.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.IdentityMapper.html#14-92" title="Go to source code">Model/IdentityMapper.php</a><br>
 	</div>
 
 
@@ -186,7 +190,7 @@ instances for the same data.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getSignature">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.IdentityMapper.html#27-46" title="Go to source code">getSignature</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code> <var>$entity</var></span>, <span>array <var>$primary_key</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.IdentityMapper.html#29-48" title="Go to source code">getSignature</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code> <var>$entity</var></span>, <span>array <var>$primary_key</var></span> )</code>
 
 		<div class="description short">
 			<p>getSignature</p>
@@ -227,14 +231,14 @@ an empty primary key is provided, null is returned.</p>
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
+			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_fetch">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.IdentityMapper.html#48-74" title="Go to source code">fetch</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code> <var>$entity</var></span>, <span>array <var>$primary_key</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.IdentityMapper.html#50-76" title="Go to source code">fetch</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code> <var>$entity</var></span>, <span>array <var>$primary_key</var></span> )</code>
 
 		<div class="description short">
 			<p>fetch</p>
@@ -244,7 +248,7 @@ an empty primary key is provided, null is returned.</p>
 		<div class="description detailed hidden">
 			<p>fetch</p>
 
-<p>Pool FlexibleEntity instances and update them if necessary.</p>
+<p>Pool FlexibleEntityInterface instances and update them if necessary.</p>
 
 
 
@@ -260,7 +264,46 @@ an empty primary key is provided, null is returned.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code>
+					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="clear" id="_clear">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-PommProject.ModelManager.Model.IdentityMapper.html">PommProject\ModelManager\Model\IdentityMapper</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_clear">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.IdentityMapper.html#78-91" title="Go to source code">clear</a>( )</code>
+
+		<div class="description short">
+			<p>clear</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>clear</p>
+
+<p>Flush instances from the identity mapper.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.ModelManager.Model.IdentityMapper.html">PommProject\ModelManager\Model\IdentityMapper</a></code></code><br>$this
+
 				</div>
 
 
@@ -291,7 +334,7 @@ an empty primary key is provided, null is returned.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.ModelManager.Model.IdentityMapper.html#25" title="Go to source code"><var>$instances</var></a>
+				<a href="source-class-PommProject.ModelManager.Model.IdentityMapper.html#27" title="Go to source code"><var>$instances</var></a>
 
 			<div class="description short">
 				
@@ -326,6 +369,6 @@ an empty primary key is provided, null is returned.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

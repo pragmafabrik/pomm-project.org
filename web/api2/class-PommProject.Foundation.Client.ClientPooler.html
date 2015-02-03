@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -95,6 +99,11 @@
 				<li><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">ClientPoolerInterface</a></li>
 			</ul>
 
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html">ClientPoolerTrait</a></li>
+				<li><a href="class-PommProject.Foundation.Client.ClientTrait.html">ClientTrait</a></li>
+			</ul>
 
 
 
@@ -139,15 +148,6 @@
 	<div class="description">
 	<p>ClientPooler</p>
 
-<p>Base class for client poolers. ClientPooler instances are factories for
-Session's Client. The workflow of the ClientPooler is the following:
-When a client is called
-1   It is fetched from the pool
-2.0 If no client is found:
-2.1 The createClient() method is triggered.
-2.2 The client is registered to the session
-3   The client is returned back</p>
-
 	</div>
 
 	<dl class="tree">
@@ -156,6 +156,8 @@ When a client is called
 			 implements 
 				<a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html"><span>PommProject\Foundation\Client\ClientPoolerInterface</span></a>
 			
+			 uses 
+					<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html"><span>PommProject\Foundation\Client\ClientPoolerTrait</span></a>
 			
 		</dd>
 	</dl>
@@ -168,7 +170,7 @@ When a client is called
 			<a href="class-PommProject.Foundation.Listener.ListenerPooler.html">PommProject\Foundation\Listener\ListenerPooler</a>, 
 			<a href="class-PommProject.Foundation.Observer.ObserverPooler.html">PommProject\Foundation\Observer\ObserverPooler</a>, 
 			<a href="class-PommProject.Foundation.PreparedQuery.PreparedQueryPooler.html">PommProject\Foundation\PreparedQuery\PreparedQueryPooler</a>, 
-			<a href="class-PommProject.Foundation.Query.QueryPooler.html">PommProject\Foundation\Query\QueryPooler</a>, 
+			<a href="class-PommProject.Foundation.QueryManager.QueryManagerPooler.html">PommProject\Foundation\QueryManager\QueryManagerPooler</a>, 
 			<a href="class-PommProject.ModelManager.Model.ModelPooler.html">PommProject\ModelManager\Model\ModelPooler</a>, 
 			<a href="class-PommProject.ModelManager.ModelLayer.ModelLayerPooler.html">PommProject\ModelManager\ModelLayer\ModelLayerPooler</a>
 	</div>
@@ -194,249 +196,38 @@ When a client is called
 <br>
 				<b>See:</b>
 				<code><code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">PommProject\Foundation\Client\ClientPoolerInterface</a></code></code><br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.Client.ClientPooler.html#15-117" title="Go to source code">Client/ClientPooler.php</a><br>
+				<b>See:</b>
+				<code><code><a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html">PommProject\Foundation\Client\ClientPoolerTrait</a></code></code><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.Client.ClientPooler.html#15-29" title="Go to source code">Client/ClientPooler.php</a><br>
 	</div>
 
 
 
-	<table class="summary methods" id="methods">
-	<caption>Methods summary</caption>
-	<tr data-order="createClient" id="_createClient">
-
-		<td class="attributes"><code>
-			abstract protected 
-
-			<code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_createClient">#</a>
-		<code><a href="source-class-PommProject.Foundation.Client.ClientPooler.html#38-48" title="Go to source code">createClient</a>( <span>string <var>$identifier</var></span> )</code>
-
-		<div class="description short">
-			<p>createClient</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			<p>createClient</p>
-
-<p>Create a new client.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$identifier</var></dt>
-					<dd>
-</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code></code>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="register" id="_register">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">PommProject\Foundation\Client\ClientPoolerInterface</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_register">#</a>
-		<code><a href="source-class-PommProject.Foundation.Client.ClientPooler.html#50-60" title="Go to source code">register</a>( <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
-
-		<div class="description short">
-			<p>register</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			<p>register</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$session</var></dt>
-					<dd>
-</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">PommProject\Foundation\Client\ClientPoolerInterface</a></code></code><br>$this
-
-				</div>
-
-
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">PommProject\Foundation\Client\ClientPoolerInterface</a></code></code><br>
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html#_register">PommProject\Foundation\Client\ClientPoolerInterface::register()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getClient" id="_getClient">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getClient">#</a>
-		<code><a href="source-class-PommProject.Foundation.Client.ClientPooler.html#62-82" title="Go to source code">getClient</a>( <span>string <var>$identifier</var></span> )</code>
-
-		<div class="description short">
-			<p>getClient</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			<p>getClient</p>
-
-<p>Basic getClient method.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$identifier</var></dt>
-					<dd>
-</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code></code>
-				</div>
-
-
-				<h4>See</h4>
-				<div class="list">
-						<code><code><a href="class-PommProject.Foundation.Client.ClientInterface.html">PommProject\Foundation\Client\ClientInterface</a></code></code><br>
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html#_getClient">PommProject\Foundation\Client\ClientPoolerInterface::getClient()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getClientFromPool" id="_getClientFromPool">
-
-		<td class="attributes"><code>
-			 protected 
-
-			<code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code>|null
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getClientFromPool">#</a>
-		<code><a href="source-class-PommProject.Foundation.Client.ClientPooler.html#84-99" title="Go to source code">getClientFromPool</a>( <span>string <var>$identifier</var></span> )</code>
-
-		<div class="description short">
-			<p>getClientFromPool</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			<p>getClientFromPool</p>
-
-<p>How the pooler fetch a client from the pool.</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$identifier</var></dt>
-					<dd>
-</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-PommProject.Foundation.Client.Client.html">PommProject\Foundation\Client\Client</a></code>|null</code>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getSession" id="_getSession">
-
-		<td class="attributes"><code>
-			 protected 
-
-			<code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getSession">#</a>
-		<code><a href="source-class-PommProject.Foundation.Client.ClientPooler.html#101-116" title="Go to source code">getSession</a>( )</code>
-
-		<div class="description short">
-			<p>getSession</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			<p>getSession</p>
-
-<p>Check if the session is set and return it.</p>
-
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code></code>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	</table>
 
 	<table class="summary inherited">
 	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html#methods">PommProject\Foundation\Client\ClientPoolerInterface</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html#_getPoolerType">getPoolerType()</a>
+			<a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html#_getClient">getClient()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html#_getPoolerType">getPoolerType()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html#_register">register()</a>
 		</code></td>
 	</tr>
 	</table>
 
+	<table class="summary used">
+	<caption>Methods used from <a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#methods">PommProject\Foundation\Client\ClientPoolerTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#_createClient">createClient()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#_getClient">getClient()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#_getClientFromPool">getClientFromPool()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#_getPoolerType">getPoolerType()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#_getSession">getSession()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#_register">register()</a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
@@ -461,6 +252,6 @@ When a client is called
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

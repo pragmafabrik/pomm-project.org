@@ -53,7 +53,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -66,8 +66,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -157,20 +161,20 @@
 </span></span><span id="9" class="l"><a class="l" href="#9"> 9: </a><span class="php-comment"> */</span>
 </span><span id="10" class="l"><a class="l" href="#10">10: </a><span class="php-keyword1">namespace</span> PommProject\Foundation\Converter;
 </span><span id="11" class="l"><a class="l" href="#11">11: </a>
-</span><span id="12" class="l"><a class="l" href="#12">12: </a><span class="php-comment">/**
-</span></span><span id="13" class="l"><a class="l" href="#13">13: </a><span class="php-comment"> * PgTsRange
-</span></span><span id="14" class="l"><a class="l" href="#14">14: </a><span class="php-comment"> *
-</span></span><span id="15" class="l"><a class="l" href="#15">15: </a><span class="php-comment"> * Range for timestamps.
+</span><span id="12" class="l"><a class="l" href="#12">12: </a><span class="php-keyword1">use</span> PommProject\Foundation\Converter\TypeConverter;
+</span><span id="13" class="l"><a class="l" href="#13">13: </a>
+</span><span id="14" class="l"><a class="l" href="#14">14: </a><span class="php-comment">/**
+</span></span><span id="15" class="l"><a class="l" href="#15">15: </a><span class="php-comment"> * PgTsRange
 </span></span><span id="16" class="l"><a class="l" href="#16">16: </a><span class="php-comment"> *
-</span></span><span id="17" class="l"><a class="l" href="#17">17: </a><span class="php-comment"> * @package Foundation
-</span></span><span id="18" class="l"><a class="l" href="#18">18: </a><span class="php-comment"> * @copyright 2014 Grégoire HUBERT
-</span></span><span id="19" class="l"><a class="l" href="#19">19: </a><span class="php-comment"> * @author Grégoire HUBERT
-</span></span><span id="20" class="l"><a class="l" href="#20">20: </a><span class="php-comment"> * @license X11 {@link http://opensource.org/licenses/mit-license.php}
-</span></span><span id="21" class="l"><a class="l" href="#21">21: </a><span class="php-comment"> *
-</span></span><span id="22" class="l"><a class="l" href="#22">22: </a><span class="php-comment"> *
-</span></span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-comment"> * @see PgNumRange
+</span></span><span id="17" class="l"><a class="l" href="#17">17: </a><span class="php-comment"> * Range for timestamps.
+</span></span><span id="18" class="l"><a class="l" href="#18">18: </a><span class="php-comment"> *
+</span></span><span id="19" class="l"><a class="l" href="#19">19: </a><span class="php-comment"> * @package Foundation
+</span></span><span id="20" class="l"><a class="l" href="#20">20: </a><span class="php-comment"> * @copyright 2014 Grégoire HUBERT
+</span></span><span id="21" class="l"><a class="l" href="#21">21: </a><span class="php-comment"> * @author Grégoire HUBERT
+</span></span><span id="22" class="l"><a class="l" href="#22">22: </a><span class="php-comment"> * @license X11 {@link http://opensource.org/licenses/mit-license.php}
+</span></span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-comment"> * @see TypeConverter
 </span></span><span id="24" class="l"><a class="l" href="#24">24: </a><span class="php-comment"> */</span>
-</span><span id="25" class="l"><a class="l" href="#25">25: </a><span class="php-keyword1">class</span> <a id="PgTsRange" href="#PgTsRange">PgTsRange</a> <span class="php-keyword1">extends</span> PgNumRange
+</span><span id="25" class="l"><a class="l" href="#25">25: </a><span class="php-keyword1">class</span> <a id="PgTsRange" href="#PgTsRange">PgTsRange</a> <span class="php-keyword1">extends</span> TypeConverter
 </span><span id="26" class="l"><a class="l" href="#26">26: </a>{
 </span><span id="27" class="l"><a class="l" href="#27">27: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_getTypeClassName" href="#_getTypeClassName">getTypeClassName</a>()
 </span><span id="28" class="l"><a class="l" href="#28">28: </a>    {
@@ -185,6 +189,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

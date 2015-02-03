@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -144,6 +148,8 @@
 			 implements 
 				<a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html"><span>PommProject\Foundation\Client\ClientPoolerInterface</span></a>
 			
+			 uses 
+					<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html"><span>PommProject\Foundation\Client\ClientPoolerTrait</span></a>
 			
 		</dd>
 		<dd style="padding-left:30px">
@@ -189,7 +195,7 @@
 		<td class="attributes"><code>
 			 public 
 
-			string
+			
 			
 			</code>
 		</td>
@@ -199,24 +205,22 @@
 		<code><a href="source-class-PommProject.Foundation.Observer.ObserverPooler.html#33-36" title="Go to source code">getPoolerType</a>( )</code>
 
 		<div class="description short">
-			<p>getType</p>
+			<p>getPoolerType</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>getType</p>
-
-<p>Return the client type which this pooler is to be associated with.</p>
+			<p>getPoolerType</p>
 
 
 
 
-				<h4>Returns</h4>
+
+
+				<h4>See</h4>
 				<div class="list">
-					<code>string</code>
+						<code><code><a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html">PommProject\Foundation\Client\ClientPoolerInterface</a></code></code><br>
 				</div>
-
-
 
 
 		</div>
@@ -271,17 +275,26 @@
 	</table>
 
 	<table class="summary inherited">
-	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.ClientPooler.html#methods">PommProject\Foundation\Client\ClientPooler</a></caption>
+	<caption>Methods inherited from <a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html#methods">PommProject\Foundation\Client\ClientPoolerInterface</a></caption>
 	<tr>
 		<td><code>
-			<a href="class-PommProject.Foundation.Client.ClientPooler.html#_getClient">getClient()</a>, 
-			<a href="class-PommProject.Foundation.Client.ClientPooler.html#_getClientFromPool">getClientFromPool()</a>, 
-			<a href="class-PommProject.Foundation.Client.ClientPooler.html#_getSession">getSession()</a>, 
-			<a href="class-PommProject.Foundation.Client.ClientPooler.html#_register">register()</a>
+			<a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html#_getClient">getClient()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerInterface.html#_register">register()</a>
 		</code></td>
 	</tr>
 	</table>
 
+	<table class="summary used">
+	<caption>Methods used from <a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#methods">PommProject\Foundation\Client\ClientPoolerTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#_getClient">getClient()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#_getClientFromPool">getClientFromPool()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#_getSession">getSession()</a>, 
+			<a href="class-PommProject.Foundation.Client.ClientPoolerTrait.html#_register">register()</a>
+		</code></td>
+	</tr>
+	</table>
 
 
 
@@ -306,6 +319,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

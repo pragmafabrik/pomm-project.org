@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -176,9 +180,8 @@
 				Grégoire HUBERT
 <br>
 				<b>See:</b>
-				ConverterInterface
-<br>
-		<b>Located at</b> <a href="source-class-PommProject.Foundation.Converter.Geometry.PgCircle.html#14-38" title="Go to source code">Converter/Geometry/PgCircle.php</a><br>
+				<code><code><a href="class-PommProject.Foundation.Converter.ConverterInterface.html">PommProject\Foundation\Converter\ConverterInterface</a></code></code><br>
+		<b>Located at</b> <a href="source-class-PommProject.Foundation.Converter.Geometry.PgCircle.html#16-85" title="Go to source code">Converter/Geometry/PgCircle.php</a><br>
 	</div>
 
 
@@ -197,7 +200,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTypeClassName">#</a>
-		<code><a href="source-class-PommProject.Foundation.Converter.Geometry.PgCircle.html#27-37" title="Go to source code">getTypeClassName</a>( )</code>
+		<code><a href="source-class-PommProject.Foundation.Converter.Geometry.PgCircle.html#31-41" title="Go to source code">getTypeClassName</a>( )</code>
 
 		<div class="description short">
 			<p>getTypeClassName</p>
@@ -227,6 +230,105 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="toPg" id="_toPg">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_toPg">#</a>
+		<code><a href="source-class-PommProject.Foundation.Converter.Geometry.PgCircle.html#43-65" title="Go to source code">toPg</a>( <span>mixed <var>$data</var></span>, <span>string <var>$type</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+
+		<div class="description short">
+			<p>toPg</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>toPg</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd>PHP representation.
+</dd>
+					<dt><var>$type</var></dt>
+					<dd>
+</dd>
+					<dt><var>$session</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br>Pg converted string for input.
+
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						<code><code><a href="class-PommProject.Foundation.Converter.ConverterInterface.html">PommProject\Foundation\Converter\ConverterInterface</a></code></code><br>
+				</div>
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PommProject.Foundation.Converter.TypeConverter.html#_toPg">PommProject\Foundation\Converter\TypeConverter::toPg()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getPointConverter" id="_getPointConverter">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-PommProject.Foundation.Converter.ConverterInterface.html">PommProject\Foundation\Converter\ConverterInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getPointConverter">#</a>
+		<code><a href="source-class-PommProject.Foundation.Converter.Geometry.PgCircle.html#67-84" title="Go to source code">getPointConverter</a>( <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span> )</code>
+
+		<div class="description short">
+			<p>getPointConverter</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>getPointConverter</p>
+
+<p>Cache the point converter.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$session</var></dt>
+					<dd>
+</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-PommProject.Foundation.Converter.ConverterInterface.html">PommProject\Foundation\Converter\ConverterInterface</a></code></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	</table>
 
 	<table class="summary inherited">
@@ -234,8 +336,9 @@
 	<tr>
 		<td><code>
 			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#___construct">__construct()</a>, 
-			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#_fromPg">fromPg()</a>, 
-			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#_toPg">toPg()</a>
+			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#_checkData">checkData()</a>, 
+			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#_createObjectFrom">createObjectFrom()</a>, 
+			<a href="class-PommProject.Foundation.Converter.TypeConverter.html#_fromPg">fromPg()</a>
 		</code></td>
 	</tr>
 	</table>
@@ -250,6 +353,36 @@
 
 
 
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="point_converter" id="$point_converter">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.Foundation.Converter.Geometry.PgCircle.html#29" title="Go to source code"><var>$point_converter</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$point_converter" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
 
 	<table class="summary inherited">
 	<caption>Properties inherited from <a href="class-PommProject.Foundation.Converter.TypeConverter.html#properties">PommProject\Foundation\Converter\TypeConverter</a></caption>
@@ -272,6 +405,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

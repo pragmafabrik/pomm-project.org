@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li class="active"><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -85,7 +89,7 @@
 			<h3>Classes</h3>
 			<ul>
 				<li class="active"><a href="class-PommProject.ModelManager.Model.CollectionIterator.html">CollectionIterator</a></li>
-				<li><a href="class-PommProject.ModelManager.Model.CollectionQuery.html">CollectionQuery</a></li>
+				<li><a href="class-PommProject.ModelManager.Model.CollectionQueryManager.html">CollectionQueryManager</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.HydrationPlan.html">HydrationPlan</a></li>
 				<li><a href="class-PommProject.ModelManager.Model.IdentityMapper.html">IdentityMapper</a></li>
@@ -151,7 +155,9 @@
 			 implements 
 				<a href="class-Iterator.html"><span>Iterator</span></a>, 
 			
-				<a href="class-Countable.html"><span>Countable</span></a>
+				<a href="class-Countable.html"><span>Countable</span></a>, 
+			
+				<a href="class-JsonSerializable.html"><span>JsonSerializable</span></a>
 			
 			
 		</dd>
@@ -184,7 +190,7 @@
 				<b>Author:</b>
 				Grégoire HUBERT <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;:&#x68;&#x75;&#x62;&#x65;&#114;&#116;&#46;g&#x72;&#x65;&#x67;&#64;&#103;&#109;&#97;i&#x6c;&#x2e;&#x63;&#111;&#109;">&#x68;&#x75;&#x62;&#x65;&#114;&#116;&#46;g&#x72;&#x65;&#x67;&#64;&#103;&#109;&#97;i&#x6c;&#x2e;&#x63;&#111;&#109;</a>
 <br>
-		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#17-186" title="Go to source code">Model/CollectionIterator.php</a><br>
+		<b>Located at</b> <a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#18-205" title="Go to source code">Model/CollectionIterator.php</a><br>
 	</div>
 
 
@@ -203,7 +209,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#33-49" title="Go to source code">__construct</a>( <span><code><a href="class-PommProject.Foundation.Session.ResultHandler.html">PommProject\Foundation\Session\ResultHandler</a></code> <var>$result</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span>, <span><code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code> <var>$projection</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#37-59" title="Go to source code">__construct</a>( <span><code><a href="class-PommProject.Foundation.Session.ResultHandler.html">PommProject\Foundation\Session\ResultHandler</a></code> <var>$result</var></span>, <span><code><a href="class-PommProject.Foundation.Session.Session.html">PommProject\Foundation\Session\Session</a></code> <var>$session</var></span>, <span><code><a href="class-PommProject.ModelManager.Model.Projection.html">PommProject\ModelManager\Model\Projection</a></code> <var>$projection</var></span> )</code>
 
 		<div class="description short">
 			<p>__construct</p>
@@ -248,14 +254,14 @@
 		<td class="attributes"><code>
 			 public 
 
-			array
+			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#51-59" title="Go to source code">get</a>( <span>integer <var>$index</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#61-70" title="Go to source code">get</a>( <span>integer <var>$index</var></span> )</code>
 
 		<div class="description short">
 			<p>get</p>
@@ -276,7 +282,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array</code>
+					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code>
 				</div>
 
 
@@ -296,14 +302,14 @@
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
+			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_parseRow">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#61-84" title="Go to source code">parseRow</a>( <span>array <var>$values</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#72-88" title="Go to source code">parseRow</a>( <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>parseRow</p>
@@ -326,7 +332,7 @@
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code>
+					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code>
 				</div>
 
 
@@ -351,7 +357,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_launchFilters">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#86-106" title="Go to source code">launchFilters</a>( <span>array <var>$values</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#90-110" title="Go to source code">launchFilters</a>( <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>launchFilters</p>
@@ -395,7 +401,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_registerFilter">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#108-130" title="Go to source code">registerFilter</a>( <span>callable <var>$callable</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#112-134" title="Go to source code">registerFilter</a>( <span>callable <var>$callable</var></span> )</code>
 
 		<div class="description short">
 			<p>registerFilter</p>
@@ -441,7 +447,7 @@ array with field name as key.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_clearFilters">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#132-142" title="Go to source code">clearFilters</a>( )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#136-146" title="Go to source code">clearFilters</a>( )</code>
 
 		<div class="description short">
 			<p>clearFilters</p>
@@ -463,6 +469,46 @@ array with field name as key.</p>
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="extract" id="_extract">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_extract">#</a>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#148-165" title="Go to source code">extract</a>( )</code>
+
+		<div class="description short">
+			<p>extract</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			<p>extract</p>
+
+<p>Return an array of entities extractd as arrays.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>array</code>
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PommProject.Foundation.ResultIterator.html#_extract">PommProject\Foundation\ResultIterator::extract()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="slice" id="_slice">
 
 		<td class="attributes"><code>
@@ -475,7 +521,7 @@ array with field name as key.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_slice">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#144-152" title="Go to source code">slice</a>( <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#167-179" title="Go to source code">slice</a>( <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>slice</p>
@@ -492,14 +538,13 @@ array with field name as key.</p>
 				<h4>Parameters</h4>
 				<div class="list"><dl>
 					<dt><var>$name</var></dt>
-					<dd>$field
+					<dd>
 </dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>array</code><br>values
-
+					<code>array</code>
 				</div>
 
 
@@ -522,7 +567,7 @@ array with field name as key.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_convertSlice">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#154-185" title="Go to source code">convertSlice</a>( <span>array <var>$values</var></span>, <span>string <var>$name</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#182-203" title="Go to source code">convertSlice</a>( <span>array <var>$values</var></span>, <span>string <var>$name</var></span> )</code>
 
 		<div class="description short">
 			<p>convertSlice</p>
@@ -573,6 +618,7 @@ array with field name as key.</p>
 			<a href="class-PommProject.Foundation.ResultIterator.html#_isFirst">isFirst()</a>, 
 			<a href="class-PommProject.Foundation.ResultIterator.html#_isLast">isLast()</a>, 
 			<a href="class-PommProject.Foundation.ResultIterator.html#_isOdd">isOdd()</a>, 
+			<a href="class-PommProject.Foundation.ResultIterator.html#_jsonSerialize">jsonSerialize()</a>, 
 			<a href="class-PommProject.Foundation.ResultIterator.html#_key">key()</a>, 
 			<a href="class-PommProject.Foundation.ResultIterator.html#_next">next()</a>, 
 			<a href="class-PommProject.Foundation.ResultIterator.html#_rewind">rewind()</a>, 
@@ -600,7 +646,7 @@ array with field name as key.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#29" title="Go to source code"><var>$session</var></a>
+				<a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#30" title="Go to source code"><var>$session</var></a>
 
 			<div class="description short">
 				
@@ -627,7 +673,7 @@ array with field name as key.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#30" title="Go to source code"><var>$projection</var></a>
+				<a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#31" title="Go to source code"><var>$projection</var></a>
 
 			<div class="description short">
 				
@@ -654,7 +700,7 @@ array with field name as key.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#31" title="Go to source code"><var>$filters</var></a>
+				<a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#32" title="Go to source code"><var>$filters</var></a>
 
 			<div class="description short">
 				
@@ -671,6 +717,33 @@ array with field name as key.</p>
 			<div>
 				<a href="#$filters" class="anchor">#</a>
 				<code>[]</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="hydration_plan" id="$hydration_plan">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-PommProject.ModelManager.Model.CollectionIterator.html#33" title="Go to source code"><var>$hydration_plan</var></a>
+
+			<div class="description short">
+				
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$hydration_plan" class="anchor">#</a>
+				<code></code>
 			</div>
 		</td>
 	</tr>
@@ -697,6 +770,6 @@ array with field name as key.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

@@ -52,7 +52,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -65,8 +65,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li class="active"><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li class="active"><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -188,7 +192,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_insertOne">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#32-70" title="Go to source code">insertOne</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code> <var>&amp; $entity</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#32-71" title="Go to source code">insertOne</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code> <var>&amp; $entity</var></span> )</code>
 
 		<div class="description short">
 			<p>insertOne</p>
@@ -234,7 +238,7 @@ It is updated with values returned by the database (ie, default values).</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_updateOne">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#72-94" title="Go to source code">updateOne</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code> <var>&amp; $entity</var></span>, <span>array <var>$fields</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#73-95" title="Go to source code">updateOne</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code> <var>&amp; $entity</var></span>, <span>array <var>$fields</var></span> )</code>
 
 		<div class="description short">
 			<p>updateOne</p>
@@ -279,14 +283,14 @@ primary key is not fully set, an exception is thrown.</p>
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
+			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_updateByPk">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#96-139" title="Go to source code">updateByPk</a>( <span>array <var>$primary_key</var></span>, <span>array <var>$updates</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#97-140" title="Go to source code">updateByPk</a>( <span>array <var>$primary_key</var></span>, <span>array <var>$updates</var></span> )</code>
 
 		<div class="description short">
 			<p>updateByPk</p>
@@ -313,7 +317,7 @@ the given key, null is returned.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code>
+					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code>
 				</div>
 
 
@@ -334,7 +338,7 @@ the given key, null is returned.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_deleteOne">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#141-156" title="Go to source code">deleteOne</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code> <var>&amp; $entity</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#142-157" title="Go to source code">deleteOne</a>( <span><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code> <var>&amp; $entity</var></span> )</code>
 
 		<div class="description short">
 			<p>deleteOne</p>
@@ -373,14 +377,14 @@ updated with the values fetched from the deleted record.</p>
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
+			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_deleteByPK">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#158-187" title="Go to source code">deleteByPK</a>( <span>array <var>$primary_key</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#159-188" title="Go to source code">deleteByPK</a>( <span>array <var>$primary_key</var></span> )</code>
 
 		<div class="description short">
 			<p>deleteByPK</p>
@@ -404,7 +408,7 @@ null if not found.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code>
+					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code>
 				</div>
 
 
@@ -418,14 +422,14 @@ null if not found.</p>
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code>
+			<code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createAndSave">#</a>
-		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#189-205" title="Go to source code">createAndSave</a>( <span>array <var>$values</var></span> )</code>
+		<code><a href="source-class-PommProject.ModelManager.Model.ModelTrait.WriteQueries.html#190-205" title="Go to source code">createAndSave</a>( <span>array <var>$values</var></span> )</code>
 
 		<div class="description short">
 			<p>createAndSave</p>
@@ -448,7 +452,7 @@ null if not found.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.html">PommProject\ModelManager\Model\FlexibleEntity</a></code></code>
+					<code><code><a href="class-PommProject.ModelManager.Model.FlexibleEntity.FlexibleEntityInterface.html">PommProject\ModelManager\Model\FlexibleEntity\FlexibleEntityInterface</a></code></code>
 				</div>
 
 
@@ -571,6 +575,7 @@ array or not and call the converter pooler.</p>
 	<caption>Methods used from <a href="class-PommProject.ModelManager.Model.ModelTrait.BaseTrait.html#methods">PommProject\ModelManager\Model\ModelTrait\BaseTrait</a></caption>
 	<tr>
 		<td><code>
+			<a href="class-PommProject.ModelManager.Model.ModelTrait.BaseTrait.html#_createEntity">createEntity()</a>, 
 			<a href="class-PommProject.ModelManager.Model.ModelTrait.BaseTrait.html#_createProjection">createProjection()</a>, 
 			<a href="class-PommProject.ModelManager.Model.ModelTrait.BaseTrait.html#_escapeIdentifier">escapeIdentifier()</a>, 
 			<a href="class-PommProject.ModelManager.Model.ModelTrait.BaseTrait.html#_escapeLiteral">escapeLiteral()</a>, 
@@ -606,6 +611,6 @@ array or not and call the converter pooler.</p>
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

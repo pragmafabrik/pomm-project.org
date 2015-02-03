@@ -53,7 +53,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -66,8 +66,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -90,12 +94,14 @@
 				<li><a href="class-PommProject.Cli.Command.GenerateForSchema.html">GenerateForSchema</a></li>
 				<li><a href="class-PommProject.Cli.Command.GenerateRelationModel.html">GenerateRelationModel</a></li>
 				<li><a href="class-PommProject.Cli.Command.GenerateRelationStructure.html">GenerateRelationStructure</a></li>
+				<li><a href="class-PommProject.Cli.Command.InspectConfig.html">InspectConfig</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectDatabase.html">InspectDatabase</a></li>
 				<li class="active"><a href="class-PommProject.Cli.Command.InspectRelation.html">InspectRelation</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectSchema.html">InspectSchema</a></li>
 				<li><a href="class-PommProject.Cli.Command.PommAwareCommand.html">PommAwareCommand</a></li>
 				<li><a href="class-PommProject.Cli.Command.RelationAwareCommand.html">RelationAwareCommand</a></li>
 				<li><a href="class-PommProject.Cli.Command.SchemaAwareCommand.html">SchemaAwareCommand</a></li>
+				<li><a href="class-PommProject.Cli.Command.SessionAwareCommand.html">SessionAwareCommand</a></li>
 			</ul>
 
 
@@ -180,7 +186,7 @@
 </span><span id="41" class="l"><a class="l" href="#41"> 41: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_configure" href="#_configure">configure</a>()
 </span><span id="42" class="l"><a class="l" href="#42"> 42: </a>    {
 </span><span id="43" class="l"><a class="l" href="#43"> 43: </a>        <span class="php-var">$this</span>
-</span><span id="44" class="l"><a class="l" href="#44"> 44: </a>            -&gt;setName(<span class="php-quote">'inspect:relation'</span>)
+</span><span id="44" class="l"><a class="l" href="#44"> 44: </a>            -&gt;setName(<span class="php-quote">'pomm:inspect:relation'</span>)
 </span><span id="45" class="l"><a class="l" href="#45"> 45: </a>            -&gt;setDescription(<span class="php-quote">'Display a relation information.'</span>)
 </span><span id="46" class="l"><a class="l" href="#46"> 46: </a>        ;
 </span><span id="47" class="l"><a class="l" href="#47"> 47: </a>        parent::configure();
@@ -281,6 +287,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

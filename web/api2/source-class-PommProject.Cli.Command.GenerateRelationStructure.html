@@ -53,7 +53,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -66,8 +66,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -90,12 +94,14 @@
 				<li><a href="class-PommProject.Cli.Command.GenerateForSchema.html">GenerateForSchema</a></li>
 				<li><a href="class-PommProject.Cli.Command.GenerateRelationModel.html">GenerateRelationModel</a></li>
 				<li class="active"><a href="class-PommProject.Cli.Command.GenerateRelationStructure.html">GenerateRelationStructure</a></li>
+				<li><a href="class-PommProject.Cli.Command.InspectConfig.html">InspectConfig</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectDatabase.html">InspectDatabase</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectRelation.html">InspectRelation</a></li>
 				<li><a href="class-PommProject.Cli.Command.InspectSchema.html">InspectSchema</a></li>
 				<li><a href="class-PommProject.Cli.Command.PommAwareCommand.html">PommAwareCommand</a></li>
 				<li><a href="class-PommProject.Cli.Command.RelationAwareCommand.html">RelationAwareCommand</a></li>
 				<li><a href="class-PommProject.Cli.Command.SchemaAwareCommand.html">SchemaAwareCommand</a></li>
+				<li><a href="class-PommProject.Cli.Command.SessionAwareCommand.html">SessionAwareCommand</a></li>
 			</ul>
 
 
@@ -152,60 +158,64 @@
 </span><span id="13" class="l"><a class="l" href="#13">13: </a><span class="php-keyword1">use</span> Symfony\Component\Console\Input\InputInterface;
 </span><span id="14" class="l"><a class="l" href="#14">14: </a><span class="php-keyword1">use</span> Symfony\Component\Console\Output\OutputInterface;
 </span><span id="15" class="l"><a class="l" href="#15">15: </a>
-</span><span id="16" class="l"><a class="l" href="#16">16: </a><span class="php-keyword1">use</span> PommProject\Cli\Generator\StructureGenerator;
-</span><span id="17" class="l"><a class="l" href="#17">17: </a>
-</span><span id="18" class="l"><a class="l" href="#18">18: </a><span class="php-comment">/**
-</span></span><span id="19" class="l"><a class="l" href="#19">19: </a><span class="php-comment"> * GenerateRelationStructure
-</span></span><span id="20" class="l"><a class="l" href="#20">20: </a><span class="php-comment"> *
-</span></span><span id="21" class="l"><a class="l" href="#21">21: </a><span class="php-comment"> * Command to scan a relation and (re)build the according structure file.
-</span></span><span id="22" class="l"><a class="l" href="#22">22: </a><span class="php-comment"> *
-</span></span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-comment"> * @package Cli
-</span></span><span id="24" class="l"><a class="l" href="#24">24: </a><span class="php-comment"> * @copyright 2014 Grégoire HUBERT
-</span></span><span id="25" class="l"><a class="l" href="#25">25: </a><span class="php-comment"> * @author Grégoire HUBERT
-</span></span><span id="26" class="l"><a class="l" href="#26">26: </a><span class="php-comment"> * @license X11 {@link http://opensource.org/licenses/mit-license.php}
-</span></span><span id="27" class="l"><a class="l" href="#27">27: </a><span class="php-comment"> * @see Command
-</span></span><span id="28" class="l"><a class="l" href="#28">28: </a><span class="php-comment"> */</span>
-</span><span id="29" class="l"><a class="l" href="#29">29: </a><span class="php-keyword1">class</span> <a id="GenerateRelationStructure" href="#GenerateRelationStructure">GenerateRelationStructure</a> <span class="php-keyword1">extends</span> RelationAwareCommand
-</span><span id="30" class="l"><a class="l" href="#30">30: </a>{
-</span><span id="31" class="l"><a class="l" href="#31">31: </a>    <span class="php-comment">/**
-</span></span><span id="32" class="l"><a class="l" href="#32">32: </a><span class="php-comment">     * configure
-</span></span><span id="33" class="l"><a class="l" href="#33">33: </a><span class="php-comment">     *
-</span></span><span id="34" class="l"><a class="l" href="#34">34: </a><span class="php-comment">     * @see Command
-</span></span><span id="35" class="l"><a class="l" href="#35">35: </a><span class="php-comment">     */</span>
-</span><span id="36" class="l"><a class="l" href="#36">36: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_configure" href="#_configure">configure</a>()
-</span><span id="37" class="l"><a class="l" href="#37">37: </a>    {
-</span><span id="38" class="l"><a class="l" href="#38">38: </a>        <span class="php-var">$this</span>
-</span><span id="39" class="l"><a class="l" href="#39">39: </a>            -&gt;setName(<span class="php-quote">'generate:structure'</span>)
-</span><span id="40" class="l"><a class="l" href="#40">40: </a>            -&gt;setDescription(<span class="php-quote">'Generate a RowStructure file based on table schema.'</span>)
-</span><span id="41" class="l"><a class="l" href="#41">41: </a>            -&gt;setHelp(<span class="php-quote">&lt;&lt;&lt;HELP
-</span></span><span id="42" class="l"><a class="l" href="#42">42: </a><span class="php-quote">HELP
-</span></span><span id="43" class="l"><a class="l" href="#43">43: </a><span class="php-quote">        )
-</span></span><span id="44" class="l"><a class="l" href="#44">44: </a><span class="php-quote">            ;
-</span></span><span id="45" class="l"><a class="l" href="#45">45: </a><span class="php-quote">        parent::configure();
-</span></span><span id="46" class="l"><a class="l" href="#46">46: </a><span class="php-quote">    }
-</span></span><span id="47" class="l"><a class="l" href="#47">47: </a><span class="php-quote">
-</span></span><span id="48" class="l"><a class="l" href="#48">48: </a><span class="php-quote">    /**
-</span></span><span id="49" class="l"><a class="l" href="#49">49: </a><span class="php-quote">     * execute
-</span></span><span id="50" class="l"><a class="l" href="#50">50: </a><span class="php-quote">     *
-</span></span><span id="51" class="l"><a class="l" href="#51">51: </a><span class="php-quote">     * @see Command
-</span></span><span id="52" class="l"><a class="l" href="#52">52: </a><span class="php-quote">     */
-</span></span><span id="53" class="l"><a class="l" href="#53">53: </a><span class="php-quote">    protected function execute(InputInterface </span><span class="php-var">$input</span><span class="php-quote">, OutputInterface </span><span class="php-var">$output</span><span class="php-quote">)
-</span></span><span id="54" class="l"><a class="l" href="#54">54: </a><span class="php-quote">    {
-</span></span><span id="55" class="l"><a class="l" href="#55">55: </a><span class="php-quote">        parent::execute(</span><span class="php-var">$input</span><span class="php-quote">, </span><span class="php-var">$output</span><span class="php-quote">);
-</span></span><span id="56" class="l"><a class="l" href="#56">56: </a><span class="php-quote">
-</span></span><span id="57" class="l"><a class="l" href="#57">57: </a><span class="php-quote">        </span><span class="php-var">$this</span><span class="php-quote">-&gt;filename = </span><span class="php-var">$this</span><span class="php-quote">-&gt;getFileName(</span><span class="php-var">$input</span><span class="php-quote">-&gt;getArgument('config-name'), null, 'AutoStructure');
-</span></span><span id="58" class="l"><a class="l" href="#58">58: </a><span class="php-quote">        </span><span class="php-var">$this</span><span class="php-quote">-&gt;namespace = </span><span class="php-var">$this</span><span class="php-quote">-&gt;getNamespace(</span><span class="php-var">$input</span><span class="php-quote">-&gt;getArgument('config-name'), 'AutoStructure');
-</span></span><span id="59" class="l"><a class="l" href="#59">59: </a><span class="php-quote">
-</span></span><span id="60" class="l"><a class="l" href="#60">60: </a><span class="php-quote">        (new StructureGenerator(
-</span></span><span id="61" class="l"><a class="l" href="#61">61: </a><span class="php-quote">            </span><span class="php-var">$this</span><span class="php-quote">-&gt;getSession(),
-</span></span><span id="62" class="l"><a class="l" href="#62">62: </a><span class="php-quote">            </span><span class="php-var">$this</span><span class="php-quote">-&gt;schema,
-</span></span><span id="63" class="l"><a class="l" href="#63">63: </a><span class="php-quote">            </span><span class="php-var">$this</span><span class="php-quote">-&gt;relation,
-</span></span><span id="64" class="l"><a class="l" href="#64">64: </a><span class="php-quote">            </span><span class="php-var">$this</span><span class="php-quote">-&gt;filename,
-</span></span><span id="65" class="l"><a class="l" href="#65">65: </a><span class="php-quote">            </span><span class="php-var">$this</span><span class="php-quote">-&gt;namespace
-</span></span><span id="66" class="l"><a class="l" href="#66">66: </a><span class="php-quote">        ))-&gt;generate(</span><span class="php-var">$input</span><span class="php-quote">, </span><span class="php-var">$output</span><span class="php-quote">);
-</span></span><span id="67" class="l"><a class="l" href="#67">67: </a><span class="php-quote">    }
-</span></span><span id="68" class="l"><a class="l" href="#68">68: </a><span class="php-quote">}
-</span></span><span id="69" class="l"><a class="l" href="#69">69: </a></span></code></pre>
+</span><span id="16" class="l"><a class="l" href="#16">16: </a><span class="php-keyword1">use</span> PommProject\Foundation\ParameterHolder;
+</span><span id="17" class="l"><a class="l" href="#17">17: </a><span class="php-keyword1">use</span> PommProject\ModelManager\Generator\StructureGenerator;
+</span><span id="18" class="l"><a class="l" href="#18">18: </a>
+</span><span id="19" class="l"><a class="l" href="#19">19: </a><span class="php-comment">/**
+</span></span><span id="20" class="l"><a class="l" href="#20">20: </a><span class="php-comment"> * GenerateRelationStructure
+</span></span><span id="21" class="l"><a class="l" href="#21">21: </a><span class="php-comment"> *
+</span></span><span id="22" class="l"><a class="l" href="#22">22: </a><span class="php-comment"> * Command to scan a relation and (re)build the according structure file.
+</span></span><span id="23" class="l"><a class="l" href="#23">23: </a><span class="php-comment"> *
+</span></span><span id="24" class="l"><a class="l" href="#24">24: </a><span class="php-comment"> * @package Cli
+</span></span><span id="25" class="l"><a class="l" href="#25">25: </a><span class="php-comment"> * @copyright 2014 Grégoire HUBERT
+</span></span><span id="26" class="l"><a class="l" href="#26">26: </a><span class="php-comment"> * @author Grégoire HUBERT
+</span></span><span id="27" class="l"><a class="l" href="#27">27: </a><span class="php-comment"> * @license X11 {@link http://opensource.org/licenses/mit-license.php}
+</span></span><span id="28" class="l"><a class="l" href="#28">28: </a><span class="php-comment"> * @see Command
+</span></span><span id="29" class="l"><a class="l" href="#29">29: </a><span class="php-comment"> */</span>
+</span><span id="30" class="l"><a class="l" href="#30">30: </a><span class="php-keyword1">class</span> <a id="GenerateRelationStructure" href="#GenerateRelationStructure">GenerateRelationStructure</a> <span class="php-keyword1">extends</span> RelationAwareCommand
+</span><span id="31" class="l"><a class="l" href="#31">31: </a>{
+</span><span id="32" class="l"><a class="l" href="#32">32: </a>    <span class="php-comment">/**
+</span></span><span id="33" class="l"><a class="l" href="#33">33: </a><span class="php-comment">     * configure
+</span></span><span id="34" class="l"><a class="l" href="#34">34: </a><span class="php-comment">     *
+</span></span><span id="35" class="l"><a class="l" href="#35">35: </a><span class="php-comment">     * @see Command
+</span></span><span id="36" class="l"><a class="l" href="#36">36: </a><span class="php-comment">     */</span>
+</span><span id="37" class="l"><a class="l" href="#37">37: </a>    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> <a id="_configure" href="#_configure">configure</a>()
+</span><span id="38" class="l"><a class="l" href="#38">38: </a>    {
+</span><span id="39" class="l"><a class="l" href="#39">39: </a>        <span class="php-var">$this</span>
+</span><span id="40" class="l"><a class="l" href="#40">40: </a>            -&gt;setName(<span class="php-quote">'pomm:generate:structure'</span>)
+</span><span id="41" class="l"><a class="l" href="#41">41: </a>            -&gt;setDescription(<span class="php-quote">'Generate a RowStructure file based on table schema.'</span>)
+</span><span id="42" class="l"><a class="l" href="#42">42: </a>            -&gt;setHelp(<span class="php-quote">&lt;&lt;&lt;HELP
+</span></span><span id="43" class="l"><a class="l" href="#43">43: </a><span class="php-quote">HELP
+</span></span><span id="44" class="l"><a class="l" href="#44">44: </a><span class="php-quote">        )
+</span></span><span id="45" class="l"><a class="l" href="#45">45: </a><span class="php-quote">            ;
+</span></span><span id="46" class="l"><a class="l" href="#46">46: </a><span class="php-quote">        parent::configure();
+</span></span><span id="47" class="l"><a class="l" href="#47">47: </a><span class="php-quote">    }
+</span></span><span id="48" class="l"><a class="l" href="#48">48: </a><span class="php-quote">
+</span></span><span id="49" class="l"><a class="l" href="#49">49: </a><span class="php-quote">    /**
+</span></span><span id="50" class="l"><a class="l" href="#50">50: </a><span class="php-quote">     * execute
+</span></span><span id="51" class="l"><a class="l" href="#51">51: </a><span class="php-quote">     *
+</span></span><span id="52" class="l"><a class="l" href="#52">52: </a><span class="php-quote">     * @see Command
+</span></span><span id="53" class="l"><a class="l" href="#53">53: </a><span class="php-quote">     */
+</span></span><span id="54" class="l"><a class="l" href="#54">54: </a><span class="php-quote">    protected function execute(InputInterface </span><span class="php-var">$input</span><span class="php-quote">, OutputInterface </span><span class="php-var">$output</span><span class="php-quote">)
+</span></span><span id="55" class="l"><a class="l" href="#55">55: </a><span class="php-quote">    {
+</span></span><span id="56" class="l"><a class="l" href="#56">56: </a><span class="php-quote">        parent::execute(</span><span class="php-var">$input</span><span class="php-quote">, </span><span class="php-var">$output</span><span class="php-quote">);
+</span></span><span id="57" class="l"><a class="l" href="#57">57: </a><span class="php-quote">
+</span></span><span id="58" class="l"><a class="l" href="#58">58: </a><span class="php-quote">        </span><span class="php-var">$this</span><span class="php-quote">-&gt;filename = </span><span class="php-var">$this</span><span class="php-quote">-&gt;getFileName(</span><span class="php-var">$input</span><span class="php-quote">-&gt;getArgument('config-name'), null, 'AutoStructure');
+</span></span><span id="59" class="l"><a class="l" href="#59">59: </a><span class="php-quote">        </span><span class="php-var">$this</span><span class="php-quote">-&gt;namespace = </span><span class="php-var">$this</span><span class="php-quote">-&gt;getNamespace(</span><span class="php-var">$input</span><span class="php-quote">-&gt;getArgument('config-name'), 'AutoStructure');
+</span></span><span id="60" class="l"><a class="l" href="#60">60: </a><span class="php-quote">
+</span></span><span id="61" class="l"><a class="l" href="#61">61: </a><span class="php-quote">        </span><span class="php-var">$this</span><span class="php-quote">-&gt;updateOutput(
+</span></span><span id="62" class="l"><a class="l" href="#62">62: </a><span class="php-quote">            </span><span class="php-var">$output</span><span class="php-quote">,
+</span></span><span id="63" class="l"><a class="l" href="#63">63: </a><span class="php-quote">            (new StructureGenerator(
+</span></span><span id="64" class="l"><a class="l" href="#64">64: </a><span class="php-quote">                </span><span class="php-var">$this</span><span class="php-quote">-&gt;getSession(),
+</span></span><span id="65" class="l"><a class="l" href="#65">65: </a><span class="php-quote">                </span><span class="php-var">$this</span><span class="php-quote">-&gt;schema,
+</span></span><span id="66" class="l"><a class="l" href="#66">66: </a><span class="php-quote">                </span><span class="php-var">$this</span><span class="php-quote">-&gt;relation,
+</span></span><span id="67" class="l"><a class="l" href="#67">67: </a><span class="php-quote">                </span><span class="php-var">$this</span><span class="php-quote">-&gt;filename,
+</span></span><span id="68" class="l"><a class="l" href="#68">68: </a><span class="php-quote">                </span><span class="php-var">$this</span><span class="php-quote">-&gt;namespace
+</span></span><span id="69" class="l"><a class="l" href="#69">69: </a><span class="php-quote">            ))-&gt;generate(new ParameterHolder())
+</span></span><span id="70" class="l"><a class="l" href="#70">70: </a><span class="php-quote">        );
+</span></span><span id="71" class="l"><a class="l" href="#71">71: </a><span class="php-quote">    }
+</span></span><span id="72" class="l"><a class="l" href="#72">72: </a><span class="php-quote">}
+</span></span><span id="73" class="l"><a class="l" href="#73">73: </a></span></code></pre>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -213,6 +223,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>

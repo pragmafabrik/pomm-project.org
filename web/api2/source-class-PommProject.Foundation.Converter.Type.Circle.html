@@ -53,7 +53,7 @@
 						</li>
 				<li><a href="namespace-PommProject.Foundation.PreparedQuery.html">PreparedQuery</a>
 						</li>
-				<li><a href="namespace-PommProject.Foundation.Query.html">Query</a>
+				<li><a href="namespace-PommProject.Foundation.QueryManager.html">QueryManager</a>
 						</li>
 				<li><a href="namespace-PommProject.Foundation.Session.html">Session</a>
 						</li>
@@ -66,8 +66,12 @@
 						</li>
 				<li><a href="namespace-PommProject.ModelManager.Exception.html">Exception</a>
 						</li>
+				<li><a href="namespace-PommProject.ModelManager.Generator.html">Generator</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.html">Model<span></span></a>
 						<ul>
+				<li><a href="namespace-PommProject.ModelManager.Model.FlexibleEntity.html">FlexibleEntity</a>
+						</li>
 				<li><a href="namespace-PommProject.ModelManager.Model.ModelTrait.html">ModelTrait</a>
 						</li>
 							</ul></li>
@@ -210,10 +214,10 @@
 </span><span id="77" class="l"><a class="l" href="#77">77: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="___toString" href="#___toString">__toString</a>()
 </span><span id="78" class="l"><a class="l" href="#78">78: </a>    {
 </span><span id="79" class="l"><a class="l" href="#79">79: </a>        <span class="php-keyword1">return</span> <span class="php-keyword2">sprintf</span>(
-</span><span id="80" class="l"><a class="l" href="#80">80: </a>            <span class="php-quote">&quot;circle(%s,%s)&quot;</span>,
-</span><span id="81" class="l"><a class="l" href="#81">81: </a>            <span class="php-var">$this</span>-&gt;center-&gt;__toString(),
-</span><span id="82" class="l"><a class="l" href="#82">82: </a>            <span class="php-var">$this</span>-&gt;radius
-</span><span id="83" class="l"><a class="l" href="#83">83: </a>        );
+</span><span id="80" class="l"><a class="l" href="#80">80: </a>            <span class="php-quote">&quot;&lt;%s,%s&gt;&quot;</span>,
+</span><span id="81" class="l"><a class="l" href="#81">81: </a>                (string) <span class="php-var">$this</span>-&gt;center,
+</span><span id="82" class="l"><a class="l" href="#82">82: </a>                <span class="php-var">$this</span>-&gt;radius
+</span><span id="83" class="l"><a class="l" href="#83">83: </a>            );
 </span><span id="84" class="l"><a class="l" href="#84">84: </a>    }
 </span><span id="85" class="l"><a class="l" href="#85">85: </a>}
 </span><span id="86" class="l"><a class="l" href="#86">86: </a></span></code></pre>
@@ -224,6 +228,6 @@
 </div>
 </div>
 <script src="resources/combined.js?721046668"></script>
-<script src="elementlist.js?2708423488"></script>
+<script src="elementlist.js?481054386"></script>
 </body>
 </html>
