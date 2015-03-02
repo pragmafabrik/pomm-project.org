@@ -47,7 +47,7 @@ class NewsModel extends Model
     public function createProjection()
     {
         return parent::createProjection()
-            ->setField('age', 'age(%published_at)', 'interval')
+            ->setField('age', 'age(now(), %published_at)', 'interval')
             ;
     }
 

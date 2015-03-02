@@ -232,12 +232,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/Foundation.git",
-                "reference": "467f66bd6e88896dc77b4b36f3fb28e7a13b470d"
+                "reference": "5c72f9f0c8f212705e0109c4953f3ec63a698d3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/467f66bd6e88896dc77b4b36f3fb28e7a13b470d",
-                "reference": "467f66bd6e88896dc77b4b36f3fb28e7a13b470d",
+                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/5c72f9f0c8f212705e0109c4953f3ec63a698d3b",
+                "reference": "5c72f9f0c8f212705e0109c4953f3ec63a698d3b",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
                 "pomm",
                 "postgresql"
             ],
-            "time": "2015-02-11 11:26:46"
+            "time": "2015-03-02 10:28:49"
         },
         {
             "name": "pomm-project/model-manager",
@@ -286,12 +286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/ModelManager.git",
-                "reference": "24a5bd90563172e0989bff66125b462712206076"
+                "reference": "ee9df72053a08bd538bf8d1eec67fd78958251be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/ModelManager/zipball/24a5bd90563172e0989bff66125b462712206076",
-                "reference": "24a5bd90563172e0989bff66125b462712206076",
+                "url": "https://api.github.com/repos/pomm-project/ModelManager/zipball/ee9df72053a08bd538bf8d1eec67fd78958251be",
+                "reference": "ee9df72053a08bd538bf8d1eec67fd78958251be",
                 "shasum": ""
             },
             "require": {
@@ -336,7 +336,7 @@
                 "pomm",
                 "postgresql"
             ],
-            "time": "2015-02-10 09:06:32"
+            "time": "2015-02-27 11:10:56"
         },
         {
             "name": "pomm-project/pomm-profiler-service-provider",
