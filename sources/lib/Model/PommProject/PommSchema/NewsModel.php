@@ -47,7 +47,7 @@ class NewsModel extends Model
     public function createProjection()
     {
         return parent::createProjection()
-            ->setField('age', 'age(now(), %published_at)', 'interval')
+            ->setField('age', 'age(now(), %:published_at:%)', 'interval')
             ;
     }
 
@@ -75,7 +75,7 @@ SQL;
         $projection = $this
             ->createProjection()
             ->unsetField('content')
-            ->setField('content', "cut_nicely(regexp_replace(substr(%content, 1, 900), '<[^>]+>', ' ', 'g'), 450)", 'text')
+            ->setField('content', "cut_nicely(regexp_replace(substr(%:content:%, 1, 900), '<[^>]+>', ' ', 'g'), 450)", 'text')
             ;
 
         $sql = strtr(
