@@ -97,13 +97,14 @@ $ php vendor/bin/pomm.php pomm:generate:schema-all my_db public
                   What it does is returning all computers with an interface in the <code>192.168.0.0/20</code> network:
 <code><pre class="vimsql">
 <span class="Statement">select</span>
-    computer_id <span class="Special">as</span> computer_id,
+    c.<span class="String">&quot;computer_id&quot;</span> <span class="Special">as</span> <span class="String">&quot;computer_id&quot;</span>,
     …,
-    interfaces <span class="Special">as</span> interfaces
+    c.<span class="String">&quot;interfaces&quot;</span> <span class="Special">as</span> <span class="String">&quot;interfaces&quot;</span>
 <span class="Special">from</span>
-    public.computer
+    public.computer c
 <span class="Special">where</span>
-    $* &gt;&gt; <span class="Statement">any</span> (interfaces)</pre></code>
+    $<span class="Number">1</span> &gt;&gt; <span class="Statement">any</span> (interfaces)
+</pre></code>
                   It will display all the computers matching the given condition and print out the list of their interfaces on the same line.</p>
                   <p>For the example's sake, let's say we always want to know if a computer has a public IP address (a "public" computer). It is possible to modify the projection to add such information in the <code>select</code> part of SQL queries that fetches computers:
 <code><pre class="vimphp">
@@ -114,7 +115,7 @@ $ php vendor/bin/pomm.php pomm:generate:schema-all my_db public
         <span class="Statement">return</span> <span class="Structure">parent</span><span class="Operator">::</span>createProjection<span class="Special">()</span>
             <span class="Structure">-&gt;</span>setField<span class="Special">(</span>
                 '<span class="String">is_public</span>',
-                &quot;<span class="String">not '192.168.0.0/16'::inet &gt;&gt; all(interfaces)</span>&quot;,
+                &quot;<span class="String">not '192.168.0.0/16'::inet &gt;&gt; all(%:interfaces:%)</span>&quot;,
                 '<span class="String">bool</span>'
             <span class="Special">)</span>;
     <span class="Special">}</span>
@@ -122,12 +123,15 @@ $ php vendor/bin/pomm.php pomm:generate:schema-all my_db public
                   The SQL queries issued by <code>script.php</code> turns to:
 <code><pre class="vimsql">
 <span class="Statement">select</span>
-    computer_id <span class="Special">as</span> computer_id,
+    c.<span class="String">&quot;computer_id&quot;</span> <span class="Special">as</span> <span class="String">&quot;computer_id&quot;</span>,
     …,
-    interfaces <span class="Special">as</span> interfaces,
-    <span class="Statement">not</span> <span class="String">'192.168.0.0/12'</span>::<span class="Type">inet</span> &gt;&gt; <span class="Statement">all</span>(interfaces) <span class="Special">as</span> is_public
+    c.<span class="String">&quot;interfaces&quot;</span> <span class="Special">as</span> <span class="String">&quot;interfaces&quot;</span>,
+    <span class="Statement">not</span> <span class="String">'192.168.0.0/12'</span>::<span class="Type">inet</span> &gt;&gt; <span class="Statement">all</span>(c.<span class="String">&quot;interfaces&quot;</span>) <span class="Special">as</span> <span class="String">&quot;is_public&quot;</span>
 <span class="Special">from</span>
-  …</pre></code>
+  public.computer c
+<span class="Special">where</span>
+  …
+</pre></code>
                   The <code>Computer</code> instances now have a new attribute named <code>is_public</code> with boolean value. This field can be accessed like any other field but it can however not be saved.
                 </p>
                 <h3>Step 4: custom queries</h3>

@@ -442,12 +442,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/pomm-symfony-bridge.git",
-                "reference": "ca32a31c3790362410a5195583cfc7147e1f261c"
+                "reference": "6a4abeac65f9e6c08d37e8135727315e3c00eca5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/pomm-symfony-bridge/zipball/ca32a31c3790362410a5195583cfc7147e1f261c",
-                "reference": "ca32a31c3790362410a5195583cfc7147e1f261c",
+                "url": "https://api.github.com/repos/pomm-project/pomm-symfony-bridge/zipball/6a4abeac65f9e6c08d37e8135727315e3c00eca5",
+                "reference": "6a4abeac65f9e6c08d37e8135727315e3c00eca5",
                 "shasum": ""
             },
             "require": {
@@ -495,7 +495,7 @@
                 "silex",
                 "symfony"
             ],
-            "time": "2015-02-06 13:41:15"
+            "time": "2015-03-06 17:15:39"
         },
         {
             "name": "psr/log",
