@@ -34,41 +34,20 @@
     <link href="/css/bootstrap.css" rel="stylesheet" media="screen" />
     <link href="/css/custom.css" rel="stylesheet" media="screen" />
 {% block css %}{% endblock %}
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-{{ render(app.url_generator.generate("main_navbar")) }}
-        </div>
-      </div> <!-- row -->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-              <h1><a href="{{ app.url_generator.generate('main_index') }}"><img  style="vertical-align: bottom;" width="100" src="/images/Pomm.png" alt="pomm" /></a> The Postgresql object model manager for PHP</h1>
-              </div>
-              <div class="panel-body">
-                <p style="font-size: 140%; font-style: italic;">
-                  Pomm is an open source database access framework coupled with an Object Model Manager dedicated to the Postgresql™ database. It offers an <a href="{{ app.url_generator.generate('main_about') }}">alternative approach</a> than ORM to using database in web developments.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <div class="row">
-        <div class="col-md-12"></div>
-      </div> <!-- row -->
+</head>
+<body>
+    {%  include '_navbar.html.twig' %}
 {% include "_error_bar.html.twig" with { "app": app } only %}
-{% block content %}{% endblock %}
-    </div> <!-- container -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <hr />
-          <table><tr><td><a href="http://www.pragmafabrik.com/en"><img src="/images/logo_pragma.png" style="margin-right: 30px;" width="100" /></a></td><td> Copyright Grégoire HUBERT 2014 - 2015. All contents on this site are under the CC by-sa licence.<br />The background image is taken by Abrget47j (Own work) <a href="http://creativecommons.org/licenses/by-sa/3.0">CC-BY-SA-3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Hommik_Viru_rabas.jpg">Wikimedia Commons</a>.<br />Free tools for a free network. This site has been made and is powered using open source and free softwares only.</td></tr></table>
+    {% block content %}
+    {% endblock %}
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <table><tr><td><a href="http://www.pragmafabrik.com/en"><img src="/images/logo_pragma.png" style="margin-right: 30px;" width="100" /></a></td><td> Copyright Grégoire HUBERT 2014 - 2015. All contents on this site are under the CC by-sa licence.<br />The background image is taken by Abrget47j (Own work) <a href="http://creativecommons.org/licenses/by-sa/3.0">CC-BY-SA-3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Hommik_Viru_rabas.jpg">Wikimedia Commons</a>.<br />Free tools for a free network. This site has been made and is powered using open source and free softwares only.</td></tr></table>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   </body>
 </html>

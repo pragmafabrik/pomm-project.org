@@ -1,9 +1,114 @@
-body {
-  margin-top: 10px;
- }
 
-html {
-  background:url('/images/background.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
+
+div#headerhome{
+    background: url('../images/background.jpg') center center;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    margin-bottom: 60px;
+}
+
+div#headerhome div.container{
+    text-align: center;
+}
+
+a{
+    color: #000000;
+}
+
+.navbar{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.navbar-brand{
+    padding-top: 16px;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+#logotop{
+    margin-right: 10px;
+}
+
+div#navbar ul.navbar-nav{
+    margin-top: 6px;
+}
+
+.panel{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.panel-info{
+    border:none;
+}
+
+.panel-info > .panel-heading{
+    background: none;
+    border: none;
+    color: #EA3889;
+}
+
+.panel-info .panel-body{
+    padding-top: 1px;
+    border:none;
+}
+
+.panel-info > .panel-heading h3{
+    padding-top: 5px;
+}
+
+.panel-info > .panel-heading img{
+    margin-top: -5px;
+}
+
+#homeproject{
+    background: #ECE3E8;
+    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#homeproject h3{
+    color: #6A5FA6;
+    padding-left: 17px;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.accroche{
+    text-align: justify;
+}
+
+.accroche img{
+    display: block;
+    margin: auto;
+
+}
+.accroche .header_accroche{
+    text-align: center;
+}
+.accroche h2{
+    color: #EA3889;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+div.footer{
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+div#homeproject span.sstitle{
+    font-weight: bold;
+}
+
+div#homeproject a{
+    color: #EA3889;
 }
