@@ -87,7 +87,7 @@
     <span class="StorageClass">public</span> <span class="Define">function</span> createProjection<span class="Special">()</span>
     <span class="Special">{</span>
         <span class="Statement">return</span> <span class="Structure">parent</span><span class="Operator">::</span>createProjection<span class="Special">()</span>
-            <span class="Structure">-&gt;</span>setField<span class="Special">(</span>'<span class="String">age</span>', '<span class="String">age(%published_at)</span>', '<span class="String">interval</span>'<span class="Special">)</span>
+            <span class="Structure">-&gt;</span>setField<span class="Special">(</span>'<span class="String">age</span>', '<span class="String">age(%:published_at:%)</span>', '<span class="String">interval</span>'<span class="Special">)</span>
             ;
     <span class="Special">}</span></pre></code>
                 Now all <code>News</code> entities returned by queries will have an extra field <code>age</code> containing the age of the publication in a <code>\DateInterval</code>. All the default queries are sensible to the projection:
