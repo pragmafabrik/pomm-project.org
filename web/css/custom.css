@@ -3,9 +3,19 @@
 div#headerhome{
     background: url('../images/background.jpg') center center;
     background-size: cover;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 70px;
+    padding-bottom: 70px;
     margin-bottom: 60px;
+}
+
+div#headerhome #baseline{
+    padding-top: 67px;
+}
+div#headerhome #baseline h2{
+    margin-bottom: 15px;
+}
+div#headerhome #baseline p{
+    text-align: justify;
 }
 
 div#headerhome div.container{

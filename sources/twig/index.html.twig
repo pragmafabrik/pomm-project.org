@@ -1,15 +1,20 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}home{% endblock %}
-{% block css %}        <link href="/css/index.css" rel="stylesheet" media="screen" />
+{% block css %}
+  <link href="/css/index.css" rel="stylesheet" media="screen" />
 {% endblock %}
 
 {% block content %}
   <div class="jumbotron" id="headerhome">
     <div class="container">
-      <h1><img src="/images/Pomm.png" /></h1>
-      <h2>The Postgresql object model manager for PHP</h2>
-      <p>Pomm is an open source database access framework coupled with an Object Model Manager dedicated to the Postgresql™ database. It offers an alternative approach than ORM to using database in web developments.</p>
+      <div class="col-md-4">
+        <h1><img src="/images/Pomm.png" /></h1>
+      </div>
+      <div class="col-md-8" id="baseline">
+        <h2>The Postgresql object model manager for PHP</h2>
+        <p>Pomm is an open source database access framework coupled with an Object Model Manager dedicated to the Postgresql™ database. It offers an alternative approach than ORM to using database in web developments.</p>
+      </div>
     </div>
   </div>
   <div class="container">
