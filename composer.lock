@@ -232,12 +232,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/Foundation.git",
-                "reference": "0491314d52322c484c94bee2af6ecf6fbd056eb6"
+                "reference": "0914e04fb305efd7c248ee8c9c68ecf9c626507e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/0491314d52322c484c94bee2af6ecf6fbd056eb6",
-                "reference": "0491314d52322c484c94bee2af6ecf6fbd056eb6",
+                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/0914e04fb305efd7c248ee8c9c68ecf9c626507e",
+                "reference": "0914e04fb305efd7c248ee8c9c68ecf9c626507e",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
                 "pomm",
                 "postgresql"
             ],
-            "time": "2015-03-05 09:41:37"
+            "time": "2015-03-11 21:42:34"
         },
         {
             "name": "pomm-project/model-manager",
@@ -286,12 +286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/ModelManager.git",
-                "reference": "d23466aad1b32943587b5bdf687ef6d5c80b8cdd"
+                "reference": "e779ba3dbd2460f12b7108a7a6a88c355b4086a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/ModelManager/zipball/d23466aad1b32943587b5bdf687ef6d5c80b8cdd",
-                "reference": "d23466aad1b32943587b5bdf687ef6d5c80b8cdd",
+                "url": "https://api.github.com/repos/pomm-project/ModelManager/zipball/e779ba3dbd2460f12b7108a7a6a88c355b4086a2",
+                "reference": "e779ba3dbd2460f12b7108a7a6a88c355b4086a2",
                 "shasum": ""
             },
             "require": {
@@ -336,7 +336,7 @@
                 "pomm",
                 "postgresql"
             ],
-            "time": "2015-03-06 13:42:17"
+            "time": "2015-03-11 22:06:08"
         },
         {
             "name": "pomm-project/pomm-profiler-service-provider",
@@ -442,12 +442,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/pomm-symfony-bridge.git",
-                "reference": "6a4abeac65f9e6c08d37e8135727315e3c00eca5"
+                "reference": "15535ba8fbd4a647797bf10a6a928643337d16f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/pomm-symfony-bridge/zipball/6a4abeac65f9e6c08d37e8135727315e3c00eca5",
-                "reference": "6a4abeac65f9e6c08d37e8135727315e3c00eca5",
+                "url": "https://api.github.com/repos/pomm-project/pomm-symfony-bridge/zipball/15535ba8fbd4a647797bf10a6a928643337d16f1",
+                "reference": "15535ba8fbd4a647797bf10a6a928643337d16f1",
                 "shasum": ""
             },
             "require": {
@@ -495,7 +495,7 @@
                 "silex",
                 "symfony"
             ],
-            "time": "2015-03-06 17:15:39"
+            "time": "2015-03-09 16:08:54"
         },
         {
             "name": "psr/log",
