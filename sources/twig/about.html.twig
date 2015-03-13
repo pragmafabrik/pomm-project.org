@@ -4,15 +4,11 @@
 
 {% block css %}    <link href="/css/vim.css" rel="stylesheet" media="screen" />
 {% endblock %}
-
+{% block title_baseline %}A take on ORM limitations{% endblock %}
 {% block content %}
+<div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-                <h2>A take on ORM limitations</h2>
-              </div>
-              <div class="panel-body">
               <p>
               When ORM appeared in the PHP world, they brought with them a lot of good practices in addition of sticking to a purely object oriented model which, at the time, was missing in most of PHP projects. If ORM are widely used today it is because they ease the development of large applications. But they also come with pitfalls that lead to badly designed data structures, complex processes and more generally, performances issues. The goal of this article is to present Pomm's underpinning choices and what they change for developers.
               <blockquote>Imagine an ORM but upside down. That's what Pomm is.</blockquote>
@@ -104,7 +100,6 @@
                 <p>The whole SQL language's features are available: <code>WITH</code> statements, window functions, foreign data wrappers, custom functions etc.</p>
                 <p>Pomm's ability to integrate SQL as query language allied with schemaless entities and the projection system make developers able to shape exactly the data they need to present with maximum performances.</p>
               </div>
-            </div>
-          </div>
         </div>
+</div>
 {% endblock %}

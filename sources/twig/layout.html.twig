@@ -37,7 +37,15 @@
 </head>
 <body>
     {%  include '_navbar.html.twig' %}
-{% include "_error_bar.html.twig" with { "app": app } only %}
+    {% include "_error_bar.html.twig" with { "app": app } only %}
+    {% block baseline %}
+        <div class="jumbotron" >
+            <div class="container">
+                <h1>{% block title_baseline %}{% endblock %}</h1>
+                <p>{% block acroche_baseline %}{% endblock %}</p>
+            </div>
+        </div>
+    {% endblock %}
     {% block content %}
     {% endblock %}
     <div class="footer">

@@ -1,5 +1,8 @@
 
-
+.jumbotron{
+    background-color: #ECE3E8;
+    color: #403A76;
+}
 div#headerhome{
     background: url('../images/background.jpg') center center;
     background-size: cover;
@@ -10,6 +13,7 @@ div#headerhome{
 
 div#headerhome #baseline{
     padding-top: 67px;
+
 }
 div#headerhome #baseline h2{
     margin-bottom: 15px;
@@ -121,4 +125,13 @@ div#homeproject span.sstitle{
 
 div#homeproject a{
     color: #EA3889;
+}
+
+.jumbotron h1, .jumbotron .h1{
+    color: #EA3889;
+    font-size: 61px;
+}
+
+h3, .toc-backref{
+    color: #6A5FA6;
 }

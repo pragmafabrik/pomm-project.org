@@ -4,16 +4,14 @@
 
 {% block css %}    <link href="/css/vim.css" rel="stylesheet" media="screen" />
 {% endblock %}
-
+{% block title_baseline %}Pomm 2.0 in few steps{% endblock %}
+{% block acroche_baseline %}
+    Even though Pomm 2.0 is not stable yet, it is already usable and may be a good start for new small projects.
+{% endblock %}
 {% block content %}
+<div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-                <h2>Pomm 2.0 in few steps</h2>
-              </div>
-              <div class="panel-body">
-                <p>Even though Pomm 2.0 is not stable yet, it is already usable and may be a good start for new small projects.</p>
                 <p>
                   <dl>
                     <dt>Requirements:</dt>
@@ -193,8 +191,8 @@ $ php vendor/bin/pomm.php pomm:generate:schema-all my_db public
     ;
 
 <span class="Define">echo</span> <span class="Function">json_encode</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">computers</span><span class="Structure">-&gt;</span><span class="Operator">extract</span><span class="Special">())</span>;</pre></code>
-              </div> <!-- panel-body -->
-            </div> <!-- panel -->
+
           </div> <!-- col-md-12 -->
         </div> <!-- row -->
+    </div>
 {% endblock %}

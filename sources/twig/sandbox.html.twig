@@ -1,16 +1,15 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}howto | install Pomm 1.x{% endblock %}
-
+{% block title_baseline %}Pomm 1.x in few steps{% endblock %}
+{% block acroche_baseline %}
+    We are going to show a simple application as quick Pomm test sandbox.
+{% endblock %}
 {% block content %}
+<div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-                <h2>Pomm 1.x in few steps</h2>
-              </div>
-              <div class="panel-body">
-                <p>We are going to show a simple application as quick Pomm test sandbox.</p>
+
                 <p>
                   <dl>
                     <dt>requirements:</dt>
@@ -183,7 +182,8 @@
     <span class="lnr">16 </span>    <span class="Special">}</span>
     </pre>
               </p>
-            </div>
-          </div>
+
+
         </div><!-- row -->
+</div>
 {% endblock %}

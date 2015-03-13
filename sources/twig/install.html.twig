@@ -1,16 +1,11 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}howto | install Pomm{% endblock %}
-
+{% block title_baseline %}Installing Pomm 1.x{% endblock %}
 {% block content %}
+<div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h2>Installing Pomm 1.x</h2>
-              </div>
-              <div class="panel-body">
-                <hr />
                 <p>For each version's minimum requirements, please check the <a href="{{ app.url_generator.generate("main_download") }}">download</a> page.</p>
                 <h3>The easy way: composer</h3>
                 <p>If, like us, you love composer, you can have a look at <a href="https://packagist.org/packages/pomm/pomm">Pomm's packagist page</a>. Basically, installing Pomm in an existing project will be as simple as adding the following line to your <code>composer.json</code> file in the <code>require</code> section:
@@ -42,8 +37,7 @@
 <span class="lnr"> 3 </span>        <span class="Operator">$</span><span class="Identifier">class</span> <span class="Operator">=</span> <span class="Function">str_replace</span><span class="Special">(</span>'<span class="Special">\\</span>', '<span class="String">/</span>', <span class="Operator">$</span><span class="Identifier">class</span><span class="Special">)</span>;
 <span class="lnr"> 4 </span>        <span class="Include">require</span> <span class="Function">sprintf</span><span class="Special">(</span>&quot;<span class="String">%s/%s.php</span>&quot;, <span class="Constant">__DIR__</span>, <span class="Operator">$</span><span class="Identifier">class</span><span class="Special">)</span>;
 <span class="lnr"> 5 </span><span class="Special">}</span></pre>
-              </div>
-            </div>
           </div>
         </div><!-- row -->
+</div>
 {% endblock %}

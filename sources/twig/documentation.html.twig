@@ -1,8 +1,9 @@
 {% extends "layout.html.twig" %}
 
 {% block title %} Pomm {{ pomm_version }} Documentation {% endblock %}
-
+{% block title_baseline %}Documentation 1.x{% endblock %}
 {% block content %}
+<div class="container">
     <div class="row">
       <div class="col-md-3">
         <div class="panel panel-info">
@@ -13,4 +14,5 @@
 {% include 'documentation/doc_' ~ pomm_version ~ '.html.twig' %}
       </div>
     </div>
+</div>
 {% endblock %}
