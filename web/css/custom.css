@@ -132,6 +132,10 @@ div#homeproject a{
     font-size: 61px;
 }
 
-h3, .toc-backref{
+h3, .toc-backref, h3 a, h2{
     color: #6A5FA6;
+}
+
+div.align-center{
+    text-align: center;
 }

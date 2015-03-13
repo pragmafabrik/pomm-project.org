@@ -1,20 +1,20 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}news{% endblock %}
-
+{% block title_baseline %}News{% endblock %}
 {% block content %}
-        <div class="row">
-          <div class="col-md-12">
+<div class="container">
+
   {% for new in news_pager.getIterator() %}
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <h3><a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">{{ new.title }}</a><small> published {{ new.age }}</small></h3>
-              </div>
-              <div class="panel-body">
-                {% autoescape false %}{{ new.content }}... <a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">read more</a>{% endautoescape %}
-              </div>
-            </div>
+              <div class="row">
+                  <div class="col-md-12">
+          <h3><a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">{{ new.title }}</a><br/><small> published {{ new.age }}</small></h3>
+          {% autoescape false %}<p>{{ new.content }}... <a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">read more</a></p>{% endautoescape %}
+                      <hr/>
+      </div></div>
   {% endfor %}
+    <div class="row">
+        <div class="col-md-12">
             <div class="align-center">
               <ul class="pagination">
   {% if news_pager.isPreviousPage %}
@@ -38,4 +38,5 @@
             </div>
           </div>
         </div>
+</div>
 {% endblock %}
