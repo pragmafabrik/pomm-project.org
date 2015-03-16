@@ -37,11 +37,6 @@ class MainController implements ControllerProviderInterface
         return $this->app['twig']->render('index.html.twig');
     }
 
-    public function navbar()
-    {
-        return $this->app['twig']->render('_navbar.html.twig');
-    }
-
     public function about()
     {
         return $this->app['twig']->render('about.html.twig');

@@ -1,38 +1,40 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}{{ news.title }}{% endblock %}
-
+{% block title_baseline %}{{ news.title }}{% endblock %}
+{% block acroche_baseline %}
+    Posted on {{ news.published_at|date('Y-m-d') }}
+{% endblock %}
 {% block css %}    <link href="/css/vim.css" rel="stylesheet" media="screen" />
 {% endblock %}
 
 {% block content %}
+    <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-heading"><h2>{{ news.title }}</h2> <small>Posted on {{ news.published_at|date('Y-m-d') }}</small></div>
-              <div class="panel-body">
+
 {% autoescape false %}
 {{ news.content }}
 {% endautoescape %}
-              </div>
-              <div class="panel-footer">
+
+
                 <ul class="pager">
     {% if news.prev_slug != '' %}
-                  <li class="previous"><a href="{{ app.url_generator.generate("blog_show", {"slug": news.prev_slug }) }}">&larr; Older</a></li>
+                  <li class="previous"><a class="btn btn-default" href="{{ app.url_generator.generate("blog_show", {"slug": news.prev_slug }) }}">&larr; Older</a></li>
     {% else %}
-                  <li class="previous disabled"><a href="#">&larr; Older</a></li>
+                  <li class="previous disabled"><a class="btn btn-default" href="#">&larr; Older</a></li>
     {% endif %}
-                  <li><a href="{{ app.url_generator.generate('blog_index') }}">&uarr; up &uarr;</a></li>
+                  <li><a class="btn btn-default" href="{{ app.url_generator.generate('blog_index') }}">&uarr; up &uarr;</a></li>
     {% if news.next_slug != '' %}
-                  <li class="next"><a href="{{ app.url_generator.generate("blog_show", {"slug": news.next_slug }) }}">Newer &rarr;</a></li>
+                  <li class="next"><a class="btn btn-default" href="{{ app.url_generator.generate("blog_show", {"slug": news.next_slug }) }}">Newer &rarr;</a></li>
     {% else %}
-                  <li class="next disabled"><a href="#">Newer &rarr;</a></li>
+                  <li class="next disabled"><a class="btn btn-default" href="#">Newer &rarr;</a></li>
     {% endif %}
 
                 </ul>
-              </div>
-            </div>
-          </div>
+
         </div><!-- row -->
+    </div>
+    </div>
 {% endblock %}
 

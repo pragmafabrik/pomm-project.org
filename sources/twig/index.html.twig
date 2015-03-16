@@ -1,200 +1,149 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}home{% endblock %}
-{% block css %}        <link href="/css/index.css" rel="stylesheet" media="screen" />
+{% block css %}
+  <link href="/css/index.css" rel="stylesheet" media="screen" />
 {% endblock %}
-
+{% block baseline %}
+  <div class="jumbotron" id="headerhome">
+    <div class="container">
+      <div class="col-md-4">
+        <h1><img src="/images/Pomm.png" /></h1>
+      </div>
+      <div class="col-md-8" id="baseline">
+        <h2>The Postgresql object model manager for PHP</h2>
+        <p>Pomm is an open source database access framework coupled with an Object Model Manager dedicated to the Postgresql™ database. It offers an alternative approach than ORM to using database in web developments.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
 {% block content %}
-        <div class="row">
-          <div class="col-md-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <h3><img src="/images/icons/efficient.png" width="32"/> Pragmatic approach</h3>
-              </div>
-              <div class="panel-body">
-              <strong>Tired of your ORM limitations ?</strong>
-              <p>Since 4 years, Pomm sets the database at developers fingertips without the arduousness of an abstraction layer. It grants developers with unlimited access to SQL and database features while proposing a high level API over low level drivers.</p>
-                <p><br /><a href="{{ app.url_generator.generate('main_about') }}">Read more&#133;</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <h3><img src="/images/icons/enterprise.png" width="32"/> Efficient &amp; easy</h3>
-              </div>
-              <div class="panel-body">
-              <strong>Be productive in a matter of seconds.</strong>
-              <p>With its client oriented kernel, Pomm2 gives an easy access to powerful Postgresql features. It also comes with a CLI tool to help developers inspect database structures and generate mapping classes.<br />Using a modular distribution is the best way to comply with everyone's way of doing the things.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <h3><img src="/images/icons/pragmatic.png" width="32"/> Enterprise ready</h3>
-              </div>
-              <div class="panel-body">
-              <strong>On the shoulders of giants</strong>
-              <p>Pomm is dedicated to let developers the full usage of Postgresql™, the most advanced open source database.<br />It has a comprehensive documentation and modules to be used with modern frameworks like Silex™, Symfony™ or Zend™. Pomm2 complies with <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a>, <a href="http://semver.org/">semver</a> standards and proposes a controlled cycle of releases.</p>
-              </div>
-            </div>
-          </div>
-        </div> <!-- row -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 accroche">
+        <div class="header_accroche">
+          <img src="/images/icons/efficient.png" width="55"/>
+          <h2>Pragmatic approach</h2>
+        </div>
+        <p><span class="uppercase">Tired of your ORM limitations ?</span><br/>
+          Since 4 years, Pomm sets the database at developers fingertips without the arduousness of an abstraction layer.<br/> It grants developers with unlimited access to SQL and database features while proposing a high level API over low level drivers.</p>
+        <p><a class="btn btn-default" href="{{ app.url_generator.generate('main_about') }}" role="button">View details »</a></p>
+      </div>
+      <div class="col-md-4 accroche">
+        <div class="header_accroche">
+          <img src="/images/icons/enterprise.png" width="55"/>
+          <h2> Efficient &amp; easy</h2>
+        </div>
+        <p><span class="uppercase">Be productive in a matter of seconds.</span><br/>
+          With its client oriented kernel, Pomm2 gives an easy access to powerful Postgresql features. It also comes with a CLI tool to help developers inspect database structures and generate mapping classes.<br />Using a modular distribution is the best way to comply with everyone's way of doing the things.
+        </p>
+      </div>
+      <div class="col-md-4 accroche">
+        <div class="header_accroche">
+          <img src="/images/icons/pragmatic.png" width="55"/>
+          <h2>Enterprise ready</h2>
+        </div>
+        <p><span class="uppercase">On the shoulders of giants</span><br/>
+          Pomm is dedicated to let developers the full usage of Postgresql™, the most advanced open source database.<br />It has a comprehensive documentation and modules to be used with modern frameworks like Silex™, Symfony™ or Zend™. Pomm2 complies with <a href="http://www.php-fig.org/psr/psr-2/">PSR-2</a>, <a href="http://semver.org/">semver</a> standards and proposes a controlled cycle of releases.
+        </p>
+      </div>
+    </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-                <h3><img src="/images/icons/checkbox.png" width="32"/> Features</h3>
-              </div>
-              <div class="panel-body">
-                <table class="table table-condensed" style="margin-bottom: 0px;">
-                  <tr>
-                    <td>
-                      <dl>
-                        <dt>On the fly type conversion</dt>
-                        <dd>UUID, geometric types</dd>
-                        <dd>HStore, arrays</dd>
-                        <dd>inet, JSON etc.</dd>
-                      </dl>
-                    </td>
-                    <td>
-                      <dl>
-                        <dt>Object oriented entities</dt>
-                        <dd>Unlimited access to SQL</dd>
-                        <dd>Iterators on results</dd>
-                        <dd>Embedded entities</dd>
-                      </dl>
-                    </td>
-                    <td>
-                      <dl>
-                        <dt>Postgresql to the fingertips</dt>
-                        <dd>LISTEN / NOTIFY support</dd>
-                        <dd>Transactions and savepoints</dd>
-                        <dd>Multiple inheritance</dd>
-                      </dl>
-                    </td>
-                    <td>
-                      <dl>
-                        <dt>Crafted with tools</dt>
-                        <dd>Database introspection</dd>
-                        <dd>Code generators</dd>
-                        <dd>Condition builder</dd>
-                        <dd><a href="{{ app.url_generator.generate('main_whatis') }}">See how it works…</a></dd>
-                      </dl>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </div><!-- panel -->
-          </div><!-- col-md-12 -->
-        </div><!-- row -->
+  </div>
+  <div id="homeproject">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Features</h3>
+          <div class="col-md-3 col-xs-6">
+            <p>
+              <span class="sstitle">On the fly type conversion</span><br/>
+              UUID, geometric types<br/>HStore, arrays<br/>inet, JSON etc.
+            </p>
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <p>
+              <span class="sstitle">Object oriented entities</span><br/>
+              Unlimited access to SQL<br/>Iterators on results<br/>Embedded entities
+            </p>
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <p>
+              <span class="sstitle">Postgresql to the fingertips</span><br/>
+              LISTEN / NOTIFY support<br/>Transactions and savepoints<br/>Multiple inheritance
+            </p>
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <p>
+              <span class="sstitle">Crafted with tools</span><br/>
+              Database introspection<br/>Code generators<br/>Condition builder<br/><a href="{{ app.url_generator.generate('main_whatis') }}">See how it works…</a>
+            </p>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Documentation</h3>
+          <div class="col-md-3 col-xs-6">
+            <p>
+              <span class="sstitle">Official</span><br/>
+              Pomm 1.2 <a href="{{ app.url_generator.generate('documentation', { 'version': '1.2' }) }}">documentation</a> | <a href="/api/index.html">API</a><br/>
+              Pomm 2.0 <a href="/api2/index.html">API</a><br/>
+              Pomm 2.0 <a href="https://github.com/pomm-project/ModelManager#pomm-modelmanager">Model Manager</a><br/>
+              Pomm 2.0 <a href="https://github.com/pomm-project/Foundation#foundation">Foundation</a><br/>
+              Pomm 2.0 <a href="https://github.com/pomm-project/Cli#cli">Cli</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <p>
+              <span class="sstitle">Howto</span><br/>
+              <a href="{{ app.url_generator.generate('main_whatis') }}">What is Pomm 2</a><br/>
+              <a href="{{ app.url_generator.generate('main_sandbox2') }}">Pomm 2.0 in few steps</a><br/>
+              <a href="{{ app.url_generator.generate('main_install') }}">Install Pomm 1.x</a><br/>
+              <a href="{{ app.url_generator.generate('main_sandbox') }}">Pomm 1.x in few steps</a><br/>
+              <a href="{{ app.url_generator.generate('main_examples') }}">Code examples 1.x</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <p>
+              <span class="sstitle">Tutorial</span><br/>
+              <a href="https://github.com/chanmix51/elcaro/blob/english/documentation/article.md">English 1.x</a><br/>
+              <a href="https://github.com/chanmix51/elcaro/blob/master/documentation/article.md">French 1.x</a><br/>
+            </p>
+          </div>
+          <div class="col-md-3 col-xs-6">
+            <p>
+              <span class="sstitle">Help</span><br/>
+              IRC: irc.freenode.net #pomm<br/>
+              <a href="https://groups.google.com/forum/#!forum/pommproject">Mailing list</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+          <h3>Download</h3>
+          <div class="col-md-3">
+            <p>
+              <span class="sstitle">Pomm</span><br/>
+              UUID, geometric types<br/>HStore, arrays<br/>inet, JSON etc.
+            </p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              <span class="sstitle">Silex</span><br/>
+              Unlimited access to SQL<br/>Iterators on results<br/>Embedded entities
+            </p>
+          </div>
+          <div class="col-md-3">
+            <p>
+              <span class="sstitle">Symfony2</span><br/>
+              LISTEN / NOTIFY support<br/>Transactions and savepoints<br/>Multiple inheritance
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-                <h3><img src="/images/icons/compass.png" width="32"/> Documentation</h3>
-              </div>
-              <div class="panel-body">
-                <table class="table table-condensed" style="margin-bottom: 0px;">
-                  <tr>
-                    <th>
-                      Official documentation
-                    </th>
-                    <th>
-                      Howto
-                    </th>
-                    <th>
-                      Tutorial
-                    </th>
-                    <th>
-                      find help
-                    </th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <dl style="margin-bottom: 0px;">
-                        <dd>Pomm 1.2 <a href="{{ app.url_generator.generate('documentation', { 'version': '1.2' }) }}">documentation</a> | <a href="/api/index.html">API</a></dd>
-                        <dd>Pomm 2.0 <a href="/api2/index.html">API</a></dd>
-                        <dd>Pomm 2.0 <a href="https://github.com/pomm-project/ModelManager#pomm-modelmanager">Model Manager</a></dd>
-                        <dd>Pomm 2.0 <a href="https://github.com/pomm-project/Foundation#foundation">Foundation</a></dd>
-                        <dd>Pomm 2.0 <a href="https://github.com/pomm-project/Cli#cli">Cli</a></dd>
-                      </dl>
-                    </td>
-                    <td>
-                      <dl style="margin-bottom: 0px;">
-                        <dd><a href="{{ app.url_generator.generate('main_whatis') }}">What is Pomm 2</a></dd>
-                        <dd><a href="{{ app.url_generator.generate('main_sandbox2') }}">Pomm 2.0 in few steps</a></dd>
-                        <dd><a href="{{ app.url_generator.generate('main_install') }}">Install Pomm 1.x</a></dd>
-                        <dd><a href="{{ app.url_generator.generate('main_sandbox') }}">Pomm 1.x in few steps</a></dd>
-                        <dd><a href="{{ app.url_generator.generate('main_examples') }}">Code examples 1.x</a></dd>
-                        <!--<dd><a href="#">Useful Gists</a></dd>-->
-                      </dl>
-                    <td>
-                      <dl style="margin-bottom: 0px;">
-                        <dd><a href="https://github.com/chanmix51/elcaro/blob/english/documentation/article.md">English 1.x</a></dd>
-                        <dd><a href="https://github.com/chanmix51/elcaro/blob/master/documentation/article.md">French 1.x</a></dd>
-                      </dl>
-                    </td>
-                    <td>
-                      <dl style="margin-bottom: 0px;">
-                        <dd>IRC: irc.freenode.net #pomm</dd>
-                        <dd><a href="https://groups.google.com/forum/#!forum/pommproject">Mailing list</a>
-                      </dl>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </div> <!-- panel -->
-          </div>
-        </div> <!-- row -->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-                <h3><img src="/images/icons/arrow_down.png" width="32"/> Download</h3>
-              </div>
-              <div class="panel-body">
-                <table class="table table-condensed" style="margin-bottom: 0px;">
-                  <tr>
-                    <th>
-                      Pomm
-                    </th>
-                    <th>
-                      <a href="http://silex.sensiolabs.org/">Silex</a>
-                    </th>
-                    <th>
-                      <a href="http://symfony.com/">Symfony2</a>
-                    </th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <dl style="margin-bottom: 0px;">
-                        <dd><a href="https://github.com/chanmix51/Pomm/archive/master.zip">Pomm 1.3</a> (stable)</dd>
-                        <dd><a href="https://github.com/chanmix51/Pomm/archive/1.2.zip">Pomm 1.2</a> (stable)</dd>
-                        <dd>Github <a href="https://github.com/chanmix51/Pomm">1.x</a>, <a href="https://github.com/pomm-project">2.0</a></dd>
-                      </dl>
-                    </td>
-                    <td>
-                      <dl style="margin-bottom: 0px;">
-                        <dd><a href="https://github.com/pomm-project/pomm-service-provider">PommServiceProvider</a> (2.0)</dd>
-                        <dd><a href="https://github.com/pomm-project/pomm-profiler-service-provider">PommProfilerServiceProvider</a> (2.0)</dd>
-                        <dd><a href="https://github.com/chanmix51/PommServiceProvider">PommServiceProvider</a> (1.2)</dd>
-                      </dl>
-                    </td>
-                    <td>
-                      <dl style="margin-bottom: 0px;">
-                        <dd><a href="https://github.com/pomm-project/pomm-bundle">PommBundle</a> (2.0)</dd>
-                        <dd><a href="https://github.com/chanmix51/PommBundle">PommBundle</a> (1.2)</dd>
-                        <dd><a href="https://github.com/fferriere/PommFosUserBundle">PommFosUserBundle</a> (1.2)</dd>
-                      </dl>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </div> <!-- panel -->
-          </div>
-        </div> <!-- row -->
+  </div>
 {% endblock %}

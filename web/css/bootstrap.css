@@ -653,9 +653,8 @@ pre {
   word-break: break-all;
   word-wrap: break-word;
   color: #333333;
-  background-color: #f5f5f5;
+  background-color: #ECE3E8;
   border: 1px solid #cccccc;
-  border-radius: 4px;
 }
 pre code {
   padding: 0;
@@ -3598,9 +3597,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
   clear: both;
 }
 @media (min-width: 768px) {
-  .navbar {
-    border-radius: 4px;
-  }
 }
 .navbar-header:before,
 .navbar-header:after {
@@ -3908,7 +3904,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #311b00;
+  background-color: #6b5fa7;
   border-color: #100900;
 }
 .navbar-default .navbar-brand {
@@ -3959,7 +3955,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #100900;
+  background-color: #403878;
   color: #888888;
 }
 @media (max-width: 767px) {
@@ -4215,10 +4211,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .pager li > a,
 .pager li > span {
   display: inline-block;
-  padding: 5px 14px;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 15px;
 }
 .pager li > a:hover,
 .pager li > a:focus {
@@ -4653,9 +4645,7 @@ a.list-group-item.active:focus .list-group-item-text {
   margin-bottom: 20px;
   background-color: #ffffff;
   border: 1px solid transparent;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+
 }
 .panel-body {
   padding: 15px;
@@ -4776,8 +4766,6 @@ a.list-group-item.active:focus .list-group-item-text {
   padding: 10px 15px;
   background-color: #f5f5f5;
   border-top: 1px solid #dddddd;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
 }
 .panel-group .panel {
   margin-bottom: 0;
