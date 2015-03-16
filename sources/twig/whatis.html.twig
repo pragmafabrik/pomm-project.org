@@ -4,15 +4,11 @@
 
 {% block css %}    <link href="/css/vim.css" rel="stylesheet" media="screen" />
 {% endblock %}
-
+{% block title_baseline %}What is Pomm 2{% endblock %}
 {% block content %}
+<div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-                <h2>What is Pomm 2</h2>
-              </div>
-              <div class="panel-body">
                 <p>
                 Pomm 2 is a small database access framework for PHP dedicated to Postgresql. <a href="{{ app.url_generator.generate('main_about') }}">Pomm is different from an ORM</a>. For convenience, Pomm library has been divided into small packages:
                   <ul>
@@ -173,8 +169,8 @@ Relation pomm.news
                 <h3>What else…</h3>
                 <p>Pomm2 is usable directly from any PHP development but it also integrates with <a href="http://silex.sensiolabs.org/">Silex</a> and <a href="http://symfony.com/">Symfony™</a> frameworks. <a href="https://packagist.org/packages/pomm-project/pomm-service-provider">PommServiceProvider</a> and <a href="https://packagist.org/packages/pomm-project/pomm-bundle">PommBundle</a> proposes a nifty panel in the web debug toolbar giving useful informations about queries sent to the server. It is even possible to display an <code>EXPLAIN</code> execution plan:</p>
                 <img src="/images/toolbar.png" />
-              </div><!-- panel-body -->
-            </div><!-- panel-warning -->
+
           </div><!-- col-md-12 -->
         </div><!-- row -->
+</div>
 {% endblock %}
