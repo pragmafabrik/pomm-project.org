@@ -1,7 +1,10 @@
 
 .jumbotron{
-    background-color: #ECE3E8;
     color: #403A76;
+    padding-bottom: 18px;
+    padding-top: 18px;
+    background: url('../images/small_background.png') center right no-repeat;
+    background-color: #ECE3E8;
 }
 div#headerhome{
     background: url('../images/background.jpg') center center;
