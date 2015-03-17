@@ -15,7 +15,7 @@ class MainController implements ControllerProviderInterface
     public function connect(Application $app)
     {
         $this->app = $app;
-        $this->releases = array('1.2' => '1.2.2', '1.3' => '1.3.0-RC1', '2.0' => '2.0-beta.2');
+        $this->releases = array('1.2' => '1.2.2', '1.3' => '1.3.0-RC1', '2.0' => '2.0-rc.1');
 
         $controller_collection = $app['controllers_factory'];
         $controller_collection->get('/', array($this, 'index'))->bind('main_index');

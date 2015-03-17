@@ -24,7 +24,8 @@ class BlogController implements ControllerProviderInterface
 
     public function index($page)
     {
-        $news_pager = $this->app['pomm']['pomm_project']
+        $news_pager = $this->app['pomm']
+            ->getDefaultSession()
             ->getModel('Model\PommProject\PommSchema\NewsModel')
             ->paginateFindAllShorten(5, $page);
 
@@ -37,7 +38,8 @@ class BlogController implements ControllerProviderInterface
     public function show($slug)
     {
         if (!$news = ($this
-            ->app['pomm']['pomm_project']
+            ->app['pomm']
+            ->getDefaultSession()
             ->getModel('Model\PommProject\PommSchema\NewsModel')
             ->findBySlugWithNeighbours($slug)
         )) {
