@@ -3,7 +3,7 @@
 {% block title %}{{ news.title }}{% endblock %}
 {% block title_baseline %}{{ news.title }}{% endblock %}
 {% block acroche_baseline %}
-    Posted on {{ news.published_at|date('Y-m-d') }}
+    Posted {{ news.getAge() }}.
 {% endblock %}
 {% block css %}    <link href="/css/vim.css" rel="stylesheet" media="screen" />
 {% endblock %}
