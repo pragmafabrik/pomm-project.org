@@ -25,3 +25,5 @@ pre.vimsql .Type { color: #0000ff; }
 pre.vimsql .Special { color: #ff00ff; }
 pre.vimsql .Identifier { color: #0000ff; }
 pre.vimsql .String { color: #777777; }
+pre.vimsql .Comment { color: #bd48b3; }
+
