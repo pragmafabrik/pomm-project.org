@@ -172,12 +172,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/Cli.git",
-                "reference": "1823dcf3456d5ce9bf6e67d1660964af5a08a39f"
+                "reference": "e6a2451a25a0bf6508ced57274dc0c1cebb3ecff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/Cli/zipball/1823dcf3456d5ce9bf6e67d1660964af5a08a39f",
-                "reference": "1823dcf3456d5ce9bf6e67d1660964af5a08a39f",
+                "url": "https://api.github.com/repos/pomm-project/Cli/zipball/e6a2451a25a0bf6508ced57274dc0c1cebb3ecff",
+                "reference": "e6a2451a25a0bf6508ced57274dc0c1cebb3ecff",
                 "shasum": ""
             },
             "require": {
@@ -224,7 +224,7 @@
                 "pomm",
                 "postgresql"
             ],
-            "time": "2015-04-10 07:32:00"
+            "time": "2015-04-28 20:21:11"
         },
         {
             "name": "pomm-project/foundation",
@@ -232,12 +232,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/Foundation.git",
-                "reference": "0f1f9ce16d2807c0474e8c1d1715c4f75285d9e2"
+                "reference": "9acffd6498ddb67a7a5dd8442b0ad7026e4f3cc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/0f1f9ce16d2807c0474e8c1d1715c4f75285d9e2",
-                "reference": "0f1f9ce16d2807c0474e8c1d1715c4f75285d9e2",
+                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/9acffd6498ddb67a7a5dd8442b0ad7026e4f3cc0",
+                "reference": "9acffd6498ddb67a7a5dd8442b0ad7026e4f3cc0",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
                 "pomm",
                 "postgresql"
             ],
-            "time": "2015-04-15 19:37:40"
+            "time": "2015-04-28 19:58:30"
         },
         {
             "name": "pomm-project/model-manager",
@@ -286,12 +286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pomm-project/ModelManager.git",
-                "reference": "e45785e4d908d1f08ae1efa0f98997cfdb74056c"
+                "reference": "2f0bceedbd57d087273098d37b4ea408e36053b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/ModelManager/zipball/e45785e4d908d1f08ae1efa0f98997cfdb74056c",
-                "reference": "e45785e4d908d1f08ae1efa0f98997cfdb74056c",
+                "url": "https://api.github.com/repos/pomm-project/ModelManager/zipball/2f0bceedbd57d087273098d37b4ea408e36053b0",
+                "reference": "2f0bceedbd57d087273098d37b4ea408e36053b0",
                 "shasum": ""
             },
             "require": {
@@ -336,7 +336,7 @@
                 "pomm",
                 "postgresql"
             ],
-            "time": "2015-04-15 21:35:52"
+            "time": "2015-04-28 20:29:04"
         },
         {
             "name": "pomm-project/pomm-profiler-service-provider",

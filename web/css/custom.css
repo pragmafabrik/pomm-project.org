@@ -33,6 +33,16 @@ a{
     color: #000000;
 }
 
+.blog a{
+    color: #0000aa;
+    text-decoration: underline;
+}
+
+.blog a:visited{
+    color: #4000aa;
+    text-decoration: underline;
+}
+
 .navbar{
     margin-bottom: 10px;
     margin-top: 10px;
