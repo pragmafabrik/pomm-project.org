@@ -193,6 +193,6 @@ SQL;
      */
     private function prepareTsWords($string)
     {
-        return join(' & ', preg_split('/\W+/', $string));
+        return join(' & ', preg_split('/\W+/', trim($string)));
     }
 }
