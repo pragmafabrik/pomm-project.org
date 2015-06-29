@@ -48,6 +48,7 @@ class NewsModel extends Model
     {
         return parent::createProjection()
             ->setField('age', 'age(now(), %:published_at:%)', 'interval')
+            ->unsetField('lexem')
             ;
     }
 
@@ -142,5 +143,56 @@ SQL;
         );
 
         return $this->query($sql, array($slug), $projection)->current();
+    }
+
+    /**
+     * search
+     *
+     * A short description here
+     *
+     * @access public
+     * @param  string $search_string
+     * @return CollectionIterator
+     */
+    public function search($search_string)
+    {
+        $words = $this->prepareTsWords($search_string, $limit);
+        $sql = <<<SQL
+select
+  :projection
+from
+  :news,
+  to_tsquery('english', $*) as query
+where lexem @@ query
+order by ranking desc
+limit $*
+SQL;
+
+        $projection = $this->createProjection()
+            ->unsetField('content')
+            ->setField('ranking', "ts_rank_cd(%:lexem:%, query)", 'float4')
+            ->setField('content', "ts_headline('english', %:content:%, query)", 'text')
+            ;
+
+        $sql = strtr($sql, [
+            ':projection' => $projection,
+            ':news'       => $this->structure->getRelation(),
+            ]);
+
+        return $this->query($sql, [$words, $limit], $projection);
+    }
+
+    /**
+     * prepareTsWords
+     *
+     * Prepare search words for ts_query.
+     *
+     * @access private
+     * @param  string $string
+     * @return string
+     */
+    private function prepareTsWords($string)
+    {
+        return join(' & ', preg_split('/\W+/', $string));
     }
 }

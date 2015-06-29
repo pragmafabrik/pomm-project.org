@@ -1,0 +1,20 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}search news{% endblock %}
+{% block title_baseline %}Search results{% endblock %}
+{% block content %}
+<div class="container">
+
+  {% include "_blog_search_form.html.twig" with {"search_string": search_string} only %}
+  <h3>Search results: {{ news.count() }}</h3>
+  {% for new in news %}
+              <div class="row">
+                  <div class="col-md-12">
+          <h3><a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">{{ new.title }}</a><br/><small> published {{ new.age }}</small></h3>
+          {% autoescape false %}<p>{{ new.content }}... <a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">read more</a></p>{% endautoescape %}
+                      <hr/>
+      </div></div>
+  {% endfor %}
+</div>
+{% endblock %}
+
