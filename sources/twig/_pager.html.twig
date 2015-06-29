@@ -1,0 +1,15 @@
+                <ul class="pager">
+    {% if news.prev_slug != '' %}
+                  <li class="previous"><a class="btn btn-default" href="{{ app.url_generator.generate("blog_show", {"slug": news.prev_slug }) }}">&larr; {{ news.prev_title }}</a></li>
+    {% else %}
+                  <li class="previous disabled"><a class="btn btn-default" href="#">&larr; No older article</a></li>
+    {% endif %}
+                  <li><a class="btn btn-default" href="{{ app.url_generator.generate('blog_index') }}">&uarr; up &uarr;</a></li>
+    {% if news.next_slug != '' %}
+                  <li class="next"><a class="btn btn-default" href="{{ app.url_generator.generate("blog_show", {"slug": news.next_slug }) }}">{{ news.next_title }} &rarr;</a></li>
+    {% else %}
+                  <li class="next disabled"><a class="btn btn-default" href="#">No newer article &rarr;</a></li>
+    {% endif %}
+
+                </ul>
+

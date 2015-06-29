@@ -12,29 +12,15 @@
     <div class="container">
         <div class="row">
           <div class="col-md-12">
+{% include '_pager.html.twig' with {"news" : news} only %}
             <div class="blog">
 {% autoescape false %}
 {{ news.content }}
 {% endautoescape %}
             </div>
-
-                <ul class="pager">
-    {% if news.prev_slug != '' %}
-                  <li class="previous"><a class="btn btn-default" href="{{ app.url_generator.generate("blog_show", {"slug": news.prev_slug }) }}">&larr; Older</a></li>
-    {% else %}
-                  <li class="previous disabled"><a class="btn btn-default" href="#">&larr; Older</a></li>
-    {% endif %}
-                  <li><a class="btn btn-default" href="{{ app.url_generator.generate('blog_index') }}">&uarr; up &uarr;</a></li>
-    {% if news.next_slug != '' %}
-                  <li class="next"><a class="btn btn-default" href="{{ app.url_generator.generate("blog_show", {"slug": news.next_slug }) }}">Newer &rarr;</a></li>
-    {% else %}
-                  <li class="next disabled"><a class="btn btn-default" href="#">Newer &rarr;</a></li>
-    {% endif %}
-
-                </ul>
-
+{% include '_pager.html.twig' with {"news" : news} only %}
+          </div>
         </div><!-- row -->
-    </div>
-    </div>
+    </div><!-- container -->
 {% endblock %}
 

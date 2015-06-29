@@ -120,6 +120,8 @@ select
 from
     :news_table
       left join neighbour n using (slug)
+      left join :news_table nn on n.next_slug = nn.slug
+      left join :news_table pn on n.prev_slug = pn.slug
 where
     news.slug = $*
 SQL;
@@ -128,11 +130,13 @@ SQL;
             ->createProjection()
             ->setField('next_slug', 'n.next_slug', 'varchar')
             ->setField('prev_slug', 'n.prev_slug', 'varchar')
+            ->setField('next_title', 'nn.title', 'varchar')
+            ->setField('prev_title', 'pn.title', 'varchar')
             ;
 
         $sql = strtr($sql,
             [
-            ':news_fields' => $projection,
+            ':news_fields' => $projection->formatFieldsWithFieldAlias('news'),
             ':news_table' => $this->structure->getRelation(),
             ]
         );
