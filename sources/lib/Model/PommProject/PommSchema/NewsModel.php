@@ -154,9 +154,9 @@ SQL;
      * @param  string $search_string
      * @return CollectionIterator
      */
-    public function search($search_string)
+    public function search($search_string, $limit)
     {
-        $words = $this->prepareTsWords($search_string, $limit);
+        $words = $this->prepareTsWords($search_string);
         $sql = <<<SQL
 select
   :projection
@@ -193,6 +193,17 @@ SQL;
      */
     private function prepareTsWords($string)
     {
-        return join(' & ', preg_split('/\W+/', trim($string)));
+        $elements = preg_split('/\W+/', trim($string));
+        $words = [];
+
+        foreach ($elements as $element) {
+            $element = trim($element);
+
+            if ($element !== '' && $element !== null) {
+                $words[] = $element;
+            }
+        }
+
+        return join(' & ', $words);
     }
 }
