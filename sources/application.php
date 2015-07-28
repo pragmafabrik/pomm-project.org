@@ -9,13 +9,11 @@ $app->mount('/news', new \Controller\BlogController());
 
 $app->error(function(Exception $e, $code) use ($app) {
 
-    if ($code == 404)
-    {
+    if ($code == 404) {
         return $app['twig']->render('error404.html.twig');
     }
 
-    if ($app['debug'])
-    {
+    if ($app['debug']) {
         // trigger log if enabled
 
         return;

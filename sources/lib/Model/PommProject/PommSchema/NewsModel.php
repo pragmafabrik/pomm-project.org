@@ -164,7 +164,9 @@ from
   :news,
   to_tsquery('english', $*) as query
 where lexem @@ query
-order by ranking desc
+order by
+  ranking desc,
+  created_at asc
 limit $*
 SQL;
 
