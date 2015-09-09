@@ -6,21 +6,21 @@
 {% endblock %}
 {% block title_baseline %}Pomm 2.0 in few steps{% endblock %}
 {% block acroche_baseline %}
-    Even though Pomm 2.0 is not stable yet, it is already usable and may be a good start for new small projects.
+    Quick Pomm2 setup recipe
 {% endblock %}
 {% block content %}
 <div class="container">
         <div class="row">
           <div class="col-md-12">
-                <p>
-                  <dl>
-                    <dt>Requirements:</dt>
-                    <dd>&#10149; PHP &gt;= 5.4.4</dd>
-                    <dd>&#10149; A working Postgresql database</dd>
-                  </dl>
-                </p>
-                <h3>Step 1: Install Pomm</h3>
-                <p>Installing Pomm 2 is as simple as adding the following packages in a <code>composer.json</code> file:
+            <p>
+              <dl>
+                <dt>Requirements:</dt>
+                <dd>&#10149; PHP &gt;= 5.4.4</dd>
+                <dd>&#10149; A working Postgresql database</dd>
+              </dl>
+            </p>
+            <h3>Step 1: Install Pomm</h3>
+            <p>Installing Pomm 2 is as simple as adding the following packages in a <code>composer.json</code> file:
 <code><pre class="vimphp"><span class="Special">{</span>
     <span class="Statement">"require"</span>: <span class="Special">{</span>
         <span class="Statement">"pomm-project/cli"</span>: <span class="String">"2.0.*@dev"</span>,
@@ -28,8 +28,8 @@
         <span class="Statement">"pomm-project/foundation"</span>: <span class="String">"2.0.*@dev"</span>
     <span class="Special">}</span>
 <span class="Special">}</span></pre></code></p>
-                <p>Launch <code>composer.phar install</code> and it will install Pomm2 and sets the autoloader accordingly.</p>
-                <p>Now it is time to configure the database connections. The CLI expects to get a configured <code>Pomm</code> instance from requiring the file <code>.pomm_cli_bootstrap.php</code>in the project root directory. Let's fill it with database configuration:
+            <p>Launch <code>composer.phar install</code> and it will install Pomm2 and sets the autoloader accordingly.</p>
+            <p>Now it is time to configure the database connections. The CLI expects to get a configured <code>Pomm</code> instance from requiring the file <code>.pomm_cli_bootstrap.php</code>in the project root directory. Let's fill it with database configuration:
 <code><pre class="vimphp">
 <span class="Special">&lt;?php</span> <span class="Comment">// .pomm_cli_bootstrap.php</span>
 
@@ -44,9 +44,9 @@
         '<span class="String">class:session_builder</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> '<span class="String">\PommProject\ModelManager\SessionBuilder</span>',
     <span class="Special">]</span>
 <span class="Special">])</span>;</pre></code>
-                The name of the database is important since it will be used in the namespace for generated classes.</p>
-                <p>At this point, the CLI tool should be functional, just enter <code>php vendor/bin/pomm.php</code> in a terminal, it should greet you with a help message. Try to launch a <code>pomm:inspect:database</code> command, it should output something similar to:
-                <code><pre>$ php vendor/bin/pomm.php pomm:inspect:database my_db
+            The name of the database is important since it will be used in the namespace for generated classes.</p>
+            <p>At this point, the CLI tool should be functional, just enter <code>php vendor/bin/pomm.php</code> in a terminal, it should greet you with a help message. Try to launch a <code>pomm:inspect:database</code> command, it should output something similar to:
+            <code><pre>$ php vendor/bin/pomm.php pomm:inspect:database my_db
 Found 1 schemas in database.
 +-----------+--------+-----------+-------------------------+
 | name      | oid    | relations | comment                 |
@@ -54,8 +54,8 @@ Found 1 schemas in database.
 | public    | 2200   | 11        | standard public schema  |
 +-----------+--------+-----------+-------------------------+
 </pre></code></p>
-                <h3>Step 2: Generate model classes</h3>
-                <p>The CLI can also be used to generate model files. If you want to generate model files for all the relations in a schema, just enter:
+            <h3>Step 2: Generate model classes</h3>
+            <p>The CLI can also be used to generate model files. If you want to generate model files for all the relations in a schema, just enter:
 <code><pre>
 $ php vendor/bin/pomm.php pomm:generate:schema-all my_db public
  ✓  Creating file './MyDb/PublicSchema/AutoStructure/Computer.php'.
@@ -63,139 +63,14 @@ $ php vendor/bin/pomm.php pomm:generate:schema-all my_db public
  ✓  Creating file './MyDb/PublicSchema/Computer.php'.
 …
 </pre></code>
-                  <ul class="list-unstyled">
-                    <li>The class in <code>AutoStructure/Entity.php</code> owns the structure dependent code introspected from the database.</li>
-                    <li>The class in <code>EntityModel.php</code> is where the custom queries for the according entity will take place.</li>
-                    <li>The class in <code>Entity.php</code> is the flexible entity code. Getter and setters overloads will go there.</li>
-                  </ul>
-                </p>
-                <h3>Step 3: tune the projection</h3>
-                <p>Let's consider the following script that uses the <code>ComputerModel</code>:
-<code><pre class="vimphp">
-<span class="Special">&lt;?php</span>
-
-<span class="Operator">$</span><span class="Identifier">pomm</span> <span class="Operator">=</span> <span class="Include">require</span> &quot;<span class="String">.pomm_cli_bootstrap.php</span>&quot;;
-
-<span class="Operator">$</span><span class="Identifier">computers</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">pomm</span><span class="Special">[</span>'<span class="String">my_db</span>'<span class="Special">]</span>
-    <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\MyDb\PublicSchema\ComputerModel</span>'<span class="Special">)</span>
-    <span class="Structure">-&gt;</span>findWhere<span class="Special">(</span>'<span class="String">$* &gt;&gt; any (interfaces)</span>', <span class="Special">[</span>'<span class="String">192.168.0.0/20</span>'<span class="Special">])</span>
-    ;
-
-<span class="Statement">if</span> <span class="Special">(</span><span class="Operator">$</span><span class="Identifier">computers</span><span class="Structure">-&gt;</span>isEmpty<span class="Special">())</span> <span class="Special">{</span>
-    <span class="Function">printf</span><span class="Special">(</span>&quot;<span class="String">No computers in database.</span><span class="Special">\n</span>&quot;<span class="Special">)</span>;
-<span class="Special">}</span> <span class="Statement">else</span> <span class="Special">{</span>
-    <span class="Statement">foreach</span> <span class="Special">(</span><span class="Operator">$</span><span class="Identifier">computers</span> <span class="Statement">as</span> <span class="Operator">$</span><span class="Identifier">computer</span><span class="Special">)</span> <span class="Special">{</span>
-        <span class="Function">printf</span><span class="Special">(</span>
-            &quot;<span class="String">Computer id='%s', interfaces = [%s].</span><span class="Special">\n</span>&quot;,
-            <span class="Operator">$</span><span class="Identifier">computer</span><span class="Special">[</span>'<span class="String">computer_id</span>'<span class="Special">]</span>,
-            <span class="Function">join</span><span class="Special">(</span>'<span class="String">, </span>', <span class="Operator">$</span><span class="Identifier">computer</span><span class="Special">[</span>'<span class="String">interfaces</span>'<span class="Special">])</span>
-        <span class="Special">)</span>;
-    <span class="Special">}</span>
-<span class="Special">}</span></pre></code>
-                  What it does is returning all computers with an interface in the <code>192.168.0.0/20</code> network:
-<code><pre class="vimsql">
-<span class="Statement">select</span>
-    c.<span class="String">&quot;computer_id&quot;</span> <span class="Special">as</span> <span class="String">&quot;computer_id&quot;</span>,
-    …,
-    c.<span class="String">&quot;interfaces&quot;</span> <span class="Special">as</span> <span class="String">&quot;interfaces&quot;</span>
-<span class="Special">from</span>
-    public.computer c
-<span class="Special">where</span>
-    $<span class="Number">1</span> &gt;&gt; <span class="Statement">any</span> (interfaces)
-</pre></code>
-                  It will display all the computers matching the given condition and print out the list of their interfaces on the same line.</p>
-                  <p>For the example's sake, let's say we always want to know if a computer has a public IP address (a "public" computer). It is possible to modify the projection to add such information in the <code>select</code> part of SQL queries that fetches computers:
-<code><pre class="vimphp">
-<span class="Special">&lt;?php</span> <span class="Comment">// MyDB/PublicSchema/ComputerModel.php</span>
-<span class="Comment">// …</span>
-    <span class="StorageClass">public</span> <span class="Define">function</span> createProjection<span class="Special">()</span>
-    <span class="Special">{</span>
-        <span class="Statement">return</span> <span class="Structure">parent</span><span class="Operator">::</span>createProjection<span class="Special">()</span>
-            <span class="Structure">-&gt;</span>setField<span class="Special">(</span>
-                '<span class="String">is_public</span>',
-                &quot;<span class="String">not '192.168.0.0/16'::inet &gt;&gt; all(%:interfaces:%)</span>&quot;,
-                '<span class="String">bool</span>'
-            <span class="Special">)</span>;
-    <span class="Special">}</span>
-<span class="Comment">//…</span></pre></code>
-                  The SQL queries issued by <code>script.php</code> turns to:
-<code><pre class="vimsql">
-<span class="Statement">select</span>
-    c.<span class="String">&quot;computer_id&quot;</span> <span class="Special">as</span> <span class="String">&quot;computer_id&quot;</span>,
-    …,
-    c.<span class="String">&quot;interfaces&quot;</span> <span class="Special">as</span> <span class="String">&quot;interfaces&quot;</span>,
-    <span class="Statement">not</span> <span class="String">'192.168.0.0/12'</span>::<span class="Type">inet</span> &gt;&gt; <span class="Statement">all</span>(c.<span class="String">&quot;interfaces&quot;</span>) <span class="Special">as</span> <span class="String">&quot;is_public&quot;</span>
-<span class="Special">from</span>
-  public.computer c
-<span class="Special">where</span>
-  …
-</pre></code>
-                  The <code>Computer</code> instances now have a new attribute named <code>is_public</code> with boolean value. This field can be accessed like any other field but it can however not be saved.
-                </p>
-                <h3>Step 4: custom queries</h3>
-                <p>All the model's built-in methods issue queries regarding a given relation. This covers a broad range of queries but most of the time, queries join relations to consolidate data. Let's assume we want to know the number of registered applications running on each machine. We need to write the SQL for that query. Query writing respects almost always the same steps:
-                  <dl>
-                    <dd>&#10149; step 1: write the SQL.</dd>
-                    <dd>&#10149; step 2: create a custom projection if needed.</dd>
-                    <dd>&#10149; step 3: expand the query.</dd>
-                    <dd>&#10149; step 4: execute the query.</dd>
-                  </dl>
-                  <code><pre class="vimphp">
-<span class="Special">&lt;?php</span> <span class="Comment">// MyDb/PublicSchema/ComputerModel.php</span>
-<span class="Comment">// …</span>
-    <span class="StorageClass">public</span> <span class="Define">function</span> findWithSoftCountWhere<span class="Special">(</span>Where <span class="Operator">$</span><span class="Identifier">where</span><span class="Special">)</span>
-    <span class="Special">{</span>
-        <span class="Comment">// step 1</span>
-        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Operator">&lt;&lt;&lt;</span><span class="Special">SQL</span>
-<span class="Statement">select</span>
-  :projection
-<span class="Special">from</span>
-  :relation
-    <span class="Function">left</span> <span class="Special">join</span> :installed_application_relation soft <span class="Special">using</span> (computer_id)
-<span class="Special">where</span>
-    :condition
-<span class="Special">group</span> <span class="Special">by</span> computer_id
-<span class="Special">SQL</span>;
-        <span class="Comment">// step 2</span>
-        <span class="Operator">$</span><span class="Identifier">projection</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>createProjection<span class="Special">()</span>
-            <span class="Structure">-&gt;</span>setField<span class="Special">(</span>'<span class="String">soft_count</span>', '<span class="String">count(soft)</span>', '<span class="String">int4</span>'<span class="Special">)</span>
-            ;
-
-        <span class="Comment">// step 3</span>
-        <span class="Operator">$</span><span class="Identifier">sql</span> <span class="Operator">=</span> <span class="Function">strtr</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>,
-            <span class="Special">[</span>
-                '<span class="String">:projection</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">projection</span>,
-                '<span class="String">:relation</span>'   <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>getStructure<span class="Special">()</span><span class="Structure">-&gt;</span>getRelation<span class="Special">()</span>,
-                '<span class="String">:installed_application_relation</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>getSession<span class="Special">()</span>
-                    <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\MyDb\PublicSchema\InstalledApplicationModel</span>'<span class="Special">)</span>
-                    <span class="Structure">-&gt;</span>getStructure<span class="Special">()</span>
-                    <span class="Structure">-&gt;</span>getRelation<span class="Special">()</span>,
-                '<span class="String">:condition</span>' <span class="Operator">=</span><span class="Operator">&gt;</span> <span class="Operator">$</span><span class="Identifier">where</span>,
-            <span class="Special">]</span>
-        <span class="Special">)</span>;
-
-        <span class="Comment">// step 4</span>
-        <span class="Statement">return</span> <span class="Operator">$</span><span class="Identifier">this</span><span class="Structure">-&gt;</span>query<span class="Special">(</span><span class="Operator">$</span><span class="Identifier">sql</span>, <span class="Operator">$</span><span class="Identifier">where</span><span class="Structure">-&gt;</span>getValues<span class="Special">()</span>, <span class="Operator">$</span><span class="Identifier">projection</span><span class="Special">)</span>;
-    <span class="Special">}</span></pre></code></p>
-                <p><strong>Step 1</strong>, since the query uses the projection system, there is no need to deal with a tedious and hard to maintain list of fields. Same for the relations names. The query is expressed as its simplest form: what is needed ?</p>
-                <p><strong>Step 2</strong>, default projection is augmented with this query specific fields. The <code>soft_count</code> will be converted to <code>integer</code> and accessed like any other fields.</p>
-                <p><strong>Step 3</strong>, the query parameters are expanded.</p>
-                <p><strong>Step 4</strong>, the query is issued, thanks to the <code>Where</code> instance.</p>
-                <p>With this method, the <code>script.php</code> can be rewritten as:
-                <code><pre class="vimphp">
-<span class="Special">&lt;?php</span>
-
-<span class="Include">use</span> PommProject\Foundation\Where;
-
-<span class="Operator">$</span><span class="Identifier">pomm</span> <span class="Operator">=</span> <span class="Include">require</span> &quot;<span class="String">.pomm_cli_bootstrap.php</span>&quot;;
-
-<span class="Operator">$</span><span class="Identifier">computers</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">pomm</span><span class="Special">[</span>'<span class="String">my_db</span>'<span class="Special">]</span>
-    <span class="Structure">-&gt;</span>getModel<span class="Special">(</span>'<span class="String">\MyDb\PublicSchema\ComputerModel</span>'<span class="Special">)</span>
-    <span class="Structure">-&gt;</span>findWithSoftCountWhere<span class="Special">(</span><span class="Define">new</span> Where<span class="Special">(</span>'<span class="String">$* &gt;&gt; any (interfaces)</span>', <span class="Special">[</span>'<span class="String">192.168.0.0/20</span>'<span class="Special">]))</span>
-    ;
-
-<span class="Define">echo</span> <span class="Function">json_encode</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">computers</span><span class="Structure">-&gt;</span><span class="Operator">extract</span><span class="Special">())</span>;</pre></code>
-
+              <ul class="list-unstyled">
+                <li>The class in <code>AutoStructure/Entity.php</code> owns the structure dependent code introspected from the database.</li>
+                <li>The class in <code>EntityModel.php</code> is where the custom queries for the according entity will take place.</li>
+                <li>The class in <code>Entity.php</code> is the flexible entity code. Getter and setters overloads will go there.</li>
+              </ul>
+            </p>
+            <h3>Step 3: Documentation</h3>
+            <p>Next read is in <a href=="https://github.com/pomm-project/Foundation/blob/master/documentation/foundation.rst">Foundation’s documentation</a> or the <a href="https://github.com/pomm-project/ModelManager/blob/master/README.md">Model Manager’s documentation</a>.</p>
           </div> <!-- col-md-12 -->
         </div> <!-- row -->
     </div>
