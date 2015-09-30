@@ -12,7 +12,7 @@ use PommProject\ModelManager\Model\RowStructure;
 /**
  * Comment
  *
- * Structure class for relation pomm.comment.
+ * Structure class for relation "pomm"."comment".
  * 
  * Class and fields comments are inspected from table and fields comments.
  * Just add comments in your database and they will appear here.
@@ -34,7 +34,7 @@ class Comment extends RowStructure
     public function __construct()
     {
         $this
-            ->setRelation('pomm.comment')
+            ->setRelation('"pomm"."comment"')
             ->setPrimaryKey([])
             ->addField('id', 'int4')
             ->addField('article_slug', 'varchar')
