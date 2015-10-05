@@ -37,7 +37,7 @@ class BlogController implements ControllerProviderInterface
         $news_pager = $this->app['pomm']
             ->getDefaultSession()
             ->getModel('Model\PommProject\PommSchema\NewsModel')
-            ->paginateFindAllShorten(5, $page);
+            ->paginateFindAllShorten(20, $page);
 
         return $this
             ->app['twig']
