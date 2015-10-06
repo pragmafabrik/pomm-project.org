@@ -11,7 +11,7 @@
               <div class="row">
                   <div class="col-md-12">
           <h3><a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">{{ new.title }}</a><br/><small> published {{ new.age }}</small></h3>
-          {% autoescape false %}<p>{{ new.content }}... <a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}">read more</a></p>{% endautoescape %}
+          {% autoescape false %}<p>{{ new.content }}...</p><p><a href="{{ app.url_generator.generate('blog_show', { 'slug': new.slug }) }}"><button>read more &#10161;</button></a></p>{% endautoescape %}
                       <hr/>
       </div></div>
   {% endfor %}
