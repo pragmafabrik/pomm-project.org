@@ -173,7 +173,7 @@ SQL;
         $projection = $this->createProjection()
             ->unsetField('content')
             ->setField('ranking', "ts_rank_cd(%:lexem:%, query)", 'float4')
-            ->setField('content', "ts_headline('english', %:content:%, query)", 'text')
+            ->setField('content', "ts_headline('english', %:content:%, query, 'MinWords=100,MaxWords=300')", 'text')
             ;
 
         $sql = strtr($sql, [

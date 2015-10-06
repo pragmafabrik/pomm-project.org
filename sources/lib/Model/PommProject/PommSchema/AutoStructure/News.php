@@ -12,7 +12,7 @@ use PommProject\ModelManager\Model\RowStructure;
 /**
  * News
  *
- * Structure class for relation "pomm"."news".
+ * Structure class for relation pomm.news.
  * The slugs are generated automatically from the title using a trigger.
  *
  * slug:
@@ -36,7 +36,7 @@ class News extends RowStructure
     public function __construct()
     {
         $this
-            ->setRelation('"pomm"."news"')
+            ->setRelation('pomm.news')
             ->setPrimaryKey(['slug'])
             ->addField('slug', 'varchar')
             ->addField('title', 'varchar')
