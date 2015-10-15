@@ -185,7 +185,7 @@ code a b {
 	overflow: auto;
 	margin-left: 275px;
 	height: 100%;
-	position: fixed;
+	position: relative;
 	left: 0;
 	right: 0;
 }
@@ -363,6 +363,10 @@ dl.tree dd {
 	text-align: right;
 }
 
+.summary td hr {
+	margin: 3px -10px;
+}
+
 #packages.summary td:first-child, #namespaces.summary td:first-child, .inherited.summary td:first-child, .used.summary td:first-child {
 	text-align: left;
 }
@@ -403,6 +407,10 @@ dl.tree dd {
 	white-space: pre-wrap;
 }
 
+td.name, td.attributes {
+	width: 1%;
+}
+
 td.attributes {
 	width: 1%;
 }
@@ -418,6 +426,7 @@ td.attributes {
 
 .class .methods .name > div > code span, .function .value > code {
 	white-space: nowrap;
+	display: inline-block;
 }
 
 .class .methods td.name > div, .class td.value > div {
@@ -534,6 +543,10 @@ div.tree span.padding {
 .xlang {
 	color: #ff0000;
 	font-weight: bold;
+}
+
+pre.numbers {
+	float: left;
 }
 
 span.l {
