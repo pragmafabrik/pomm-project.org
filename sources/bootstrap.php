@@ -40,6 +40,7 @@ $app['loader'] = $loader;
 // set DEBUG mode or not
 if (preg_match('/^dev/', ENV)) {
     $app['debug'] = true;
+    $app->register(new Silex\Provider\HttpFragmentServiceProvider);
     $app->register(new Provider\MonologServiceProvider(), array(
         'monolog.logfile' => PROJECT_DIR.'/log/app.log',
         'monolog.level'   => Monolog\Logger::DEBUG,
