@@ -156,13 +156,12 @@ SQL;
      */
     public function search($search_string, $limit)
     {
-        $words = $this->prepareTsWords($search_string);
         $sql = <<<SQL
 select
   :projection
 from
   :news,
-  to_tsquery('english', $*) as query
+  plainto_tsquery('english', $*) as query
 where lexem @@ query
 order by
   ranking desc,
@@ -181,31 +180,6 @@ SQL;
             ':news'       => $this->structure->getRelation(),
             ]);
 
-        return $this->query($sql, [$words, $limit], $projection);
-    }
-
-    /**
-     * prepareTsWords
-     *
-     * Prepare search words for ts_query.
-     *
-     * @access private
-     * @param  string $string
-     * @return string
-     */
-    private function prepareTsWords($string)
-    {
-        $elements = preg_split('/\W+/', trim($string));
-        $words = [];
-
-        foreach ($elements as $element) {
-            $element = trim($element);
-
-            if ($element !== '' && $element !== null) {
-                $words[] = $element;
-            }
-        }
-
-        return join(' & ', $words);
+        return $this->query($sql, [$search_string, $limit], $projection);
     }
 }
