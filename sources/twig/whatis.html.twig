@@ -12,13 +12,13 @@
                 <p>
                 Pomm 2 is a small database access framework for PHP dedicated to Postgresql. <a href="{{ app.url_generator.generate('main_about') }}">Pomm is different from an ORM</a>. For convenience, Pomm library has been divided into small packages:
                   <ul>
-                    <li>Foundation</li>
-                    <li>ModelManager</li>
-                    <li>Cli</li>
+                    <li><a href="#foundation">Foundation</a></li>
+                    <li><a href="#model-manager">ModelManager</a></li>
+                    <li><a href="#cli">Command Line Interface (CLI)</a></li>
                   </ul>
                 </p>
-                <h3>Foundation</h3>
-                <p>The foundation package is a library that shares a database &quot;physical&quot; connection between clients through a session. Thare are different kind of clients, pametrized statements, prepared queries, converter, database inspector. These different kind of clients are managed by pool managers abbreviated as &quot;poolers&quot;.</p>
+                <a name="foundation"><h3>Foundation</h3></a>
+                <p>The foundation package is Pomm’s kernel. It shares a database &quot;physical&quot; connection between clients through a session. There are different kind of clients, parametrized statements, prepared queries, converter, database inspector. These different kind of clients are managed by pool managers abbreviated as &quot;poolers&quot;.</p>
                 <div class="row">
                   <div class="col-md-4">
                     <img src="/images/session.png" />
@@ -26,29 +26,52 @@
                   <div class="col-md-8">
                     <p>Each client registered to the session can access the connection or summon other client's methods. The example below shows how the system work and how transparent it is:
                           <code><pre class="vimphp">
+<span class="Special">&lt;?php</span>
+
+<span class="Operator">$</span><span class="Identifier">session</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">pomm</span><span class="Special">[</span>'<span class="String">my_session</span>'<span class="Special">]</span>;
+
+<span class="Comment">// wait for a DB notification on channel pika</span>
+<span class="Statement">do</span> <span class="Special">{</span>
+    <span class="Function">sleep</span><span class="Special">(</span><span class="Number">1</span><span class="Special">)</span>;
+    <span class="Operator">$</span><span class="Identifier">notification</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">session</span>
+        <span class="Structure">-&gt;</span>getObserver<span class="Special">(</span>'<span class="String">pika</span>'<span class="Special">)</span> <span class="Comment">// Get the &quot;pika&quot; observer client.</span>
+        <span class="Structure">-&gt;</span>getNotification<span class="Special">()</span>   <span class="Comment">// Ask it to listen to notifications.</span>
+        ;
+<span class="Special">}</span> <span class="Statement">while</span> <span class="Special">(</span><span class="Operator">$</span><span class="Identifier">notification</span> <span class="Statement">===</span> <span class="Type">null</span><span class="Special">)</span>;
+<span class="Operator">$</span><span class="Identifier">payload</span> <span class="Operator">=</span> <span class="Function">json_decode</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">notification</span><span class="Special">[</span>'<span class="String">payload</span>'<span class="Special">])</span>;
+
+<span class="Comment">// perform a query using data received in the notification</span>
 <span class="Operator">$</span><span class="Identifier">iterator</span> <span class="Operator">=</span> <span class="Operator">$</span><span class="Identifier">session</span>
     <span class="Structure">-&gt;</span>getQueryManager<span class="Special">()</span>
-    <span class="Structure">-&gt;</span>query<span class="Special">(</span>'<span class="String">select * from a_table where a_field = $*</span>', <span class="Special">[</span>'<span class="String">a value</span>'<span class="Special">])</span>
+    <span class="Structure">-&gt;</span>query<span class="Special">(</span>&quot;<span class="String">SELECT count(*) AS total FROM blog.article WHERE slug ~* $*::text</span>&quot;, <span class="Special">[</span><span class="Operator">$</span><span class="Identifier">payload</span><span class="Structure">-&gt;</span>slug<span class="Special">])</span>
     ;
 
-<span class="Statement">foreach</span> <span class="Special">(</span><span class="Operator">$</span><span class="Identifier">iterator</span> <span class="Statement">as</span> <span class="Operator">$</span><span class="Identifier">row</span><span class="Special">)</span> <span class="Special">{</span>
-  <span class="Function">print_r</span><span class="Special">(</span><span class="Operator">$</span><span class="Identifier">row</span><span class="Special">)</span>;
-<span class="Special">}</span>
+<span class="Function">printf</span><span class="Special">(</span>
+    &quot;<span class="String">There are %d articles matching '%s' slug.</span><span class="Special">\n</span>&quot;,
+    <span class="Operator">$</span><span class="Identifier">iterator</span><span class="Structure">-&gt;</span>current<span class="Special">()[</span>'<span class="String">total</span>'<span class="Special">]</span>,
+    <span class="Operator">$</span><span class="Identifier">payload</span><span class="Structure">-&gt;</span>slug
+<span class="Special">)</span>;
 </pre></code>
                     </p>
                   </div> <!--col-md-8 -->
                 </div><!-- row -->
-                <p>
-                  The code example above shows how to ask the QueryManager pooler to give us a client able to perform a query. The returned result iterator owns a reference to the session. Each time a result is fetched from the iterator, the converter pooler is used to get a converter client. This way, each converter can access the session which is useful to use Postgresql <a href="http://php.net/manual/en/function.pg-escape-literal.php">configuration dependant escaping functions</a>. The following usefull poolers come configured with the default session builder:
-                  <ul>
-                    <li>QueryManager (can use <code>PreparedQueryPooler</code> to use prepared statements)</li>
-                    <li>Converter</li>
-                    <li>Observer (to take advantage of Postgresql listen/notify feature)</li>
-                    <li>Inspector</li>
-                    <li>Listener (trigger code on events within Pomm)</li>
-                  </ul>
+                <p>The code example above uses Foundation’s observer client type to listen to notifications sent through Postgres server. When another process sends a notification <code>NOTIFY "pika", '{"slug": "this-is-a-slug"}'</code> it is caught by the script and query is then performed using the query manager client. Parameters are automatically escaped and converted from/to Postgres/PHP. This makes the use of Postgres secure and easy and it keeps the developers focused on the important parts.</p>
+                <p>Here is a list of some client types packaged with Foundation:
+                  <dl>
+                    <dt>&rdca; QueryManager</dt>
+                    <dd>Send parametrized queries and convert results.</dd>
+                    <dd>can use <code>PreparedQueryPooler</code> to use prepared statements.</dd>
+                    <dt>&rdca; Converter</dt>
+                    <dd>Convert any type from/to Postgres.</dd>
+                    <dt>&rdca; Observer</dt>
+                    <dd>Listen to notifications sent through Postgres.</dd>
+                    <dt>&rdca; Inspector</dt>
+                    <dd>Introspect database objects.</dd>
+                    <dt>&rdca; Listener</dt>
+                    <dd>Trigger code on events within Pomm.</dd>
+                  </dl>
                 </p>
-                <h3>Model Manager</h3>
+                <h3><a name="model-manager">Model Manager</a></h3>
                 <p>Pomm's model manager is a package adding extra clients to Foundation in order to map database records with object oriented entities. This greatly eases all the write operations and enhances data conversion, allowing the use of composite types and embedded entities.</p>
                 <p>Each <code>Model</code> class maps a database relation to a <code>FlexibleEntity</code> using a <code>Projection</code>. There is <a href="{{ app.url_generator.generate('main_about') }}">more about this here</a>. A typical model file looks like the following:
                 <code><pre class="vimphp">
@@ -131,7 +154,7 @@
     <span class="Special">}</span>
 </pre></code>
                 </p>
-                <h3>Command Line Interface (CLI)</h3>
+                <h3><a name="cli">Command Line Interface (CLI)</a></h3>
                 <p>The CLI package crafts a command line thats uses Foundation and ModelManager clients to inspect the database structure or to generate classes for the model manager.</p>
                 <code><pre><b>$</b> php vendor/bin/pomm.php pomm:inspect:relation pomm_project news pomm
 Relation pomm.news

@@ -68,6 +68,7 @@ $ php vendor/bin/pomm.php pomm:generate:schema-all -d sources/lib/Model -a 'Vend
                     <li>The class in <code>EntityModel.php</code> is where the custom queries for the according entity will take place.</li>
                     <li>The class in <code>Entity.php</code> is the flexible entity code. Getter and setters overloads will go there.</li>
                   </ul>
+                  <div class="well well-sm well-warning"><p><b><u>Note about path:</u></b><br />&nbsp;&nbsp;The source path <code>sources\lib</code> generated in the example above assumes this directory is declared to the autoloader. See <u><a href="https://github.com/pomm-project/ModelManager/issues/82">this issue</a></u> for more informations.</p></div>
                 </p>
                 <h3>Step 3: tune the projection</h3>
                 <p>Let's consider the following script that uses the <code>ComputerModel</code>:
